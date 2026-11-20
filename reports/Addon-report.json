@@ -1,0 +1,3836 @@
+{
+  "tool_version": "0.1.0",
+  "source": "D:\\softwares\\NFS-hack\\cars2\\1970 AMC Rebel The Machine\\Addon",
+  "layout": {
+    "detected_types": [
+      "VLT/NFSMS database installation",
+      "Possible Unlimiter add-on model payload"
+    ],
+    "file_type_counts": {
+      "vlt_script": 2,
+      "car_model_or_texture": 2,
+      "other": 1,
+      "unlimiter_or_mod_config": 1,
+      "texture_or_logo": 2
+    },
+    "confidence": "heuristic; verify against author instructions"
+  },
+  "file_count": 8,
+  "extension_counts": {
+    ".bin": 2,
+    ".dds": 2,
+    ".ini": 1,
+    ".nfsms": 2,
+    ".png": 1
+  },
+  "files": [
+    {
+      "path": "Install.nfsms",
+      "size": 479,
+      "kind": "vlt_script"
+    },
+    {
+      "path": "REBEL/GEOMETRY.BIN",
+      "size": 5591552,
+      "kind": "car_model_or_texture"
+    },
+    {
+      "path": "REBEL/TEXTURES.BIN",
+      "size": 1602122,
+      "kind": "car_model_or_texture"
+    },
+    {
+      "path": "SetupFiles/rebel.png",
+      "size": 1413153,
+      "kind": "other"
+    },
+    {
+      "path": "SetupFiles/rebel_install.nfsms",
+      "size": 14606,
+      "kind": "vlt_script"
+    },
+    {
+      "path": "Ed Files/Config/NFSMW/REBEL.ini",
+      "size": 2015,
+      "kind": "unlimiter_or_mod_config"
+    },
+    {
+      "path": "Ed Files/Resources/NFSMW/FrontEnd/FrontEndTextures/729181AD/CARSELECT_MANUFACTURER_AMC.dds",
+      "size": 174928,
+      "kind": "texture_or_logo"
+    },
+    {
+      "path": "Ed Files/Resources/NFSMW/FrontEnd/FrontEndTextures/729181AD/SECONDARY_LOGO_REBEL.dds",
+      "size": 349712,
+      "kind": "texture_or_logo"
+    }
+  ],
+  "nfsms_commands": [
+    {
+      "file": "Install.nfsms",
+      "line": 3,
+      "command": "ui_image",
+      "args": [
+        "SetupFiles\\rebel.png"
+      ],
+      "raw": "ui_image SetupFiles\\rebel.png"
+    },
+    {
+      "file": "Install.nfsms",
+      "line": 5,
+      "command": "ui_text",
+      "args": [
+        "1970",
+        "American",
+        "Motors",
+        "Rebel",
+        "The",
+        "Machine|",
+        "Addon"
+      ],
+      "raw": "ui_text 1970 American Motors Rebel The Machine| Addon"
+    },
+    {
+      "file": "Install.nfsms",
+      "line": 6,
+      "command": "ui_text",
+      "args": [
+        "Converted",
+        "by",
+        "Rauny_noobexX",
+        "from",
+        "Forza",
+        "Horizon",
+        "4"
+      ],
+      "raw": "ui_text Converted by Rauny_noobexX from Forza Horizon 4"
+    },
+    {
+      "file": "Install.nfsms",
+      "line": 7,
+      "command": "ui_text",
+      "args": [
+        "Performance",
+        "Attributes",
+        "by",
+        "LTLGamer1"
+      ],
+      "raw": "ui_text Performance Attributes by LTLGamer1"
+    },
+    {
+      "file": "Install.nfsms",
+      "line": 8,
+      "command": "ui_text____________________________________________________________",
+      "args": [],
+      "raw": "ui_text____________________________________________________________"
+    },
+    {
+      "file": "Install.nfsms",
+      "line": 9,
+      "command": "ui_text",
+      "args": [],
+      "raw": "ui_text"
+    },
+    {
+      "file": "Install.nfsms",
+      "line": 12,
+      "command": "folder_create",
+      "args": [
+        "CARS\\REBEL"
+      ],
+      "raw": "folder_create CARS\\REBEL"
+    },
+    {
+      "file": "Install.nfsms",
+      "line": 13,
+      "command": "file_copy",
+      "args": [
+        "REBEL\\GEOMETRY.BIN",
+        "CARS\\REBEL\\GEOMETRY.BIN"
+      ],
+      "raw": "file_copy REBEL\\GEOMETRY.BIN CARS\\REBEL\\GEOMETRY.BIN"
+    },
+    {
+      "file": "Install.nfsms",
+      "line": 14,
+      "command": "file_copy",
+      "args": [
+        "REBEL\\TEXTURES.BIN",
+        "CARS\\REBEL\\TEXTURES.BIN"
+      ],
+      "raw": "file_copy REBEL\\TEXTURES.BIN CARS\\REBEL\\TEXTURES.BIN"
+    },
+    {
+      "file": "Install.nfsms",
+      "line": 15,
+      "command": "script",
+      "args": [
+        "SetupFiles\\rebel_install.nfsms"
+      ],
+      "raw": "script\tSetupFiles\\rebel_install.nfsms"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 1,
+      "command": "copy_node",
+      "args": [
+        "brakes",
+        "punto",
+        "default",
+        "rebel"
+      ],
+      "raw": "copy_node brakes punto default rebel"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 2,
+      "command": "copy_node",
+      "args": [
+        "brakes",
+        "punto_top",
+        "rebel",
+        "rebel_top"
+      ],
+      "raw": "copy_node brakes punto_top rebel rebel_top"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 3,
+      "command": "copy_node",
+      "args": [
+        "chassis",
+        "punto",
+        "default",
+        "rebel"
+      ],
+      "raw": "copy_node chassis punto default rebel"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 4,
+      "command": "copy_node",
+      "args": [
+        "chassis",
+        "punto_top",
+        "rebel",
+        "rebel_top"
+      ],
+      "raw": "copy_node chassis punto_top rebel rebel_top"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 5,
+      "command": "copy_node",
+      "args": [
+        "ecar",
+        "punto",
+        "racers",
+        "rebel"
+      ],
+      "raw": "copy_node ecar punto racers rebel"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 6,
+      "command": "copy_node",
+      "args": [
+        "engine",
+        "punto",
+        "default",
+        "rebel"
+      ],
+      "raw": "copy_node engine punto default rebel"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 7,
+      "command": "copy_node",
+      "args": [
+        "engine",
+        "punto_top",
+        "rebel",
+        "rebel_top"
+      ],
+      "raw": "copy_node engine punto_top rebel rebel_top"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 8,
+      "command": "copy_node",
+      "args": [
+        "induction",
+        "punto_base",
+        "default",
+        "rebel"
+      ],
+      "raw": "copy_node induction punto_base default rebel"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 9,
+      "command": "copy_node",
+      "args": [
+        "induction",
+        "punto_top",
+        "rebel",
+        "rebel_top"
+      ],
+      "raw": "copy_node induction punto_top rebel rebel_top"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 10,
+      "command": "copy_node",
+      "args": [
+        "pvehicle",
+        "punto",
+        "racers",
+        "rebel"
+      ],
+      "raw": "copy_node pvehicle punto racers rebel"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 11,
+      "command": "copy_node",
+      "args": [
+        "tires",
+        "punto",
+        "default",
+        "rebel"
+      ],
+      "raw": "copy_node tires punto default rebel"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 12,
+      "command": "copy_node",
+      "args": [
+        "tires",
+        "punto_top",
+        "rebel",
+        "rebel_top"
+      ],
+      "raw": "copy_node tires punto_top rebel rebel_top"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 13,
+      "command": "copy_node",
+      "args": [
+        "transmission",
+        "punto",
+        "default",
+        "rebel"
+      ],
+      "raw": "copy_node transmission punto default rebel"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 14,
+      "command": "copy_node",
+      "args": [
+        "transmission",
+        "punto_top",
+        "rebel",
+        "rebel_top"
+      ],
+      "raw": "copy_node transmission punto_top rebel rebel_top"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 15,
+      "command": "copy_node",
+      "args": [
+        "camerainfo",
+        "punto_hood",
+        "hood",
+        "rebel_hood"
+      ],
+      "raw": "copy_node camerainfo punto_hood hood rebel_hood"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 16,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "MODEL",
+        "Visual",
+        "REBEL"
+      ],
+      "raw": "update_field pvehicle rebel MODEL Visual REBEL"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 17,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "MODEL",
+        "Collision",
+        "REBEL"
+      ],
+      "raw": "update_field pvehicle rebel MODEL Collision REBEL"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 18,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "MODEL",
+        "Collision64",
+        "REBEL"
+      ],
+      "raw": "update_field pvehicle rebel MODEL Collision64 REBEL"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 19,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "transmission[0]",
+        "Collection",
+        "rebel"
+      ],
+      "raw": "update_field pvehicle rebel transmission[0] Collection rebel"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 20,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "transmission[1]",
+        "Collection",
+        "rebel_top"
+      ],
+      "raw": "update_field pvehicle rebel transmission[1] Collection rebel_top"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 21,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "tires[0]",
+        "Collection",
+        "rebel"
+      ],
+      "raw": "update_field pvehicle rebel tires[0] Collection rebel"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 22,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "tires[1]",
+        "Collection",
+        "rebel_top"
+      ],
+      "raw": "update_field pvehicle rebel tires[1] Collection rebel_top"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 23,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "induction[0]",
+        "Collection",
+        "rebel"
+      ],
+      "raw": "update_field pvehicle rebel induction[0] Collection rebel"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 24,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "induction[1]",
+        "Collection",
+        "rebel_top"
+      ],
+      "raw": "update_field pvehicle rebel induction[1] Collection rebel_top"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 25,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "frontend",
+        "Collection",
+        "rebel"
+      ],
+      "raw": "update_field pvehicle rebel frontend Collection rebel"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 26,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "engine[0]",
+        "Collection",
+        "rebel"
+      ],
+      "raw": "update_field pvehicle rebel engine[0] Collection rebel"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 27,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "engine[1]",
+        "Collection",
+        "rebel_top"
+      ],
+      "raw": "update_field pvehicle rebel engine[1] Collection rebel_top"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 28,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "chassis[0]",
+        "Collection",
+        "rebel"
+      ],
+      "raw": "update_field pvehicle rebel chassis[0] Collection rebel"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 29,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "chassis[1]",
+        "Collection",
+        "rebel_top"
+      ],
+      "raw": "update_field pvehicle rebel chassis[1] Collection rebel_top"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 30,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "brakes[0]",
+        "Collection",
+        "rebel"
+      ],
+      "raw": "update_field pvehicle rebel brakes[0] Collection rebel"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 31,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "brakes[1]",
+        "Collection",
+        "rebel_top"
+      ],
+      "raw": "update_field pvehicle rebel brakes[1] Collection rebel_top"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 33,
+      "command": "copy_node",
+      "args": [
+        "frontend",
+        "audi",
+        "north_america",
+        "amc"
+      ],
+      "raw": "copy_node frontend audi north_america amc"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 34,
+      "command": "update_field",
+      "args": [
+        "frontend",
+        "amc",
+        "manufacturer",
+        "124"
+      ],
+      "raw": "update_field frontend amc manufacturer 124"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 35,
+      "command": "copy_node",
+      "args": [
+        "frontend",
+        "tt",
+        "amc",
+        "rebel"
+      ],
+      "raw": "copy_node frontend tt amc rebel"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 36,
+      "command": "update_field",
+      "args": [
+        "frontend",
+        "rebel",
+        "manufacturer",
+        "124"
+      ],
+      "raw": "update_field frontend rebel manufacturer 124"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 37,
+      "command": "update_field",
+      "args": [
+        "frontend",
+        "rebel",
+        "Cost",
+        "69900"
+      ],
+      "raw": "update_field frontend rebel Cost 69900"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 39,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "MASS",
+        "1656"
+      ],
+      "raw": "update_field pvehicle rebel MASS 1656"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 40,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "TENSOR_SCALE",
+        "X",
+        "1"
+      ],
+      "raw": "update_field pvehicle rebel TENSOR_SCALE X 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 41,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "TENSOR_SCALE",
+        "Y",
+        "2"
+      ],
+      "raw": "update_field pvehicle rebel TENSOR_SCALE Y 2"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 42,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "TENSOR_SCALE",
+        "Z",
+        "1"
+      ],
+      "raw": "update_field pvehicle rebel TENSOR_SCALE Z 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 43,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "TENSOR_SCALE",
+        "W",
+        "0"
+      ],
+      "raw": "update_field pvehicle rebel TENSOR_SCALE W 0"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 44,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "HandlingRating[0]",
+        "55"
+      ],
+      "raw": "update_field pvehicle rebel HandlingRating[0] 55"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 45,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "HandlingRating[1]",
+        "96"
+      ],
+      "raw": "update_field pvehicle rebel HandlingRating[1] 96"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 46,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "VerbalType",
+        "0x08000000"
+      ],
+      "raw": "update_field pvehicle rebel VerbalType 0x08000000"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 47,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "BodyDive",
+        "DegPerG",
+        "6"
+      ],
+      "raw": "update_field ecar rebel BodyDive DegPerG 6"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 48,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "BodyDive",
+        "MaxG",
+        "1"
+      ],
+      "raw": "update_field ecar rebel BodyDive MaxG 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 49,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "BodyDive",
+        "DegPerSec",
+        "6"
+      ],
+      "raw": "update_field ecar rebel BodyDive DegPerSec 6"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 50,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "RideHeight",
+        "4"
+      ],
+      "raw": "update_field ecar rebel RideHeight 4"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 51,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[0]",
+        "X",
+        "1.45"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[0] X 1.45"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 52,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[0]",
+        "Y",
+        "0.9"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[0] Y 0.9"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 53,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[0]",
+        "Z",
+        "-0.03"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[0] Z -0.03"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 54,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[0]",
+        "W",
+        "0.34"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[0] W 0.34"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 55,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[1]",
+        "X",
+        "1.45"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[1] X 1.45"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 56,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[1]",
+        "Y",
+        "-0.9"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[1] Y -0.9"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 57,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[1]",
+        "Z",
+        "-0.03"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[1] Z -0.03"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 58,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[1]",
+        "W",
+        "0.34"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[1] W 0.34"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 59,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[2]",
+        "X",
+        "-1.45"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[2] X -1.45"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 60,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[2]",
+        "Y",
+        "-0.91"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[2] Y -0.91"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 61,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[2]",
+        "Z",
+        "-0.03"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[2] Z -0.03"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 62,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[2]",
+        "W",
+        "0.35"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[2] W 0.35"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 63,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[3]",
+        "X",
+        "-1.45"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[3] X -1.45"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 64,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[3]",
+        "Y",
+        "0.91"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[3] Y 0.91"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 65,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[3]",
+        "Z",
+        "-0.03"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[3] Z -0.03"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 66,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[3]",
+        "W",
+        "0.35"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[3] W 0.35"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 67,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "BodySquat",
+        "DegPerG",
+        "6"
+      ],
+      "raw": "update_field ecar rebel BodySquat DegPerG 6"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 68,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "BodySquat",
+        "MaxG",
+        "1"
+      ],
+      "raw": "update_field ecar rebel BodySquat MaxG 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 69,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "BodySquat",
+        "DegPerSec",
+        "6"
+      ],
+      "raw": "update_field ecar rebel BodySquat DegPerSec 6"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 70,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "CamberRear",
+        "0.18"
+      ],
+      "raw": "update_field ecar rebel CamberRear 0.18"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 71,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "CamberFront",
+        "0.22"
+      ],
+      "raw": "update_field ecar rebel CamberFront 0.22"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 72,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "FECompressions[0]",
+        "0.09"
+      ],
+      "raw": "update_field ecar rebel FECompressions[0] 0.09"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 73,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "FECompressions[1]",
+        "0.09"
+      ],
+      "raw": "update_field ecar rebel FECompressions[1] 0.09"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 74,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireSkidWidth[0]",
+        "0.245"
+      ],
+      "raw": "update_field ecar rebel TireSkidWidth[0] 0.245"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 75,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireSkidWidth[1]",
+        "0.245"
+      ],
+      "raw": "update_field ecar rebel TireSkidWidth[1] 0.245"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 76,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireSkidWidth[2]",
+        "0.295"
+      ],
+      "raw": "update_field ecar rebel TireSkidWidth[2] 0.295"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 77,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireSkidWidth[3]",
+        "0.295"
+      ],
+      "raw": "update_field ecar rebel TireSkidWidth[3] 0.295"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 78,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "WheelSpokeCount",
+        "5"
+      ],
+      "raw": "update_field ecar rebel WheelSpokeCount 5"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 79,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "ReflectionOffset",
+        "0.17"
+      ],
+      "raw": "update_field ecar rebel ReflectionOffset 0.17"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 80,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "KitWheelOffsetRear[0]",
+        "0"
+      ],
+      "raw": "update_field ecar rebel KitWheelOffsetRear[0] 0"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 81,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "KitWheelOffsetRear[1]",
+        "0"
+      ],
+      "raw": "update_field ecar rebel KitWheelOffsetRear[1] 0"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 82,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "KitWheelOffsetRear[2]",
+        "0"
+      ],
+      "raw": "update_field ecar rebel KitWheelOffsetRear[2] 0"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 83,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "KitWheelOffsetRear[3]",
+        "0"
+      ],
+      "raw": "update_field ecar rebel KitWheelOffsetRear[3] 0"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 84,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "KitWheelOffsetRear[4]",
+        "0"
+      ],
+      "raw": "update_field ecar rebel KitWheelOffsetRear[4] 0"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 85,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "KitWheelOffsetRear[5]",
+        "0"
+      ],
+      "raw": "update_field ecar rebel KitWheelOffsetRear[5] 0"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 86,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "BodyRoll",
+        "DegPerG",
+        "3"
+      ],
+      "raw": "update_field ecar rebel BodyRoll DegPerG 3"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 87,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "BodyRoll",
+        "MaxG",
+        "1"
+      ],
+      "raw": "update_field ecar rebel BodyRoll MaxG 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 88,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "BodyRoll",
+        "DegPerSec",
+        "4"
+      ],
+      "raw": "update_field ecar rebel BodyRoll DegPerSec 4"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 89,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "KitWheelOffsetFront[0]",
+        "0"
+      ],
+      "raw": "update_field ecar rebel KitWheelOffsetFront[0] 0"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 90,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "KitWheelOffsetFront[1]",
+        "0"
+      ],
+      "raw": "update_field ecar rebel KitWheelOffsetFront[1] 0"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 91,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "KitWheelOffsetFront[2]",
+        "0"
+      ],
+      "raw": "update_field ecar rebel KitWheelOffsetFront[2] 0"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 92,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "KitWheelOffsetFront[3]",
+        "0"
+      ],
+      "raw": "update_field ecar rebel KitWheelOffsetFront[3] 0"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 93,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "KitWheelOffsetFront[4]",
+        "0"
+      ],
+      "raw": "update_field ecar rebel KitWheelOffsetFront[4] 0"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 94,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "KitWheelOffsetFront[5]",
+        "0"
+      ],
+      "raw": "update_field ecar rebel KitWheelOffsetFront[5] 0"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 95,
+      "command": "update_field",
+      "args": [
+        "brakes",
+        "rebel",
+        "BRAKES",
+        "Front",
+        "450"
+      ],
+      "raw": "update_field brakes rebel BRAKES Front 450"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 96,
+      "command": "update_field",
+      "args": [
+        "brakes",
+        "rebel",
+        "BRAKES",
+        "Rear",
+        "550"
+      ],
+      "raw": "update_field brakes rebel BRAKES Rear 550"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 97,
+      "command": "update_field",
+      "args": [
+        "brakes",
+        "rebel",
+        "EBRAKE",
+        "600"
+      ],
+      "raw": "update_field brakes rebel EBRAKE 600"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 98,
+      "command": "update_field",
+      "args": [
+        "brakes",
+        "rebel",
+        "BRAKE_LOCK",
+        "Front",
+        "1"
+      ],
+      "raw": "update_field brakes rebel BRAKE_LOCK Front 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 99,
+      "command": "update_field",
+      "args": [
+        "brakes",
+        "rebel",
+        "BRAKE_LOCK",
+        "Rear",
+        "3.5"
+      ],
+      "raw": "update_field brakes rebel BRAKE_LOCK Rear 3.5"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 100,
+      "command": "update_field",
+      "args": [
+        "brakes",
+        "rebel_top",
+        "BRAKES",
+        "Front",
+        "550"
+      ],
+      "raw": "update_field brakes rebel_top BRAKES Front 550"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 101,
+      "command": "update_field",
+      "args": [
+        "brakes",
+        "rebel_top",
+        "BRAKES",
+        "Rear",
+        "600"
+      ],
+      "raw": "update_field brakes rebel_top BRAKES Rear 600"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 102,
+      "command": "update_field",
+      "args": [
+        "brakes",
+        "rebel_top",
+        "EBRAKE",
+        "650"
+      ],
+      "raw": "update_field brakes rebel_top EBRAKE 650"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 103,
+      "command": "update_field",
+      "args": [
+        "brakes",
+        "rebel_top",
+        "BRAKE_LOCK",
+        "Front",
+        "1"
+      ],
+      "raw": "update_field brakes rebel_top BRAKE_LOCK Front 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 104,
+      "command": "update_field",
+      "args": [
+        "brakes",
+        "rebel_top",
+        "BRAKE_LOCK",
+        "Rear",
+        "3.5"
+      ],
+      "raw": "update_field brakes rebel_top BRAKE_LOCK Rear 3.5"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 105,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "WHEEL_BASE",
+        "2.972"
+      ],
+      "raw": "update_field chassis rebel WHEEL_BASE 2.972"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 106,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "DRAG_COEFFICIENT",
+        "0.5"
+      ],
+      "raw": "update_field chassis rebel DRAG_COEFFICIENT 0.5"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 107,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SHOCK_VALVING",
+        "Front",
+        "17.5"
+      ],
+      "raw": "update_field chassis rebel SHOCK_VALVING Front 17.5"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 108,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SHOCK_VALVING",
+        "Rear",
+        "17.5"
+      ],
+      "raw": "update_field chassis rebel SHOCK_VALVING Rear 17.5"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 109,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "RIDE_HEIGHT",
+        "Front",
+        "9.5"
+      ],
+      "raw": "update_field chassis rebel RIDE_HEIGHT Front 9.5"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 110,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "RIDE_HEIGHT",
+        "Rear",
+        "9.5"
+      ],
+      "raw": "update_field chassis rebel RIDE_HEIGHT Rear 9.5"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 111,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SHOCK_STIFFNESS",
+        "Front",
+        "50"
+      ],
+      "raw": "update_field chassis rebel SHOCK_STIFFNESS Front 50"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 112,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SHOCK_STIFFNESS",
+        "Rear",
+        "50"
+      ],
+      "raw": "update_field chassis rebel SHOCK_STIFFNESS Rear 50"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 113,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SHOCK_BLOWOUT",
+        "7"
+      ],
+      "raw": "update_field chassis rebel SHOCK_BLOWOUT 7"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 114,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SHOCK_EXT_STIFFNESS",
+        "Front",
+        "60"
+      ],
+      "raw": "update_field chassis rebel SHOCK_EXT_STIFFNESS Front 60"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 115,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SHOCK_EXT_STIFFNESS",
+        "Rear",
+        "60"
+      ],
+      "raw": "update_field chassis rebel SHOCK_EXT_STIFFNESS Rear 60"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 116,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SWAYBAR_STIFFNESS",
+        "Front",
+        "300"
+      ],
+      "raw": "update_field chassis rebel SWAYBAR_STIFFNESS Front 300"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 117,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SWAYBAR_STIFFNESS",
+        "Rear",
+        "300"
+      ],
+      "raw": "update_field chassis rebel SWAYBAR_STIFFNESS Rear 300"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 118,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "ROLL_CENTER",
+        "11.5"
+      ],
+      "raw": "update_field chassis rebel ROLL_CENTER 11.5"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 119,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "TRAVEL",
+        "Front",
+        "10"
+      ],
+      "raw": "update_field chassis rebel TRAVEL Front 10"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 120,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "TRAVEL",
+        "Rear",
+        "10"
+      ],
+      "raw": "update_field chassis rebel TRAVEL Rear 10"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 121,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SPRING_STIFFNESS",
+        "Front",
+        "400"
+      ],
+      "raw": "update_field chassis rebel SPRING_STIFFNESS Front 400"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 122,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SPRING_STIFFNESS",
+        "Rear",
+        "400"
+      ],
+      "raw": "update_field chassis rebel SPRING_STIFFNESS Rear 400"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 123,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "AERO_CG",
+        "50"
+      ],
+      "raw": "update_field chassis rebel AERO_CG 50"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 124,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SPRING_PROGRESSION",
+        "Front",
+        "6"
+      ],
+      "raw": "update_field chassis rebel SPRING_PROGRESSION Front 6"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 125,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SPRING_PROGRESSION",
+        "Rear",
+        "6"
+      ],
+      "raw": "update_field chassis rebel SPRING_PROGRESSION Rear 6"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 126,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "TRACK_WIDTH",
+        "Front",
+        "1.516"
+      ],
+      "raw": "update_field chassis rebel TRACK_WIDTH Front 1.516"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 127,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "TRACK_WIDTH",
+        "Rear",
+        "1.504"
+      ],
+      "raw": "update_field chassis rebel TRACK_WIDTH Rear 1.504"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 128,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SHOCK_DIGRESSION",
+        "Front",
+        "0.5"
+      ],
+      "raw": "update_field chassis rebel SHOCK_DIGRESSION Front 0.5"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 129,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SHOCK_DIGRESSION",
+        "Rear",
+        "0.5"
+      ],
+      "raw": "update_field chassis rebel SHOCK_DIGRESSION Rear 0.5"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 130,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "RENDER_MOTION",
+        "1"
+      ],
+      "raw": "update_field chassis rebel RENDER_MOTION 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 131,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "AERO_COEFFICIENT",
+        "0.19"
+      ],
+      "raw": "update_field chassis rebel AERO_COEFFICIENT 0.19"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 132,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "FRONT_AXLE",
+        "1.485"
+      ],
+      "raw": "update_field chassis rebel FRONT_AXLE 1.485"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 133,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "FRONT_WEIGHT_BIAS",
+        "52"
+      ],
+      "raw": "update_field chassis rebel FRONT_WEIGHT_BIAS 52"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 134,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "WHEEL_BASE",
+        "2.972"
+      ],
+      "raw": "update_field chassis rebel_top WHEEL_BASE 2.972"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 135,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "FRONT_WEIGHT_BIAS",
+        "0.29"
+      ],
+      "raw": "update_field chassis rebel_top FRONT_WEIGHT_BIAS 0.29"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 136,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SHOCK_VALVING",
+        "Front",
+        "20"
+      ],
+      "raw": "update_field chassis rebel_top SHOCK_VALVING Front 20"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 137,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SHOCK_VALVING",
+        "Rear",
+        "20"
+      ],
+      "raw": "update_field chassis rebel_top SHOCK_VALVING Rear 20"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 138,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "RIDE_HEIGHT",
+        "Front",
+        "8.5"
+      ],
+      "raw": "update_field chassis rebel_top RIDE_HEIGHT Front 8.5"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 139,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "RIDE_HEIGHT",
+        "Rear",
+        "8.5"
+      ],
+      "raw": "update_field chassis rebel_top RIDE_HEIGHT Rear 8.5"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 140,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SHOCK_STIFFNESS",
+        "Front",
+        "60"
+      ],
+      "raw": "update_field chassis rebel_top SHOCK_STIFFNESS Front 60"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 141,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SHOCK_STIFFNESS",
+        "Rear",
+        "60"
+      ],
+      "raw": "update_field chassis rebel_top SHOCK_STIFFNESS Rear 60"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 142,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SHOCK_BLOWOUT",
+        "7"
+      ],
+      "raw": "update_field chassis rebel_top SHOCK_BLOWOUT 7"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 143,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SHOCK_EXT_STIFFNESS",
+        "Front",
+        "70"
+      ],
+      "raw": "update_field chassis rebel_top SHOCK_EXT_STIFFNESS Front 70"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 144,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SHOCK_EXT_STIFFNESS",
+        "Rear",
+        "70"
+      ],
+      "raw": "update_field chassis rebel_top SHOCK_EXT_STIFFNESS Rear 70"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 145,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SWAYBAR_STIFFNESS",
+        "Front",
+        "300"
+      ],
+      "raw": "update_field chassis rebel_top SWAYBAR_STIFFNESS Front 300"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 146,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SWAYBAR_STIFFNESS",
+        "Rear",
+        "300"
+      ],
+      "raw": "update_field chassis rebel_top SWAYBAR_STIFFNESS Rear 300"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 147,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "ROLL_CENTER",
+        "10.5"
+      ],
+      "raw": "update_field chassis rebel_top ROLL_CENTER 10.5"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 148,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "TRAVEL",
+        "Front",
+        "7.5"
+      ],
+      "raw": "update_field chassis rebel_top TRAVEL Front 7.5"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 149,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "TRAVEL",
+        "Rear",
+        "7.5"
+      ],
+      "raw": "update_field chassis rebel_top TRAVEL Rear 7.5"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 150,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SPRING_STIFFNESS",
+        "Front",
+        "650"
+      ],
+      "raw": "update_field chassis rebel_top SPRING_STIFFNESS Front 650"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 151,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SPRING_STIFFNESS",
+        "Rear",
+        "650"
+      ],
+      "raw": "update_field chassis rebel_top SPRING_STIFFNESS Rear 650"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 152,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "AERO_CG",
+        "47"
+      ],
+      "raw": "update_field chassis rebel_top AERO_CG 47"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 153,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SPRING_PROGRESSION",
+        "Front",
+        "8"
+      ],
+      "raw": "update_field chassis rebel_top SPRING_PROGRESSION Front 8"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 154,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SPRING_PROGRESSION",
+        "Rear",
+        "8"
+      ],
+      "raw": "update_field chassis rebel_top SPRING_PROGRESSION Rear 8"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 155,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "TRACK_WIDTH",
+        "Front",
+        "1.516"
+      ],
+      "raw": "update_field chassis rebel_top TRACK_WIDTH Front 1.516"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 156,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "TRACK_WIDTH",
+        "Rear",
+        "1.504"
+      ],
+      "raw": "update_field chassis rebel_top TRACK_WIDTH Rear 1.504"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 157,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SHOCK_DIGRESSION",
+        "Front",
+        "0.4"
+      ],
+      "raw": "update_field chassis rebel_top SHOCK_DIGRESSION Front 0.4"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 158,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SHOCK_DIGRESSION",
+        "Rear",
+        "0.4"
+      ],
+      "raw": "update_field chassis rebel_top SHOCK_DIGRESSION Rear 0.4"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 159,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "RENDER_MOTION",
+        "0.5"
+      ],
+      "raw": "update_field chassis rebel_top RENDER_MOTION 0.5"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 160,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "AERO_COEFFICIENT",
+        "0.27"
+      ],
+      "raw": "update_field chassis rebel_top AERO_COEFFICIENT 0.27"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 161,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "FRONT_AXLE",
+        "1.485"
+      ],
+      "raw": "update_field chassis rebel_top FRONT_AXLE 1.485"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 162,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "FRONT_WEIGHT_BIAS",
+        "50"
+      ],
+      "raw": "update_field chassis rebel_top FRONT_WEIGHT_BIAS 50"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 163,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "ENGINE_BRAKING[0]",
+        "0.75"
+      ],
+      "raw": "update_field engine rebel ENGINE_BRAKING[0] 0.75"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 164,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "ENGINE_BRAKING[1]",
+        "0.85"
+      ],
+      "raw": "update_field engine rebel ENGINE_BRAKING[1] 0.85"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 165,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "ENGINE_BRAKING[2]",
+        "0.95"
+      ],
+      "raw": "update_field engine rebel ENGINE_BRAKING[2] 0.95"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 166,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "IDLE",
+        "900"
+      ],
+      "raw": "update_field engine rebel IDLE 900"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 167,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "TORQUE[0]",
+        "148"
+      ],
+      "raw": "update_field engine rebel TORQUE[0] 148"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 168,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "TORQUE[1]",
+        "201"
+      ],
+      "raw": "update_field engine rebel TORQUE[1] 201"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 169,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "TORQUE[2]",
+        "245"
+      ],
+      "raw": "update_field engine rebel TORQUE[2] 245"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 170,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "TORQUE[3]",
+        "289"
+      ],
+      "raw": "update_field engine rebel TORQUE[3] 289"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 171,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "TORQUE[4]",
+        "332"
+      ],
+      "raw": "update_field engine rebel TORQUE[4] 332"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 172,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "TORQUE[5]",
+        "368"
+      ],
+      "raw": "update_field engine rebel TORQUE[5] 368"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 173,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "TORQUE[6]",
+        "353"
+      ],
+      "raw": "update_field engine rebel TORQUE[6] 353"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 174,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "TORQUE[7]",
+        "323"
+      ],
+      "raw": "update_field engine rebel TORQUE[7] 323"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 175,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "TORQUE[8]",
+        "289"
+      ],
+      "raw": "update_field engine rebel TORQUE[8] 289"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 176,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "MAX_RPM",
+        "7000"
+      ],
+      "raw": "update_field engine rebel MAX_RPM 7000"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 177,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "FLYWHEEL_MASS",
+        "11"
+      ],
+      "raw": "update_field engine rebel FLYWHEEL_MASS 11"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 178,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "RED_LINE",
+        "6000"
+      ],
+      "raw": "update_field engine rebel RED_LINE 6000"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 179,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "ENGINE_BRAKING[0]",
+        "0.65"
+      ],
+      "raw": "update_field engine rebel_top ENGINE_BRAKING[0] 0.65"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 180,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "ENGINE_BRAKING[1]",
+        "0.75"
+      ],
+      "raw": "update_field engine rebel_top ENGINE_BRAKING[1] 0.75"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 181,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "ENGINE_BRAKING[2]",
+        "0.85"
+      ],
+      "raw": "update_field engine rebel_top ENGINE_BRAKING[2] 0.85"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 182,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "IDLE",
+        "950"
+      ],
+      "raw": "update_field engine rebel_top IDLE 950"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 183,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "TORQUE[0]",
+        "432"
+      ],
+      "raw": "update_field engine rebel_top TORQUE[0] 432"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 184,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "TORQUE[1]",
+        "516"
+      ],
+      "raw": "update_field engine rebel_top TORQUE[1] 516"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 185,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "TORQUE[2]",
+        "558"
+      ],
+      "raw": "update_field engine rebel_top TORQUE[2] 558"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 186,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "TORQUE[3]",
+        "601"
+      ],
+      "raw": "update_field engine rebel_top TORQUE[3] 601"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 187,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "TORQUE[4]",
+        "643"
+      ],
+      "raw": "update_field engine rebel_top TORQUE[4] 643"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 188,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "TORQUE[5]",
+        "674"
+      ],
+      "raw": "update_field engine rebel_top TORQUE[5] 674"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 189,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "TORQUE[6]",
+        "634"
+      ],
+      "raw": "update_field engine rebel_top TORQUE[6] 634"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 190,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "TORQUE[7]",
+        "575"
+      ],
+      "raw": "update_field engine rebel_top TORQUE[7] 575"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 191,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "TORQUE[8]",
+        "514"
+      ],
+      "raw": "update_field engine rebel_top TORQUE[8] 514"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 192,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "MAX_RPM",
+        "7100"
+      ],
+      "raw": "update_field engine rebel_top MAX_RPM 7100"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 193,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "FLYWHEEL_MASS",
+        "10"
+      ],
+      "raw": "update_field engine rebel_top FLYWHEEL_MASS 10"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 194,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "RED_LINE",
+        "6100"
+      ],
+      "raw": "update_field engine rebel_top RED_LINE 6100"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 195,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel",
+        "SPOOL_TIME_DOWN",
+        "0.1"
+      ],
+      "raw": "update_field induction rebel SPOOL_TIME_DOWN 0.1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 196,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel",
+        "HIGH_BOOST",
+        "0.1"
+      ],
+      "raw": "update_field induction rebel HIGH_BOOST 0.1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 197,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel",
+        "LOW_BOOST",
+        "0.1"
+      ],
+      "raw": "update_field induction rebel LOW_BOOST 0.1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 198,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel",
+        "SPOOL_TIME_UP",
+        "2.5"
+      ],
+      "raw": "update_field induction rebel SPOOL_TIME_UP 2.5"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 199,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel",
+        "PSI",
+        "9"
+      ],
+      "raw": "update_field induction rebel PSI 9"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 200,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel",
+        "SPOOL",
+        "0.15"
+      ],
+      "raw": "update_field induction rebel SPOOL 0.15"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 201,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel",
+        "VACUUM",
+        "0.1"
+      ],
+      "raw": "update_field induction rebel VACUUM 0.1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 202,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel_top",
+        "SPOOL_TIME_DOWN",
+        "0.15"
+      ],
+      "raw": "update_field induction rebel_top SPOOL_TIME_DOWN 0.15"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 203,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel_top",
+        "HIGH_BOOST",
+        "0.15"
+      ],
+      "raw": "update_field induction rebel_top HIGH_BOOST 0.15"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 204,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel_top",
+        "LOW_BOOST",
+        "0.15"
+      ],
+      "raw": "update_field induction rebel_top LOW_BOOST 0.15"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 205,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel_top",
+        "SPOOL_TIME_UP",
+        "2"
+      ],
+      "raw": "update_field induction rebel_top SPOOL_TIME_UP 2"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 206,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel_top",
+        "PSI",
+        "12"
+      ],
+      "raw": "update_field induction rebel_top PSI 12"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 207,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel_top",
+        "SPOOL",
+        "0"
+      ],
+      "raw": "update_field induction rebel_top SPOOL 0"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 208,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel_top",
+        "VACUUM",
+        "0"
+      ],
+      "raw": "update_field induction rebel_top VACUUM 0"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 209,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "SECTION_WIDTH",
+        "Front",
+        "225"
+      ],
+      "raw": "update_field tires rebel SECTION_WIDTH Front 225"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 210,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "SECTION_WIDTH",
+        "Rear",
+        "275"
+      ],
+      "raw": "update_field tires rebel SECTION_WIDTH Rear 275"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 211,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "YAW_CONTROL[0]",
+        "0.025"
+      ],
+      "raw": "update_field tires rebel YAW_CONTROL[0] 0.025"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 212,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "YAW_CONTROL[1]",
+        "0.05"
+      ],
+      "raw": "update_field tires rebel YAW_CONTROL[1] 0.05"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 213,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "YAW_CONTROL[2]",
+        "0.07"
+      ],
+      "raw": "update_field tires rebel YAW_CONTROL[2] 0.07"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 214,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "YAW_CONTROL[3]",
+        "0.15"
+      ],
+      "raw": "update_field tires rebel YAW_CONTROL[3] 0.15"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 215,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "DYNAMIC_GRIP",
+        "Front",
+        "1.3"
+      ],
+      "raw": "update_field tires rebel DYNAMIC_GRIP Front 1.3"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 216,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "DYNAMIC_GRIP",
+        "Rear",
+        "1.4"
+      ],
+      "raw": "update_field tires rebel DYNAMIC_GRIP Rear 1.4"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 217,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "RIM_SIZE",
+        "Front",
+        "14"
+      ],
+      "raw": "update_field tires rebel RIM_SIZE Front 14"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 218,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "RIM_SIZE",
+        "Rear",
+        "14"
+      ],
+      "raw": "update_field tires rebel RIM_SIZE Rear 14"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 219,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "YAW_SPEED",
+        "0.3"
+      ],
+      "raw": "update_field tires rebel YAW_SPEED 0.3"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 220,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "ASPECT_RATIO",
+        "Front",
+        "60"
+      ],
+      "raw": "update_field tires rebel ASPECT_RATIO Front 60"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 221,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "ASPECT_RATIO",
+        "Rear",
+        "60"
+      ],
+      "raw": "update_field tires rebel ASPECT_RATIO Rear 60"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 222,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "STATIC_GRIP",
+        "Front",
+        "1.5"
+      ],
+      "raw": "update_field tires rebel STATIC_GRIP Front 1.5"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 223,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "STATIC_GRIP",
+        "Rear",
+        "1.6"
+      ],
+      "raw": "update_field tires rebel STATIC_GRIP Rear 1.6"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 224,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "GRIP_SCALE",
+        "Front",
+        "1.4"
+      ],
+      "raw": "update_field tires rebel GRIP_SCALE Front 1.4"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 225,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "GRIP_SCALE",
+        "Rear",
+        "1.5"
+      ],
+      "raw": "update_field tires rebel GRIP_SCALE Rear 1.5"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 226,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "STEERING",
+        "1"
+      ],
+      "raw": "update_field tires rebel STEERING 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 227,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "SECTION_WIDTH",
+        "Front",
+        "275"
+      ],
+      "raw": "update_field tires rebel_top SECTION_WIDTH Front 275"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 228,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "SECTION_WIDTH",
+        "Rear",
+        "305"
+      ],
+      "raw": "update_field tires rebel_top SECTION_WIDTH Rear 305"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 229,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "YAW_CONTROL[0]",
+        "0.06"
+      ],
+      "raw": "update_field tires rebel_top YAW_CONTROL[0] 0.06"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 230,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "YAW_CONTROL[1]",
+        "0.1"
+      ],
+      "raw": "update_field tires rebel_top YAW_CONTROL[1] 0.1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 231,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "YAW_CONTROL[2]",
+        "0.15"
+      ],
+      "raw": "update_field tires rebel_top YAW_CONTROL[2] 0.15"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 232,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "YAW_CONTROL[3]",
+        "0.2"
+      ],
+      "raw": "update_field tires rebel_top YAW_CONTROL[3] 0.2"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 233,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "DYNAMIC_GRIP",
+        "Front",
+        "2.2"
+      ],
+      "raw": "update_field tires rebel_top DYNAMIC_GRIP Front 2.2"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 234,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "DYNAMIC_GRIP",
+        "Rear",
+        "2.3"
+      ],
+      "raw": "update_field tires rebel_top DYNAMIC_GRIP Rear 2.3"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 235,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "RIM_SIZE",
+        "Front",
+        "15"
+      ],
+      "raw": "update_field tires rebel_top RIM_SIZE Front 15"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 236,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "RIM_SIZE",
+        "Rear",
+        "15"
+      ],
+      "raw": "update_field tires rebel_top RIM_SIZE Rear 15"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 237,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "YAW_SPEED",
+        "0.325"
+      ],
+      "raw": "update_field tires rebel_top YAW_SPEED 0.325"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 238,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "ASPECT_RATIO",
+        "Front",
+        "70"
+      ],
+      "raw": "update_field tires rebel_top ASPECT_RATIO Front 70"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 239,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "ASPECT_RATIO",
+        "Rear",
+        "70"
+      ],
+      "raw": "update_field tires rebel_top ASPECT_RATIO Rear 70"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 240,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "STATIC_GRIP",
+        "Front",
+        "2.4"
+      ],
+      "raw": "update_field tires rebel_top STATIC_GRIP Front 2.4"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 241,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "STATIC_GRIP",
+        "Rear",
+        "2.5"
+      ],
+      "raw": "update_field tires rebel_top STATIC_GRIP Rear 2.5"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 242,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "GRIP_SCALE",
+        "Front",
+        "1.3"
+      ],
+      "raw": "update_field tires rebel_top GRIP_SCALE Front 1.3"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 243,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "GRIP_SCALE",
+        "Rear",
+        "1.4"
+      ],
+      "raw": "update_field tires rebel_top GRIP_SCALE Rear 1.4"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 244,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "STEERING",
+        "1.025"
+      ],
+      "raw": "update_field tires rebel_top STEERING 1.025"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 245,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_RATIO",
+        "6"
+      ],
+      "raw": "update_field transmission rebel GEAR_RATIO 6"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 246,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_RATIO[0]",
+        "3.275"
+      ],
+      "raw": "update_field transmission rebel GEAR_RATIO[0] 3.275"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 247,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_RATIO[1]",
+        "0"
+      ],
+      "raw": "update_field transmission rebel GEAR_RATIO[1] 0"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 248,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_RATIO[2]",
+        "2.948"
+      ],
+      "raw": "update_field transmission rebel GEAR_RATIO[2] 2.948"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 249,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_RATIO[3]",
+        "1.842"
+      ],
+      "raw": "update_field transmission rebel GEAR_RATIO[3] 1.842"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 250,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_RATIO[4]",
+        "1.339"
+      ],
+      "raw": "update_field transmission rebel GEAR_RATIO[4] 1.339"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 251,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_RATIO[5]",
+        "1.052"
+      ],
+      "raw": "update_field transmission rebel GEAR_RATIO[5] 1.052"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 252,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "DIFFERENTIAL[0]",
+        "0"
+      ],
+      "raw": "update_field transmission rebel DIFFERENTIAL[0] 0"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 253,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "DIFFERENTIAL[1]",
+        "0.65"
+      ],
+      "raw": "update_field transmission rebel DIFFERENTIAL[1] 0.65"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 254,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "DIFFERENTIAL[2]",
+        "0"
+      ],
+      "raw": "update_field transmission rebel DIFFERENTIAL[2] 0"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 255,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_EFFICIENCY[0]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel GEAR_EFFICIENCY[0] 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 256,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_EFFICIENCY[1]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel GEAR_EFFICIENCY[1] 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 257,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_EFFICIENCY[2]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel GEAR_EFFICIENCY[2] 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 258,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_EFFICIENCY[3]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel GEAR_EFFICIENCY[3] 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 259,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_EFFICIENCY[4]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel GEAR_EFFICIENCY[4] 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 260,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_EFFICIENCY[5]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel GEAR_EFFICIENCY[5] 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 261,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_EFFICIENCY[6]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel GEAR_EFFICIENCY[6] 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 262,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_EFFICIENCY[7]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel GEAR_EFFICIENCY[7] 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 263,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_EFFICIENCY[8]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel GEAR_EFFICIENCY[8] 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 264,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "TORQUE_CONVERTER",
+        "0.3"
+      ],
+      "raw": "update_field transmission rebel TORQUE_CONVERTER 0.3"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 265,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "TORQUE_SPLIT",
+        "0"
+      ],
+      "raw": "update_field transmission rebel TORQUE_SPLIT 0"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 266,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "CLUTCH_SLIP",
+        "0.7"
+      ],
+      "raw": "update_field transmission rebel CLUTCH_SLIP 0.7"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 267,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "SHIFT_SPEED",
+        "0.3"
+      ],
+      "raw": "update_field transmission rebel SHIFT_SPEED 0.3"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 268,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "FINAL_GEAR",
+        "3.106"
+      ],
+      "raw": "update_field transmission rebel FINAL_GEAR 3.106"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 269,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_RATIO",
+        "8"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_RATIO 8"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 270,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_RATIO[0]",
+        "3.275"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_RATIO[0] 3.275"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 271,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_RATIO[1]",
+        "0"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_RATIO[1] 0"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 272,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_RATIO[2]",
+        "2.948"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_RATIO[2] 2.948"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 273,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_RATIO[3]",
+        "1.842"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_RATIO[3] 1.842"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 274,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_RATIO[4]",
+        "1.339"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_RATIO[4] 1.339"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 275,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_RATIO[5]",
+        "1.052"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_RATIO[5] 1.052"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 276,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_RATIO[6]",
+        "0.866"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_RATIO[6] 0.866"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 277,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_RATIO[7]",
+        "0.736"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_RATIO[7] 0.736"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 278,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "DIFFERENTIAL[0]",
+        "0.8"
+      ],
+      "raw": "update_field transmission rebel_top DIFFERENTIAL[0] 0.8"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 279,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "DIFFERENTIAL[1]",
+        "0.8"
+      ],
+      "raw": "update_field transmission rebel_top DIFFERENTIAL[1] 0.8"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 280,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "DIFFERENTIAL[2]",
+        "0.8"
+      ],
+      "raw": "update_field transmission rebel_top DIFFERENTIAL[2] 0.8"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 281,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_EFFICIENCY[0]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_EFFICIENCY[0] 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 282,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_EFFICIENCY[1]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_EFFICIENCY[1] 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 283,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_EFFICIENCY[2]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_EFFICIENCY[2] 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 284,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_EFFICIENCY[3]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_EFFICIENCY[3] 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 285,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_EFFICIENCY[4]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_EFFICIENCY[4] 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 286,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_EFFICIENCY[5]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_EFFICIENCY[5] 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 287,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_EFFICIENCY[6]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_EFFICIENCY[6] 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 288,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_EFFICIENCY[7]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_EFFICIENCY[7] 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 289,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_EFFICIENCY[8]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_EFFICIENCY[8] 1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 290,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "TORQUE_CONVERTER",
+        "0.6"
+      ],
+      "raw": "update_field transmission rebel_top TORQUE_CONVERTER 0.6"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 291,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "TORQUE_SPLIT",
+        "0"
+      ],
+      "raw": "update_field transmission rebel_top TORQUE_SPLIT 0"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 292,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "CLUTCH_SLIP",
+        "0.8"
+      ],
+      "raw": "update_field transmission rebel_top CLUTCH_SLIP 0.8"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 293,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "SHIFT_SPEED",
+        "0.1"
+      ],
+      "raw": "update_field transmission rebel_top SHIFT_SPEED 0.1"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 294,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "FINAL_GEAR",
+        "3.034"
+      ],
+      "raw": "update_field transmission rebel_top FINAL_GEAR 3.034"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 297,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "engineaudio[0]",
+        "Collection",
+        "corvette_z06_v2"
+      ],
+      "raw": "update_field pvehicle rebel engineaudio[0] Collection corvette_z06_v2"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 298,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "engineaudio[1]",
+        "Collection",
+        "corvette_z06_v2"
+      ],
+      "raw": "update_field pvehicle rebel engineaudio[1] Collection corvette_z06_v2"
+    },
+    {
+      "file": "SetupFiles/rebel_install.nfsms",
+      "line": 299,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "engineaudio[2]",
+        "Collection",
+        "corvette_z06_v2"
+      ],
+      "raw": "update_field pvehicle rebel engineaudio[2] Collection corvette_z06_v2"
+    }
+  ],
+  "findings": [],
+  "inventory_loaded": false,
+  "safety_note": "Analysis only. No game files or databases were modified."
+}

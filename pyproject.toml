@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nfsmw-addon-installer"
+version = "0.1.0"
+description = "Discovery and validation assistant for Need for Speed Most Wanted (2005) car mods"
+requires-python = ">=3.10"
+authors = [{name = "Local project"}]
+
+[project.scripts]
+nfsmw-installer = "nfsmw_installer.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]

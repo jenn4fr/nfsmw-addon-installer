@@ -1,0 +1,155 @@
+{
+  "planner_version": "0.1.0",
+  "package": "D:\\softwares\\NFS-hack\\cars2\\1970 AMC Rebel The Machine",
+  "install_script": "D:\\softwares\\NFS-hack\\cars2\\1970 AMC Rebel The Machine\\Addon\\Install.nfsms",
+  "game_root": "D:\\softwares\\NFS-MW-Unlimiter",
+  "mode": "read-only-plan",
+  "writes_performed": false,
+  "operations": [
+    {
+      "operation": "folder_create",
+      "line": 12,
+      "destination": "CARS/REBEL",
+      "mechanism": "addon-installer",
+      "status": "ready",
+      "destination_absolute": "D:\\softwares\\NFS-MW-Unlimiter\\CARS\\REBEL",
+      "destination_exists": false
+    },
+    {
+      "operation": "file_copy",
+      "line": 13,
+      "source": "REBEL/GEOMETRY.BIN",
+      "destination": "CARS/REBEL/GEOMETRY.BIN",
+      "mechanism": "addon-installer",
+      "status": "ready",
+      "source_absolute": "D:\\softwares\\NFS-hack\\cars2\\1970 AMC Rebel The Machine\\Addon\\REBEL\\GEOMETRY.BIN",
+      "source_exists": true,
+      "destination_absolute": "D:\\softwares\\NFS-MW-Unlimiter\\CARS\\REBEL\\GEOMETRY.BIN",
+      "destination_exists": false
+    },
+    {
+      "operation": "file_copy",
+      "line": 14,
+      "source": "REBEL/TEXTURES.BIN",
+      "destination": "CARS/REBEL/TEXTURES.BIN",
+      "mechanism": "addon-installer",
+      "status": "ready",
+      "source_absolute": "D:\\softwares\\NFS-hack\\cars2\\1970 AMC Rebel The Machine\\Addon\\REBEL\\TEXTURES.BIN",
+      "source_exists": true,
+      "destination_absolute": "D:\\softwares\\NFS-MW-Unlimiter\\CARS\\REBEL\\TEXTURES.BIN",
+      "destination_exists": false
+    },
+    {
+      "operation": "script",
+      "line": 15,
+      "script": "SetupFiles/rebel_install.nfsms",
+      "mechanism": "database-script",
+      "status": "ready-for-db-validation",
+      "script_absolute": "D:\\softwares\\NFS-hack\\cars2\\1970 AMC Rebel The Machine\\Addon\\SetupFiles\\rebel_install.nfsms",
+      "script_exists": true,
+      "reason": "Database script is not executed by this planner"
+    },
+    {
+      "operation": "file_copy",
+      "mechanism": "modloader",
+      "source": "Modloader/ADDONS/CARS_REPLACE/PUNTO/ATTRIBUTES.MWPS",
+      "source_absolute": "D:\\softwares\\NFS-hack\\cars2\\1970 AMC Rebel The Machine\\Modloader\\ADDONS\\CARS_REPLACE\\PUNTO\\ATTRIBUTES.MWPS",
+      "source_exists": true,
+      "destination": "modloader/1970_AMC_Rebel_The_Machine/CARS/PUNTO/ATTRIBUTES.MWPS",
+      "mod_name": "1970_AMC_Rebel_The_Machine",
+      "destination_absolute": "D:\\softwares\\NFS-MW-Unlimiter\\modloader\\1970_AMC_Rebel_The_Machine\\CARS\\PUNTO\\ATTRIBUTES.MWPS",
+      "destination_exists": false,
+      "status": "ready"
+    },
+    {
+      "operation": "file_copy",
+      "mechanism": "modloader",
+      "source": "Modloader/ADDONS/CARS_REPLACE/PUNTO/CAR.ini",
+      "source_absolute": "D:\\softwares\\NFS-hack\\cars2\\1970 AMC Rebel The Machine\\Modloader\\ADDONS\\CARS_REPLACE\\PUNTO\\CAR.ini",
+      "source_exists": true,
+      "destination": "modloader/1970_AMC_Rebel_The_Machine/CARS/PUNTO/CAR.ini",
+      "mod_name": "1970_AMC_Rebel_The_Machine",
+      "destination_absolute": "D:\\softwares\\NFS-MW-Unlimiter\\modloader\\1970_AMC_Rebel_The_Machine\\CARS\\PUNTO\\CAR.ini",
+      "destination_exists": false,
+      "status": "ready"
+    },
+    {
+      "operation": "file_copy",
+      "mechanism": "modloader",
+      "source": "Modloader/ADDONS/CARS_REPLACE/PUNTO/FE.MWPS",
+      "source_absolute": "D:\\softwares\\NFS-hack\\cars2\\1970 AMC Rebel The Machine\\Modloader\\ADDONS\\CARS_REPLACE\\PUNTO\\FE.MWPS",
+      "source_exists": true,
+      "destination": "modloader/1970_AMC_Rebel_The_Machine/CARS/PUNTO/FE.MWPS",
+      "mod_name": "1970_AMC_Rebel_The_Machine",
+      "destination_absolute": "D:\\softwares\\NFS-MW-Unlimiter\\modloader\\1970_AMC_Rebel_The_Machine\\CARS\\PUNTO\\FE.MWPS",
+      "destination_exists": false,
+      "status": "ready"
+    },
+    {
+      "operation": "file_copy",
+      "mechanism": "modloader",
+      "source": "Modloader/ADDONS/CARS_REPLACE/PUNTO/GEOMETRY.BIN",
+      "source_absolute": "D:\\softwares\\NFS-hack\\cars2\\1970 AMC Rebel The Machine\\Modloader\\ADDONS\\CARS_REPLACE\\PUNTO\\GEOMETRY.BIN",
+      "source_exists": true,
+      "destination": "modloader/1970_AMC_Rebel_The_Machine/CARS/PUNTO/GEOMETRY.BIN",
+      "mod_name": "1970_AMC_Rebel_The_Machine",
+      "destination_absolute": "D:\\softwares\\NFS-MW-Unlimiter\\modloader\\1970_AMC_Rebel_The_Machine\\CARS\\PUNTO\\GEOMETRY.BIN",
+      "destination_exists": false,
+      "status": "ready"
+    },
+    {
+      "operation": "file_copy",
+      "mechanism": "modloader",
+      "source": "Modloader/ADDONS/CARS_REPLACE/PUNTO/SECONDARYLOGO.BIN",
+      "source_absolute": "D:\\softwares\\NFS-hack\\cars2\\1970 AMC Rebel The Machine\\Modloader\\ADDONS\\CARS_REPLACE\\PUNTO\\SECONDARYLOGO.BIN",
+      "source_exists": true,
+      "destination": "modloader/1970_AMC_Rebel_The_Machine/CARS/PUNTO/SECONDARYLOGO.BIN",
+      "mod_name": "1970_AMC_Rebel_The_Machine",
+      "destination_absolute": "D:\\softwares\\NFS-MW-Unlimiter\\modloader\\1970_AMC_Rebel_The_Machine\\CARS\\PUNTO\\SECONDARYLOGO.BIN",
+      "destination_exists": false,
+      "status": "ready"
+    },
+    {
+      "operation": "file_copy",
+      "mechanism": "modloader",
+      "source": "Modloader/ADDONS/CARS_REPLACE/PUNTO/TEXTURES.BIN",
+      "source_absolute": "D:\\softwares\\NFS-hack\\cars2\\1970 AMC Rebel The Machine\\Modloader\\ADDONS\\CARS_REPLACE\\PUNTO\\TEXTURES.BIN",
+      "source_exists": true,
+      "destination": "modloader/1970_AMC_Rebel_The_Machine/CARS/PUNTO/TEXTURES.BIN",
+      "mod_name": "1970_AMC_Rebel_The_Machine",
+      "destination_absolute": "D:\\softwares\\NFS-MW-Unlimiter\\modloader\\1970_AMC_Rebel_The_Machine\\CARS\\PUNTO\\TEXTURES.BIN",
+      "destination_exists": false,
+      "status": "ready"
+    },
+    {
+      "operation": "file_copy",
+      "mechanism": "modloader",
+      "source": "Modloader/ADDONS/FRONTEND/MANUFACTURERS/75-REBEL.BIN",
+      "source_absolute": "D:\\softwares\\NFS-hack\\cars2\\1970 AMC Rebel The Machine\\Modloader\\ADDONS\\FRONTEND\\MANUFACTURERS\\75-REBEL.BIN",
+      "source_exists": true,
+      "destination": "modloader/1970_AMC_Rebel_The_Machine/FRONTEND/MANUFACTURERS/75-REBEL.BIN",
+      "mod_name": "1970_AMC_Rebel_The_Machine",
+      "destination_absolute": "D:\\softwares\\NFS-MW-Unlimiter\\modloader\\1970_AMC_Rebel_The_Machine\\FRONTEND\\MANUFACTURERS\\75-REBEL.BIN",
+      "destination_exists": false,
+      "status": "ready"
+    }
+  ],
+  "conflicts": [],
+  "unresolved_mappings": [
+    {
+      "source": "D:\\softwares\\NFS-hack\\cars2\\1970 AMC Rebel The Machine\\Addon\\Ed Files",
+      "mechanism": "ed-resource",
+      "status": "mapping-required",
+      "reason": "ED configuration/resource destination has not yet been verified"
+    }
+  ],
+  "backup_rollback_plan": [],
+  "summary": {
+    "operation_count": 11,
+    "ready_count": 10,
+    "conflict_count": 0,
+    "unresolved_mapping_count": 1,
+    "missing_source_count": 0
+  },
+  "safety_note": "Plan only. No game files or databases were changed."
+}

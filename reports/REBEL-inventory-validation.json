@@ -1,0 +1,7241 @@
+{
+  "tool_version": "0.1.0",
+  "source": "D:\\softwares\\NFS-hack\\cars2\\1970 AMC Rebel The Machine",
+  "layout": {
+    "detected_types": [
+      "VLT/NFSMS database installation",
+      "Binary/MWPS patch installation",
+      "ModLoader replacement payload"
+    ],
+    "file_type_counts": {
+      "readme_or_documentation": 1,
+      "vlt_script": 2,
+      "car_model_or_texture": 4,
+      "other": 2,
+      "unlimiter_or_mod_config": 1,
+      "texture_or_logo": 2,
+      "binary_patch_script": 2,
+      "modloader_car_config": 1,
+      "game_database_or_logo_binary": 1
+    },
+    "confidence": "heuristic; verify against author instructions"
+  },
+  "file_count": 16,
+  "extension_counts": {
+    ".bin": 6,
+    ".dds": 2,
+    ".ini": 2,
+    ".mwps": 2,
+    ".nfsms": 2,
+    ".png": 1,
+    ".txt": 1
+  },
+  "files": [
+    {
+      "path": "readme.txt",
+      "size": 834,
+      "kind": "readme_or_documentation"
+    },
+    {
+      "path": "Addon/Install.nfsms",
+      "size": 479,
+      "kind": "vlt_script"
+    },
+    {
+      "path": "Addon/REBEL/GEOMETRY.BIN",
+      "size": 5591552,
+      "kind": "car_model_or_texture"
+    },
+    {
+      "path": "Addon/REBEL/TEXTURES.BIN",
+      "size": 1602122,
+      "kind": "car_model_or_texture"
+    },
+    {
+      "path": "Addon/SetupFiles/rebel.png",
+      "size": 1413153,
+      "kind": "other"
+    },
+    {
+      "path": "Addon/SetupFiles/rebel_install.nfsms",
+      "size": 14606,
+      "kind": "vlt_script"
+    },
+    {
+      "path": "Addon/Ed Files/Config/NFSMW/REBEL.ini",
+      "size": 2015,
+      "kind": "unlimiter_or_mod_config"
+    },
+    {
+      "path": "Addon/Ed Files/Resources/NFSMW/FrontEnd/FrontEndTextures/729181AD/CARSELECT_MANUFACTURER_AMC.dds",
+      "size": 174928,
+      "kind": "texture_or_logo"
+    },
+    {
+      "path": "Addon/Ed Files/Resources/NFSMW/FrontEnd/FrontEndTextures/729181AD/SECONDARY_LOGO_REBEL.dds",
+      "size": 349712,
+      "kind": "texture_or_logo"
+    },
+    {
+      "path": "Modloader/ADDONS/CARS_REPLACE/PUNTO/ATTRIBUTES.MWPS",
+      "size": 12480,
+      "kind": "binary_patch_script"
+    },
+    {
+      "path": "Modloader/ADDONS/CARS_REPLACE/PUNTO/CAR.ini",
+      "size": 96,
+      "kind": "modloader_car_config"
+    },
+    {
+      "path": "Modloader/ADDONS/CARS_REPLACE/PUNTO/FE.MWPS",
+      "size": 588,
+      "kind": "binary_patch_script"
+    },
+    {
+      "path": "Modloader/ADDONS/CARS_REPLACE/PUNTO/GEOMETRY.BIN",
+      "size": 5591552,
+      "kind": "car_model_or_texture"
+    },
+    {
+      "path": "Modloader/ADDONS/CARS_REPLACE/PUNTO/SECONDARYLOGO.BIN",
+      "size": 262912,
+      "kind": "game_database_or_logo_binary"
+    },
+    {
+      "path": "Modloader/ADDONS/CARS_REPLACE/PUNTO/TEXTURES.BIN",
+      "size": 1602123,
+      "kind": "car_model_or_texture"
+    },
+    {
+      "path": "Modloader/ADDONS/FRONTEND/MANUFACTURERS/75-REBEL.BIN",
+      "size": 131840,
+      "kind": "other"
+    }
+  ],
+  "nfsms_commands": [
+    {
+      "file": "Addon/Install.nfsms",
+      "line": 3,
+      "command": "ui_image",
+      "args": [
+        "SetupFiles\\rebel.png"
+      ],
+      "raw": "ui_image SetupFiles\\rebel.png",
+      "sequence": 1
+    },
+    {
+      "file": "Addon/Install.nfsms",
+      "line": 5,
+      "command": "ui_text",
+      "args": [
+        "1970",
+        "American",
+        "Motors",
+        "Rebel",
+        "The",
+        "Machine|",
+        "Addon"
+      ],
+      "raw": "ui_text 1970 American Motors Rebel The Machine| Addon",
+      "sequence": 2
+    },
+    {
+      "file": "Addon/Install.nfsms",
+      "line": 6,
+      "command": "ui_text",
+      "args": [
+        "Converted",
+        "by",
+        "Rauny_noobexX",
+        "from",
+        "Forza",
+        "Horizon",
+        "4"
+      ],
+      "raw": "ui_text Converted by Rauny_noobexX from Forza Horizon 4",
+      "sequence": 3
+    },
+    {
+      "file": "Addon/Install.nfsms",
+      "line": 7,
+      "command": "ui_text",
+      "args": [
+        "Performance",
+        "Attributes",
+        "by",
+        "LTLGamer1"
+      ],
+      "raw": "ui_text Performance Attributes by LTLGamer1",
+      "sequence": 4
+    },
+    {
+      "file": "Addon/Install.nfsms",
+      "line": 8,
+      "command": "ui_text____________________________________________________________",
+      "args": [],
+      "raw": "ui_text____________________________________________________________",
+      "sequence": 5
+    },
+    {
+      "file": "Addon/Install.nfsms",
+      "line": 9,
+      "command": "ui_text",
+      "args": [],
+      "raw": "ui_text",
+      "sequence": 6
+    },
+    {
+      "file": "Addon/Install.nfsms",
+      "line": 12,
+      "command": "folder_create",
+      "args": [
+        "CARS\\REBEL"
+      ],
+      "raw": "folder_create CARS\\REBEL",
+      "sequence": 7
+    },
+    {
+      "file": "Addon/Install.nfsms",
+      "line": 13,
+      "command": "file_copy",
+      "args": [
+        "REBEL\\GEOMETRY.BIN",
+        "CARS\\REBEL\\GEOMETRY.BIN"
+      ],
+      "raw": "file_copy REBEL\\GEOMETRY.BIN CARS\\REBEL\\GEOMETRY.BIN",
+      "sequence": 8
+    },
+    {
+      "file": "Addon/Install.nfsms",
+      "line": 14,
+      "command": "file_copy",
+      "args": [
+        "REBEL\\TEXTURES.BIN",
+        "CARS\\REBEL\\TEXTURES.BIN"
+      ],
+      "raw": "file_copy REBEL\\TEXTURES.BIN CARS\\REBEL\\TEXTURES.BIN",
+      "sequence": 9
+    },
+    {
+      "file": "Addon/Install.nfsms",
+      "line": 15,
+      "command": "script",
+      "args": [
+        "SetupFiles\\rebel_install.nfsms"
+      ],
+      "raw": "script\tSetupFiles\\rebel_install.nfsms",
+      "sequence": 10
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 1,
+      "command": "copy_node",
+      "args": [
+        "brakes",
+        "punto",
+        "default",
+        "rebel"
+      ],
+      "raw": "copy_node brakes punto default rebel",
+      "sequence": 1
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 2,
+      "command": "copy_node",
+      "args": [
+        "brakes",
+        "punto_top",
+        "rebel",
+        "rebel_top"
+      ],
+      "raw": "copy_node brakes punto_top rebel rebel_top",
+      "sequence": 2
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 3,
+      "command": "copy_node",
+      "args": [
+        "chassis",
+        "punto",
+        "default",
+        "rebel"
+      ],
+      "raw": "copy_node chassis punto default rebel",
+      "sequence": 3
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 4,
+      "command": "copy_node",
+      "args": [
+        "chassis",
+        "punto_top",
+        "rebel",
+        "rebel_top"
+      ],
+      "raw": "copy_node chassis punto_top rebel rebel_top",
+      "sequence": 4
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 5,
+      "command": "copy_node",
+      "args": [
+        "ecar",
+        "punto",
+        "racers",
+        "rebel"
+      ],
+      "raw": "copy_node ecar punto racers rebel",
+      "sequence": 5
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 6,
+      "command": "copy_node",
+      "args": [
+        "engine",
+        "punto",
+        "default",
+        "rebel"
+      ],
+      "raw": "copy_node engine punto default rebel",
+      "sequence": 6
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 7,
+      "command": "copy_node",
+      "args": [
+        "engine",
+        "punto_top",
+        "rebel",
+        "rebel_top"
+      ],
+      "raw": "copy_node engine punto_top rebel rebel_top",
+      "sequence": 7
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 8,
+      "command": "copy_node",
+      "args": [
+        "induction",
+        "punto_base",
+        "default",
+        "rebel"
+      ],
+      "raw": "copy_node induction punto_base default rebel",
+      "sequence": 8
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 9,
+      "command": "copy_node",
+      "args": [
+        "induction",
+        "punto_top",
+        "rebel",
+        "rebel_top"
+      ],
+      "raw": "copy_node induction punto_top rebel rebel_top",
+      "sequence": 9
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 10,
+      "command": "copy_node",
+      "args": [
+        "pvehicle",
+        "punto",
+        "racers",
+        "rebel"
+      ],
+      "raw": "copy_node pvehicle punto racers rebel",
+      "sequence": 10
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 11,
+      "command": "copy_node",
+      "args": [
+        "tires",
+        "punto",
+        "default",
+        "rebel"
+      ],
+      "raw": "copy_node tires punto default rebel",
+      "sequence": 11
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 12,
+      "command": "copy_node",
+      "args": [
+        "tires",
+        "punto_top",
+        "rebel",
+        "rebel_top"
+      ],
+      "raw": "copy_node tires punto_top rebel rebel_top",
+      "sequence": 12
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 13,
+      "command": "copy_node",
+      "args": [
+        "transmission",
+        "punto",
+        "default",
+        "rebel"
+      ],
+      "raw": "copy_node transmission punto default rebel",
+      "sequence": 13
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 14,
+      "command": "copy_node",
+      "args": [
+        "transmission",
+        "punto_top",
+        "rebel",
+        "rebel_top"
+      ],
+      "raw": "copy_node transmission punto_top rebel rebel_top",
+      "sequence": 14
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 15,
+      "command": "copy_node",
+      "args": [
+        "camerainfo",
+        "punto_hood",
+        "hood",
+        "rebel_hood"
+      ],
+      "raw": "copy_node camerainfo punto_hood hood rebel_hood",
+      "sequence": 15
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 16,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "MODEL",
+        "Visual",
+        "REBEL"
+      ],
+      "raw": "update_field pvehicle rebel MODEL Visual REBEL",
+      "sequence": 16
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 17,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "MODEL",
+        "Collision",
+        "REBEL"
+      ],
+      "raw": "update_field pvehicle rebel MODEL Collision REBEL",
+      "sequence": 17
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 18,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "MODEL",
+        "Collision64",
+        "REBEL"
+      ],
+      "raw": "update_field pvehicle rebel MODEL Collision64 REBEL",
+      "sequence": 18
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 19,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "transmission[0]",
+        "Collection",
+        "rebel"
+      ],
+      "raw": "update_field pvehicle rebel transmission[0] Collection rebel",
+      "sequence": 19
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 20,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "transmission[1]",
+        "Collection",
+        "rebel_top"
+      ],
+      "raw": "update_field pvehicle rebel transmission[1] Collection rebel_top",
+      "sequence": 20
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 21,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "tires[0]",
+        "Collection",
+        "rebel"
+      ],
+      "raw": "update_field pvehicle rebel tires[0] Collection rebel",
+      "sequence": 21
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 22,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "tires[1]",
+        "Collection",
+        "rebel_top"
+      ],
+      "raw": "update_field pvehicle rebel tires[1] Collection rebel_top",
+      "sequence": 22
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 23,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "induction[0]",
+        "Collection",
+        "rebel"
+      ],
+      "raw": "update_field pvehicle rebel induction[0] Collection rebel",
+      "sequence": 23
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 24,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "induction[1]",
+        "Collection",
+        "rebel_top"
+      ],
+      "raw": "update_field pvehicle rebel induction[1] Collection rebel_top",
+      "sequence": 24
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 25,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "frontend",
+        "Collection",
+        "rebel"
+      ],
+      "raw": "update_field pvehicle rebel frontend Collection rebel",
+      "sequence": 25
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 26,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "engine[0]",
+        "Collection",
+        "rebel"
+      ],
+      "raw": "update_field pvehicle rebel engine[0] Collection rebel",
+      "sequence": 26
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 27,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "engine[1]",
+        "Collection",
+        "rebel_top"
+      ],
+      "raw": "update_field pvehicle rebel engine[1] Collection rebel_top",
+      "sequence": 27
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 28,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "chassis[0]",
+        "Collection",
+        "rebel"
+      ],
+      "raw": "update_field pvehicle rebel chassis[0] Collection rebel",
+      "sequence": 28
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 29,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "chassis[1]",
+        "Collection",
+        "rebel_top"
+      ],
+      "raw": "update_field pvehicle rebel chassis[1] Collection rebel_top",
+      "sequence": 29
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 30,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "brakes[0]",
+        "Collection",
+        "rebel"
+      ],
+      "raw": "update_field pvehicle rebel brakes[0] Collection rebel",
+      "sequence": 30
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 31,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "brakes[1]",
+        "Collection",
+        "rebel_top"
+      ],
+      "raw": "update_field pvehicle rebel brakes[1] Collection rebel_top",
+      "sequence": 31
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 33,
+      "command": "copy_node",
+      "args": [
+        "frontend",
+        "audi",
+        "north_america",
+        "amc"
+      ],
+      "raw": "copy_node frontend audi north_america amc",
+      "sequence": 32
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 34,
+      "command": "update_field",
+      "args": [
+        "frontend",
+        "amc",
+        "manufacturer",
+        "124"
+      ],
+      "raw": "update_field frontend amc manufacturer 124",
+      "sequence": 33
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 35,
+      "command": "copy_node",
+      "args": [
+        "frontend",
+        "tt",
+        "amc",
+        "rebel"
+      ],
+      "raw": "copy_node frontend tt amc rebel",
+      "sequence": 34
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 36,
+      "command": "update_field",
+      "args": [
+        "frontend",
+        "rebel",
+        "manufacturer",
+        "124"
+      ],
+      "raw": "update_field frontend rebel manufacturer 124",
+      "sequence": 35
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 37,
+      "command": "update_field",
+      "args": [
+        "frontend",
+        "rebel",
+        "Cost",
+        "69900"
+      ],
+      "raw": "update_field frontend rebel Cost 69900",
+      "sequence": 36
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 39,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "MASS",
+        "1656"
+      ],
+      "raw": "update_field pvehicle rebel MASS 1656",
+      "sequence": 37
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 40,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "TENSOR_SCALE",
+        "X",
+        "1"
+      ],
+      "raw": "update_field pvehicle rebel TENSOR_SCALE X 1",
+      "sequence": 38
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 41,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "TENSOR_SCALE",
+        "Y",
+        "2"
+      ],
+      "raw": "update_field pvehicle rebel TENSOR_SCALE Y 2",
+      "sequence": 39
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 42,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "TENSOR_SCALE",
+        "Z",
+        "1"
+      ],
+      "raw": "update_field pvehicle rebel TENSOR_SCALE Z 1",
+      "sequence": 40
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 43,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "TENSOR_SCALE",
+        "W",
+        "0"
+      ],
+      "raw": "update_field pvehicle rebel TENSOR_SCALE W 0",
+      "sequence": 41
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 44,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "HandlingRating[0]",
+        "55"
+      ],
+      "raw": "update_field pvehicle rebel HandlingRating[0] 55",
+      "sequence": 42
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 45,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "HandlingRating[1]",
+        "96"
+      ],
+      "raw": "update_field pvehicle rebel HandlingRating[1] 96",
+      "sequence": 43
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 46,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "VerbalType",
+        "0x08000000"
+      ],
+      "raw": "update_field pvehicle rebel VerbalType 0x08000000",
+      "sequence": 44
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 47,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "BodyDive",
+        "DegPerG",
+        "6"
+      ],
+      "raw": "update_field ecar rebel BodyDive DegPerG 6",
+      "sequence": 45
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 48,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "BodyDive",
+        "MaxG",
+        "1"
+      ],
+      "raw": "update_field ecar rebel BodyDive MaxG 1",
+      "sequence": 46
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 49,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "BodyDive",
+        "DegPerSec",
+        "6"
+      ],
+      "raw": "update_field ecar rebel BodyDive DegPerSec 6",
+      "sequence": 47
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 50,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "RideHeight",
+        "4"
+      ],
+      "raw": "update_field ecar rebel RideHeight 4",
+      "sequence": 48
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 51,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[0]",
+        "X",
+        "1.45"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[0] X 1.45",
+      "sequence": 49
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 52,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[0]",
+        "Y",
+        "0.9"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[0] Y 0.9",
+      "sequence": 50
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 53,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[0]",
+        "Z",
+        "-0.03"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[0] Z -0.03",
+      "sequence": 51
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 54,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[0]",
+        "W",
+        "0.34"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[0] W 0.34",
+      "sequence": 52
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 55,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[1]",
+        "X",
+        "1.45"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[1] X 1.45",
+      "sequence": 53
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 56,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[1]",
+        "Y",
+        "-0.9"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[1] Y -0.9",
+      "sequence": 54
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 57,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[1]",
+        "Z",
+        "-0.03"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[1] Z -0.03",
+      "sequence": 55
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 58,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[1]",
+        "W",
+        "0.34"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[1] W 0.34",
+      "sequence": 56
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 59,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[2]",
+        "X",
+        "-1.45"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[2] X -1.45",
+      "sequence": 57
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 60,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[2]",
+        "Y",
+        "-0.91"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[2] Y -0.91",
+      "sequence": 58
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 61,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[2]",
+        "Z",
+        "-0.03"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[2] Z -0.03",
+      "sequence": 59
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 62,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[2]",
+        "W",
+        "0.35"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[2] W 0.35",
+      "sequence": 60
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 63,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[3]",
+        "X",
+        "-1.45"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[3] X -1.45",
+      "sequence": 61
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 64,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[3]",
+        "Y",
+        "0.91"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[3] Y 0.91",
+      "sequence": 62
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 65,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[3]",
+        "Z",
+        "-0.03"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[3] Z -0.03",
+      "sequence": 63
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 66,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireOffsets[3]",
+        "W",
+        "0.35"
+      ],
+      "raw": "update_field ecar rebel TireOffsets[3] W 0.35",
+      "sequence": 64
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 67,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "BodySquat",
+        "DegPerG",
+        "6"
+      ],
+      "raw": "update_field ecar rebel BodySquat DegPerG 6",
+      "sequence": 65
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 68,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "BodySquat",
+        "MaxG",
+        "1"
+      ],
+      "raw": "update_field ecar rebel BodySquat MaxG 1",
+      "sequence": 66
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 69,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "BodySquat",
+        "DegPerSec",
+        "6"
+      ],
+      "raw": "update_field ecar rebel BodySquat DegPerSec 6",
+      "sequence": 67
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 70,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "CamberRear",
+        "0.18"
+      ],
+      "raw": "update_field ecar rebel CamberRear 0.18",
+      "sequence": 68
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 71,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "CamberFront",
+        "0.22"
+      ],
+      "raw": "update_field ecar rebel CamberFront 0.22",
+      "sequence": 69
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 72,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "FECompressions[0]",
+        "0.09"
+      ],
+      "raw": "update_field ecar rebel FECompressions[0] 0.09",
+      "sequence": 70
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 73,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "FECompressions[1]",
+        "0.09"
+      ],
+      "raw": "update_field ecar rebel FECompressions[1] 0.09",
+      "sequence": 71
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 74,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireSkidWidth[0]",
+        "0.245"
+      ],
+      "raw": "update_field ecar rebel TireSkidWidth[0] 0.245",
+      "sequence": 72
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 75,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireSkidWidth[1]",
+        "0.245"
+      ],
+      "raw": "update_field ecar rebel TireSkidWidth[1] 0.245",
+      "sequence": 73
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 76,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireSkidWidth[2]",
+        "0.295"
+      ],
+      "raw": "update_field ecar rebel TireSkidWidth[2] 0.295",
+      "sequence": 74
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 77,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "TireSkidWidth[3]",
+        "0.295"
+      ],
+      "raw": "update_field ecar rebel TireSkidWidth[3] 0.295",
+      "sequence": 75
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 78,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "WheelSpokeCount",
+        "5"
+      ],
+      "raw": "update_field ecar rebel WheelSpokeCount 5",
+      "sequence": 76
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 79,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "ReflectionOffset",
+        "0.17"
+      ],
+      "raw": "update_field ecar rebel ReflectionOffset 0.17",
+      "sequence": 77
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 80,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "KitWheelOffsetRear[0]",
+        "0"
+      ],
+      "raw": "update_field ecar rebel KitWheelOffsetRear[0] 0",
+      "sequence": 78
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 81,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "KitWheelOffsetRear[1]",
+        "0"
+      ],
+      "raw": "update_field ecar rebel KitWheelOffsetRear[1] 0",
+      "sequence": 79
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 82,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "KitWheelOffsetRear[2]",
+        "0"
+      ],
+      "raw": "update_field ecar rebel KitWheelOffsetRear[2] 0",
+      "sequence": 80
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 83,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "KitWheelOffsetRear[3]",
+        "0"
+      ],
+      "raw": "update_field ecar rebel KitWheelOffsetRear[3] 0",
+      "sequence": 81
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 84,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "KitWheelOffsetRear[4]",
+        "0"
+      ],
+      "raw": "update_field ecar rebel KitWheelOffsetRear[4] 0",
+      "sequence": 82
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 85,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "KitWheelOffsetRear[5]",
+        "0"
+      ],
+      "raw": "update_field ecar rebel KitWheelOffsetRear[5] 0",
+      "sequence": 83
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 86,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "BodyRoll",
+        "DegPerG",
+        "3"
+      ],
+      "raw": "update_field ecar rebel BodyRoll DegPerG 3",
+      "sequence": 84
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 87,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "BodyRoll",
+        "MaxG",
+        "1"
+      ],
+      "raw": "update_field ecar rebel BodyRoll MaxG 1",
+      "sequence": 85
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 88,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "BodyRoll",
+        "DegPerSec",
+        "4"
+      ],
+      "raw": "update_field ecar rebel BodyRoll DegPerSec 4",
+      "sequence": 86
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 89,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "KitWheelOffsetFront[0]",
+        "0"
+      ],
+      "raw": "update_field ecar rebel KitWheelOffsetFront[0] 0",
+      "sequence": 87
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 90,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "KitWheelOffsetFront[1]",
+        "0"
+      ],
+      "raw": "update_field ecar rebel KitWheelOffsetFront[1] 0",
+      "sequence": 88
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 91,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "KitWheelOffsetFront[2]",
+        "0"
+      ],
+      "raw": "update_field ecar rebel KitWheelOffsetFront[2] 0",
+      "sequence": 89
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 92,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "KitWheelOffsetFront[3]",
+        "0"
+      ],
+      "raw": "update_field ecar rebel KitWheelOffsetFront[3] 0",
+      "sequence": 90
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 93,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "KitWheelOffsetFront[4]",
+        "0"
+      ],
+      "raw": "update_field ecar rebel KitWheelOffsetFront[4] 0",
+      "sequence": 91
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 94,
+      "command": "update_field",
+      "args": [
+        "ecar",
+        "rebel",
+        "KitWheelOffsetFront[5]",
+        "0"
+      ],
+      "raw": "update_field ecar rebel KitWheelOffsetFront[5] 0",
+      "sequence": 92
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 95,
+      "command": "update_field",
+      "args": [
+        "brakes",
+        "rebel",
+        "BRAKES",
+        "Front",
+        "450"
+      ],
+      "raw": "update_field brakes rebel BRAKES Front 450",
+      "sequence": 93
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 96,
+      "command": "update_field",
+      "args": [
+        "brakes",
+        "rebel",
+        "BRAKES",
+        "Rear",
+        "550"
+      ],
+      "raw": "update_field brakes rebel BRAKES Rear 550",
+      "sequence": 94
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 97,
+      "command": "update_field",
+      "args": [
+        "brakes",
+        "rebel",
+        "EBRAKE",
+        "600"
+      ],
+      "raw": "update_field brakes rebel EBRAKE 600",
+      "sequence": 95
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 98,
+      "command": "update_field",
+      "args": [
+        "brakes",
+        "rebel",
+        "BRAKE_LOCK",
+        "Front",
+        "1"
+      ],
+      "raw": "update_field brakes rebel BRAKE_LOCK Front 1",
+      "sequence": 96
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 99,
+      "command": "update_field",
+      "args": [
+        "brakes",
+        "rebel",
+        "BRAKE_LOCK",
+        "Rear",
+        "3.5"
+      ],
+      "raw": "update_field brakes rebel BRAKE_LOCK Rear 3.5",
+      "sequence": 97
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 100,
+      "command": "update_field",
+      "args": [
+        "brakes",
+        "rebel_top",
+        "BRAKES",
+        "Front",
+        "550"
+      ],
+      "raw": "update_field brakes rebel_top BRAKES Front 550",
+      "sequence": 98
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 101,
+      "command": "update_field",
+      "args": [
+        "brakes",
+        "rebel_top",
+        "BRAKES",
+        "Rear",
+        "600"
+      ],
+      "raw": "update_field brakes rebel_top BRAKES Rear 600",
+      "sequence": 99
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 102,
+      "command": "update_field",
+      "args": [
+        "brakes",
+        "rebel_top",
+        "EBRAKE",
+        "650"
+      ],
+      "raw": "update_field brakes rebel_top EBRAKE 650",
+      "sequence": 100
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 103,
+      "command": "update_field",
+      "args": [
+        "brakes",
+        "rebel_top",
+        "BRAKE_LOCK",
+        "Front",
+        "1"
+      ],
+      "raw": "update_field brakes rebel_top BRAKE_LOCK Front 1",
+      "sequence": 101
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 104,
+      "command": "update_field",
+      "args": [
+        "brakes",
+        "rebel_top",
+        "BRAKE_LOCK",
+        "Rear",
+        "3.5"
+      ],
+      "raw": "update_field brakes rebel_top BRAKE_LOCK Rear 3.5",
+      "sequence": 102
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 105,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "WHEEL_BASE",
+        "2.972"
+      ],
+      "raw": "update_field chassis rebel WHEEL_BASE 2.972",
+      "sequence": 103
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 106,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "DRAG_COEFFICIENT",
+        "0.5"
+      ],
+      "raw": "update_field chassis rebel DRAG_COEFFICIENT 0.5",
+      "sequence": 104
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 107,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SHOCK_VALVING",
+        "Front",
+        "17.5"
+      ],
+      "raw": "update_field chassis rebel SHOCK_VALVING Front 17.5",
+      "sequence": 105
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 108,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SHOCK_VALVING",
+        "Rear",
+        "17.5"
+      ],
+      "raw": "update_field chassis rebel SHOCK_VALVING Rear 17.5",
+      "sequence": 106
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 109,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "RIDE_HEIGHT",
+        "Front",
+        "9.5"
+      ],
+      "raw": "update_field chassis rebel RIDE_HEIGHT Front 9.5",
+      "sequence": 107
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 110,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "RIDE_HEIGHT",
+        "Rear",
+        "9.5"
+      ],
+      "raw": "update_field chassis rebel RIDE_HEIGHT Rear 9.5",
+      "sequence": 108
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 111,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SHOCK_STIFFNESS",
+        "Front",
+        "50"
+      ],
+      "raw": "update_field chassis rebel SHOCK_STIFFNESS Front 50",
+      "sequence": 109
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 112,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SHOCK_STIFFNESS",
+        "Rear",
+        "50"
+      ],
+      "raw": "update_field chassis rebel SHOCK_STIFFNESS Rear 50",
+      "sequence": 110
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 113,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SHOCK_BLOWOUT",
+        "7"
+      ],
+      "raw": "update_field chassis rebel SHOCK_BLOWOUT 7",
+      "sequence": 111
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 114,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SHOCK_EXT_STIFFNESS",
+        "Front",
+        "60"
+      ],
+      "raw": "update_field chassis rebel SHOCK_EXT_STIFFNESS Front 60",
+      "sequence": 112
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 115,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SHOCK_EXT_STIFFNESS",
+        "Rear",
+        "60"
+      ],
+      "raw": "update_field chassis rebel SHOCK_EXT_STIFFNESS Rear 60",
+      "sequence": 113
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 116,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SWAYBAR_STIFFNESS",
+        "Front",
+        "300"
+      ],
+      "raw": "update_field chassis rebel SWAYBAR_STIFFNESS Front 300",
+      "sequence": 114
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 117,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SWAYBAR_STIFFNESS",
+        "Rear",
+        "300"
+      ],
+      "raw": "update_field chassis rebel SWAYBAR_STIFFNESS Rear 300",
+      "sequence": 115
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 118,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "ROLL_CENTER",
+        "11.5"
+      ],
+      "raw": "update_field chassis rebel ROLL_CENTER 11.5",
+      "sequence": 116
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 119,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "TRAVEL",
+        "Front",
+        "10"
+      ],
+      "raw": "update_field chassis rebel TRAVEL Front 10",
+      "sequence": 117
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 120,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "TRAVEL",
+        "Rear",
+        "10"
+      ],
+      "raw": "update_field chassis rebel TRAVEL Rear 10",
+      "sequence": 118
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 121,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SPRING_STIFFNESS",
+        "Front",
+        "400"
+      ],
+      "raw": "update_field chassis rebel SPRING_STIFFNESS Front 400",
+      "sequence": 119
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 122,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SPRING_STIFFNESS",
+        "Rear",
+        "400"
+      ],
+      "raw": "update_field chassis rebel SPRING_STIFFNESS Rear 400",
+      "sequence": 120
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 123,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "AERO_CG",
+        "50"
+      ],
+      "raw": "update_field chassis rebel AERO_CG 50",
+      "sequence": 121
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 124,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SPRING_PROGRESSION",
+        "Front",
+        "6"
+      ],
+      "raw": "update_field chassis rebel SPRING_PROGRESSION Front 6",
+      "sequence": 122
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 125,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SPRING_PROGRESSION",
+        "Rear",
+        "6"
+      ],
+      "raw": "update_field chassis rebel SPRING_PROGRESSION Rear 6",
+      "sequence": 123
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 126,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "TRACK_WIDTH",
+        "Front",
+        "1.516"
+      ],
+      "raw": "update_field chassis rebel TRACK_WIDTH Front 1.516",
+      "sequence": 124
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 127,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "TRACK_WIDTH",
+        "Rear",
+        "1.504"
+      ],
+      "raw": "update_field chassis rebel TRACK_WIDTH Rear 1.504",
+      "sequence": 125
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 128,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SHOCK_DIGRESSION",
+        "Front",
+        "0.5"
+      ],
+      "raw": "update_field chassis rebel SHOCK_DIGRESSION Front 0.5",
+      "sequence": 126
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 129,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "SHOCK_DIGRESSION",
+        "Rear",
+        "0.5"
+      ],
+      "raw": "update_field chassis rebel SHOCK_DIGRESSION Rear 0.5",
+      "sequence": 127
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 130,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "RENDER_MOTION",
+        "1"
+      ],
+      "raw": "update_field chassis rebel RENDER_MOTION 1",
+      "sequence": 128
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 131,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "AERO_COEFFICIENT",
+        "0.19"
+      ],
+      "raw": "update_field chassis rebel AERO_COEFFICIENT 0.19",
+      "sequence": 129
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 132,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "FRONT_AXLE",
+        "1.485"
+      ],
+      "raw": "update_field chassis rebel FRONT_AXLE 1.485",
+      "sequence": 130
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 133,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel",
+        "FRONT_WEIGHT_BIAS",
+        "52"
+      ],
+      "raw": "update_field chassis rebel FRONT_WEIGHT_BIAS 52",
+      "sequence": 131
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 134,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "WHEEL_BASE",
+        "2.972"
+      ],
+      "raw": "update_field chassis rebel_top WHEEL_BASE 2.972",
+      "sequence": 132
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 135,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "FRONT_WEIGHT_BIAS",
+        "0.29"
+      ],
+      "raw": "update_field chassis rebel_top FRONT_WEIGHT_BIAS 0.29",
+      "sequence": 133
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 136,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SHOCK_VALVING",
+        "Front",
+        "20"
+      ],
+      "raw": "update_field chassis rebel_top SHOCK_VALVING Front 20",
+      "sequence": 134
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 137,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SHOCK_VALVING",
+        "Rear",
+        "20"
+      ],
+      "raw": "update_field chassis rebel_top SHOCK_VALVING Rear 20",
+      "sequence": 135
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 138,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "RIDE_HEIGHT",
+        "Front",
+        "8.5"
+      ],
+      "raw": "update_field chassis rebel_top RIDE_HEIGHT Front 8.5",
+      "sequence": 136
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 139,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "RIDE_HEIGHT",
+        "Rear",
+        "8.5"
+      ],
+      "raw": "update_field chassis rebel_top RIDE_HEIGHT Rear 8.5",
+      "sequence": 137
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 140,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SHOCK_STIFFNESS",
+        "Front",
+        "60"
+      ],
+      "raw": "update_field chassis rebel_top SHOCK_STIFFNESS Front 60",
+      "sequence": 138
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 141,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SHOCK_STIFFNESS",
+        "Rear",
+        "60"
+      ],
+      "raw": "update_field chassis rebel_top SHOCK_STIFFNESS Rear 60",
+      "sequence": 139
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 142,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SHOCK_BLOWOUT",
+        "7"
+      ],
+      "raw": "update_field chassis rebel_top SHOCK_BLOWOUT 7",
+      "sequence": 140
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 143,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SHOCK_EXT_STIFFNESS",
+        "Front",
+        "70"
+      ],
+      "raw": "update_field chassis rebel_top SHOCK_EXT_STIFFNESS Front 70",
+      "sequence": 141
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 144,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SHOCK_EXT_STIFFNESS",
+        "Rear",
+        "70"
+      ],
+      "raw": "update_field chassis rebel_top SHOCK_EXT_STIFFNESS Rear 70",
+      "sequence": 142
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 145,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SWAYBAR_STIFFNESS",
+        "Front",
+        "300"
+      ],
+      "raw": "update_field chassis rebel_top SWAYBAR_STIFFNESS Front 300",
+      "sequence": 143
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 146,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SWAYBAR_STIFFNESS",
+        "Rear",
+        "300"
+      ],
+      "raw": "update_field chassis rebel_top SWAYBAR_STIFFNESS Rear 300",
+      "sequence": 144
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 147,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "ROLL_CENTER",
+        "10.5"
+      ],
+      "raw": "update_field chassis rebel_top ROLL_CENTER 10.5",
+      "sequence": 145
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 148,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "TRAVEL",
+        "Front",
+        "7.5"
+      ],
+      "raw": "update_field chassis rebel_top TRAVEL Front 7.5",
+      "sequence": 146
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 149,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "TRAVEL",
+        "Rear",
+        "7.5"
+      ],
+      "raw": "update_field chassis rebel_top TRAVEL Rear 7.5",
+      "sequence": 147
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 150,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SPRING_STIFFNESS",
+        "Front",
+        "650"
+      ],
+      "raw": "update_field chassis rebel_top SPRING_STIFFNESS Front 650",
+      "sequence": 148
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 151,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SPRING_STIFFNESS",
+        "Rear",
+        "650"
+      ],
+      "raw": "update_field chassis rebel_top SPRING_STIFFNESS Rear 650",
+      "sequence": 149
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 152,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "AERO_CG",
+        "47"
+      ],
+      "raw": "update_field chassis rebel_top AERO_CG 47",
+      "sequence": 150
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 153,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SPRING_PROGRESSION",
+        "Front",
+        "8"
+      ],
+      "raw": "update_field chassis rebel_top SPRING_PROGRESSION Front 8",
+      "sequence": 151
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 154,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SPRING_PROGRESSION",
+        "Rear",
+        "8"
+      ],
+      "raw": "update_field chassis rebel_top SPRING_PROGRESSION Rear 8",
+      "sequence": 152
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 155,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "TRACK_WIDTH",
+        "Front",
+        "1.516"
+      ],
+      "raw": "update_field chassis rebel_top TRACK_WIDTH Front 1.516",
+      "sequence": 153
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 156,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "TRACK_WIDTH",
+        "Rear",
+        "1.504"
+      ],
+      "raw": "update_field chassis rebel_top TRACK_WIDTH Rear 1.504",
+      "sequence": 154
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 157,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SHOCK_DIGRESSION",
+        "Front",
+        "0.4"
+      ],
+      "raw": "update_field chassis rebel_top SHOCK_DIGRESSION Front 0.4",
+      "sequence": 155
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 158,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "SHOCK_DIGRESSION",
+        "Rear",
+        "0.4"
+      ],
+      "raw": "update_field chassis rebel_top SHOCK_DIGRESSION Rear 0.4",
+      "sequence": 156
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 159,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "RENDER_MOTION",
+        "0.5"
+      ],
+      "raw": "update_field chassis rebel_top RENDER_MOTION 0.5",
+      "sequence": 157
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 160,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "AERO_COEFFICIENT",
+        "0.27"
+      ],
+      "raw": "update_field chassis rebel_top AERO_COEFFICIENT 0.27",
+      "sequence": 158
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 161,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "FRONT_AXLE",
+        "1.485"
+      ],
+      "raw": "update_field chassis rebel_top FRONT_AXLE 1.485",
+      "sequence": 159
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 162,
+      "command": "update_field",
+      "args": [
+        "chassis",
+        "rebel_top",
+        "FRONT_WEIGHT_BIAS",
+        "50"
+      ],
+      "raw": "update_field chassis rebel_top FRONT_WEIGHT_BIAS 50",
+      "sequence": 160
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 163,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "ENGINE_BRAKING[0]",
+        "0.75"
+      ],
+      "raw": "update_field engine rebel ENGINE_BRAKING[0] 0.75",
+      "sequence": 161
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 164,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "ENGINE_BRAKING[1]",
+        "0.85"
+      ],
+      "raw": "update_field engine rebel ENGINE_BRAKING[1] 0.85",
+      "sequence": 162
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 165,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "ENGINE_BRAKING[2]",
+        "0.95"
+      ],
+      "raw": "update_field engine rebel ENGINE_BRAKING[2] 0.95",
+      "sequence": 163
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 166,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "IDLE",
+        "900"
+      ],
+      "raw": "update_field engine rebel IDLE 900",
+      "sequence": 164
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 167,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "TORQUE[0]",
+        "148"
+      ],
+      "raw": "update_field engine rebel TORQUE[0] 148",
+      "sequence": 165
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 168,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "TORQUE[1]",
+        "201"
+      ],
+      "raw": "update_field engine rebel TORQUE[1] 201",
+      "sequence": 166
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 169,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "TORQUE[2]",
+        "245"
+      ],
+      "raw": "update_field engine rebel TORQUE[2] 245",
+      "sequence": 167
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 170,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "TORQUE[3]",
+        "289"
+      ],
+      "raw": "update_field engine rebel TORQUE[3] 289",
+      "sequence": 168
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 171,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "TORQUE[4]",
+        "332"
+      ],
+      "raw": "update_field engine rebel TORQUE[4] 332",
+      "sequence": 169
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 172,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "TORQUE[5]",
+        "368"
+      ],
+      "raw": "update_field engine rebel TORQUE[5] 368",
+      "sequence": 170
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 173,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "TORQUE[6]",
+        "353"
+      ],
+      "raw": "update_field engine rebel TORQUE[6] 353",
+      "sequence": 171
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 174,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "TORQUE[7]",
+        "323"
+      ],
+      "raw": "update_field engine rebel TORQUE[7] 323",
+      "sequence": 172
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 175,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "TORQUE[8]",
+        "289"
+      ],
+      "raw": "update_field engine rebel TORQUE[8] 289",
+      "sequence": 173
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 176,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "MAX_RPM",
+        "7000"
+      ],
+      "raw": "update_field engine rebel MAX_RPM 7000",
+      "sequence": 174
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 177,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "FLYWHEEL_MASS",
+        "11"
+      ],
+      "raw": "update_field engine rebel FLYWHEEL_MASS 11",
+      "sequence": 175
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 178,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel",
+        "RED_LINE",
+        "6000"
+      ],
+      "raw": "update_field engine rebel RED_LINE 6000",
+      "sequence": 176
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 179,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "ENGINE_BRAKING[0]",
+        "0.65"
+      ],
+      "raw": "update_field engine rebel_top ENGINE_BRAKING[0] 0.65",
+      "sequence": 177
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 180,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "ENGINE_BRAKING[1]",
+        "0.75"
+      ],
+      "raw": "update_field engine rebel_top ENGINE_BRAKING[1] 0.75",
+      "sequence": 178
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 181,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "ENGINE_BRAKING[2]",
+        "0.85"
+      ],
+      "raw": "update_field engine rebel_top ENGINE_BRAKING[2] 0.85",
+      "sequence": 179
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 182,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "IDLE",
+        "950"
+      ],
+      "raw": "update_field engine rebel_top IDLE 950",
+      "sequence": 180
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 183,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "TORQUE[0]",
+        "432"
+      ],
+      "raw": "update_field engine rebel_top TORQUE[0] 432",
+      "sequence": 181
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 184,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "TORQUE[1]",
+        "516"
+      ],
+      "raw": "update_field engine rebel_top TORQUE[1] 516",
+      "sequence": 182
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 185,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "TORQUE[2]",
+        "558"
+      ],
+      "raw": "update_field engine rebel_top TORQUE[2] 558",
+      "sequence": 183
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 186,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "TORQUE[3]",
+        "601"
+      ],
+      "raw": "update_field engine rebel_top TORQUE[3] 601",
+      "sequence": 184
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 187,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "TORQUE[4]",
+        "643"
+      ],
+      "raw": "update_field engine rebel_top TORQUE[4] 643",
+      "sequence": 185
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 188,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "TORQUE[5]",
+        "674"
+      ],
+      "raw": "update_field engine rebel_top TORQUE[5] 674",
+      "sequence": 186
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 189,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "TORQUE[6]",
+        "634"
+      ],
+      "raw": "update_field engine rebel_top TORQUE[6] 634",
+      "sequence": 187
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 190,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "TORQUE[7]",
+        "575"
+      ],
+      "raw": "update_field engine rebel_top TORQUE[7] 575",
+      "sequence": 188
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 191,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "TORQUE[8]",
+        "514"
+      ],
+      "raw": "update_field engine rebel_top TORQUE[8] 514",
+      "sequence": 189
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 192,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "MAX_RPM",
+        "7100"
+      ],
+      "raw": "update_field engine rebel_top MAX_RPM 7100",
+      "sequence": 190
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 193,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "FLYWHEEL_MASS",
+        "10"
+      ],
+      "raw": "update_field engine rebel_top FLYWHEEL_MASS 10",
+      "sequence": 191
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 194,
+      "command": "update_field",
+      "args": [
+        "engine",
+        "rebel_top",
+        "RED_LINE",
+        "6100"
+      ],
+      "raw": "update_field engine rebel_top RED_LINE 6100",
+      "sequence": 192
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 195,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel",
+        "SPOOL_TIME_DOWN",
+        "0.1"
+      ],
+      "raw": "update_field induction rebel SPOOL_TIME_DOWN 0.1",
+      "sequence": 193
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 196,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel",
+        "HIGH_BOOST",
+        "0.1"
+      ],
+      "raw": "update_field induction rebel HIGH_BOOST 0.1",
+      "sequence": 194
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 197,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel",
+        "LOW_BOOST",
+        "0.1"
+      ],
+      "raw": "update_field induction rebel LOW_BOOST 0.1",
+      "sequence": 195
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 198,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel",
+        "SPOOL_TIME_UP",
+        "2.5"
+      ],
+      "raw": "update_field induction rebel SPOOL_TIME_UP 2.5",
+      "sequence": 196
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 199,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel",
+        "PSI",
+        "9"
+      ],
+      "raw": "update_field induction rebel PSI 9",
+      "sequence": 197
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 200,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel",
+        "SPOOL",
+        "0.15"
+      ],
+      "raw": "update_field induction rebel SPOOL 0.15",
+      "sequence": 198
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 201,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel",
+        "VACUUM",
+        "0.1"
+      ],
+      "raw": "update_field induction rebel VACUUM 0.1",
+      "sequence": 199
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 202,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel_top",
+        "SPOOL_TIME_DOWN",
+        "0.15"
+      ],
+      "raw": "update_field induction rebel_top SPOOL_TIME_DOWN 0.15",
+      "sequence": 200
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 203,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel_top",
+        "HIGH_BOOST",
+        "0.15"
+      ],
+      "raw": "update_field induction rebel_top HIGH_BOOST 0.15",
+      "sequence": 201
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 204,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel_top",
+        "LOW_BOOST",
+        "0.15"
+      ],
+      "raw": "update_field induction rebel_top LOW_BOOST 0.15",
+      "sequence": 202
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 205,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel_top",
+        "SPOOL_TIME_UP",
+        "2"
+      ],
+      "raw": "update_field induction rebel_top SPOOL_TIME_UP 2",
+      "sequence": 203
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 206,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel_top",
+        "PSI",
+        "12"
+      ],
+      "raw": "update_field induction rebel_top PSI 12",
+      "sequence": 204
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 207,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel_top",
+        "SPOOL",
+        "0"
+      ],
+      "raw": "update_field induction rebel_top SPOOL 0",
+      "sequence": 205
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 208,
+      "command": "update_field",
+      "args": [
+        "induction",
+        "rebel_top",
+        "VACUUM",
+        "0"
+      ],
+      "raw": "update_field induction rebel_top VACUUM 0",
+      "sequence": 206
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 209,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "SECTION_WIDTH",
+        "Front",
+        "225"
+      ],
+      "raw": "update_field tires rebel SECTION_WIDTH Front 225",
+      "sequence": 207
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 210,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "SECTION_WIDTH",
+        "Rear",
+        "275"
+      ],
+      "raw": "update_field tires rebel SECTION_WIDTH Rear 275",
+      "sequence": 208
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 211,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "YAW_CONTROL[0]",
+        "0.025"
+      ],
+      "raw": "update_field tires rebel YAW_CONTROL[0] 0.025",
+      "sequence": 209
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 212,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "YAW_CONTROL[1]",
+        "0.05"
+      ],
+      "raw": "update_field tires rebel YAW_CONTROL[1] 0.05",
+      "sequence": 210
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 213,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "YAW_CONTROL[2]",
+        "0.07"
+      ],
+      "raw": "update_field tires rebel YAW_CONTROL[2] 0.07",
+      "sequence": 211
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 214,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "YAW_CONTROL[3]",
+        "0.15"
+      ],
+      "raw": "update_field tires rebel YAW_CONTROL[3] 0.15",
+      "sequence": 212
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 215,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "DYNAMIC_GRIP",
+        "Front",
+        "1.3"
+      ],
+      "raw": "update_field tires rebel DYNAMIC_GRIP Front 1.3",
+      "sequence": 213
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 216,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "DYNAMIC_GRIP",
+        "Rear",
+        "1.4"
+      ],
+      "raw": "update_field tires rebel DYNAMIC_GRIP Rear 1.4",
+      "sequence": 214
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 217,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "RIM_SIZE",
+        "Front",
+        "14"
+      ],
+      "raw": "update_field tires rebel RIM_SIZE Front 14",
+      "sequence": 215
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 218,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "RIM_SIZE",
+        "Rear",
+        "14"
+      ],
+      "raw": "update_field tires rebel RIM_SIZE Rear 14",
+      "sequence": 216
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 219,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "YAW_SPEED",
+        "0.3"
+      ],
+      "raw": "update_field tires rebel YAW_SPEED 0.3",
+      "sequence": 217
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 220,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "ASPECT_RATIO",
+        "Front",
+        "60"
+      ],
+      "raw": "update_field tires rebel ASPECT_RATIO Front 60",
+      "sequence": 218
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 221,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "ASPECT_RATIO",
+        "Rear",
+        "60"
+      ],
+      "raw": "update_field tires rebel ASPECT_RATIO Rear 60",
+      "sequence": 219
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 222,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "STATIC_GRIP",
+        "Front",
+        "1.5"
+      ],
+      "raw": "update_field tires rebel STATIC_GRIP Front 1.5",
+      "sequence": 220
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 223,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "STATIC_GRIP",
+        "Rear",
+        "1.6"
+      ],
+      "raw": "update_field tires rebel STATIC_GRIP Rear 1.6",
+      "sequence": 221
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 224,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "GRIP_SCALE",
+        "Front",
+        "1.4"
+      ],
+      "raw": "update_field tires rebel GRIP_SCALE Front 1.4",
+      "sequence": 222
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 225,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "GRIP_SCALE",
+        "Rear",
+        "1.5"
+      ],
+      "raw": "update_field tires rebel GRIP_SCALE Rear 1.5",
+      "sequence": 223
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 226,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel",
+        "STEERING",
+        "1"
+      ],
+      "raw": "update_field tires rebel STEERING 1",
+      "sequence": 224
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 227,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "SECTION_WIDTH",
+        "Front",
+        "275"
+      ],
+      "raw": "update_field tires rebel_top SECTION_WIDTH Front 275",
+      "sequence": 225
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 228,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "SECTION_WIDTH",
+        "Rear",
+        "305"
+      ],
+      "raw": "update_field tires rebel_top SECTION_WIDTH Rear 305",
+      "sequence": 226
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 229,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "YAW_CONTROL[0]",
+        "0.06"
+      ],
+      "raw": "update_field tires rebel_top YAW_CONTROL[0] 0.06",
+      "sequence": 227
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 230,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "YAW_CONTROL[1]",
+        "0.1"
+      ],
+      "raw": "update_field tires rebel_top YAW_CONTROL[1] 0.1",
+      "sequence": 228
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 231,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "YAW_CONTROL[2]",
+        "0.15"
+      ],
+      "raw": "update_field tires rebel_top YAW_CONTROL[2] 0.15",
+      "sequence": 229
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 232,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "YAW_CONTROL[3]",
+        "0.2"
+      ],
+      "raw": "update_field tires rebel_top YAW_CONTROL[3] 0.2",
+      "sequence": 230
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 233,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "DYNAMIC_GRIP",
+        "Front",
+        "2.2"
+      ],
+      "raw": "update_field tires rebel_top DYNAMIC_GRIP Front 2.2",
+      "sequence": 231
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 234,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "DYNAMIC_GRIP",
+        "Rear",
+        "2.3"
+      ],
+      "raw": "update_field tires rebel_top DYNAMIC_GRIP Rear 2.3",
+      "sequence": 232
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 235,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "RIM_SIZE",
+        "Front",
+        "15"
+      ],
+      "raw": "update_field tires rebel_top RIM_SIZE Front 15",
+      "sequence": 233
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 236,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "RIM_SIZE",
+        "Rear",
+        "15"
+      ],
+      "raw": "update_field tires rebel_top RIM_SIZE Rear 15",
+      "sequence": 234
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 237,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "YAW_SPEED",
+        "0.325"
+      ],
+      "raw": "update_field tires rebel_top YAW_SPEED 0.325",
+      "sequence": 235
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 238,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "ASPECT_RATIO",
+        "Front",
+        "70"
+      ],
+      "raw": "update_field tires rebel_top ASPECT_RATIO Front 70",
+      "sequence": 236
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 239,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "ASPECT_RATIO",
+        "Rear",
+        "70"
+      ],
+      "raw": "update_field tires rebel_top ASPECT_RATIO Rear 70",
+      "sequence": 237
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 240,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "STATIC_GRIP",
+        "Front",
+        "2.4"
+      ],
+      "raw": "update_field tires rebel_top STATIC_GRIP Front 2.4",
+      "sequence": 238
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 241,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "STATIC_GRIP",
+        "Rear",
+        "2.5"
+      ],
+      "raw": "update_field tires rebel_top STATIC_GRIP Rear 2.5",
+      "sequence": 239
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 242,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "GRIP_SCALE",
+        "Front",
+        "1.3"
+      ],
+      "raw": "update_field tires rebel_top GRIP_SCALE Front 1.3",
+      "sequence": 240
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 243,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "GRIP_SCALE",
+        "Rear",
+        "1.4"
+      ],
+      "raw": "update_field tires rebel_top GRIP_SCALE Rear 1.4",
+      "sequence": 241
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 244,
+      "command": "update_field",
+      "args": [
+        "tires",
+        "rebel_top",
+        "STEERING",
+        "1.025"
+      ],
+      "raw": "update_field tires rebel_top STEERING 1.025",
+      "sequence": 242
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 245,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_RATIO",
+        "6"
+      ],
+      "raw": "update_field transmission rebel GEAR_RATIO 6",
+      "sequence": 243
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 246,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_RATIO[0]",
+        "3.275"
+      ],
+      "raw": "update_field transmission rebel GEAR_RATIO[0] 3.275",
+      "sequence": 244
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 247,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_RATIO[1]",
+        "0"
+      ],
+      "raw": "update_field transmission rebel GEAR_RATIO[1] 0",
+      "sequence": 245
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 248,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_RATIO[2]",
+        "2.948"
+      ],
+      "raw": "update_field transmission rebel GEAR_RATIO[2] 2.948",
+      "sequence": 246
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 249,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_RATIO[3]",
+        "1.842"
+      ],
+      "raw": "update_field transmission rebel GEAR_RATIO[3] 1.842",
+      "sequence": 247
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 250,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_RATIO[4]",
+        "1.339"
+      ],
+      "raw": "update_field transmission rebel GEAR_RATIO[4] 1.339",
+      "sequence": 248
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 251,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_RATIO[5]",
+        "1.052"
+      ],
+      "raw": "update_field transmission rebel GEAR_RATIO[5] 1.052",
+      "sequence": 249
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 252,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "DIFFERENTIAL[0]",
+        "0"
+      ],
+      "raw": "update_field transmission rebel DIFFERENTIAL[0] 0",
+      "sequence": 250
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 253,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "DIFFERENTIAL[1]",
+        "0.65"
+      ],
+      "raw": "update_field transmission rebel DIFFERENTIAL[1] 0.65",
+      "sequence": 251
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 254,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "DIFFERENTIAL[2]",
+        "0"
+      ],
+      "raw": "update_field transmission rebel DIFFERENTIAL[2] 0",
+      "sequence": 252
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 255,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_EFFICIENCY[0]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel GEAR_EFFICIENCY[0] 1",
+      "sequence": 253
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 256,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_EFFICIENCY[1]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel GEAR_EFFICIENCY[1] 1",
+      "sequence": 254
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 257,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_EFFICIENCY[2]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel GEAR_EFFICIENCY[2] 1",
+      "sequence": 255
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 258,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_EFFICIENCY[3]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel GEAR_EFFICIENCY[3] 1",
+      "sequence": 256
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 259,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_EFFICIENCY[4]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel GEAR_EFFICIENCY[4] 1",
+      "sequence": 257
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 260,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_EFFICIENCY[5]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel GEAR_EFFICIENCY[5] 1",
+      "sequence": 258
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 261,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_EFFICIENCY[6]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel GEAR_EFFICIENCY[6] 1",
+      "sequence": 259
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 262,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_EFFICIENCY[7]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel GEAR_EFFICIENCY[7] 1",
+      "sequence": 260
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 263,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "GEAR_EFFICIENCY[8]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel GEAR_EFFICIENCY[8] 1",
+      "sequence": 261
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 264,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "TORQUE_CONVERTER",
+        "0.3"
+      ],
+      "raw": "update_field transmission rebel TORQUE_CONVERTER 0.3",
+      "sequence": 262
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 265,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "TORQUE_SPLIT",
+        "0"
+      ],
+      "raw": "update_field transmission rebel TORQUE_SPLIT 0",
+      "sequence": 263
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 266,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "CLUTCH_SLIP",
+        "0.7"
+      ],
+      "raw": "update_field transmission rebel CLUTCH_SLIP 0.7",
+      "sequence": 264
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 267,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "SHIFT_SPEED",
+        "0.3"
+      ],
+      "raw": "update_field transmission rebel SHIFT_SPEED 0.3",
+      "sequence": 265
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 268,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel",
+        "FINAL_GEAR",
+        "3.106"
+      ],
+      "raw": "update_field transmission rebel FINAL_GEAR 3.106",
+      "sequence": 266
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 269,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_RATIO",
+        "8"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_RATIO 8",
+      "sequence": 267
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 270,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_RATIO[0]",
+        "3.275"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_RATIO[0] 3.275",
+      "sequence": 268
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 271,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_RATIO[1]",
+        "0"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_RATIO[1] 0",
+      "sequence": 269
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 272,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_RATIO[2]",
+        "2.948"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_RATIO[2] 2.948",
+      "sequence": 270
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 273,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_RATIO[3]",
+        "1.842"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_RATIO[3] 1.842",
+      "sequence": 271
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 274,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_RATIO[4]",
+        "1.339"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_RATIO[4] 1.339",
+      "sequence": 272
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 275,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_RATIO[5]",
+        "1.052"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_RATIO[5] 1.052",
+      "sequence": 273
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 276,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_RATIO[6]",
+        "0.866"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_RATIO[6] 0.866",
+      "sequence": 274
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 277,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_RATIO[7]",
+        "0.736"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_RATIO[7] 0.736",
+      "sequence": 275
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 278,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "DIFFERENTIAL[0]",
+        "0.8"
+      ],
+      "raw": "update_field transmission rebel_top DIFFERENTIAL[0] 0.8",
+      "sequence": 276
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 279,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "DIFFERENTIAL[1]",
+        "0.8"
+      ],
+      "raw": "update_field transmission rebel_top DIFFERENTIAL[1] 0.8",
+      "sequence": 277
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 280,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "DIFFERENTIAL[2]",
+        "0.8"
+      ],
+      "raw": "update_field transmission rebel_top DIFFERENTIAL[2] 0.8",
+      "sequence": 278
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 281,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_EFFICIENCY[0]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_EFFICIENCY[0] 1",
+      "sequence": 279
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 282,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_EFFICIENCY[1]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_EFFICIENCY[1] 1",
+      "sequence": 280
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 283,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_EFFICIENCY[2]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_EFFICIENCY[2] 1",
+      "sequence": 281
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 284,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_EFFICIENCY[3]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_EFFICIENCY[3] 1",
+      "sequence": 282
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 285,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_EFFICIENCY[4]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_EFFICIENCY[4] 1",
+      "sequence": 283
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 286,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_EFFICIENCY[5]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_EFFICIENCY[5] 1",
+      "sequence": 284
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 287,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_EFFICIENCY[6]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_EFFICIENCY[6] 1",
+      "sequence": 285
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 288,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_EFFICIENCY[7]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_EFFICIENCY[7] 1",
+      "sequence": 286
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 289,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "GEAR_EFFICIENCY[8]",
+        "1"
+      ],
+      "raw": "update_field transmission rebel_top GEAR_EFFICIENCY[8] 1",
+      "sequence": 287
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 290,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "TORQUE_CONVERTER",
+        "0.6"
+      ],
+      "raw": "update_field transmission rebel_top TORQUE_CONVERTER 0.6",
+      "sequence": 288
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 291,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "TORQUE_SPLIT",
+        "0"
+      ],
+      "raw": "update_field transmission rebel_top TORQUE_SPLIT 0",
+      "sequence": 289
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 292,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "CLUTCH_SLIP",
+        "0.8"
+      ],
+      "raw": "update_field transmission rebel_top CLUTCH_SLIP 0.8",
+      "sequence": 290
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 293,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "SHIFT_SPEED",
+        "0.1"
+      ],
+      "raw": "update_field transmission rebel_top SHIFT_SPEED 0.1",
+      "sequence": 291
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 294,
+      "command": "update_field",
+      "args": [
+        "transmission",
+        "rebel_top",
+        "FINAL_GEAR",
+        "3.034"
+      ],
+      "raw": "update_field transmission rebel_top FINAL_GEAR 3.034",
+      "sequence": 292
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 297,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "engineaudio[0]",
+        "Collection",
+        "corvette_z06_v2"
+      ],
+      "raw": "update_field pvehicle rebel engineaudio[0] Collection corvette_z06_v2",
+      "sequence": 293
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 298,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "engineaudio[1]",
+        "Collection",
+        "corvette_z06_v2"
+      ],
+      "raw": "update_field pvehicle rebel engineaudio[1] Collection corvette_z06_v2",
+      "sequence": 294
+    },
+    {
+      "file": "Addon/SetupFiles/rebel_install.nfsms",
+      "line": 299,
+      "command": "update_field",
+      "args": [
+        "pvehicle",
+        "rebel",
+        "engineaudio[2]",
+        "Collection",
+        "corvette_z06_v2"
+      ],
+      "raw": "update_field pvehicle rebel engineaudio[2] Collection corvette_z06_v2",
+      "sequence": 295
+    }
+  ],
+  "dependency_graph": {
+    "scripts": [
+      {
+        "file": "Addon/Install.nfsms",
+        "command_count": 10,
+        "created_nodes": []
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "command_count": 295,
+        "created_nodes": [
+          "brakes/rebel",
+          "brakes/rebel_top",
+          "chassis/rebel",
+          "chassis/rebel_top",
+          "ecar/rebel",
+          "engine/rebel",
+          "engine/rebel_top",
+          "induction/rebel",
+          "induction/rebel_top",
+          "pvehicle/rebel",
+          "tires/rebel",
+          "tires/rebel_top",
+          "transmission/rebel",
+          "transmission/rebel_top",
+          "camerainfo/rebel_hood",
+          "frontend/amc",
+          "frontend/rebel"
+        ]
+      }
+    ],
+    "nodes_created": [
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 1,
+        "sequence": 1,
+        "node": "brakes/rebel",
+        "donor": "brakes/punto",
+        "parent": "default"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 2,
+        "sequence": 2,
+        "node": "brakes/rebel_top",
+        "donor": "brakes/punto_top",
+        "parent": "rebel"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 3,
+        "sequence": 3,
+        "node": "chassis/rebel",
+        "donor": "chassis/punto",
+        "parent": "default"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 4,
+        "sequence": 4,
+        "node": "chassis/rebel_top",
+        "donor": "chassis/punto_top",
+        "parent": "rebel"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 5,
+        "sequence": 5,
+        "node": "ecar/rebel",
+        "donor": "ecar/punto",
+        "parent": "racers"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 6,
+        "sequence": 6,
+        "node": "engine/rebel",
+        "donor": "engine/punto",
+        "parent": "default"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 7,
+        "sequence": 7,
+        "node": "engine/rebel_top",
+        "donor": "engine/punto_top",
+        "parent": "rebel"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 8,
+        "sequence": 8,
+        "node": "induction/rebel",
+        "donor": "induction/punto_base",
+        "parent": "default"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 9,
+        "sequence": 9,
+        "node": "induction/rebel_top",
+        "donor": "induction/punto_top",
+        "parent": "rebel"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 10,
+        "sequence": 10,
+        "node": "pvehicle/rebel",
+        "donor": "pvehicle/punto",
+        "parent": "racers"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 11,
+        "sequence": 11,
+        "node": "tires/rebel",
+        "donor": "tires/punto",
+        "parent": "default"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 12,
+        "sequence": 12,
+        "node": "tires/rebel_top",
+        "donor": "tires/punto_top",
+        "parent": "rebel"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 13,
+        "sequence": 13,
+        "node": "transmission/rebel",
+        "donor": "transmission/punto",
+        "parent": "default"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 14,
+        "sequence": 14,
+        "node": "transmission/rebel_top",
+        "donor": "transmission/punto_top",
+        "parent": "rebel"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 15,
+        "sequence": 15,
+        "node": "camerainfo/rebel_hood",
+        "donor": "camerainfo/punto_hood",
+        "parent": "hood"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 33,
+        "sequence": 32,
+        "node": "frontend/amc",
+        "donor": "frontend/audi",
+        "parent": "north_america"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 35,
+        "sequence": 34,
+        "node": "frontend/rebel",
+        "donor": "frontend/tt",
+        "parent": "amc"
+      }
+    ],
+    "dependencies": [
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 1,
+        "sequence": 1,
+        "kind": "copy_donor",
+        "reference": "brakes/punto",
+        "status": "inventory"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 2,
+        "sequence": 2,
+        "kind": "copy_donor",
+        "reference": "brakes/punto_top",
+        "status": "inventory"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 2,
+        "sequence": 2,
+        "kind": "copy_parent",
+        "reference": "brakes/rebel",
+        "status": "created_earlier",
+        "created_at_line": 1
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 3,
+        "sequence": 3,
+        "kind": "copy_donor",
+        "reference": "chassis/punto",
+        "status": "inventory"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 4,
+        "sequence": 4,
+        "kind": "copy_donor",
+        "reference": "chassis/punto_top",
+        "status": "inventory"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 4,
+        "sequence": 4,
+        "kind": "copy_parent",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 5,
+        "sequence": 5,
+        "kind": "copy_donor",
+        "reference": "ecar/punto",
+        "status": "inventory"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 5,
+        "sequence": 5,
+        "kind": "copy_parent",
+        "reference": "ecar/racers",
+        "status": "inventory_node"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 6,
+        "sequence": 6,
+        "kind": "copy_donor",
+        "reference": "engine/punto",
+        "status": "inventory"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 7,
+        "sequence": 7,
+        "kind": "copy_donor",
+        "reference": "engine/punto_top",
+        "status": "inventory"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 7,
+        "sequence": 7,
+        "kind": "copy_parent",
+        "reference": "engine/rebel",
+        "status": "created_earlier",
+        "created_at_line": 6
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 8,
+        "sequence": 8,
+        "kind": "copy_donor",
+        "reference": "induction/punto_base",
+        "status": "inventory"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 9,
+        "sequence": 9,
+        "kind": "copy_donor",
+        "reference": "induction/punto_top",
+        "status": "inventory"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 9,
+        "sequence": 9,
+        "kind": "copy_parent",
+        "reference": "induction/rebel",
+        "status": "created_earlier",
+        "created_at_line": 8
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 10,
+        "sequence": 10,
+        "kind": "copy_donor",
+        "reference": "pvehicle/punto",
+        "status": "inventory"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 10,
+        "sequence": 10,
+        "kind": "copy_parent",
+        "reference": "pvehicle/racers",
+        "status": "inventory_node"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 11,
+        "sequence": 11,
+        "kind": "copy_donor",
+        "reference": "tires/punto",
+        "status": "inventory"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 12,
+        "sequence": 12,
+        "kind": "copy_donor",
+        "reference": "tires/punto_top",
+        "status": "inventory"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 12,
+        "sequence": 12,
+        "kind": "copy_parent",
+        "reference": "tires/rebel",
+        "status": "created_earlier",
+        "created_at_line": 11
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 13,
+        "sequence": 13,
+        "kind": "copy_donor",
+        "reference": "transmission/punto",
+        "status": "inventory"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 14,
+        "sequence": 14,
+        "kind": "copy_donor",
+        "reference": "transmission/punto_top",
+        "status": "inventory"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 14,
+        "sequence": 14,
+        "kind": "copy_parent",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 15,
+        "sequence": 15,
+        "kind": "copy_donor",
+        "reference": "camerainfo/punto_hood",
+        "status": "inventory"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 15,
+        "sequence": 15,
+        "kind": "copy_parent",
+        "reference": "camerainfo/hood",
+        "status": "inventory_node"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 16,
+        "sequence": 16,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 17,
+        "sequence": 17,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 18,
+        "sequence": 18,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 19,
+        "sequence": 19,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 19,
+        "sequence": 19,
+        "kind": "collection_reference",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 20,
+        "sequence": 20,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 20,
+        "sequence": 20,
+        "kind": "collection_reference",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 21,
+        "sequence": 21,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 21,
+        "sequence": 21,
+        "kind": "collection_reference",
+        "reference": "tires/rebel",
+        "status": "created_earlier",
+        "created_at_line": 11
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 22,
+        "sequence": 22,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 22,
+        "sequence": 22,
+        "kind": "collection_reference",
+        "reference": "tires/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 12
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 23,
+        "sequence": 23,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 23,
+        "sequence": 23,
+        "kind": "collection_reference",
+        "reference": "induction/rebel",
+        "status": "created_earlier",
+        "created_at_line": 8
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 24,
+        "sequence": 24,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 24,
+        "sequence": 24,
+        "kind": "collection_reference",
+        "reference": "induction/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 9
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 25,
+        "sequence": 25,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 25,
+        "sequence": 25,
+        "kind": "collection_reference",
+        "reference": "frontend/rebel",
+        "status": "created_later",
+        "created_at_line": 35
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 26,
+        "sequence": 26,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 26,
+        "sequence": 26,
+        "kind": "collection_reference",
+        "reference": "engine/rebel",
+        "status": "created_earlier",
+        "created_at_line": 6
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 27,
+        "sequence": 27,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 27,
+        "sequence": 27,
+        "kind": "collection_reference",
+        "reference": "engine/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 7
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 28,
+        "sequence": 28,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 28,
+        "sequence": 28,
+        "kind": "collection_reference",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 29,
+        "sequence": 29,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 29,
+        "sequence": 29,
+        "kind": "collection_reference",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 30,
+        "sequence": 30,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 30,
+        "sequence": 30,
+        "kind": "collection_reference",
+        "reference": "brakes/rebel",
+        "status": "created_earlier",
+        "created_at_line": 1
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 31,
+        "sequence": 31,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 31,
+        "sequence": 31,
+        "kind": "collection_reference",
+        "reference": "brakes/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 2
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 33,
+        "sequence": 32,
+        "kind": "copy_donor",
+        "reference": "frontend/audi",
+        "status": "inventory"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 33,
+        "sequence": 32,
+        "kind": "copy_parent",
+        "reference": "frontend/north_america",
+        "status": "inventory_node"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 34,
+        "sequence": 33,
+        "kind": "update_target",
+        "reference": "frontend/amc",
+        "status": "created_earlier",
+        "created_at_line": 33
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 35,
+        "sequence": 34,
+        "kind": "copy_donor",
+        "reference": "frontend/tt",
+        "status": "inventory"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 35,
+        "sequence": 34,
+        "kind": "copy_parent",
+        "reference": "frontend/amc",
+        "status": "created_earlier",
+        "created_at_line": 33
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 36,
+        "sequence": 35,
+        "kind": "update_target",
+        "reference": "frontend/rebel",
+        "status": "created_earlier",
+        "created_at_line": 35
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 37,
+        "sequence": 36,
+        "kind": "update_target",
+        "reference": "frontend/rebel",
+        "status": "created_earlier",
+        "created_at_line": 35
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 39,
+        "sequence": 37,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 40,
+        "sequence": 38,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 41,
+        "sequence": 39,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 42,
+        "sequence": 40,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 43,
+        "sequence": 41,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 44,
+        "sequence": 42,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 45,
+        "sequence": 43,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 46,
+        "sequence": 44,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 47,
+        "sequence": 45,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 48,
+        "sequence": 46,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 49,
+        "sequence": 47,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 50,
+        "sequence": 48,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 51,
+        "sequence": 49,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 52,
+        "sequence": 50,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 53,
+        "sequence": 51,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 54,
+        "sequence": 52,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 55,
+        "sequence": 53,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 56,
+        "sequence": 54,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 57,
+        "sequence": 55,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 58,
+        "sequence": 56,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 59,
+        "sequence": 57,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 60,
+        "sequence": 58,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 61,
+        "sequence": 59,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 62,
+        "sequence": 60,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 63,
+        "sequence": 61,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 64,
+        "sequence": 62,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 65,
+        "sequence": 63,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 66,
+        "sequence": 64,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 67,
+        "sequence": 65,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 68,
+        "sequence": 66,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 69,
+        "sequence": 67,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 70,
+        "sequence": 68,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 71,
+        "sequence": 69,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 72,
+        "sequence": 70,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 73,
+        "sequence": 71,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 74,
+        "sequence": 72,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 75,
+        "sequence": 73,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 76,
+        "sequence": 74,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 77,
+        "sequence": 75,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 78,
+        "sequence": 76,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 79,
+        "sequence": 77,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 80,
+        "sequence": 78,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 81,
+        "sequence": 79,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 82,
+        "sequence": 80,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 83,
+        "sequence": 81,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 84,
+        "sequence": 82,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 85,
+        "sequence": 83,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 86,
+        "sequence": 84,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 87,
+        "sequence": 85,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 88,
+        "sequence": 86,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 89,
+        "sequence": 87,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 90,
+        "sequence": 88,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 91,
+        "sequence": 89,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 92,
+        "sequence": 90,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 93,
+        "sequence": 91,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 94,
+        "sequence": 92,
+        "kind": "update_target",
+        "reference": "ecar/rebel",
+        "status": "created_earlier",
+        "created_at_line": 5
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 95,
+        "sequence": 93,
+        "kind": "update_target",
+        "reference": "brakes/rebel",
+        "status": "created_earlier",
+        "created_at_line": 1
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 96,
+        "sequence": 94,
+        "kind": "update_target",
+        "reference": "brakes/rebel",
+        "status": "created_earlier",
+        "created_at_line": 1
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 97,
+        "sequence": 95,
+        "kind": "update_target",
+        "reference": "brakes/rebel",
+        "status": "created_earlier",
+        "created_at_line": 1
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 98,
+        "sequence": 96,
+        "kind": "update_target",
+        "reference": "brakes/rebel",
+        "status": "created_earlier",
+        "created_at_line": 1
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 99,
+        "sequence": 97,
+        "kind": "update_target",
+        "reference": "brakes/rebel",
+        "status": "created_earlier",
+        "created_at_line": 1
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 100,
+        "sequence": 98,
+        "kind": "update_target",
+        "reference": "brakes/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 2
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 101,
+        "sequence": 99,
+        "kind": "update_target",
+        "reference": "brakes/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 2
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 102,
+        "sequence": 100,
+        "kind": "update_target",
+        "reference": "brakes/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 2
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 103,
+        "sequence": 101,
+        "kind": "update_target",
+        "reference": "brakes/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 2
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 104,
+        "sequence": 102,
+        "kind": "update_target",
+        "reference": "brakes/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 2
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 105,
+        "sequence": 103,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 106,
+        "sequence": 104,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 107,
+        "sequence": 105,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 108,
+        "sequence": 106,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 109,
+        "sequence": 107,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 110,
+        "sequence": 108,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 111,
+        "sequence": 109,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 112,
+        "sequence": 110,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 113,
+        "sequence": 111,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 114,
+        "sequence": 112,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 115,
+        "sequence": 113,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 116,
+        "sequence": 114,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 117,
+        "sequence": 115,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 118,
+        "sequence": 116,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 119,
+        "sequence": 117,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 120,
+        "sequence": 118,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 121,
+        "sequence": 119,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 122,
+        "sequence": 120,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 123,
+        "sequence": 121,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 124,
+        "sequence": 122,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 125,
+        "sequence": 123,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 126,
+        "sequence": 124,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 127,
+        "sequence": 125,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 128,
+        "sequence": 126,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 129,
+        "sequence": 127,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 130,
+        "sequence": 128,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 131,
+        "sequence": 129,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 132,
+        "sequence": 130,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 133,
+        "sequence": 131,
+        "kind": "update_target",
+        "reference": "chassis/rebel",
+        "status": "created_earlier",
+        "created_at_line": 3
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 134,
+        "sequence": 132,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 135,
+        "sequence": 133,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 136,
+        "sequence": 134,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 137,
+        "sequence": 135,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 138,
+        "sequence": 136,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 139,
+        "sequence": 137,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 140,
+        "sequence": 138,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 141,
+        "sequence": 139,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 142,
+        "sequence": 140,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 143,
+        "sequence": 141,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 144,
+        "sequence": 142,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 145,
+        "sequence": 143,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 146,
+        "sequence": 144,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 147,
+        "sequence": 145,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 148,
+        "sequence": 146,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 149,
+        "sequence": 147,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 150,
+        "sequence": 148,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 151,
+        "sequence": 149,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 152,
+        "sequence": 150,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 153,
+        "sequence": 151,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 154,
+        "sequence": 152,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 155,
+        "sequence": 153,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 156,
+        "sequence": 154,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 157,
+        "sequence": 155,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 158,
+        "sequence": 156,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 159,
+        "sequence": 157,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 160,
+        "sequence": 158,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 161,
+        "sequence": 159,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 162,
+        "sequence": 160,
+        "kind": "update_target",
+        "reference": "chassis/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 4
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 163,
+        "sequence": 161,
+        "kind": "update_target",
+        "reference": "engine/rebel",
+        "status": "created_earlier",
+        "created_at_line": 6
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 164,
+        "sequence": 162,
+        "kind": "update_target",
+        "reference": "engine/rebel",
+        "status": "created_earlier",
+        "created_at_line": 6
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 165,
+        "sequence": 163,
+        "kind": "update_target",
+        "reference": "engine/rebel",
+        "status": "created_earlier",
+        "created_at_line": 6
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 166,
+        "sequence": 164,
+        "kind": "update_target",
+        "reference": "engine/rebel",
+        "status": "created_earlier",
+        "created_at_line": 6
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 167,
+        "sequence": 165,
+        "kind": "update_target",
+        "reference": "engine/rebel",
+        "status": "created_earlier",
+        "created_at_line": 6
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 168,
+        "sequence": 166,
+        "kind": "update_target",
+        "reference": "engine/rebel",
+        "status": "created_earlier",
+        "created_at_line": 6
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 169,
+        "sequence": 167,
+        "kind": "update_target",
+        "reference": "engine/rebel",
+        "status": "created_earlier",
+        "created_at_line": 6
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 170,
+        "sequence": 168,
+        "kind": "update_target",
+        "reference": "engine/rebel",
+        "status": "created_earlier",
+        "created_at_line": 6
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 171,
+        "sequence": 169,
+        "kind": "update_target",
+        "reference": "engine/rebel",
+        "status": "created_earlier",
+        "created_at_line": 6
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 172,
+        "sequence": 170,
+        "kind": "update_target",
+        "reference": "engine/rebel",
+        "status": "created_earlier",
+        "created_at_line": 6
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 173,
+        "sequence": 171,
+        "kind": "update_target",
+        "reference": "engine/rebel",
+        "status": "created_earlier",
+        "created_at_line": 6
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 174,
+        "sequence": 172,
+        "kind": "update_target",
+        "reference": "engine/rebel",
+        "status": "created_earlier",
+        "created_at_line": 6
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 175,
+        "sequence": 173,
+        "kind": "update_target",
+        "reference": "engine/rebel",
+        "status": "created_earlier",
+        "created_at_line": 6
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 176,
+        "sequence": 174,
+        "kind": "update_target",
+        "reference": "engine/rebel",
+        "status": "created_earlier",
+        "created_at_line": 6
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 177,
+        "sequence": 175,
+        "kind": "update_target",
+        "reference": "engine/rebel",
+        "status": "created_earlier",
+        "created_at_line": 6
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 178,
+        "sequence": 176,
+        "kind": "update_target",
+        "reference": "engine/rebel",
+        "status": "created_earlier",
+        "created_at_line": 6
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 179,
+        "sequence": 177,
+        "kind": "update_target",
+        "reference": "engine/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 7
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 180,
+        "sequence": 178,
+        "kind": "update_target",
+        "reference": "engine/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 7
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 181,
+        "sequence": 179,
+        "kind": "update_target",
+        "reference": "engine/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 7
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 182,
+        "sequence": 180,
+        "kind": "update_target",
+        "reference": "engine/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 7
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 183,
+        "sequence": 181,
+        "kind": "update_target",
+        "reference": "engine/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 7
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 184,
+        "sequence": 182,
+        "kind": "update_target",
+        "reference": "engine/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 7
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 185,
+        "sequence": 183,
+        "kind": "update_target",
+        "reference": "engine/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 7
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 186,
+        "sequence": 184,
+        "kind": "update_target",
+        "reference": "engine/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 7
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 187,
+        "sequence": 185,
+        "kind": "update_target",
+        "reference": "engine/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 7
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 188,
+        "sequence": 186,
+        "kind": "update_target",
+        "reference": "engine/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 7
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 189,
+        "sequence": 187,
+        "kind": "update_target",
+        "reference": "engine/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 7
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 190,
+        "sequence": 188,
+        "kind": "update_target",
+        "reference": "engine/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 7
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 191,
+        "sequence": 189,
+        "kind": "update_target",
+        "reference": "engine/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 7
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 192,
+        "sequence": 190,
+        "kind": "update_target",
+        "reference": "engine/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 7
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 193,
+        "sequence": 191,
+        "kind": "update_target",
+        "reference": "engine/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 7
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 194,
+        "sequence": 192,
+        "kind": "update_target",
+        "reference": "engine/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 7
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 195,
+        "sequence": 193,
+        "kind": "update_target",
+        "reference": "induction/rebel",
+        "status": "created_earlier",
+        "created_at_line": 8
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 196,
+        "sequence": 194,
+        "kind": "update_target",
+        "reference": "induction/rebel",
+        "status": "created_earlier",
+        "created_at_line": 8
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 197,
+        "sequence": 195,
+        "kind": "update_target",
+        "reference": "induction/rebel",
+        "status": "created_earlier",
+        "created_at_line": 8
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 198,
+        "sequence": 196,
+        "kind": "update_target",
+        "reference": "induction/rebel",
+        "status": "created_earlier",
+        "created_at_line": 8
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 199,
+        "sequence": 197,
+        "kind": "update_target",
+        "reference": "induction/rebel",
+        "status": "created_earlier",
+        "created_at_line": 8
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 200,
+        "sequence": 198,
+        "kind": "update_target",
+        "reference": "induction/rebel",
+        "status": "created_earlier",
+        "created_at_line": 8
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 201,
+        "sequence": 199,
+        "kind": "update_target",
+        "reference": "induction/rebel",
+        "status": "created_earlier",
+        "created_at_line": 8
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 202,
+        "sequence": 200,
+        "kind": "update_target",
+        "reference": "induction/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 9
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 203,
+        "sequence": 201,
+        "kind": "update_target",
+        "reference": "induction/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 9
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 204,
+        "sequence": 202,
+        "kind": "update_target",
+        "reference": "induction/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 9
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 205,
+        "sequence": 203,
+        "kind": "update_target",
+        "reference": "induction/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 9
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 206,
+        "sequence": 204,
+        "kind": "update_target",
+        "reference": "induction/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 9
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 207,
+        "sequence": 205,
+        "kind": "update_target",
+        "reference": "induction/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 9
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 208,
+        "sequence": 206,
+        "kind": "update_target",
+        "reference": "induction/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 9
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 209,
+        "sequence": 207,
+        "kind": "update_target",
+        "reference": "tires/rebel",
+        "status": "created_earlier",
+        "created_at_line": 11
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 210,
+        "sequence": 208,
+        "kind": "update_target",
+        "reference": "tires/rebel",
+        "status": "created_earlier",
+        "created_at_line": 11
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 211,
+        "sequence": 209,
+        "kind": "update_target",
+        "reference": "tires/rebel",
+        "status": "created_earlier",
+        "created_at_line": 11
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 212,
+        "sequence": 210,
+        "kind": "update_target",
+        "reference": "tires/rebel",
+        "status": "created_earlier",
+        "created_at_line": 11
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 213,
+        "sequence": 211,
+        "kind": "update_target",
+        "reference": "tires/rebel",
+        "status": "created_earlier",
+        "created_at_line": 11
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 214,
+        "sequence": 212,
+        "kind": "update_target",
+        "reference": "tires/rebel",
+        "status": "created_earlier",
+        "created_at_line": 11
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 215,
+        "sequence": 213,
+        "kind": "update_target",
+        "reference": "tires/rebel",
+        "status": "created_earlier",
+        "created_at_line": 11
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 216,
+        "sequence": 214,
+        "kind": "update_target",
+        "reference": "tires/rebel",
+        "status": "created_earlier",
+        "created_at_line": 11
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 217,
+        "sequence": 215,
+        "kind": "update_target",
+        "reference": "tires/rebel",
+        "status": "created_earlier",
+        "created_at_line": 11
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 218,
+        "sequence": 216,
+        "kind": "update_target",
+        "reference": "tires/rebel",
+        "status": "created_earlier",
+        "created_at_line": 11
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 219,
+        "sequence": 217,
+        "kind": "update_target",
+        "reference": "tires/rebel",
+        "status": "created_earlier",
+        "created_at_line": 11
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 220,
+        "sequence": 218,
+        "kind": "update_target",
+        "reference": "tires/rebel",
+        "status": "created_earlier",
+        "created_at_line": 11
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 221,
+        "sequence": 219,
+        "kind": "update_target",
+        "reference": "tires/rebel",
+        "status": "created_earlier",
+        "created_at_line": 11
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 222,
+        "sequence": 220,
+        "kind": "update_target",
+        "reference": "tires/rebel",
+        "status": "created_earlier",
+        "created_at_line": 11
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 223,
+        "sequence": 221,
+        "kind": "update_target",
+        "reference": "tires/rebel",
+        "status": "created_earlier",
+        "created_at_line": 11
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 224,
+        "sequence": 222,
+        "kind": "update_target",
+        "reference": "tires/rebel",
+        "status": "created_earlier",
+        "created_at_line": 11
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 225,
+        "sequence": 223,
+        "kind": "update_target",
+        "reference": "tires/rebel",
+        "status": "created_earlier",
+        "created_at_line": 11
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 226,
+        "sequence": 224,
+        "kind": "update_target",
+        "reference": "tires/rebel",
+        "status": "created_earlier",
+        "created_at_line": 11
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 227,
+        "sequence": 225,
+        "kind": "update_target",
+        "reference": "tires/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 12
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 228,
+        "sequence": 226,
+        "kind": "update_target",
+        "reference": "tires/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 12
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 229,
+        "sequence": 227,
+        "kind": "update_target",
+        "reference": "tires/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 12
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 230,
+        "sequence": 228,
+        "kind": "update_target",
+        "reference": "tires/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 12
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 231,
+        "sequence": 229,
+        "kind": "update_target",
+        "reference": "tires/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 12
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 232,
+        "sequence": 230,
+        "kind": "update_target",
+        "reference": "tires/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 12
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 233,
+        "sequence": 231,
+        "kind": "update_target",
+        "reference": "tires/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 12
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 234,
+        "sequence": 232,
+        "kind": "update_target",
+        "reference": "tires/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 12
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 235,
+        "sequence": 233,
+        "kind": "update_target",
+        "reference": "tires/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 12
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 236,
+        "sequence": 234,
+        "kind": "update_target",
+        "reference": "tires/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 12
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 237,
+        "sequence": 235,
+        "kind": "update_target",
+        "reference": "tires/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 12
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 238,
+        "sequence": 236,
+        "kind": "update_target",
+        "reference": "tires/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 12
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 239,
+        "sequence": 237,
+        "kind": "update_target",
+        "reference": "tires/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 12
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 240,
+        "sequence": 238,
+        "kind": "update_target",
+        "reference": "tires/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 12
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 241,
+        "sequence": 239,
+        "kind": "update_target",
+        "reference": "tires/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 12
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 242,
+        "sequence": 240,
+        "kind": "update_target",
+        "reference": "tires/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 12
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 243,
+        "sequence": 241,
+        "kind": "update_target",
+        "reference": "tires/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 12
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 244,
+        "sequence": 242,
+        "kind": "update_target",
+        "reference": "tires/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 12
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 245,
+        "sequence": 243,
+        "kind": "update_target",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 246,
+        "sequence": 244,
+        "kind": "update_target",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 247,
+        "sequence": 245,
+        "kind": "update_target",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 248,
+        "sequence": 246,
+        "kind": "update_target",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 249,
+        "sequence": 247,
+        "kind": "update_target",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 250,
+        "sequence": 248,
+        "kind": "update_target",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 251,
+        "sequence": 249,
+        "kind": "update_target",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 252,
+        "sequence": 250,
+        "kind": "update_target",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 253,
+        "sequence": 251,
+        "kind": "update_target",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 254,
+        "sequence": 252,
+        "kind": "update_target",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 255,
+        "sequence": 253,
+        "kind": "update_target",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 256,
+        "sequence": 254,
+        "kind": "update_target",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 257,
+        "sequence": 255,
+        "kind": "update_target",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 258,
+        "sequence": 256,
+        "kind": "update_target",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 259,
+        "sequence": 257,
+        "kind": "update_target",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 260,
+        "sequence": 258,
+        "kind": "update_target",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 261,
+        "sequence": 259,
+        "kind": "update_target",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 262,
+        "sequence": 260,
+        "kind": "update_target",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 263,
+        "sequence": 261,
+        "kind": "update_target",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 264,
+        "sequence": 262,
+        "kind": "update_target",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 265,
+        "sequence": 263,
+        "kind": "update_target",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 266,
+        "sequence": 264,
+        "kind": "update_target",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 267,
+        "sequence": 265,
+        "kind": "update_target",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 268,
+        "sequence": 266,
+        "kind": "update_target",
+        "reference": "transmission/rebel",
+        "status": "created_earlier",
+        "created_at_line": 13
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 269,
+        "sequence": 267,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 270,
+        "sequence": 268,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 271,
+        "sequence": 269,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 272,
+        "sequence": 270,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 273,
+        "sequence": 271,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 274,
+        "sequence": 272,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 275,
+        "sequence": 273,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 276,
+        "sequence": 274,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 277,
+        "sequence": 275,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 278,
+        "sequence": 276,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 279,
+        "sequence": 277,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 280,
+        "sequence": 278,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 281,
+        "sequence": 279,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 282,
+        "sequence": 280,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 283,
+        "sequence": 281,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 284,
+        "sequence": 282,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 285,
+        "sequence": 283,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 286,
+        "sequence": 284,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 287,
+        "sequence": 285,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 288,
+        "sequence": 286,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 289,
+        "sequence": 287,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 290,
+        "sequence": 288,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 291,
+        "sequence": 289,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 292,
+        "sequence": 290,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 293,
+        "sequence": 291,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 294,
+        "sequence": 292,
+        "kind": "update_target",
+        "reference": "transmission/rebel_top",
+        "status": "created_earlier",
+        "created_at_line": 14
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 297,
+        "sequence": 293,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 297,
+        "sequence": 293,
+        "kind": "collection_reference",
+        "reference": "engineaudio/corvette_z06_v2",
+        "status": "inventory"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 298,
+        "sequence": 294,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 298,
+        "sequence": 294,
+        "kind": "collection_reference",
+        "reference": "engineaudio/corvette_z06_v2",
+        "status": "inventory"
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 299,
+        "sequence": 295,
+        "kind": "update_target",
+        "reference": "pvehicle/rebel",
+        "status": "created_earlier",
+        "created_at_line": 10
+      },
+      {
+        "file": "Addon/SetupFiles/rebel_install.nfsms",
+        "line": 299,
+        "sequence": 295,
+        "kind": "collection_reference",
+        "reference": "engineaudio/corvette_z06_v2",
+        "status": "inventory"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "severity": "warning",
+      "code": "COLLECTION_USED_BEFORE_CREATION",
+      "message": "Collection 'frontend/rebel' is referenced before its copy_node creation on line 35.",
+      "line": 25
+    }
+  ],
+  "inventory_loaded": true,
+  "safety_note": "Analysis only. No game files or databases were modified."
+}

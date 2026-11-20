@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.old
+*.swp
+*.lock
+
+# Game files and databases
+*.bin
+*.viv
+*.dat
+*.big
+*.amod
+*.nfsms
+
+# Executables and libraries
+*.exe
+*.dll
+*.sys
+
+# Archives
+*.zip
+*.rar
+*.7z
+
+# Build output
+build/
+dist/
+output/
+reports/database-scan-*/
