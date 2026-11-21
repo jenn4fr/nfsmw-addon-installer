@@ -66,7 +66,7 @@ Tests include synthetic cross-class references, racer-only anchoring, numeric ta
 | ecar relationship | Heuristic | Exact vehicle leaf; not an explicit pvehicle reference |
 | Numeric feature extraction | Partial | Only exported scalar/vector values; no verified dimensions or drivetrain |
 | Donor ranking | Initial explainable engine | Coverage/richness, optionally shared numeric feature similarity |
-| Hybrid donor proposal | Review-only | No target mapping, typed validation or executable script generation |
+| Hybrid donor proposal | Review-only, target-aware | Explicit AMOD create mappings; field type validation and executable script generation remain pending |
 | NFSMS database validation | Implemented | Convert/check/strict dry-run only |
 | Install planning | Implemented foundation | ModLoader provisional; Ed Files unresolved |
 | File executor / rollback | Experimental | File operations only; no real-game end-to-end validation |
@@ -80,7 +80,7 @@ Tests include synthetic cross-class references, racer-only anchoring, numeric ta
 2. Improve AMOD parsing for multiline nested arrays/objects, quoted braces, duplicate fields and comments while retaining raw source.
 3. Extract more trustworthy target-car hints from addon NFSMS and package metadata without guessing physical properties.
 4. Build per-factor donor scores and confidence/missing-data penalties using validated field types.
-5. Resolve target collection mappings and generate deterministic review-only AMOD candidates; run Attribulina check and strict dry-run before any proposal can be considered executable.
+5. Validate every proposed scalar against Attribulina class headers, then generate deterministic candidate AMOD and run Attribulina check plus strict dry-run.
 6. Independently verify ModLoader mappings; resolve Ed Files and MWPS.
 7. Add package-specific staging, failure-injection tests and end-to-end tests using temporary game copies.
 

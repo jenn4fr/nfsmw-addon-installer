@@ -327,3 +327,12 @@ The v0.3.0 suite has **41 passing tests**. It adds tests for parent path parsing
 7. Verify ModLoader/Ed Files/MWPS mappings and complete install/uninstall tests.
 
 Never treat this release as a completed installer. Database writes remain out of scope, and the experimental file executor must not be used on a live game without package-specific mapping verification and user approval.
+
+
+## v0.4.0 — Target-aware Hybrid proposal update
+
+Current feature branch target: `feature/donor-engine-v0.4.0`. The `donor-assist` command accepts optional `--amod <converted-target.amod>`. `parse_target_collections()` reads only explicit `create class/target from class/source` directives where class is one of the performance classes. `build_configuration_proposal()` uses these mappings to map selected donor vehicle base/base-variant and `_top` records to target collection names. When target mapping is supplied, it excludes global defaults and unrelated shared records and skips unmapped classes. Without `--amod`, legacy review-only behavior remains for compatibility.
+
+AMC Rebel v0.4.0 test report: `reports/REBEL-hybrid-proposal-v0.4.0.json`. Using catalogue `reports/donor-catalogue-v0.3.0.json` and target AMOD `reports/REBEL-attribulina.amod`, the completeness shortlist contains 43 candidates; `tt` ranks first at 87.26. This is a configuration coverage/richness score only, not physical compatibility. The report maps 13 donor collection records across pvehicle, engine, induction, transmission, brakes, chassis and tires to explicit Rebel target collection names. It is JSON review data only. No Attribulina apply or live database write was performed.
+
+Validation: Python compilation passed; 44/44 unit tests passed. Next: validate proposed fields against class header types, then generate a temporary candidate AMOD and run Attribulina check plus strict dry-run. Do not treat current JSON as an executable install artifact.

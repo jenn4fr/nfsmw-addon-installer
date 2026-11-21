@@ -47,3 +47,49 @@ class DonorMatcherTests(unittest.TestCase):
     def test_unknown_target_profile_is_rejected(self):
         with self.assertRaises(ValueError):
             rank_donors(self.catalogue, target_profile="missing")
+
+class TargetCollectionMappingTests(unittest.TestCase):
+    def test_parses_explicit_create_directives_only(self):
+        from nfsmw_installer.donor_matcher import parse_target_collections
+        text = '''create engine/rebel from engine/punto under engine/default in vault db
+create engine/rebel_top from engine/punto_top under engine/rebel in vault db
+create frontend/rebel from frontend/audi under frontend/default in vault db
+'''
+        self.assertEqual(parse_target_collections(text), {"engine": "engine/rebel"})
+
+    def test_proposal_maps_base_and_top_targets_from_amod_mapping(self):
+        from nfsmw_installer.donor_matcher import build_configuration_proposal
+        catalogue = {"vehicle_profiles": {"attributes.bin:donor": {
+            "name": "donor", "database": "attributes.bin", "configurations": {
+                "engine": [
+                    {"collection": "engine/donor", "fields": {"Power": 300}},
+                    {"collection": "engine/donor_top", "fields": {"Power": 400}},
+                ]
+            }
+        }}}
+        proposal = build_configuration_proposal(
+            catalogue, "attributes.bin:donor", "Rebel",
+            target_collections={"engine": "engine/rebel"})
+        mapped = [x["target_collection"] for x in proposal["proposals"]]
+        self.assertEqual(mapped, ["engine/rebel", "engine/rebel_top"])
+        self.assertFalse(proposal["executable"])
+
+    def test_target_aware_proposal_excludes_global_defaults_and_unmapped_classes(self):
+        from nfsmw_installer.donor_matcher import build_configuration_proposal
+        catalogue = {"vehicle_profiles": {"attributes.bin:donor": {
+            "name": "donor", "database": "attributes.bin", "configurations": {
+                "engine": [
+                    {"collection": "engine/default", "fields": {"Power": 1}},
+                    {"collection": "engine/donor", "fields": {"Power": 300}},
+                ],
+                "rigidbodyspecs": [
+                    {"collection": "rigidbodyspecs/racers", "fields": {"GRAVITY": 1}}
+                ],
+            }
+        }}}
+        proposal = build_configuration_proposal(
+            catalogue, "attributes.bin:donor", "Target",
+            target_collections={"engine": "engine/target"})
+        self.assertEqual(len(proposal["proposals"]), 1)
+        self.assertEqual(proposal["proposals"][0]["donor_collection"], "engine/donor")
+        self.assertEqual(proposal["proposals"][0]["target_collection"], "engine/target")

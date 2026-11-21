@@ -182,3 +182,19 @@ Review every plan before execution. The current ModLoader path mapping is provis
 ## Project evidence
 
 The AMC Rebel sample package was inspected and its NFSMS conversion/check/strict dry-run was accepted by Attribulina. A read-only plan identified ModLoader payloads and an unresolved Ed Files mapping. No live database write was performed. See `reports/` and `docs/AI_HANDOFF.md` for the evidence and context.
+
+
+### Target-aware Hybrid proposal (v0.4.0)
+
+Pass the converted target AMOD with `--amod`. The tool reads only explicit `create` directives and uses those target collection names when building a review-only proposal:
+
+```bash
+python -m nfsmw_installer.cli donor-assist \
+  "/path/to/addon-folder" \
+  --catalogue reports/donor-catalogue-v0.3.0.json \
+  --target "AMC Rebel" --donor tt \
+  --amod reports/REBEL-attribulina.amod \
+  -o reports/REBEL-hybrid-proposal-v0.4.0.json
+```
+
+Only donor base/base-variant and `_top` records are considered for mapped classes. Global defaults and unrelated shared collections are excluded. Unmapped classes are not proposed. This mapping is a review aid, not proof of field type compatibility or physical fitment. The output remains non-executable JSON; run a separate Attribulina check/strict dry-run on any future candidate AMOD before considering it validated.

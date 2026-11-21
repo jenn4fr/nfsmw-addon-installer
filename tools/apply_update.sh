@@ -13,7 +13,7 @@ if [[ -n "$(git status --porcelain)" ]]; then
   exit 2
 fi
 git remote get-url origin >/dev/null 2>&1 || { echo "ERROR: origin remote is missing." >&2; exit 2; }
-BRANCH="feature/donor-engine-v0.3.0"
+BRANCH="feature/donor-engine-v0.4.0"
 git fetch origin --prune
 if git show-ref --verify --quiet "refs/heads/$BRANCH"; then
   git switch "$BRANCH"
@@ -86,7 +86,7 @@ if git diff --cached --quiet; then echo "No changes to commit."; exit 0; fi
 MESSAGE="$(python - "$ZIP" <<'PY'
 import json,sys,zipfile
 m=json.loads(zipfile.ZipFile(sys.argv[1]).read('manifest.json'))
-print(m.get('commit_message','Complete donor assistant and safe file workflow'))
+print(m.get('commit_message','Add target-aware hybrid configuration proposals'))
 PY
 )"
 git commit -m "$MESSAGE"

@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.4.0 — Target-aware configuration intelligence
+
+- Added parsing of explicit Attribulina `create class/target from class/source` directives to discover target collection names from a converted add-on AMOD.
+- Added `donor-assist --amod` to attach those grounded target mappings to a review-only Hybrid proposal.
+- Restricted mapped proposals to the selected donor's base/base-variant and `_top` records; global defaults and unrelated shared records are excluded.
+- Proposals now identify exact target collection paths for mapped performance classes while leaving unmapped classes out of the mapped proposal.
+- Generated the AMC Rebel review report using the supplied v0.3.0 donor catalogue and validated Rebel AMOD.
+- No executable AMOD/NFSMS is generated; no Attribulina apply, database write, or game installation is performed.
+- Added target mapping/parser tests. 44/44 tests pass.
+
+
 ## 0.3.0 — Vehicle intelligence foundation
 
 - Replaced broad leaf-only grouping with `pvehicle/racers`-anchored vehicle profiles.

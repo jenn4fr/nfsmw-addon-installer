@@ -13,7 +13,7 @@ from .attribulina import AttribulinaAdapter
 from .inventory import build_inventory, write_inventory
 from .donor_catalogue import build_donor_catalogue, write_donor_catalogue
 from .planner import build_install_plan
-from .donor_matcher import rank_donors, build_configuration_proposal, write_json
+from .donor_matcher import rank_donors, build_configuration_proposal, parse_target_collections, write_json
 from .apply_plan import apply_file_plan, rollback_journal
 
 
@@ -297,7 +297,15 @@ def donor_assist_command(args):
         if key is None:
             print(f"ERROR: donor not found: {args.donor}", file=sys.stderr)
             return 2
-        result["configuration_proposal"] = build_configuration_proposal(catalogue, key, target)
+        target_collections = None
+        if args.amod:
+            amod_path = resolve_path(args.amod).resolve()
+            if not amod_path.is_file():
+                print(f"ERROR: target AMOD not found: {amod_path}", file=sys.stderr)
+                return 2
+            target_collections = parse_target_collections(amod_path.read_text(encoding="utf-8", errors="replace"))
+        result["configuration_proposal"] = build_configuration_proposal(
+            catalogue, key, target, target_collections=target_collections)
     output = resolve_path(args.output)
     write_json(result, output)
     print("Target vehicle:", target)
@@ -434,6 +442,7 @@ def main(argv=None):
     assist_cmd.add_argument("--target", help="Target vehicle name; defaults to package folder name")
     assist_cmd.add_argument("--target-profile", help="Optional existing vehicle profile key/name for measured local-feature comparison")
     assist_cmd.add_argument("--donor", help="Optional donor profile key or vehicle leaf name")
+    assist_cmd.add_argument("--amod", help="Optional converted target AMOD; explicit create directives map target collections")
     assist_cmd.add_argument("--database", default="attributes.bin")
     assist_cmd.add_argument("--limit", type=int, default=10)
     assist_cmd.add_argument("-o", "--output", default="reports/donor-assist.json")

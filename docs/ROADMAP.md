@@ -64,3 +64,11 @@ Remaining: independently verify ModLoader destination mapping, resolve Ed Files,
 - Dry-run by default; explicit user approval for writes.
 - All operations journaled and recoverable.
 - Tests pass and package-specific plan is reviewed before installation.
+
+
+## v0.4.0 completed — Target-aware proposal foundation
+
+- Parse target collection names from explicit Attribulina AMOD `create` directives.
+- Map selected donor base/base-variant and top-upgrade scalar proposals to target collection names.
+- Exclude global defaults and unmapped classes from target-aware proposals.
+- Keep proposals review-only; typed validation and candidate AMOD generation are the next gates.

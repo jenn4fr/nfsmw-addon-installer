@@ -177,8 +177,31 @@ def rank_donors(catalogue: dict[str, Any], *, target_name: str = "",
     }
 
 
+def parse_target_collections(amod_text: str) -> dict[str, str]:
+    """Read target class/collection names from Attribulina create directives.
+
+    Only explicit `create class/target from class/source` statements are used.
+    The parser does not infer names from the package or donor vehicle.
+    """
+    mapping: dict[str, str] = {}
+    pattern = re.compile(
+        r"^\s*create\s+([A-Za-z][A-Za-z0-9_]*)/([A-Za-z0-9_]+)\s+from\s+"
+        r"([A-Za-z][A-Za-z0-9_]*)/([A-Za-z0-9_]+)\b", re.IGNORECASE
+    )
+    for line in amod_text.splitlines():
+        match = pattern.match(line)
+        if not match:
+            continue
+        target_class, target_leaf, source_class, _source_leaf = match.groups()
+        if target_class.lower() != source_class.lower() or target_class.lower() not in PERFORMANCE_CLASSES:
+            continue
+        mapping.setdefault(target_class.lower(), f"{target_class.lower()}/{target_leaf}")
+    return mapping
+
+
 def build_configuration_proposal(catalogue: dict[str, Any], donor_key: str,
-                                target_name: str) -> dict[str, Any]:
+                                target_name: str, *,
+                                target_collections: dict[str, str] | None = None) -> dict[str, Any]:
     """Create a review-only field proposal; never emit an executable AMOD/NFSMS."""
     profiles = catalogue.get("vehicle_profiles", {})
     if donor_key not in profiles:
@@ -188,9 +211,25 @@ def build_configuration_proposal(catalogue: dict[str, Any], donor_key: str,
     proposals = []
     preserved = ["vehicle identity", "model/geometry/texture references",
                  "frontend registration", "collection identity"]
+    has_target_mapping = target_collections is not None
+    target_collections = target_collections or {}
     for cls in PERFORMANCE_CLASSES:
         records = configs.get(cls, [])
+        target_base = target_collections.get(cls)
+        if has_target_mapping and not target_base:
+            continue
+        donor_base = _candidate_name(donor).lower()
         for record in records:
+            donor_leaf = str(record.get("collection", "")).rsplit("/", 1)[-1]
+            leaf_norm = donor_leaf.lower()
+            # Ignore global defaults and unrelated shared collections. Keep only
+            # the donor's base/base-variant and top-upgrade collections.
+            if has_target_mapping:
+                if leaf_norm in {"default", "racers", "cars"}:
+                    continue
+                if not (leaf_norm == donor_base or leaf_norm == donor_base + "_base"
+                        or leaf_norm == donor_base + "_top"):
+                    continue
             fields = record.get("fields", {})
             selected = {}
             omitted = []
@@ -209,10 +248,14 @@ def build_configuration_proposal(catalogue: dict[str, Any], donor_key: str,
                     continue
                 selected[field_name] = value
             if selected or omitted:
+                # Match the common base/top upgrade pair only when the target
+                # AMOD explicitly declares the base target collection.
+                suffix = "_top" if leaf_norm.endswith("_top") else ""
+                target_collection = target_base + suffix if target_base else None
                 proposals.append({
                     "class": cls,
                     "donor_collection": record.get("collection"),
-                    "target_collection": None,
+                    "target_collection": target_collection,
                     "fields": selected,
                     "omitted_fields": omitted,
                     "status": "review-required-target-mapping",
@@ -228,8 +271,9 @@ def build_configuration_proposal(catalogue: dict[str, Any], donor_key: str,
         "excluded_classes": ["ecar", "camerainfo", "frontend", "pvehicle identity fields"],
         "executable": False,
         "writes_performed": False,
+        "target_collection_mapping": target_collections,
         "required_before_execution": [
-            "Resolve target collection names from the add-on NFSMS and local database inventory.",
+            "Confirm every target collection mapping against the add-on NFSMS and local database inventory.",
             "Validate field types against Attribulina headers for every proposed field.",
             "Review external references and dependencies; do not transplant donor collection IDs blindly.",
             "Generate AMOD and pass Attribulina check plus strict dry-run.",
