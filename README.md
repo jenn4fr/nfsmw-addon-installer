@@ -1,13 +1,13 @@
 # NFSMW Add-on Installer
 
 **Repository:** https://github.com/jenn4fr/nfsmw-addon-installer  
-**Development version:** 0.2.0  
+**Development version:** 0.3.0  
 **Target:** Need for Speed: Most Wanted (2005), PC  
 **Environment used for development:** Windows 11, Python 3.12, Git Bash
 
 A safety-first toolkit for inspecting, validating, planning, and selectively preparing NFS Most Wanted car add-ons. It now includes an explainable donor shortlist, review-only donor configuration proposals, and an opt-in transactional file-copy executor with a rollback journal.
 
-> **Important:** this is still not a fully verified one-click installer. ModLoader destination mapping remains provisional, Ed Files and MWPS handling remain unresolved, and donor scores measure available configuration coverage—not physical compatibility. Database scripts are never executed by the file installer.
+> **Important:** this is still not a fully verified one-click installer. ModLoader destination mapping remains provisional, Ed Files and MWPS handling remain unresolved, and donor scores are heuristic coverage/richness scores, optionally blended with shared numeric feature similarity—not physical compatibility guarantees. Database scripts are never executed by the file installer.
 
 ## Start here for maintainers and AI assistants
 
@@ -83,7 +83,9 @@ python -m nfsmw_installer.cli build-donor-catalogue \
   reports/database-scan-current -o reports/donor-catalogue.json
 ```
 
-The catalogue preserves ATTRIBUTES and FE_ATTRIB as separate data sets. The supplied scan snapshot produced 4,730 parsed collection records, 860 leaf-keyed profile groups, and zero export-file parse errors.
+A catalogue generated from the supplied scan is included at `reports/donor-catalogue-v0.3.0.json`; a concise validation summary is in `reports/vehicle-intelligence-validation-v0.3.0.json`.
+
+The catalogue preserves ATTRIBUTES and FE_ATTRIB as separate data sets. In the supplied scan snapshot it parsed 4,730 collection records into 86 racer-anchored profiles (43 per database), discovered 1,272 relationship edges from 1,190 recognized pvehicle references (1,188 resolved, 2 unresolved), and reported zero export-file parse errors. Profiles are anchored on `pvehicle/racers`; subsystem collections are resolved from explicit references in each `pvehicle` record, while `ecar` handling/body data is joined by exact vehicle leaf.
 
 ### 4. Donor shortlist and review-only proposal
 
@@ -93,6 +95,16 @@ python -m nfsmw_installer.cli donor-assist \
   --catalogue reports/donor-catalogue.json \
   --limit 10 \
   -o reports/donor-assist.json
+```
+
+For a target that is based on a known stock car, enable numeric comparison with a target profile:
+
+```bash
+python -m nfsmw_installer.cli donor-assist \
+  "/path/to/extracted-addon" \
+  --catalogue reports/donor-catalogue.json \
+  --target-profile attributes.bin:rx7 \
+  --limit 10 -o reports/donor-assist-rx7.json
 ```
 
 To add a proposal for a selected donor:
@@ -105,7 +117,7 @@ python -m nfsmw_installer.cli donor-assist \
   -o reports/donor-assist-punto.json
 ```
 
-The score is a configuration-coverage/richness score. It is **not** a physical compatibility score. The proposal excludes target identity fields and is explicitly non-executable. Target collection mapping, field type validation, and external reference validation are still required.
+Without a target profile, the score is a configuration-coverage/richness shortlist. If the add-on is based on a known existing vehicle, pass `--target-profile rx7` (or its `database:vehicle` key) to compare shared numeric descriptors such as mass, upgrade availability, handling-rating bounds, tensor scale and selected ecar setup values. Similarity only uses fields present on both profiles; it is **not** a physical compatibility or fitment guarantee. The proposal excludes target identity fields and is explicitly non-executable. Target collection mapping, field type validation, and external reference validation are still required.
 
 ### 5. Plan and optionally apply file operations
 
@@ -146,15 +158,19 @@ Review every plan before execution. The current ModLoader path mapping is provis
 - Attribulina adapter for conversion, check, and strict dry-run.
 - Read-only class/collection inventory and class export scanner.
 - Read-only package install planner with source/conflict checks.
-- AMOD export parser and donor catalogue builder.
-- Donor coverage shortlist with transparent factors and exclusions.
+- AMOD export parser and donor catalogue builder with `pvehicle/racers` canonical anchors.
+- Explicit pvehicle reference resolution for engine, induction, transmission, brakes, chassis, tires and other referenced subsystems.
+- ecar handling/body setup joined by exact vehicle leaf, with relationship confidence recorded.
+- Numeric feature extraction for mass, upgrade availability, handling-rating bounds, tensor scale and selected ecar scalar fields.
+- Explainable donor coverage shortlist; optional shared-numeric-feature similarity when a local target profile is supplied.
 - Review-only Hybrid proposal that filters pvehicle identity fields and preserves target identity domains.
 - Explicit opt-in file copy executor with backup journal and rollback for copied/replaced files.
 
 ## Known limitations
 
-- Donor rank is based on exported config coverage and scalar-field richness. It does not currently infer physical dimensions, drivetrain, wheelbase, body size, or handling similarity.
-- Leaf-keyed profiles are provisional groupings, not canonical vehicle identities.
+- Donor rank defaults to exported configuration coverage and scalar-field richness. With `--target-profile`, it compares shared numeric descriptors; this still does not establish physical fitment.
+- Profiles are anchored to `pvehicle/racers`; subsystem links are derived from explicit references. `ecar` association remains an exact-leaf join and is marked as such.
+- The current exports do not provide verified wheelbase/body dimensions or a dependable drivetrain classification; these must not be inferred from car names.
 - Nested AMOD/VLT parsing is intentionally incomplete; nested values remain raw text.
 - Proposal output is JSON review data, not executable AMOD/NFSMS.
 - ModLoader mapping has not been independently verified against all loader versions/package layouts.

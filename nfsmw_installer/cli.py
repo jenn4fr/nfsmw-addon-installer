@@ -287,7 +287,7 @@ def donor_assist_command(args):
         print(f"ERROR: addon folder not found: {package}", file=sys.stderr)
         return 2
     target = args.target or package.name
-    result = rank_donors(catalogue, target_name=target, limit=args.limit, database=args.database)
+    result = rank_donors(catalogue, target_name=target, limit=args.limit, database=args.database, target_profile=args.target_profile)
     if args.donor:
         key = args.donor if args.donor in catalogue.get("vehicle_profiles", {}) else None
         if key is None:
@@ -308,6 +308,7 @@ def donor_assist_command(args):
     if args.donor:
         print("Review-only configuration proposal included.")
     print("Report:", output.resolve())
+    print("Ranking basis:", result.get("ranking_basis"))
     print("Physical compatibility verified: NO")
     print("Game/database writes: NO")
     return 0
@@ -431,6 +432,7 @@ def main(argv=None):
     assist_cmd.add_argument("source", help="Extracted add-on package folder")
     assist_cmd.add_argument("--catalogue", required=True, help="donor-catalogue.json")
     assist_cmd.add_argument("--target", help="Target vehicle name; defaults to package folder name")
+    assist_cmd.add_argument("--target-profile", help="Optional existing vehicle profile key/name for measured local-feature comparison")
     assist_cmd.add_argument("--donor", help="Optional donor profile key or vehicle leaf name")
     assist_cmd.add_argument("--database", default="attributes.bin")
     assist_cmd.add_argument("--limit", type=int, default=10)

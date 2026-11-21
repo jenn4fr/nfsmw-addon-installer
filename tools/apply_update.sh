@@ -13,7 +13,7 @@ if [[ -n "$(git status --porcelain)" ]]; then
   exit 2
 fi
 git remote get-url origin >/dev/null 2>&1 || { echo "ERROR: origin remote is missing." >&2; exit 2; }
-BRANCH="feature/donor-engine-v0.2.0"
+BRANCH="feature/donor-engine-v0.3.0"
 git fetch origin --prune
 if git show-ref --verify --quiet "refs/heads/$BRANCH"; then
   git switch "$BRANCH"
@@ -75,10 +75,10 @@ PY
 }
 if ! python -m compileall -q nfsmw_installer tools tests; then echo "Compile failed; restoring backup."; rollback; exit 1; fi
 if ! python -m unittest discover -s tests -v; then echo "Tests failed; restoring backup."; rollback; exit 1; fi
-mapfile -t UPDATE_FILES < <(python - "$ZIP" <<'PY'
+mapfile -t UPDATE_FILES < <(python - "$ZIP" <<'PY' | tr -d '\r'
 import json,sys,zipfile
 m=json.loads(zipfile.ZipFile(sys.argv[1]).read('manifest.json'))
-for item in m['files']: print(item)
+for item in m['files']: print(item.rstrip('\r\n'))
 PY
 )
 git add -- "${UPDATE_FILES[@]}"

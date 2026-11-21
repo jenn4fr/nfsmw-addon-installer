@@ -32,10 +32,27 @@ ATTRIBUTES.BIN + FE_ATTRIB.BIN + Attribulina
              complete-export.amod files
                     |
                     v
-             donor_catalogue.py
+             donor_catalogue.parse_amod_export
+                    |  parent paths + top-level fields
+                    v
+             pvehicle/racers canonical vehicle anchors
+                    |
+                    +--> explicit class/collection refs from pvehicle fields
+                    |        |
+                    |        v
+                    |    referenced subsystem records
+                    |
+                    +--> ecar exact-leaf association (lower confidence)
                     |
                     v
-             donor-catalogue.json (read-only, preliminary)
+             donor-catalogue.json + relationship audit
+                    |
+                    v
+             donor_matcher.rank_donors
+                    |-- coverage/richness shortlist by default
+                    |-- optional shared numeric feature similarity
+                    v
+             donor-assist.json / review-only Hybrid proposal
 
 Addon folder + optional game root
         |
@@ -44,50 +61,37 @@ planner.py
         |
         v
 install-plan.json (operations/conflicts/unresolved; no execution)
+        |
+        v
+apply_plan.apply_file_plan (dry-run unless explicit execute)
+        |
+        v
+backup + journal -> rollback_journal
 ```
+
+## Vehicle relationship model (v0.3.0)
+
+- `pvehicle/racers` records are the canonical starting point for playable road-car candidates in the inspected MW database export.
+- A pvehicle record contains explicit references such as `engine = [engine/rx7, engine/rx7_top]`, `brakes = [...]`, `tires = [...]`, and related subsystem collections. The catalogue resolves these against the named class exports and retains each relationship's source field.
+- `ecar` body/handling data is joined by matching vehicle leaf because the inspected exports do not establish a direct pvehicle reference. This relationship is marked `exact-vehicle-leaf`, not treated as equally authoritative.
+- `MASS`, upgrade availability, `HandlingRating`, `TENSOR_SCALE`, and selected ecar scalar fields are exported numeric descriptors. Shared numeric comparison is a heuristic, not a simulation of physical compatibility.
+- ATTRIBUTES.BIN and FE_ATTRIB.BIN remain separate catalogues/profiles. Never merge them solely because their collection leaves match.
 
 ## Important data distinctions
 
-- `ATTRIBUTES.BIN` and `FE_ATTRIB.BIN` are separate source databases and remain separate in the catalogue.
-- A **class** contains collections; a collection path may be nested. A leaf collection name is not guaranteed unique.
-- A `pvehicle` collection, an `ecar` collection, and a frontend registration may refer to related concepts but must not be treated as interchangeable without parsing actual references.
-- Complete AMOD class exports are the primary data source for the current donor catalogue. The original per-collection `get` loop generated many `no collection` errors for nested paths.
-- Simple scalar values are typed by the preliminary parser. Complex values remain raw text and must not be used in numerical scoring until parsed and validated.
+- A **class** contains collections; the parent path is meaningful and must be preserved.
+- A **pvehicle** collection is a playable-vehicle configuration anchor only when it is under `pvehicle/racers` in the inspected schema.
+- A collection reference is a class/path pointer. Resolve it against the exact class export; do not assume same-name collections are interchangeable.
+- A leaf-only ecar match is weaker than an explicit VLT reference and must remain labeled.
+- Complex AMOD values remain raw text unless a dedicated parser validates their structure and type.
 
 ## Safety architecture
-
-The current code separates analysis from execution:
 
 - Inspectors read package files and emit reports.
 - Inventory/scanner read database metadata and exports.
 - Attribulina adapter performs conversion/check/dry-run only.
 - Planner emits operations but never runs them.
-- Donor catalogue emits data but never creates/apply database changes.
+- Donor catalogue/matcher emit read-only reports and non-executable proposals.
+- File executor is separate, dry-run by default, file-only, and journaled. Database scripts are skipped.
 
-Future execution should be a separate layer with explicit approvals, staged writes, backups, hashes, rollback, and tests. Do not add write behavior as a side effect of an existing read-only command.
-
-## Added in version 0.2.0
-
-```text
-Donor catalogue JSON
-        |
-        v
- donor_matcher.rank_donors
-        |                         donor_matcher.build_configuration_proposal
-        v                                         |
- explainable coverage shortlist                  v
-                                        review-only Hybrid proposal
-                                        (not executable AMOD/NFSMS)
-
-Reviewed install-plan JSON
-        |
-        v
- apply_plan.apply_file_plan
-        |-- dry-run unless explicit execute=True
-        |-- file copies only; database scripts skipped
-        |-- backup existing files; write install journal
-        v
- rollback_journal(install-journal.json)
-```
-
-The donor score is based on exported class coverage and scalar-field richness, not physical compatibility. The current profile key is `database:leaf`; canonical vehicle relationship discovery is still required. The file executor is experimental and must not be treated as a universal installer until ModLoader/Ed Files mappings are verified.
+Future database execution requires separate design: field-type validation, dependency resolution, database backup, staged apply, post-apply verification, rollback and explicit user approval. Do not add writes as side effects of catalogue or donor commands.

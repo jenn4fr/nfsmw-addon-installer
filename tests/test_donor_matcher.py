@@ -29,3 +29,21 @@ class DonorMatcherTests(unittest.TestCase):
         self.assertEqual(pv["fields"], {"MASS":1200})
         self.assertFalse(p["executable"])
         self.assertIn("vehicle identity", p["preserved_identity_domains"])
+
+    def test_target_profile_adds_numeric_similarity_explanation(self):
+        self.catalogue["vehicle_profiles"]["attributes.bin:donor_a"]["features"] = {"pvehicle.MASS": 1200}
+        self.catalogue["vehicle_profiles"]["attributes.bin:donor_b"]["features"] = {"pvehicle.MASS": 1800}
+        self.catalogue["vehicle_profiles"]["attributes.bin:target"] = {
+            "name": "target", "database": "attributes.bin", "features": {"pvehicle.MASS": 1250},
+            "configurations": {"pvehicle": [{"collection": "pvehicle/target", "fields": {"MASS": 1250}}]},
+        }
+        result = rank_donors(self.catalogue, target_name="new-addon", target_profile="target")
+        by_name = {item["name"]: item for item in result["recommendations"]}
+        self.assertGreater(by_name["donor_a"]["feature_similarity"]["score"],
+                           by_name["donor_b"]["feature_similarity"]["score"])
+        self.assertIn("numeric feature similarity", result["ranking_basis"])
+        self.assertNotIn("target", [item["name"] for item in result["recommendations"]])
+
+    def test_unknown_target_profile_is_rejected(self):
+        with self.assertRaises(ValueError):
+            rank_donors(self.catalogue, target_profile="missing")

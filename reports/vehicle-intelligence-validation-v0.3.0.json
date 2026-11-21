@@ -1,0 +1,248 @@
+{
+  "report_version": 1,
+  "project_version": "0.3.0",
+  "source_scan": "reports/database-scan-20261120_212135",
+  "read_only": true,
+  "collection_records_parsed": 4730,
+  "vehicle_profiles_total": 86,
+  "vehicle_profiles_by_database": {
+    "attributes.bin": 43,
+    "fe_attrib.bin": 43
+  },
+  "relationship_edges": 1272,
+  "recognized_pvehicle_references": 1190,
+  "resolved_references": 1188,
+  "unresolved_references": 2,
+  "export_parse_errors": 0,
+  "amc_rebel_stock_profile_found": false,
+  "amc_rebel_donor_shortlist": [
+    {
+      "rank": 1,
+      "vehicle": "tt",
+      "score": 87.26,
+      "coverage_score": 84.07,
+      "available_classes": [
+        "pvehicle",
+        "engine",
+        "induction",
+        "transmission",
+        "brakes",
+        "chassis",
+        "tires",
+        "rigidbodyspecs"
+      ],
+      "missing_classes": [
+        "acceltrans",
+        "nos",
+        "shiftpattern"
+      ],
+      "reason": "8/11 performance classes present; 165 exported scalar fields."
+    },
+    {
+      "rank": 2,
+      "vehicle": "bmwm3gtre46",
+      "score": 85.84,
+      "coverage_score": 82.3,
+      "available_classes": [
+        "pvehicle",
+        "engine",
+        "induction",
+        "transmission",
+        "brakes",
+        "chassis",
+        "tires",
+        "nos"
+      ],
+      "missing_classes": [
+        "acceltrans",
+        "shiftpattern",
+        "rigidbodyspecs"
+      ],
+      "reason": "8/11 performance classes present; 105 exported scalar fields."
+    },
+    {
+      "rank": 3,
+      "vehicle": "sl65",
+      "score": 85.44,
+      "coverage_score": 82.3,
+      "available_classes": [
+        "pvehicle",
+        "engine",
+        "induction",
+        "transmission",
+        "brakes",
+        "chassis",
+        "tires",
+        "nos"
+      ],
+      "missing_classes": [
+        "acceltrans",
+        "shiftpattern",
+        "rigidbodyspecs"
+      ],
+      "reason": "8/11 performance classes present; 98 exported scalar fields."
+    },
+    {
+      "rank": 4,
+      "vehicle": "56corvette",
+      "score": 82.3,
+      "coverage_score": 77.88,
+      "available_classes": [
+        "pvehicle",
+        "engine",
+        "induction",
+        "transmission",
+        "brakes",
+        "chassis",
+        "tires"
+      ],
+      "missing_classes": [
+        "acceltrans",
+        "nos",
+        "shiftpattern",
+        "rigidbodyspecs"
+      ],
+      "reason": "7/11 performance classes present; 127 exported scalar fields."
+    },
+    {
+      "rank": 5,
+      "vehicle": "911turbo",
+      "score": 82.3,
+      "coverage_score": 77.88,
+      "available_classes": [
+        "pvehicle",
+        "engine",
+        "induction",
+        "transmission",
+        "brakes",
+        "chassis",
+        "tires"
+      ],
+      "missing_classes": [
+        "acceltrans",
+        "nos",
+        "shiftpattern",
+        "rigidbodyspecs"
+      ],
+      "reason": "7/11 performance classes present; 134 exported scalar fields."
+    },
+    {
+      "rank": 6,
+      "vehicle": "997s",
+      "score": 82.3,
+      "coverage_score": 77.88,
+      "available_classes": [
+        "pvehicle",
+        "engine",
+        "induction",
+        "transmission",
+        "brakes",
+        "chassis",
+        "tires"
+      ],
+      "missing_classes": [
+        "acceltrans",
+        "nos",
+        "shiftpattern",
+        "rigidbodyspecs"
+      ],
+      "reason": "7/11 performance classes present; 141 exported scalar fields."
+    },
+    {
+      "rank": 7,
+      "vehicle": "a3",
+      "score": 82.3,
+      "coverage_score": 77.88,
+      "available_classes": [
+        "pvehicle",
+        "engine",
+        "induction",
+        "transmission",
+        "brakes",
+        "chassis",
+        "tires"
+      ],
+      "missing_classes": [
+        "acceltrans",
+        "nos",
+        "shiftpattern",
+        "rigidbodyspecs"
+      ],
+      "reason": "7/11 performance classes present; 141 exported scalar fields."
+    },
+    {
+      "rank": 8,
+      "vehicle": "a4",
+      "score": 82.3,
+      "coverage_score": 77.88,
+      "available_classes": [
+        "pvehicle",
+        "engine",
+        "induction",
+        "transmission",
+        "brakes",
+        "chassis",
+        "tires"
+      ],
+      "missing_classes": [
+        "acceltrans",
+        "nos",
+        "shiftpattern",
+        "rigidbodyspecs"
+      ],
+      "reason": "7/11 performance classes present; 141 exported scalar fields."
+    },
+    {
+      "rank": 9,
+      "vehicle": "carreragt",
+      "score": 82.3,
+      "coverage_score": 77.88,
+      "available_classes": [
+        "pvehicle",
+        "engine",
+        "induction",
+        "transmission",
+        "brakes",
+        "chassis",
+        "tires"
+      ],
+      "missing_classes": [
+        "acceltrans",
+        "nos",
+        "shiftpattern",
+        "rigidbodyspecs"
+      ],
+      "reason": "7/11 performance classes present; 134 exported scalar fields."
+    },
+    {
+      "rank": 10,
+      "vehicle": "caymans",
+      "score": 82.3,
+      "coverage_score": 77.88,
+      "available_classes": [
+        "pvehicle",
+        "engine",
+        "induction",
+        "transmission",
+        "brakes",
+        "chassis",
+        "tires"
+      ],
+      "missing_classes": [
+        "acceltrans",
+        "nos",
+        "shiftpattern",
+        "rigidbodyspecs"
+      ],
+      "reason": "7/11 performance classes present; 141 exported scalar fields."
+    }
+  ],
+  "ranking_interpretation": "Configuration coverage/richness only; not physical compatibility.",
+  "limitations": [
+    "AMC Rebel is not a stock vehicle profile in this scan; shortlist is configuration completeness/richness, not measured compatibility.",
+    "Only explicit pvehicle class/collection references are resolved for subsystem collections.",
+    "ecar handling/body setup is associated by exact vehicle leaf.",
+    "No verified wheelbase, body dimensions or drivetrain classification was extracted.",
+    "No game database writes were performed."
+  ]
+}

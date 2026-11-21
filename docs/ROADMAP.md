@@ -1,51 +1,57 @@
-# Roadmap
+# Roadmap — v0.3.0 baseline
 
-## Stage 1 — Analysis and validation foundation **Complete**
+## Stage 1 — Analysis and validation foundation **Implemented foundation**
 - Package inspection, partial NFSMS parsing, findings and dependency graph.
 - Read-only database inventory and Attribulina conversion/check/strict dry-run.
 - Read-only installation plan and source/conflict reporting.
 
-## Stage 2 — Donor data foundation **Complete, initial**
-- Parse complete AMOD class exports.
-- Keep ATTRIBUTES.BIN and FE_ATTRIB.BIN separate.
-- Produce leaf-keyed vehicle configuration groups.
+## Stage 2 — Vehicle relationship discovery **Initial implementation**
+- Canonical vehicle anchors from `pvehicle/racers`.
+- Explicit subsystem references resolved from pvehicle collection fields.
+- Relationship audit with resolved/unresolved status.
+- ecar handling/body data joined by exact vehicle leaf, with lower-confidence labeling.
+- Separate profiles for ATTRIBUTES.BIN and FE_ATTRIB.BIN.
 
-## Stage 3 — Donor shortlist **Initial implementation**
-- Rank road-car candidates by configuration coverage and scalar-field richness.
-- Explain available/missing classes.
-- Explicitly disclose that ranking is not physical compatibility.
+Remaining: validate all relationships against type headers and additional database snapshots; determine reliable ecar/identity/frontend references.
 
-Acceptance still needed: canonical identity mapping, target profile extraction, measurable physical similarity, and data-derived confidence.
+## Stage 3 — Vehicle feature extraction **Partial**
+- Extract mass, upgrade availability, handling-rating bounds, tensor scale, selected ecar ride height/camber/steering/wheel fields.
 
-## Stage 4 — Hybrid configuration proposal **Review-only foundation**
+Remaining: parse complex vectors/arrays safely; identify verified drivetrain, wheelbase, body dimensions, tire dimensions and other useful features if the game data actually exposes them. Do not infer missing values.
+
+## Stage 4 — Donor matching **Initial explainable engine**
+- Top-N shortlist by configuration coverage and scalar-field richness.
+- Optional numeric feature similarity against a supplied local target profile.
+- Per-candidate available/missing classes and reasons.
+
+Remaining: confidence-calibrated per-factor scoring, meaningful missing-data penalties, target hints from add-on NFSMS/package data, and validation against known donor choices. Scores are not physical-fitment guarantees.
+
+## Stage 5 — Hybrid configuration proposal **Review-only foundation**
 - Selective class/field proposal with target identity preservation.
-- Exclude model/identity references and avoid copying full donor car.
-- Mark unresolved target mappings and validation requirements.
+- Exclude model/identity references and avoid copying a full donor car.
 
-Acceptance still needed: cross-class relationship resolution, field-type validation, external reference analysis, deterministic target-specific AMOD generation, Attribulina check and strict dry-run.
+Remaining: typed schema validation, target collection mapping, dependency/reference resolution, deterministic AMOD generation and Attribulina check/strict dry-run. Do not generate executable output until these are proven.
 
-## Stage 5 — File execution and recovery **Experimental foundation**
+## Stage 6 — File execution and recovery **Experimental foundation**
 - Explicit `--execute` gate; dry-run default.
-- Copy file operations only; database scripts skipped.
+- File copies only; database scripts skipped.
 - Backup overwritten files, write journal, rollback copied/replaced files.
 
-Acceptance still needed: verify ModLoader destination mapping, test folder rollback and failure injection, validate paths against symlinks/races, package-specific end-to-end tests, and review backup retention.
+Remaining: independently verify ModLoader destination mapping, resolve Ed Files, test folder rollback/failure injection/symlink edge cases, and run representative package tests in a temporary game copy.
 
-## Stage 6 — Package compatibility
-- Verify ModLoader layout against loader source/logs and multiple real packages.
+## Stage 7 — Package compatibility **Pending**
+- Verify ModLoader layout against loader behavior and multiple real packages.
 - Resolve Ed Files config/resource destinations.
 - Add safe MWPS/binary patch handling only after format documentation and validation.
-- Add install profile for add-on versus replacement car.
+- Support add-on versus replacement profiles.
 
-## Stage 7 — Database configuration workflow
-- Discover canonical vehicle relationships and typed schema.
-- Generate reviewable AMOD from approved field mappings.
-- Require backup of both databases, Attribulina check, strict dry-run, explicit confirmation, post-apply verification, and rollback.
-- Never make database changes part of the file-only executor.
+## Stage 8 — Database configuration workflow **Pending**
+- Generate reviewable AMOD from approved target-specific field mappings.
+- Require backups of both databases, Attribulina check, strict dry-run, explicit confirmation, post-apply verification and rollback.
+- Keep database changes separate from file installation.
 
-## Stage 8 — Productization
-- Uninstall preview and manifest-based uninstall.
-- GUI only if CLI workflow is stable.
+## Stage 9 — Productization **Pending**
+- Manifest-based uninstall preview and execution.
 - CI on supported Python versions and Windows.
 - End-to-end tests against temporary copies and multiple real add-on packages.
 - Release documentation and migration notes.

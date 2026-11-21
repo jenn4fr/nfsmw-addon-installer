@@ -61,8 +61,36 @@ def _profile_metrics(profile: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _feature_similarity(target: dict[str, Any], candidate: dict[str, Any]) -> dict[str, Any]:
+    """Compare only shared numeric feature keys; missing fields are not guessed."""
+    left = target.get("features", {})
+    right = candidate.get("features", {})
+    comparable = []
+    for key in sorted(set(left) & set(right)):
+        a, b = left[key], right[key]
+        if isinstance(a, (int, float)) and not isinstance(a, bool) and isinstance(b, (int, float)) and not isinstance(b, bool):
+            scale = max(abs(float(a)), abs(float(b)), 1.0)
+            distance = min(1.0, abs(float(a) - float(b)) / scale)
+            comparable.append((key, round((1.0 - distance) * 100, 2)))
+        elif (isinstance(a, list) and isinstance(b, list) and len(a) == len(b)
+              and a and all(isinstance(x, (int, float)) and not isinstance(x, bool) for x in a + b)):
+            pair_scores = []
+            for av, bv in zip(a, b):
+                scale = max(abs(float(av)), abs(float(bv)), 1.0)
+                pair_scores.append((1.0 - min(1.0, abs(float(av) - float(bv)) / scale)) * 100)
+            comparable.append((key, round(sum(pair_scores) / len(pair_scores), 2)))
+    if not comparable:
+        return {"score": 0.0, "matched_features": 0, "features": [],
+                "warning": "No shared numeric target features; no similarity can be established."}
+    return {"score": round(sum(score for _, score in comparable) / len(comparable), 2),
+            "matched_features": len(comparable),
+            "features": [{"field": key, "similarity": score} for key, score in comparable],
+            "warning": "Similarity uses only shared numeric scalar fields; it is not a physical fitment test."}
+
+
 def rank_donors(catalogue: dict[str, Any], *, target_name: str = "",
-                limit: int = 10, database: str = "attributes.bin") -> dict[str, Any]:
+                limit: int = 10, database: str = "attributes.bin",
+                target_profile: str | None = None) -> dict[str, Any]:
     """Rank real vehicle profiles by configuration coverage and explain the score.
 
     Without target physics, this is a completeness shortlist, not a claim that
@@ -71,6 +99,21 @@ def rank_donors(catalogue: dict[str, Any], *, target_name: str = "",
     if limit < 1 or limit > 100:
         raise ValueError("limit must be between 1 and 100")
     target_norm = _norm(target_name)
+    target_data = None
+    target_profile_key = None
+    if target_profile:
+        profiles = catalogue.get("vehicle_profiles", {})
+        if target_profile in profiles:
+            target_profile_key = target_profile
+            target_data = profiles[target_profile]
+        else:
+            found = next(((k, p) for k, p in profiles.items()
+                          if _norm(str(p.get("name", ""))) == _norm(target_profile)
+                          and p.get("database", "").lower() == database.lower()), None)
+            if found:
+                target_profile_key, target_data = found
+        if target_data is None:
+            raise ValueError(f"target profile not found in database {database}: {target_profile}")
     candidates = []
     for key, profile in catalogue.get("vehicle_profiles", {}).items():
         if profile.get("database", "").lower() != database.lower():
@@ -83,20 +126,27 @@ def rank_donors(catalogue: dict[str, Any], *, target_name: str = "",
         # Police, traffic, and helicopter configurations are not normal road-car donors.
         if any(any(token in path for token in ("/cops/", "/choppers/", "/traffic/")) for path in pvehicle_paths):
             continue
-        if not name or name.lower() in {"default", "racers", "cops", "traffic", "choppers"} or (target_norm and _norm(name) == target_norm):
+        if (not name or name.lower() in {"default", "racers", "cops", "traffic", "choppers"}
+                or (target_norm and _norm(name) == target_norm)
+                or (target_profile_key and key.lower() == target_profile_key.lower())):
             continue
         metrics = _profile_metrics(profile)
-        # Avoid duplicate entries from same-name aliases and non-vehicle generic nodes.
         if metrics["record_count"] == 0:
             continue
+        similarity = _feature_similarity(target_data, profile) if target_data else None
+        final_score = metrics["score"] if similarity is None else round(metrics["score"] * 0.55 + similarity["score"] * 0.45, 2)
+        reasons = [
+            f"{len(metrics['available_classes'])}/{len(PERFORMANCE_CLASSES)} performance classes present",
+            f"{metrics['field_count']} exported scalar fields",
+        ]
+        if similarity is not None:
+            reasons.append(f"{similarity['matched_features']} comparable numeric features; similarity {similarity['score']}%")
         candidates.append({
             "key": key, "name": name, "database": profile.get("database"),
             **metrics,
-            "reason": (
-                f"{len(metrics['available_classes'])}/{len(PERFORMANCE_CLASSES)} "
-                f"performance classes present; {metrics['field_count']} scalar fields "
-                "available in exported records."
-            ),
+            "score": final_score,
+            "feature_similarity": similarity,
+            "reason": "; ".join(reasons) + ".",
         })
     candidates.sort(key=lambda x: (-x["score"], -x["coverage_score"], x["name"].lower()))
     # Keep one best record per donor name.
@@ -108,11 +158,15 @@ def rank_donors(catalogue: dict[str, Any], *, target_name: str = "",
         seen.add(n)
         unique.append(item)
     return {
-        "matcher_version": 1,
+        "matcher_version": 2,
         "target": target_name or None,
         "database": database,
-        "ranking_basis": "configuration coverage and exported scalar-field richness",
+        "ranking_basis": ("configuration coverage plus numeric feature similarity to supplied local target profile"
+                          if target_data else "configuration coverage and exported scalar-field richness"),
+        "target_profile": target_profile_key,
         "physical_compatibility_verified": False,
+        "score_interpretation": ("Coverage/richness blended with shared numeric descriptor similarity; heuristic only, not physical fitment."
+                                 if target_data else "Configuration coverage/richness only; not physical compatibility."),
         "recommendations": unique[:limit],
         "candidate_count": len(unique),
         "limitations": [
@@ -164,7 +218,7 @@ def build_configuration_proposal(catalogue: dict[str, Any], donor_key: str,
                     "status": "review-required-target-mapping",
                 })
     return {
-        "proposal_version": 1,
+        "proposal_version": 2,
         "mode": "hybrid-review-only",
         "target_vehicle": target_name,
         "donor_profile": donor_key,

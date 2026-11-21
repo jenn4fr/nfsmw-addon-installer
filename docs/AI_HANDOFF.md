@@ -1,6 +1,6 @@
 # AI handoff — read this first
 
-> **Current source of truth:** project version **0.2.0**, updated 2026-11-21. The latest implementation adds `donor-assist`, `apply-file-plan`, and `rollback-install`; the older historical notes below may describe the earlier 0.1.0 state. The latest update section at the end supersedes conflicting historical statements. Current verified test count: **37 passed**.
+> **Current source of truth:** project version **0.3.0**, updated 2026-11-21. Read the final section, “2026-11-21 update — version 0.3.0 Vehicle Intelligence,” first; it supersedes conflicting v0.1/v0.2 historical notes. Current verified test count: **41 passed**.
 
 # AI / Developer Handoff — Read Before Continuing
 
@@ -57,8 +57,11 @@ Confirm with `python -m nfsmw_installer.cli --help`.
 3. `inventory-db`
 4. `plan-install`
 5. `build-donor-catalogue`
+6. `donor-assist` (optional `--target-profile`)
+7. `apply-file-plan` (dry-run unless explicit `--execute`)
+8. `rollback-install`
 
-There is no implemented `donor-assist`, `scan-db` subcommand, `install`, `uninstall`, or `apply` command at this snapshot. The scanner is a standalone tool script.
+There is no general `install`, `uninstall`, or live database `apply` command. The database scanner is a standalone tool script.
 
 ## 6. Data findings already established
 
@@ -86,14 +89,7 @@ The failed `get` calls commonly returned `attribcli: no collection <class>/<nest
 
 ### Donor catalogue output from supplied exports
 
-Re-running the current `donor_catalogue.py` against the supplied complete-export files produced:
-
-- 4,730 parsed collection records
-- 860 leaf-keyed vehicle profile groups
-- 0 export-file parse errors
-- both `ATTRIBUTES.BIN` and `FE_ATTRIB.BIN` kept distinct
-
-The profile key is `database:collection-leaf`; it is a grouping convenience, not a canonical vehicle identity. Different classes with the same leaf can be grouped under one profile. Improve this data model before using it for recommendations.
+The v0.3.0 catalogue builder anchors canonical road-car profiles on `pvehicle/racers`, resolves subsystem collection references from pvehicle fields, and keeps ATTRIBUTES.BIN and FE_ATTRIB.BIN distinct. Current supplied-export validation is recorded in the v0.3.0 update section below: 4,730 parsed collections, 86 profiles (43 per database), 1,272 relationship edges and zero export parse errors.
 
 ## 7. User's donor assistant policy — important
 
@@ -133,7 +129,7 @@ python -m compileall -q nfsmw_installer tools tests
 python -m unittest discover -s tests -v
 ```
 
-Latest verified test baseline for the combined source update: **37 tests passed**. Existing test groups cover parser, inventory, dependencies, Attribulina adapter, CLI path handling, planner, ModLoader path mapping, and donor catalogue parsing/building.
+The historical v0.2.0 baseline was 37 tests. The current v0.3.0 baseline is **41 tests passed**. Existing test groups cover parser, inventory, dependencies, Attribulina adapter, CLI path handling, planner, ModLoader path mapping, and donor catalogue parsing/building.
 
 Every new feature needs tests. Preserve all current tests.
 
@@ -258,3 +254,76 @@ python -m nfsmw_installer.cli rollback-install PATH_TO/install-journal.json
 5. Do not generate executable donor AMOD until target references and field types are validated.
 6. Do not execute file plans against the user's live game until package-specific mappings are independently confirmed.
 7. Keep all database mutation separate from file operations and require explicit confirmation plus verified backups.
+
+---
+
+## 2026-11-21 update — version 0.3.0 Vehicle Intelligence
+
+This section supersedes the older v0.2.0 statements that profiles were grouped only by leaf name and that canonical relationship discovery had not begun.
+
+### Source changes
+
+- `donor_catalogue.py` now captures each collection's parent path from AMOD headers.
+- Canonical road-car candidates are anchored on `pvehicle` records whose parent is `pvehicle/racers`. This excludes police, traffic, trailers and generic category nodes at the source rather than trying to filter all of them later.
+- Each canonical pvehicle record is scanned for explicit `class/collection` references in its top-level exported values. Known vehicle classes are resolved against their corresponding class export, including base and upgrade variants (for example `engine/rx7` and `engine/rx7_top`).
+- The catalogue emits `relationship_edges` and per-profile `collection_references` with resolved/unresolved status.
+- `ecar` is joined by exact vehicle leaf because the inspected pvehicle records do not expose it as a direct subsystem field. The report labels this as `exact-vehicle-leaf`; do not upgrade its confidence without more evidence.
+- Numeric features currently include pvehicle mass and upgrade-count fields, HandlingRating bounds, TENSOR_SCALE vector, plus selected ecar ride-height/camber/steer/wheel fields. No drivetrain, wheelbase or body-size inference is made.
+- `donor_matcher.rank_donors(..., target_profile=...)` can compare shared numeric scalar/vector features against a known profile. The ranking is still heuristic and explicitly not a physical-fitment guarantee.
+- CLI `donor-assist` accepts `--target-profile <profile-key-or-name>`.
+
+### Validation against supplied scan
+
+Using `reports/database-scan-20261120_212135/`:
+
+- 4,730 class collection records parsed.
+- 86 canonical profiles total: 43 ATTRIBUTES.BIN and 43 FE_ATTRIB.BIN.
+- 1,272 relationship edges emitted; 1,190 recognized pvehicle references were audited (1,188 resolved, 2 unresolved).
+- 0 export-file parse/read errors.
+- 2 unresolved references among recognized vehicle-class references; unresolved entries are retained in the profile audit.
+- The stock database does not contain an AMC Rebel profile. For that add-on, the current top-10 remains a configuration-completeness shortlist unless a known baseline vehicle is supplied with `--target-profile`.
+
+### CLI examples
+
+Build catalogue:
+
+```bash
+python -m nfsmw_installer.cli build-donor-catalogue \
+  reports/database-scan-20261120_212135 \
+  -o reports/donor-catalogue-v0.3.0.json
+```
+
+AMC Rebel-style custom add-on (no target profile available):
+
+```bash
+python -m nfsmw_installer.cli donor-assist \
+  "/path/to/addon-folder" \
+  --catalogue reports/donor-catalogue-v0.3.0.json \
+  --limit 10 -o reports/donor-assist.json
+```
+
+Known baseline target profile (example RX-7):
+
+```bash
+python -m nfsmw_installer.cli donor-assist \
+  "/path/to/addon-folder" \
+  --catalogue reports/donor-catalogue-v0.3.0.json \
+  --target-profile attributes.bin:rx7 \
+  --limit 10 -o reports/donor-assist-rx7-baseline.json
+```
+
+### Tests
+
+The v0.3.0 suite has **41 passing tests**. It adds tests for parent path parsing, pvehicle/racers anchoring, explicit subsystem reference resolution (including a different engine leaf), target-profile numeric similarity, and missing target-profile rejection.
+
+### Remaining work after v0.3.0
+
+1. Robust AMOD parser for nested/multiline values and comments; current parser only extracts safe top-level scalars/raw single-line values.
+2. Parse field types/headers and validate reference targets and field compatibility against Attribulina exports.
+3. Extract addon target hints from NFSMS and package metadata; no stock profile exists for AMC Rebel.
+4. Add confidence-weighted per-factor donor score and meaningful missing-data penalties.
+5. Confirm ecar relation and other identity/frontend relationships from authoritative references.
+6. Generate target-specific, deterministic AMOD only after mapping/field types/dependencies are proven; still require Attribulina check and strict dry-run.
+7. Verify ModLoader/Ed Files/MWPS mappings and complete install/uninstall tests.
+
+Never treat this release as a completed installer. Database writes remain out of scope, and the experimental file executor must not be used on a live game without package-specific mapping verification and user approval.

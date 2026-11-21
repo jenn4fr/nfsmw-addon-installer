@@ -1,18 +1,35 @@
 # Project Status — 2026-11-21
 
-**Version:** 0.2.0 development snapshot  
-**Overall:** substantially expanded analysis/planning foundation; experimental file executor; not yet a production-safe universal installer.
+**Version:** 0.3.0 development snapshot  
+**Overall:** stronger vehicle relationship and donor-data foundation; installer execution remains experimental and is not a verified universal one-click installer.
 
 ## Verified in this snapshot
 
 - Package inspection, file classification, partial NFSMS parsing and dependency findings.
-- Attribulina conversion/check/strict dry-run adapter; no database apply operation exposed.
-- Read-only inventory of ATTRIBUTES.BIN and FE_ATTRIB.BIN.
-- Read-only install planner with source checks, destination conflicts, ModLoader provisional mapping, and unresolved Ed Files mapping.
-- AMOD export parser and catalogue builder. Supplied exports: 4,730 parsed collection records, 860 leaf-keyed profile groups, zero export-file parse errors.
-- Donor ranking command. It filters non-road-car police/chopper/traffic candidates and ranks road-car profiles by configuration class coverage and exported scalar-field richness.
-- Review-only donor configuration proposal. It filters pvehicle fields to a conservative allowlist and excludes identity-oriented classes/domains. It does not generate executable AMOD/NFSMS.
-- File-only plan executor, dry-run by default; explicit `--execute` required. It backs up replaced files, writes an install journal, skips database scripts, and supports journal rollback.
+- Attribulina conversion/check/strict dry-run adapter; no live database apply operation is exposed by the validation workflow.
+- Read-only inventory and complete class exports for ATTRIBUTES.BIN and FE_ATTRIB.BIN.
+- Read-only install planner with source checks, destination conflicts, provisional ModLoader mapping and unresolved Ed Files mapping.
+- AMOD parser now retains collection parent paths.
+- Donor profiles are anchored on `pvehicle/racers` rather than merging arbitrary same-leaf records across all classes.
+- Subsystem collections are discovered from explicit class/collection references in each pvehicle record. The relationship audit records field, class, collection and whether the target collection was found.
+- ecar body/handling setup is joined by exact vehicle leaf and explicitly labeled as that weaker relationship method.
+- Numeric descriptors include mass, upgrade availability counts, handling-rating bounds, tensor scale, ride height, camber and wheel spoke count where present.
+- Optional target-profile matching compares shared numeric features; reports explain matched fields and warn that this is not a physical fitment test.
+- Hybrid donor configuration output remains review-only JSON and never emits executable AMOD/NFSMS.
+- File-only plan executor remains dry-run by default; explicit `--execute` is required. It backs up replaced files, writes a journal, skips database scripts, and supports journal rollback.
+
+## Supplied database export validation
+
+Source: `reports/database-scan-20261120_212135/` from the user-provided project/report bundle.
+
+- 4,730 collection records parsed.
+- 86 racer-anchored vehicle profiles: 43 from ATTRIBUTES.BIN and 43 from FE_ATTRIB.BIN.
+- 1,272 relationship edges emitted, including explicit pvehicle subsystem references and ecar leaf associations; 1,190 recognized pvehicle references were audited (1,188 resolved, 2 unresolved).
+- 0 export-file parse/read errors.
+- 2 unresolved references among the recognized vehicle-class references in the generated profile audit; these remain visible rather than silently guessed.
+- AMC Rebel is not a stock profile in the supplied database export, so its donor shortlist currently uses configuration completeness unless the user supplies a known baseline vehicle profile.
+
+These figures describe the supplied snapshot, not every possible game database or modded installation.
 
 ## Current CLI
 
@@ -25,16 +42,18 @@
 7. `apply-file-plan`
 8. `rollback-install`
 
+`donor-assist` accepts optional `--target-profile` to compare the target against a known local profile. Without it, ranking is based on coverage/richness.
+
 ## Test status
 
-**37 tests passed** after adding donor matcher and file-executor tests. Run:
+**41 tests passed** in the v0.3.0 source snapshot. Run:
 
 ```bash
 python -m compileall -q nfsmw_installer tools tests
 python -m unittest discover -s tests -v
 ```
 
-Tests cover the existing parser/inventory/dependency/Attribulina/planner behavior plus donor ranking, identity-field filtering, dry-run, explicit copy, backup and rollback. They do not constitute an end-to-end game installation test.
+Tests include synthetic cross-class references, racer-only anchoring, numeric target-profile similarity, identity-preserving proposals, planner path safety, dry-run/apply/rollback behavior, Attribulina adapter behavior and existing parser/inventory/dependency coverage. They are not an end-to-end live-game installation test.
 
 ## Status by capability
 
@@ -42,39 +61,34 @@ Tests cover the existing parser/inventory/dependency/Attribulina/planner behavio
 |---|---|---|
 | Package inspection / NFSMS parsing | Implemented foundation | Partial dialect coverage |
 | Database inventory / export scanner | Implemented | Read-only; Attribulina required |
-| NFSMS validation | Implemented | Conversion/check/strict dry-run only |
-| Install planning | Implemented | ModLoader mapping provisional; Ed Files unresolved |
-| Donor catalogue | Implemented initial | Leaf grouping is not canonical identity |
-| Donor shortlist | Implemented initial | Coverage ranking, not physics compatibility |
-| Hybrid donor proposal | Review-only | No target mapping or executable script generation |
-| File executor | Experimental | Explicit opt-in; backup/journal/rollback; database scripts skipped |
-| Full install workflow | Pending | Requires mapping verification and end-to-end package tests |
-| Database config application | Pending | Must remain separate, explicit, backed up, and Attribulina-validated |
-| MWPS/binary patching | Pending | Format-specific work required |
-| Ed Files installation | Pending | Destination/resource mapping unresolved |
-| Uninstall manager | Pending | Rollback journal exists; persistent uninstall manifest/clean uninstall pending |
-| Physical donor compatibility | Pending | Need schema/reference analysis and actual measurable target attributes |
-
-## Critical limitations / caveats
-
-1. **Donor score meaning:** score measures availability of configuration classes and scalar fields. It must not be described as a vehicle suitability or handling compatibility score.
-2. **Profile identity:** `database:leaf` is a grouping convenience. Different class collections can share leaves; canonical cross-class vehicle relationships still need discovery.
-3. **Proposal safety:** proposal JSON is non-executable. `target_collection` remains unresolved; references and field types must be validated before any AMOD generation.
-4. **Installer safety:** `apply-file-plan --execute` can change files in the specified game root. Use only after manually reviewing the plan. Existing file overwrite requires `--overwrite`; backup/journal are produced. Database script operations are skipped.
-5. **Mappings:** ModLoader destination mapping is provisional. Ed Files and MWPS are not supported by the executor.
-6. **Validation:** no live game install or live database write has been performed by this project.
+| Vehicle profile anchoring | Implemented for supplied schema | Anchored on `pvehicle/racers` |
+| Subsystem relationship discovery | Implemented foundation | Explicit pvehicle references; unresolved refs audited |
+| ecar relationship | Heuristic | Exact vehicle leaf; not an explicit pvehicle reference |
+| Numeric feature extraction | Partial | Only exported scalar/vector values; no verified dimensions or drivetrain |
+| Donor ranking | Initial explainable engine | Coverage/richness, optionally shared numeric feature similarity |
+| Hybrid donor proposal | Review-only | No target mapping, typed validation or executable script generation |
+| NFSMS database validation | Implemented | Convert/check/strict dry-run only |
+| Install planning | Implemented foundation | ModLoader provisional; Ed Files unresolved |
+| File executor / rollback | Experimental | File operations only; no real-game end-to-end validation |
+| MWPS / binary patching | Pending | Format-specific work required |
+| Full uninstall manager | Pending | Journal rollback exists, general uninstall does not |
+| Live database write workflow | Disabled / pending | Requires separate transactional design and explicit approval |
 
 ## Next priorities
 
-1. Improve catalogue identity model using actual cross-class references and preserve full collection paths.
-2. Parse AMOD typed/nested values and validate fields against Attribulina headers.
-3. Build a target vehicle profile from add-on NFSMS + local DB and compute evidence-based similarity where measurable data exists.
-4. Resolve donor proposal target collection mappings and external references; generate candidate AMOD only after validation rules are proven.
-5. Verify ModLoader mapping and add representative package fixtures; resolve Ed Files.
-6. Add end-to-end staging/install/rollback tests in a temporary game-root fixture.
-7. Implement explicit database transaction workflow only after backup/restore semantics are proven; never auto-apply.
-8. Add uninstall manifest and safe uninstall preview.
+1. Validate reference resolution against additional real database snapshots and class header/type exports.
+2. Improve AMOD parsing for multiline nested arrays/objects, quoted braces, duplicate fields and comments while retaining raw source.
+3. Extract more trustworthy target-car hints from addon NFSMS and package metadata without guessing physical properties.
+4. Build per-factor donor scores and confidence/missing-data penalties using validated field types.
+5. Resolve target collection mappings and generate deterministic review-only AMOD candidates; run Attribulina check and strict dry-run before any proposal can be considered executable.
+6. Independently verify ModLoader mappings; resolve Ed Files and MWPS.
+7. Add package-specific staging, failure-injection tests and end-to-end tests using temporary game copies.
 
-## Sample evidence
+## Non-negotiable safety rules
 
-AMC Rebel sample: `Addon/Install.nfsms`, `SetupFiles/rebel_install.nfsms`, ModLoader replacement payload under `Addon/Modloader/ADDONS/CARS_REPLACE/PUNTO/`, frontend manufacturer resource, and Ed Files config. Attribulina conversion/check/dry-run accepted the NFSMS script. The install plan left Ed Files unresolved. The user's live game DB was not modified.
+- Never modify ATTRIBUTES.BIN or FE_ATTRIB.BIN during discovery, catalogue generation or tests.
+- Never run Attribulina apply against the user's live databases during development.
+- Never claim physical compatibility from collection completeness or a few numeric scalar comparisons.
+- Never copy donor identity, model, geometry, textures, frontend registration or unique target collection IDs wholesale.
+- Never silently overwrite game files; preserve backups and journal operations.
+- Keep database mutation separate from file installation and require explicit user approval.
