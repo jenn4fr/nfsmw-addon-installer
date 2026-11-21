@@ -11,6 +11,7 @@ from pathlib import Path
 from .core import scan_folder, _read_archive, make_report, load_inventory
 from .attribulina import AttribulinaAdapter
 from .inventory import build_inventory, write_inventory
+from .donor_catalogue import build_donor_catalogue, write_donor_catalogue
 from .planner import build_install_plan
 
 
@@ -257,6 +258,24 @@ def plan_install_command(args):
 
 
 
+
+def build_donor_catalogue_command(args):
+    scan_root = resolve_path(args.scan_root).resolve()
+    output = resolve_path(args.output)
+    if not scan_root.is_dir():
+        print(f"ERROR: scan directory not found: {scan_root}", file=sys.stderr)
+        return 2
+    catalogue = build_donor_catalogue(scan_root)
+    write_donor_catalogue(catalogue, output)
+    print("Scan directory:", scan_root)
+    print("Collections parsed:", catalogue["collection_count"])
+    print("Vehicle profiles:", len(catalogue["vehicle_profiles"]))
+    print("Parse/read errors:", len(catalogue["errors"]))
+    print("Catalogue:", output.resolve())
+    print("Mode: READ-ONLY; no database changes")
+    return 0
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(
         prog="nfsmw-installer",
@@ -348,6 +367,16 @@ def main(argv=None):
 
 
 
+    donor_cmd = sub.add_parser(
+        "build-donor-catalogue",
+        help="Build a read-only vehicle donor catalogue from scanner exports",
+    )
+    donor_cmd.add_argument("scan_root", help="Database scan output directory")
+    donor_cmd.add_argument(
+        "-o", "--output",
+        default="reports/donor-catalogue.json",
+    )
+
     args = parser.parse_args(argv)
 
 
@@ -370,6 +399,10 @@ def main(argv=None):
 
         if args.action == "plan-install":
             return plan_install_command(args)
+
+
+        if args.action == "build-donor-catalogue":
+            return build_donor_catalogue_command(args)
 
 
 

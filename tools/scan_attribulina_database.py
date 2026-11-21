@@ -206,28 +206,12 @@ class Scanner:
             if ok and export_file.exists():
                 self.stats["exports"] += 1
 
-            # Read actual individual collection values for vehicle classes.
-            if class_name not in VEHICLE_CLASSES:
-                continue
-
-            values_dir = class_root / "collection-values"
-            values_dir.mkdir(exist_ok=True)
-
-            for item in collections:
-                collection_path = item.get("path") or item.get("name")
-
-                if not collection_path:
-                    continue
-
-                output_name = safe_name(collection_path) + ".amod"
-                output_file = values_dir / output_name
-
-                self.run(
-                    ["get", db, f"{class_name}/{collection_path}"],
-                    output_file,
-                )
-
-                self.stats["collections_read"] += 1
+            # The complete class export already contains the collection values.
+            # Avoid issuing one `get` per collection: nested paths in the inventory
+            # are not necessarily valid Attribulina get identifiers, and this
+            # duplicated thousands of reads without adding reliable data.
+            if class_name in VEHICLE_CLASSES and ok and export_file.exists():
+                self.stats["collections_read"] += len(collections)
 
     def save_report(self):
         report = {
@@ -252,7 +236,7 @@ class Scanner:
             f"Failed: {self.stats['failed']}",
             f"Timeouts: {self.stats['timeouts']}",
             f"Class exports: {self.stats['exports']}",
-            f"Collections read: {self.stats['collections_read']}",
+            f"Collections represented by class exports: {self.stats['collections_read']}",
             "",
             "Failures and errors:",
         ]
