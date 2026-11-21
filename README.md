@@ -1,55 +1,50 @@
 # NFSMW Add-on Installer
 
-**Project:** `jenn4fr/nfsmw-addon-installer`  
-**Package version:** `0.1.0` (development foundation)  
+**Repository:** https://github.com/jenn4fr/nfsmw-addon-installer  
+**Development version:** 0.2.0  
 **Target:** Need for Speed: Most Wanted (2005), PC  
-**Current operating environment:** Windows 11 + Python 3.12 + Git Bash  
-**Primary purpose:** inspect, validate, plan, and eventually install add-on/replacement cars safely.
+**Environment used for development:** Windows 11, Python 3.12, Git Bash
 
-This repository is a safety-first development project. Its current capabilities are strongest in **package inspection, NFSMS analysis, read-only database inventory, dry-run validation, install planning, and donor-catalogue extraction**. It is not yet a fully automatic car installer.
+A safety-first toolkit for inspecting, validating, planning, and selectively preparing NFS Most Wanted car add-ons. It now includes an explainable donor shortlist, review-only donor configuration proposals, and an opt-in transactional file-copy executor with a rollback journal.
 
-> **Safety rule:** Until a separately reviewed installation engine exists, do not treat a generated plan or successful validation as permission to modify the game. The current planner is read-only, and `validate-db` ends with a strict dry-run.
+> **Important:** this is still not a fully verified one-click installer. ModLoader destination mapping remains provisional, Ed Files and MWPS handling remain unresolved, and donor scores measure available configuration coverage—not physical compatibility. Database scripts are never executed by the file installer.
 
-## Start here
+## Start here for maintainers and AI assistants
 
-- [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md) — achieved capabilities, verified results, limitations, and pending work.
-- [`docs/AI_HANDOFF.md`](docs/AI_HANDOFF.md) — detailed context and instructions for another AI/developer to continue without repeating discovery.
-- [`docs/ROADMAP.md`](docs/ROADMAP.md) — staged implementation plan and acceptance criteria.
-- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — module responsibilities and data flow.
+1. [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md) — verified achievements, limitations, pending work.
+2. [`docs/AI_HANDOFF.md`](docs/AI_HANDOFF.md) — user decisions, environment, evidence, and continuation rules.
+3. [`docs/ROADMAP.md`](docs/ROADMAP.md) — remaining milestones and acceptance criteria.
+4. [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — module/data flow.
+5. Run the test suite before editing.
 
-## Quick start
+## Setup
 
-Requirements:
-
-- Python 3.10 or newer (project tested here with Python 3.12).
-- No third-party runtime Python dependencies.
-- Optional: Attribulina CLI for database inventory and NFSMS validation.
-- Optional: 7-Zip (`7z`/`7zz`) for listing supported compressed archives.
-
-From Git Bash in the repository root:
+Requirements: Python 3.10+, no third-party runtime dependencies. Attribulina CLI is optional and required only for database inventory/validation/scanning. 7-Zip is optional for archive formats not handled by Python's built-in ZIP support.
 
 ```bash
 python -m venv .venv
 source .venv/Scripts/activate
 python -m pip install -e .
+python -m compileall -q nfsmw_installer tools tests
 python -m unittest discover -s tests -v
 ```
 
-The launchers `start.bat` and `start.sh` provide the interactive entry point. The installed console command is `nfsmw-installer`.
+Use `python -m nfsmw_installer.cli --help` for authoritative CLI syntax.
 
-## Current CLI
+## CLI workflows
 
-Run `python -m nfsmw_installer.cli --help` for the authoritative options. Current subcommands:
+| Command | Purpose | Game/database writes |
+|---|---|---|
+| `inspect` | Scan folder/archive, classify files, parse supported NFSMS commands | No |
+| `inventory-db` | Read class/collection inventory from both game databases | No |
+| `validate-db` | Convert NFSMS, check AMOD, run strict dry-run | No |
+| `plan-install` | Create read-only file/database operation plan | No |
+| `build-donor-catalogue` | Parse complete Attribulina class exports | No |
+| `donor-assist` | Rank donor candidates and optionally produce review-only configuration proposal | No |
+| `apply-file-plan` | Dry-run by default; with `--execute`, copy supported files and create backups/journal | **Yes, only with explicit flag** |
+| `rollback-install` | Restore copied/replaced files using install journal | **Yes** |
 
-| Command | Purpose | Writes to game? |
-|---|---|---:|
-| `inspect` | Scan an extracted package or supported archive; classify payloads, parse NFSMS commands, and write a JSON report | No |
-| `validate-db` | Convert NFSMS to AMOD, check against the selected database, and run strict dry-run | No |
-| `inventory-db` | Build a read-only class/collection inventory for `ATTRIBUTES.BIN` and `FE_ATTRIB.BIN` | No |
-| `plan-install` | Build a proposed file/database operation plan, detect source gaps/conflicts, and flag unresolved mappings | No |
-| `build-donor-catalogue` | Parse Attribulina class exports into a read-only vehicle configuration catalogue | No |
-
-### Inspect a package
+### 1. Inspect an add-on
 
 ```bash
 python -m nfsmw_installer.cli inspect \
@@ -58,125 +53,116 @@ python -m nfsmw_installer.cli inspect \
   -o "reports/addon-inspection.json"
 ```
 
-The scanner recognizes common NFSMS/Unlimiter, ModLoader, MWPS, INI, geometry, texture, logo, and resource payloads. It records parsed NFSMS commands, dependency findings, and package layout. Unknown commands are retained for review; they are not executed.
-
-### Validate an NFSMS script
+### 2. Validate an NFSMS script (dry-run only)
 
 ```bash
 python -m nfsmw_installer.cli validate-db \
   "/path/to/car_install.nfsms" \
   --database "/path/to/GLOBAL/FE_ATTRIB.BIN" \
   --attribulina "/path/to/attribcli.exe" \
-  --output "reports/car-validation.amod"
+  -o "reports/car-validation.amod"
 ```
 
-The workflow is conversion → database check → strict dry-run. It stops on failure. A successful result means the script passed these checks; it does **not** mean the mod has been installed. The adapter deliberately does not expose a database-write operation.
+This performs conversion → database check → strict dry-run. It does not commit changes to the database.
 
-### Build the database inventory
+### 3. Build database inventory and donor catalogue
 
 ```bash
 python -m nfsmw_installer.cli inventory-db \
   --attribulina "/path/to/attribcli.exe" \
   --attributes "/path/to/GLOBAL/ATTRIBUTES.BIN" \
   --frontend "/path/to/GLOBAL/FE_ATTRIB.BIN" \
-  -o "reports/mw-database-inventory.json"
+  -o reports/mw-database-inventory.json
+
+python tools/scan_attribulina_database.py \
+  --inventory reports/mw-database-inventory.json \
+  --attribulina "/path/to/attribcli.exe" \
+  --output reports/database-scan-current
+
+python -m nfsmw_installer.cli build-donor-catalogue \
+  reports/database-scan-current -o reports/donor-catalogue.json
 ```
 
-The inventory stores database/class/collection references. It is not a complete typed field-value dump.
+The catalogue preserves ATTRIBUTES and FE_ATTRIB as separate data sets. The supplied scan snapshot produced 4,730 parsed collection records, 860 leaf-keyed profile groups, and zero export-file parse errors.
 
-### Plan an installation (read-only)
+### 4. Donor shortlist and review-only proposal
+
+```bash
+python -m nfsmw_installer.cli donor-assist \
+  "/path/to/extracted-addon" \
+  --catalogue reports/donor-catalogue.json \
+  --limit 10 \
+  -o reports/donor-assist.json
+```
+
+To add a proposal for a selected donor:
+
+```bash
+python -m nfsmw_installer.cli donor-assist \
+  "/path/to/extracted-addon" \
+  --catalogue reports/donor-catalogue.json \
+  --donor punto \
+  -o reports/donor-assist-punto.json
+```
+
+The score is a configuration-coverage/richness score. It is **not** a physical compatibility score. The proposal excludes target identity fields and is explicitly non-executable. Target collection mapping, field type validation, and external reference validation are still required.
+
+### 5. Plan and optionally apply file operations
+
+Create a plan:
 
 ```bash
 python -m nfsmw_installer.cli plan-install \
   "/path/to/extracted-addon" \
   --game-root "/path/to/NFS-MW-Unlimiter" \
-  -o "reports/addon-install-plan.json"
+  -o reports/install-plan.json
 ```
 
-The planner currently understands the supported `Install.nfsms` operations `folder_create`, `file_copy`, and `script`, plus a provisional mapping for `Modloader/ADDONS/CARS_REPLACE` and `Modloader/ADDONS/FRONTEND`. Existing destinations are conflicts. Ed Files resource destinations are explicitly unresolved. **No copy, patch, or database script is applied.**
-
-### Scan databases and build donor catalogue
-
-The standalone scanner exports class lists, headers/type definitions, and complete class exports using Attribulina. Example:
+Dry-run the file executor (default):
 
 ```bash
-python tools/scan_attribulina_database.py \
-  --inventory reports/mw-database-inventory.json \
-  --attribulina "/path/to/attribcli.exe" \
-  --output "reports/database-scan-YYYYMMDD_HHMMSS"
+python -m nfsmw_installer.cli apply-file-plan reports/install-plan.json
 ```
 
-Build the catalogue from that scan directory:
+Actual copying requires the explicit `--execute` flag:
 
 ```bash
-python -m nfsmw_installer.cli build-donor-catalogue \
-  "reports/database-scan-YYYYMMDD_HHMMSS" \
-  -o "reports/donor-catalogue.json"
+python -m nfsmw_installer.cli apply-file-plan reports/install-plan.json --execute
 ```
 
-The catalogue keeps `ATTRIBUTES.BIN` and `FE_ATTRIB.BIN` data separate. It extracts collection names and simple scalar fields; complex/nested VLT values are retained as raw text rather than falsely interpreted. This is an extraction foundation only: it does not score donors or generate donor changes.
+Existing destinations cause failure unless `--overwrite` is supplied. Replaced files are copied to a backup directory and a journal is written. Database `script` operations are skipped and are never executed by this command.
 
-## Repository layout
-
-```text
-nfsmw-addon-installer/
-├── nfsmw_installer/
-│   ├── cli.py                 # CLI entry points and command orchestration
-│   ├── core.py                # package/archive scanner, NFSMS parser, findings
-│   ├── attribulina.py         # safe Attribulina subprocess adapter
-│   ├── inventory.py           # read-only database class/collection inventory
-│   ├── planner.py              # read-only install-plan builder
-│   └── donor_catalogue.py     # AMOD export parser and donor catalogue builder
-├── tools/
-│   └── scan_attribulina_database.py
-├── tests/                     # unittest suite
-├── reports/                   # local evidence, inventories, scan exports, plans
-├── docs/
-│   ├── PROJECT_STATUS.md
-│   ├── AI_HANDOFF.md
-│   ├── ROADMAP.md
-│   └── ARCHITECTURE.md
-├── pyproject.toml
-├── start.bat
-└── start.sh
-```
-
-## Verified sample project evidence
-
-The supplied project snapshot includes an AMC Rebel add-on analysis and local database scan artifacts. See `reports/` for the detailed outputs. Highlights:
-
-- Database inventory previously recorded two databases, 57 classes in each, and 5,511 node/collection references in the combined inventory report.
-- The supplied Attribulina scan contains 114 class exports across `ATTRIBUTES.BIN` and `FE_ATTRIB.BIN`.
-- Rebuilding the donor catalogue from those exact exports produced **4,730 parsed collection records**, **860 leaf-keyed vehicle profiles**, and **0 file parse errors**.
-- The original scan log records 2,406 Attribulina commands: 406 succeeded and 2,000 failed. The failures are primarily redundant `get` requests against nested collection paths. The updated scanner no longer performs those per-collection reads; complete class exports are used as the catalogue source.
-- The AMC Rebel validation artifacts show conversion/check/dry-run work was performed. The actual game database was not changed by the validation workflow.
-
-These figures describe the supplied scan snapshot, not a guarantee about a different game installation or future scan.
-
-## Tests
-
-Run:
+Rollback using the path printed by the executor:
 
 ```bash
-python -m compileall -q nfsmw_installer tools tests
-python -m unittest discover -s tests -v
+python -m nfsmw_installer.cli rollback-install "/path/to/_nfsmw_installer_backups/install-journal.json"
 ```
 
-**Latest recorded local verification for this documentation/update bundle:** 30 tests passed. Re-run the commands on the target Windows checkout before committing or merging. Tests use temporary fixtures/mocks; they do not prove compatibility with every third-party addon or every game database.
+Review every plan before execution. The current ModLoader path mapping is provisional; Ed Files are unresolved. Do not use `--execute` on a live game until mappings have been verified for the package being installed.
 
-## Safety boundaries and known limitations
+## Current implementation
 
-- No game database writes are performed by current CLI workflows.
-- No game-file copy/install engine exists yet.
-- No MWPS/binary patch application exists.
-- No rollback/uninstall executor exists; planner only describes backup/rollback intent for conflicts.
-- ModLoader destination mapping is provisional and needs confirmation against loader behavior and representative packages.
-- Ed Files resource mapping is unresolved.
-- NFSMS parsing is partial; arbitrary installer UI commands, includes, conditionals, and custom dialects may not be fully understood.
-- The donor catalogue is not yet a donor recommender. It does not infer vehicle geometry, drivetrain, wheelbase, mass suitability, tuning compatibility, or customization compatibility.
-- Nested AMOD/VLT structures are retained as raw text; field-level semantic parsing is incomplete.
-- No automated online compatibility knowledge base is implemented.
+- Package/file classification and partial NFSMS parser.
+- Attribulina adapter for conversion, check, and strict dry-run.
+- Read-only class/collection inventory and class export scanner.
+- Read-only package install planner with source/conflict checks.
+- AMOD export parser and donor catalogue builder.
+- Donor coverage shortlist with transparent factors and exclusions.
+- Review-only Hybrid proposal that filters pvehicle identity fields and preserves target identity domains.
+- Explicit opt-in file copy executor with backup journal and rollback for copied/replaced files.
 
-## Contribution/continuation rule
+## Known limitations
 
-Before implementing a feature, read `docs/AI_HANDOFF.md` and `docs/PROJECT_STATUS.md`. Preserve the read-only default. Add tests for each new parser, mapping, scoring rule, and operation. Never silently convert an unresolved mapping into an assumed install destination. Do not apply changes to the user's live game databases or game files without explicit approval and a separately reviewed execution path.
+- Donor rank is based on exported config coverage and scalar-field richness. It does not currently infer physical dimensions, drivetrain, wheelbase, body size, or handling similarity.
+- Leaf-keyed profiles are provisional groupings, not canonical vehicle identities.
+- Nested AMOD/VLT parsing is intentionally incomplete; nested values remain raw text.
+- Proposal output is JSON review data, not executable AMOD/NFSMS.
+- ModLoader mapping has not been independently verified against all loader versions/package layouts.
+- Ed Files resource mapping and MWPS/binary patching are not implemented.
+- The file executor should be treated as experimental until validated against representative packages; it skips database scripts.
+- Uninstall management beyond journal-based rollback is not implemented.
+- Tests are unit tests with fixtures/mocks; no end-to-end install into the user's live game has been performed.
+
+## Project evidence
+
+The AMC Rebel sample package was inspected and its NFSMS conversion/check/strict dry-run was accepted by Attribulina. A read-only plan identified ModLoader payloads and an unresolved Ed Files mapping. No live database write was performed. See `reports/` and `docs/AI_HANDOFF.md` for the evidence and context.

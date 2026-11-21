@@ -1,3 +1,7 @@
+# AI handoff — read this first
+
+> **Current source of truth:** project version **0.2.0**, updated 2026-11-21. The latest implementation adds `donor-assist`, `apply-file-plan`, and `rollback-install`; the older historical notes below may describe the earlier 0.1.0 state. The latest update section at the end supersedes conflicting historical statements. Current verified test count: **37 passed**.
+
 # AI / Developer Handoff — Read Before Continuing
 
 This document is intended to let a future AI assistant or developer continue the NFSMW Add-on Installer project from the current repository state without asking the user to repeat known setup details or redoing completed discovery.
@@ -129,7 +133,7 @@ python -m compileall -q nfsmw_installer tools tests
 python -m unittest discover -s tests -v
 ```
 
-Latest verified test baseline for the combined source update: **30 tests passed**. Existing test groups cover parser, inventory, dependencies, Attribulina adapter, CLI path handling, planner, ModLoader path mapping, and donor catalogue parsing/building.
+Latest verified test baseline for the combined source update: **37 tests passed**. Existing test groups cover parser, inventory, dependencies, Attribulina adapter, CLI path handling, planner, ModLoader path mapping, and donor catalogue parsing/building.
 
 Every new feature needs tests. Preserve all current tests.
 
@@ -195,3 +199,62 @@ python -m unittest discover -s tests -v
 ```
 
 Then read this handoff, `PROJECT_STATUS.md`, `ROADMAP.md`, `ARCHITECTURE.md`, and the relevant implementation/tests before changing code. Do not re-run the full Attribulina scan unless the existing exports are missing or the user explicitly requests a fresh scan.
+
+---
+
+## 2026-11-21 update — version 0.2.0 development snapshot
+
+The project was extended after the original 30-test handoff baseline. Read the current source; this section supersedes older statements above that said donor-assist/apply/rollback commands did not exist.
+
+### New modules
+
+- `nfsmw_installer/donor_matcher.py`
+  - `rank_donors(catalogue, target_name, limit, database)` ranks pvehicle-backed road-car profiles using weighted presence of `pvehicle`, `engine`, `induction`, `transmission`, `brakes`, `chassis`, `tires`, `acceltrans`, `nos`, `shiftpattern`, and `rigidbodyspecs`, plus scalar-field richness.
+  - The score is a configuration data coverage metric only. It is NOT a measured physical compatibility score.
+  - Police/chopper/traffic collection paths are excluded from road-car donor shortlist.
+  - `build_configuration_proposal(...)` produces review-only JSON; pvehicle fields are limited to an explicit allowlist and identity domains are preserved.
+- `nfsmw_installer/apply_plan.py`
+  - `apply_file_plan()` defaults to dry-run.
+  - `execute=True` is required to copy files.
+  - Existing destinations require `overwrite=True`; overwritten files are backed up.
+  - Writes `install-journal.json`; `rollback_journal()` restores backups or removes newly created files.
+  - Database script operations are skipped. This is a file-only experimental executor.
+
+### New CLI commands
+
+```bash
+python -m nfsmw_installer.cli donor-assist ADDON_DIR --catalogue reports/donor-catalogue.json --limit 10
+python -m nfsmw_installer.cli donor-assist ADDON_DIR --catalogue reports/donor-catalogue.json --donor punto
+python -m nfsmw_installer.cli apply-file-plan reports/install-plan.json
+python -m nfsmw_installer.cli apply-file-plan reports/install-plan.json --execute
+python -m nfsmw_installer.cli rollback-install PATH_TO/install-journal.json
+```
+
+`apply-file-plan --execute` changes files in the supplied plan's game root. It is not a recommendation to use this on a live installation until ModLoader/Ed Files mappings have been verified. Review the JSON plan first. Database scripts are not executed.
+
+### Verification
+
+- Updated package version: 0.2.0.
+- `python -m compileall -q nfsmw_installer tools tests` succeeded.
+- `python -m unittest discover -s tests -v`: **37 tests passed**.
+- Donor catalogue rebuilt from supplied exports: 4,730 collection records, 860 leaf-keyed profile groups, zero parse errors.
+- Donor shortlist smoke test returned 113 candidate profiles after excluding police/chopper/traffic classes; top 10 smoke test completed. The score is completeness only, not physical compatibility.
+
+### Known gaps remain
+
+- The donor matcher does not yet compare dimensions, drivetrain, wheelbase, or actual handling characteristics.
+- Current profiles group by leaf name and may incorrectly combine class collections with identical leaves; canonical relationship discovery is a priority.
+- Configuration proposal JSON is not executable and has unresolved target collection mappings.
+- File executor is experimental and not yet validated against real game installation. Folder cleanup, failure injection, symlink race-hardening, and representative package tests remain.
+- ModLoader mapping is provisional; Ed Files/MWPS remain unresolved.
+- No database write, live install, or live uninstall was performed.
+
+### Instructions for the next AI/developer
+
+1. Run compileall and the complete unittest suite first.
+2. Inspect `donor_matcher.py`, `apply_plan.py`, and their tests before extending them.
+3. Fix catalogue identity/relationship modeling before claiming compatibility recommendations.
+4. Do not promote the coverage score as physical suitability.
+5. Do not generate executable donor AMOD until target references and field types are validated.
+6. Do not execute file plans against the user's live game until package-specific mappings are independently confirmed.
+7. Keep all database mutation separate from file operations and require explicit confirmation plus verified backups.

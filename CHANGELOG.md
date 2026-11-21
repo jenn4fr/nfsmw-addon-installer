@@ -1,17 +1,14 @@
 # Changelog
 
-## Unreleased — 2026-11-21
+## 0.2.0 — 2026-11-21
+- Added explainable donor shortlist based on configuration class coverage and scalar-field richness.
+- Added review-only Hybrid donor configuration proposal with conservative pvehicle field allowlist and identity preservation.
+- Added explicit opt-in file-plan executor, overwrite backups, install journal and rollback.
+- Added donor matcher and file executor tests.
+- Updated README, project status, roadmap, architecture and AI handoff.
+- Safety: donor proposal remains non-executable; database scripts are skipped by file executor.
+- Hardened rollback journal path validation and added a test rejecting destinations outside the selected game root.
+- Donor proposals now include only simple typed scalar values, record omitted fields, and exclude path-like/nested/identity references.
 
-- Added read-only donor catalogue extraction from Attribulina complete class exports.
-- Updated database scanner to avoid redundant per-collection `get` calls; class exports are used as the catalogue source.
-- Added donor catalogue CLI command and tests.
-- Expanded README with CLI usage, safety boundaries, current capabilities, and limitations.
-- Added project status, AI handoff, roadmap, and architecture documents for future maintainers.
-- Verified compilation and 30 unit tests in the update environment.
-
-## 0.1.0 — initial development foundation
-
-- Package inspection and NFSMS parsing.
-- Attribulina conversion/check/strict dry-run adapter.
-- Read-only database inventory.
-- Read-only install planner.
+## 0.1.0 — development foundation
+- Package inspection, NFSMS parser, database inventory, Attribulina dry-run validation, read-only install planner and donor catalogue extraction.

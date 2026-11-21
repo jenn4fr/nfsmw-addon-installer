@@ -65,3 +65,29 @@ The current code separates analysis from execution:
 - Donor catalogue emits data but never creates/apply database changes.
 
 Future execution should be a separate layer with explicit approvals, staged writes, backups, hashes, rollback, and tests. Do not add write behavior as a side effect of an existing read-only command.
+
+## Added in version 0.2.0
+
+```text
+Donor catalogue JSON
+        |
+        v
+ donor_matcher.rank_donors
+        |                         donor_matcher.build_configuration_proposal
+        v                                         |
+ explainable coverage shortlist                  v
+                                        review-only Hybrid proposal
+                                        (not executable AMOD/NFSMS)
+
+Reviewed install-plan JSON
+        |
+        v
+ apply_plan.apply_file_plan
+        |-- dry-run unless explicit execute=True
+        |-- file copies only; database scripts skipped
+        |-- backup existing files; write install journal
+        v
+ rollback_journal(install-journal.json)
+```
+
+The donor score is based on exported class coverage and scalar-field richness, not physical compatibility. The current profile key is `database:leaf`; canonical vehicle relationship discovery is still required. The file executor is experimental and must not be treated as a universal installer until ModLoader/Ed Files mappings are verified.
