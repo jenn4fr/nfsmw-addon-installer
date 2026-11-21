@@ -1,0 +1,50 @@
+edit pvehicle/naraya {
+    TrafficEngType = 0
+    VerbalType = Type_car_type_Viper
+    MASS = 1360
+    brakes_upgrades = 2
+    induction_upgrades = 1
+    tires_upgrades = 2
+    engine_upgrades = 2
+    transmission_upgrades = 2
+    TENSOR_SCALE = (1, 2, 1, 0)
+    MODEL = "NARAYA"
+    CollectionName = "naraya"
+    nos_upgrades = 3
+    HornType = 5
+    DefaultPresetRide = ""
+    chassis_upgrades = 1
+    transmission = [transmission/naraya, transmission/0xF1A70D20]
+    HandlingRating = [80, 90]
+    TurboSND = [
+        {
+            Item = turbosfx/default
+            Level = 0
+        },
+        {
+            Item = turbosfx/superchrg_must
+            Level = 4
+        },
+    ]
+    chassis = [chassis/naraya, chassis/0xF1A70D20]
+    ShiftSND = [
+        {
+            Item = shiftpattern/0x9CFEE859
+            Level = 0
+        },
+        {
+            Item = shiftpattern/0xF0CD0398
+            Level = 3
+        },
+        {
+            Item = shiftpattern/0x009EB4D3
+            Level = 4
+        },
+    ]
+    engine = [engine/naraya, engine/0xF1A70D20]
+    induction = [induction/default, induction/0xF1A70D20]
+    frontend = frontend/naraya
+    brakes = [brakes/naraya, brakes/0xF1A70D20]
+    engineaudio = [engineaudio/dodg_viper_b, engineaudio/dodg_viper_a]
+    tires = [tires/naraya, tires/0xF1A70D20]
+}

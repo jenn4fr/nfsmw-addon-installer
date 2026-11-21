@@ -1,0 +1,9 @@
+edit engine/naraya {
+    ENGINE_BRAKING = [0.7, 0.8, 0.9]
+    IDLE = 950
+    SPEED_LIMITER = []
+    TORQUE = [221, 325, 403, 571, 628, 734, 696, 669, 648]
+    MAX_RPM = 8500
+    FLYWHEEL_MASS = 10
+    RED_LINE = 7500
+}

@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "status": "PASS",
+  "archive_checks": [
+    {
+      "filename": "1970 AMC Rebel The Machine.rar",
+      "exists": true,
+      "expected_size": 4324680,
+      "actual_size": 4324680,
+      "expected_sha256": "272f6d4004d7987d5b3fb63ff008dd39e07b3eea8c3996ae4f9dc5e41315a2db",
+      "actual_sha256": "272f6d4004d7987d5b3fb63ff008dd39e07b3eea8c3996ae4f9dc5e41315a2db",
+      "status": "PASS"
+    },
+    {
+      "filename": "Fast n Furious Flip Car-102-1-01-1704391371(1).7z",
+      "exists": true,
+      "expected_size": 17374163,
+      "actual_size": 17374163,
+      "expected_sha256": "31018e52f8ba4a05b891ea8a16bba9064fa2bbf0581ebf74f357133063d357e8",
+      "actual_sha256": "31018e52f8ba4a05b891ea8a16bba9064fa2bbf0581ebf74f357133063d357e8",
+      "status": "PASS"
+    },
+    {
+      "filename": "nfsaddons.com_BugattiChiron.rar",
+      "exists": true,
+      "expected_size": 23846182,
+      "actual_size": 23846182,
+      "expected_sha256": "a5b58dbd971b9d09e0fe2baccbd11365d942ffa09b913d602cb9e0a925307429",
+      "actual_sha256": "a5b58dbd971b9d09e0fe2baccbd11365d942ffa09b913d602cb9e0a925307429",
+      "status": "PASS"
+    },
+    {
+      "filename": "nfsmw-addon-installer.zip",
+      "exists": true,
+      "expected_size": 8641082,
+      "actual_size": 8641082,
+      "expected_sha256": "cf369b07b9b244baa0245f2edc724faf692ac2340b75d39c86a543ec5f4c8b1e",
+      "actual_sha256": "cf369b07b9b244baa0245f2edc724faf692ac2340b75d39c86a543ec5f4c8b1e",
+      "status": "PASS"
+    }
+  ],
+  "analysis_report_checks": [
+    {
+      "name": "amc_rebel",
+      "exists": true,
+      "car_ids": [
+        "REBEL"
+      ],
+      "profiles": [
+        "unlimiter_addon"
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "bugatti_chiron",
+      "exists": true,
+      "car_ids": [
+        "CHIRON16"
+      ],
+      "profiles": [
+        "classic_modloader_replacement",
+        "unlimiter_addon"
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "fast_n_furious_flip_car",
+      "exists": true,
+      "car_ids": [
+        "FLIPCAR"
+      ],
+      "profiles": [
+        "unlimiter_addon"
+      ],
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

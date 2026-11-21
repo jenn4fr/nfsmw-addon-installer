@@ -1,338 +1,117 @@
-# AI handoff — read this first
+# AI / Developer handoff — read first
 
-> **Current source of truth:** project version **0.3.0**, updated 2026-11-21. Read the final section, “2026-11-21 update — version 0.3.0 Vehicle Intelligence,” first; it supersedes conflicting v0.1/v0.2 historical notes. Current verified test count: **41 passed**.
+Last updated: 2026-11-21  
+Project version: 0.6.1
 
-# AI / Developer Handoff — Read Before Continuing
+## User's objective
 
-This document is intended to let a future AI assistant or developer continue the NFSMW Add-on Installer project from the current repository state without asking the user to repeat known setup details or redoing completed discovery.
+Build a reliable Need for Speed Most Wanted (2005) add-on car installation system. Desired UX: one command per archive/folder, automatically identify the package format, use the right native tool, back up everything, verify file/database changes and require a real in-game check before reporting success.
 
-## 1. Project goal
+The user has already supplied the reference packages. Do not ask them to upload the same files again. Exact originals are included in `reference_packages/`; hashes and analysis are in `reference_packages/manifest.json` and `reports/reference-package-audit.json`. Extracted working copies are in `/mnt/data/nfsmw-reference-packages` for this session while available.
 
-Build a safe Windows tool for inspecting and eventually installing add-on/replacement cars for **Need for Speed: Most Wanted (2005), PC**. The tool should support packages containing NFSMS/Unlimiter scripts, ModLoader payloads, MWPS files, frontend resources, and Ed Files where the format and destination are verified.
+## User's Windows environment
 
-The longer-term goal includes a **Donor Car Configuration Assistant** for addons whose vehicle attributes are incomplete or incompatible. It should recommend suitable donor configurations and create selective proposed changes while preserving the new car's identity.
+- OS: Windows 11; Python 3.12; Git Bash.
+- Protected original game: `D:\softwares\NFS-MW\Need for Speed Most Wanted Black Edition`.
+  - v1.3 Black Edition, Classic ModLoader and Widescreen Fix.
+  - Do not modify this folder unless the user explicitly chooses it.
+- Target modded game: `D:\softwares\NFS-MW-Unlimiter`.
+  - Saved read-only audit: `reports/real-game-installation-audit.json`.
+  - `speed.exe` v1.3, 6,029,312 bytes, reference SHA-256 `b248271bf8eac8c9b283b8c95e3add672b713bf529b05f1780e58268493b9d06`.
+  - `dinput8.dll`, `scripts/NFSMWUnlimiter.asi`, `scripts/NFSMW-ML.asi`, `scripts/UnlimiterData`, `modloader` folder and NFSMW-ML log present.
+  - Attribulina `info` checks passed for `GLOBAL/ATTRIBUTES.BIN` and `GLOBAL/FE_ATTRIB.BIN`.
+  - This is an Unlimiter + NFSMW-ML target, not the original Classic ModLoader target.
+- Tools root: `D:\softwares\NFS-hack\utils`.
+- Known Attribulina CLI path: `D:\softwares\NFS-hack\utils\Attribulina\attribcli.exe`.
+- Package search folders: `D:\softwares\NFS-hack\cars` and `D:\softwares\NFS-hack\routes`.
+- User prefers precise, concise, step-by-step instructions. Ask for command output before advancing. Do not assume tool versions or successful installs.
 
-## 2. User's preferred working style
+## Reference archives already analyzed
 
-- Give exact Git Bash commands that can be pasted directly.
-- Prefer automation and complete replacement files over small snippets or manual editing.
-- Avoid repeated discovery commands when reports already provide the answer.
-- Work in small tested batches; ask for command output only when it changes the next decision.
-- The user expects complete downloadable ZIP updates with repository-relative paths and a simple local apply workflow.
-- Do not assume the assistant can push to GitHub. The user runs Git operations locally unless an authorized GitHub connector is explicitly available.
+1. `nfsmw-addon-installer.zip` — project source archive, SHA-256 in `reports/reference-package-audit.json`.
+2. `nfsaddons.com_BugattiChiron.rar` — 2016 Bugatti Chiron.
+3. `1970 AMC Rebel The Machine.rar` — AMC Rebel.
+4. `Fast n Furious Flip Car-102-1-01-1704391371(1).7z` — Fast & Furious Flip Car.
 
-## 3. Environment and paths (as last provided)
+Extracted reference directories in the current working environment:
 
-- Windows 11 Pro, Git Bash, Python 3.12.
-- Game root: `D:\softwares\NFS-MW-Unlimiter`.
-- Git Bash game root: `/d/softwares/NFS-MW-Unlimiter`.
-- Game databases:
-  - `D:\softwares\NFS-MW-Unlimiter\GLOBAL\ATTRIBUTES.BIN`
-  - `D:\softwares\NFS-MW-Unlimiter\GLOBAL\FE_ATTRIB.BIN`
-- Attribulina CLI: `D:\softwares\NFS-hack\utils\Attribulina\attribcli.exe` (v1.9.1).
-- Local project path: `D:\softwares\NFS-hack\utils\nfsmw-addon-installer`.
-- GitHub: `https://github.com/jenn4fr/nfsmw-addon-installer` (public repository per user).
+- `/mnt/data/nfsmw-reference-packages/bugatti-chiron`
+- `/mnt/data/nfsmw-reference-packages/amc-rebel`
+- `/mnt/data/nfsmw-reference-packages/flip-car`
 
-Paths are environment-specific; CLI path normalization supports Git Bash `/d/...` paths on Windows. Do not hard-code the user's local paths into library code. Keep defaults configurable.
+Detailed archive hashes, package file counts, script graph, profiles, tool requirements, MWPS and Ed findings are recorded in `reports/reference-package-audit.json` and `docs/REFERENCE_PACKAGE_FINDINGS.md`. Fresh extracted-folder analysis is in `reports/reference-amc-rebel-analysis.json`, `reports/reference-bugatti-chiron-analysis.json` and `reports/reference-flip-car-analysis.json`. The 4-case CLI dry-run matrix is `reports/reference-cli-dry-run-matrix.json`.
 
-## 4. Source modules and responsibilities
+### Package-specific findings
 
-- `nfsmw_installer/core.py`: package/archive scanning, NFSMS parser, file classification, findings/dependency graph, JSON report generation.
-- `nfsmw_installer/attribulina.py`: subprocess adapter. Conversion/check/dry-run only. Preserve safety flags and timeout behavior.
-- `nfsmw_installer/inventory.py`: class/collection inventory parsing/building/writing.
-- `nfsmw_installer/planner.py`: read-only install plan from `Install.nfsms`; safe relative path handling; conflict/unresolved mapping records; provisional ModLoader mapping.
-- `nfsmw_installer/donor_catalogue.py`: parses Attribulina textual `.amod` exports and produces read-only catalogue. Simple scalar values are typed; complex values are raw text.
-- `nfsmw_installer/cli.py`: argparse commands and orchestration.
-- `tools/scan_attribulina_database.py`: read-only Attribulina database scanner.
-- `tests/`: `unittest` suite.
+- **AMC Rebel:** `Addon/Install.nfsms` copies model files to `CARS/REBEL` and calls `SetupFiles/rebel_install.nfsms`. Ed Config/Resources are included. README says ModLoader replacement for Fiat Punto, but the archive content includes an Addon script and no clear `REPLACE/ADDONS` payload; analyzer flags this mismatch. Correct flow from Ed docs: stage Ed files, run Ed/apply, then install VLT script.
+- **Bugatti Chiron:** two alternatives: `unlimiter_addon` and `classic_modloader_replacement`. Add-on has Binary `.end` and NFSMS VLT script; car ID `CHIRON16`; README declares Unlimiter v3 and Binary script credits v2.2.0. Replacement uses MWPS under `REPLACE/ADDONS/CARS_REPLACE/PUNTO`; it is for Classic ModLoader only. Also contains optional save-patcher INI; never edit saves automatically.
+- **Flip Car:** Binary `Binary Data Install.end` + `VLT Data Install.nfsms`, nested install/uninstall scripts; car ID `FLIPCAR`; Binary 2.4.0+ and VltEd 4.6 declared in README. Attribulina Mod Installer is used as the guided NFSMS alternative and must be verified on first real install.
 
-Read the source before changing an interface. Do not rely on stale external summaries if the checked-out code differs.
+## Current implementation
 
-## 5. Current CLI commands
+- `nfsmw_installer/archive.py`: safe ZIP extraction and 7-Zip-backed RAR/7z extraction. Checks traversal, links, duplicate/case-colliding names, Windows-unsafe paths and extraction limits; destination must be empty.
+- `nfsmw_installer/package_analysis.py`: package analyzer for Binary VERSN1/VERSN2 and move_file sources, recursive NFSMS references/file copies, best-effort AMOD include/collection inspection, direct CARS/UnlimiterData payloads, MWPS, Ed Files, Unlimiter config and save patcher. Detects multiple/alternative profiles.
+- `nfsmw_installer/workflow.py`: target-aware profile auto-selection, loader preflight, direct model payload staging, safe backup-root validation, GUI orchestration, Binary move_file/NFSMS file_copy hash checks, mandatory Attribulina pvehicle export read-back for Unlimiter add-ons, manual in-game confirmation and rollback. VltEd readme requirements trigger explicit approval before using Attribulina as the alternative.
+- `nfsmw_installer/cli.py`: `analyze-package` and `install` commands plus existing database/donor commands.
+- `reports/reference-package-audit.json`: real-package analysis and synthetic preflight matrix.
+- `reports/real-game-installation-audit.json`: saved read-only target game audit.
+- `docs/REFERENCE_PACKAGE_FINDINGS.md`: human-readable package findings.
 
-Confirm with `python -m nfsmw_installer.cli --help`.
+## Single-command usage
 
-1. `inspect`
-2. `validate-db`
-3. `inventory-db`
-4. `plan-install`
-5. `build-donor-catalogue`
-6. `donor-assist` (optional `--target-profile`)
-7. `apply-file-plan` (dry-run unless explicit `--execute`)
-8. `rollback-install`
+Dry-run first:
 
-There is no general `install`, `uninstall`, or live database `apply` command. The database scanner is a standalone tool script.
+```bash
+python -m nfsmw_installer.cli install \
+  "/d/softwares/NFS-hack/cars/<package>.rar" \
+  --game-root "/d/softwares/NFS-MW-Unlimiter" \
+  --tools-root "/d/softwares/NFS-hack/utils"
+```
 
-## 6. Data findings already established
+Execute only after reviewing the plan and backup requirements:
 
-### Database inventory
+```bash
+python -m nfsmw_installer.cli install \
+  "/d/softwares/NFS-hack/cars/<package>.rar" \
+  --game-root "/d/softwares/NFS-MW-Unlimiter" \
+  --tools-root "/d/softwares/NFS-hack/utils" \
+  --execute
+```
 
-- Both databases are `mw_pc` format and expose 57 classes in the supplied scan.
-- The combined inventory report records 5,511 node refs and 5,511 collection refs.
-- Vehicle-relevant classes include `ecar`, `pvehicle`, `engine`, `induction`, `transmission`, `brakes`, `chassis`, `tires`, `camerainfo`, plus `acceltrans`, `nos`, `shiftpattern`, `presetride`, `rigidbodyspecs`, `engineaudio`, `turbosfx`, and `damagespecs`.
-- Earlier comparison suggested many classes are identical between the two databases while `pvehicle` has some differences. Treat that as an observation from supplied exports; re-verify before deriving hard rules.
+For Ed packages add `--ed-root "/d/softwares/NFS-hack/utils/Ed"`. If auto-discovery fails, pass explicit `--binary`, `--attribulina-installer`, `--attribcli`, `--ed-exe`. For an unrecognized car ID, add `--car-id ID`. RAR/7z needs 7-Zip on PATH or `--7zip`. `attribcli.exe` is mandatory for an Unlimiter add-on PASS. If a package lists VltEd as a requirement, the workflow asks you to approve Attribulina as its alternative.
 
-### Attribulina scan
+`install` is dry-run by default. The guided `--execute` stage launches GUI tools, but the user still has to select/save the Binary `.end`, apply Ed configs, and choose the Attribulina install option. This is not a headless GUI automation claim.
 
-The supplied scan is under `reports/database-scan-20261120_212135/` in the uploaded project archive. It includes per-database class directories, `complete-export.amod`, `header-types.txt`, `list.txt`, export logs, and `scan-report.json`.
+## Safety rules
 
-Original scan summary:
+- First real install must be on a disposable copy of `D:\softwares\NFS-MW-Unlimiter`.
+- Never target the protected original game by default.
+- Never combine Bugatti add-on and replacement routes.
+- Never install MWPS replacement into the Unlimiter/NFSMW-ML target.
+- Never patch career saves automatically. Save-patcher INIs remain manual-only.
+- Do not call a package installed because files were copied. Require Binary/Ed/Attribulina completion, file hashes, mandatory pvehicle read-back for Unlimiter add-ons, and in-game confirmation.
+- Backups and `install-run.json` are created before writes. Keep the backup root outside GLOBAL/FRONTEND/CARS/scripts/ADDONS/modloader/LANGUAGES and outside the Ed tool folder. Rollback refuses if GLOBAL or FRONTEND changed after install; don't weaken this protection.
+- Unknown package formats, missing nested references, invalid Binary manifests and loader conflicts must stop before writes.
 
-- 2,406 commands
-- 406 successful
-- 2,000 failed
-- 0 timeouts
-- 114 class exports
-- 2,060 individual collection reads attempted
-
-The failed `get` calls commonly returned `attribcli: no collection <class>/<nested path>`. The old scanner was attempting `get` on every nested inventory path. The newer scanner removes that redundant loop and uses the successful complete class exports as the catalogue input.
-
-### Donor catalogue output from supplied exports
-
-The v0.3.0 catalogue builder anchors canonical road-car profiles on `pvehicle/racers`, resolves subsystem collection references from pvehicle fields, and keeps ATTRIBUTES.BIN and FE_ATTRIB.BIN distinct. Current supplied-export validation is recorded in the v0.3.0 update section below: 4,730 parsed collections, 86 profiles (43 per database), 1,272 relationship edges and zero export parse errors.
-
-## 7. User's donor assistant policy — important
-
-The user selected **Option B** and a **Hybrid** approach:
-
-- Preserve essential new-car registration and identity entries.
-- Preserve target car model/identity, geometry, textures, unique name/ID, and collection identity.
-- Do not blindly copy an entire donor car.
-- Reject or replace incompatible performance/customization entries with selected donor configuration entries.
-- Choose configuration selectively by category, supported by actual database evidence.
-- Consider body size, drivetrain, weight, wheelbase, tire setup, performance tier, customization support, frontend structure, engine config, and closest overall donor.
-- Provide transparent top-10 donor candidates, score explanations, and missing-data warnings.
-- Proposed changes must be target-specific and validated; never auto-apply them.
-
-Suggested future modes were Strict, Recommended, Custom, and Hybrid. Hybrid is the selected default approach. Implement other modes only if the user still wants them.
-
-## 8. Current sample package: AMC Rebel
-
-The user tested `D:\softwares\NFS-hack\cars2\1970 AMC Rebel The Machine`.
-
-- `Addon/Install.nfsms` contains folder creation, file copies, and a `script SetupFiles/rebel_install.nfsms` reference.
-- ModLoader replacement files are under `Addon/Modloader/ADDONS/CARS_REPLACE/PUNTO/`.
-- A frontend manufacturer resource exists under `Addon/Modloader/ADDONS/FRONTEND/MANUFACTURERS/75-REBEL.BIN`.
-- Ed Files includes `Addon/Ed Files/Config/NFSMW/REBEL.ini` and resource assets.
-- The user's `REBEL.ini` resource count was corrected to 2; backup retained in source package.
-- Attribulina conversion/check/dry-run artifacts show the script was accepted by the user's environment. The dry-run was not committed to the game DB.
-- A read-only plan identified an unresolved Ed Files destination mapping.
-
-Use reports as evidence; do not assume every AMC Rebel package file is ready to install.
-
-## 9. Current test baseline
-
-Run in repository root:
+## Verification baseline
 
 ```bash
 python -m compileall -q nfsmw_installer tools tests
 python -m unittest discover -s tests -v
 ```
 
-The historical v0.2.0 baseline was 37 tests. The current v0.3.0 baseline is **41 tests passed**. Existing test groups cover parser, inventory, dependencies, Attribulina adapter, CLI path handling, planner, ModLoader path mapping, and donor catalogue parsing/building.
+Current baseline: **75 tests passed**. ZIP extraction is exercised directly; RAR/7z listing safety is covered with mocked 7-Zip output, but real 7-Zip extraction still needs the Windows acceptance run. Run `python tools/verify_reference_bundle.py` to verify all preserved archive hashes and saved analysis reports. `docs/EXTERNAL_TOOL_CAPABILITIES.md` documents verified native-tool automation boundaries; `docs/ACCEPTANCE_TEST_PLAN.md` is the mandatory Windows live-test checklist.
 
-Every new feature needs tests. Preserve all current tests.
+Tests include a mocked end-to-end guided run with Binary/Ed/Attribulina, a mock `attribcli export` read-back and rollback. The three real packages were analyzed and preflighted against synthetic game layouts. No real live-game installation or in-game test has yet been performed.
 
-## 10. Next implementation sequence
+## Next required work
 
-### Priority A — Improve donor data model
+1. Inspect actual Binary/Attribulina/Ed executable paths and versions in the user's tools root.
+2. Clone the target Unlimiter game folder to a disposable test directory.
+3. Run Bugatti `unlimiter_addon` dry-run, inspect plan, then execute on the clone.
+4. Verify Binary's expected game data changes and Attribulina `pvehicle/chiron16` export.
+5. Launch the clone, confirm car appears and can be driven; record any Binary/Attribulina logs and before/after hashes.
+6. Repeat with Flip Car, then AMC Rebel (Ed stage first, VLT after Ed).
+7. Fix any real GUI/format mismatches before claiming production readiness.
 
-- Parse AMOD blocks robustly: escaped quotes, braces in strings, nested objects, arrays, duplicate field names, comments, and multiline values.
-- Keep raw source text and parser diagnostics for each record.
-- Parse headers/types and collection inventory to validate field types and cross-reference class/collection paths.
-- Replace leaf-only grouping with stable keys that include database, class, full collection path, and inferred vehicle relationship.
-- Build a normalized vehicle profile graph; do not equate a collection leaf with a car ID.
-
-### Priority B — Vehicle relationship discovery
-
-- Determine how `ecar` references `pvehicle`, `engine`, `induction`, `transmission`, `brakes`, `chassis`, `tires`, and related classes using actual exported field values and type definitions.
-- Identify identity/registration fields versus reusable tune/config fields.
-- Compare ATTRIBUTES and FE_ATTRIB records without collapsing them.
-- Record unknown/unresolved references explicitly.
-
-### Priority C — Donor matching
-
-- Candidate scoring should be evidence-based and explainable.
-- Use only fields actually present and typed/validated.
-- Include missing-data penalties and confidence; don't fabricate drivetrain, wheelbase, weight, or body dimensions if the DB doesn't expose them.
-- Generate a top-10 list with per-factor scores and exclusions.
-- Add tests with known synthetic examples and fixtures derived from exports.
-
-### Priority D — Selective proposal generator
-
-- Implement user's Option B / Hybrid policy.
-- Preserve identity and registration fields/collections.
-- Select only compatible config categories from donor.
-- Produce a proposed `.nfsms`/`.amod` change file plus machine-readable explanation/manifest.
-- Do not invoke actual apply. Validate with Attribulina conversion/check/strict dry-run.
-- Make generated proposals deterministic and reviewable.
-
-### Priority E — Installer execution (later, only after approval)
-
-- Verify ModLoader mapping from actual loader behavior.
-- Resolve Ed Files mapping and supported resource packaging.
-- Add staging, collision checks, backups, atomic copy, rollback, and uninstall manifests.
-- Handle MWPS/binary patch formats only with format-specific validation.
-- Keep database changes separate from file installation; require backups and explicit confirmation.
-
-## 11. Non-negotiable safety rules
-
-- Never edit `ATTRIBUTES.BIN` or `FE_ATTRIB.BIN` during discovery, catalogue building, or tests.
-- Never run Attribulina `apply` against live databases during development.
-- Never assume a successful dry-run equals installation.
-- Never copy donor identity, geometry, textures, frontend IDs, or unique target registration wholesale.
-- Never treat unresolved destination mappings as ready.
-- Never silently overwrite game files.
-- Require backups, a reviewable plan, and explicit user approval before any future write-capable workflow.
-
-## 12. Suggested first command for a new AI session
-
-From the project root:
-
-```bash
-python -m nfsmw_installer.cli --help
-python -m unittest discover -s tests -v
-```
-
-Then read this handoff, `PROJECT_STATUS.md`, `ROADMAP.md`, `ARCHITECTURE.md`, and the relevant implementation/tests before changing code. Do not re-run the full Attribulina scan unless the existing exports are missing or the user explicitly requests a fresh scan.
-
----
-
-## 2026-11-21 update — version 0.2.0 development snapshot
-
-The project was extended after the original 30-test handoff baseline. Read the current source; this section supersedes older statements above that said donor-assist/apply/rollback commands did not exist.
-
-### New modules
-
-- `nfsmw_installer/donor_matcher.py`
-  - `rank_donors(catalogue, target_name, limit, database)` ranks pvehicle-backed road-car profiles using weighted presence of `pvehicle`, `engine`, `induction`, `transmission`, `brakes`, `chassis`, `tires`, `acceltrans`, `nos`, `shiftpattern`, and `rigidbodyspecs`, plus scalar-field richness.
-  - The score is a configuration data coverage metric only. It is NOT a measured physical compatibility score.
-  - Police/chopper/traffic collection paths are excluded from road-car donor shortlist.
-  - `build_configuration_proposal(...)` produces review-only JSON; pvehicle fields are limited to an explicit allowlist and identity domains are preserved.
-- `nfsmw_installer/apply_plan.py`
-  - `apply_file_plan()` defaults to dry-run.
-  - `execute=True` is required to copy files.
-  - Existing destinations require `overwrite=True`; overwritten files are backed up.
-  - Writes `install-journal.json`; `rollback_journal()` restores backups or removes newly created files.
-  - Database script operations are skipped. This is a file-only experimental executor.
-
-### New CLI commands
-
-```bash
-python -m nfsmw_installer.cli donor-assist ADDON_DIR --catalogue reports/donor-catalogue.json --limit 10
-python -m nfsmw_installer.cli donor-assist ADDON_DIR --catalogue reports/donor-catalogue.json --donor punto
-python -m nfsmw_installer.cli apply-file-plan reports/install-plan.json
-python -m nfsmw_installer.cli apply-file-plan reports/install-plan.json --execute
-python -m nfsmw_installer.cli rollback-install PATH_TO/install-journal.json
-```
-
-`apply-file-plan --execute` changes files in the supplied plan's game root. It is not a recommendation to use this on a live installation until ModLoader/Ed Files mappings have been verified. Review the JSON plan first. Database scripts are not executed.
-
-### Verification
-
-- Updated package version: 0.2.0.
-- `python -m compileall -q nfsmw_installer tools tests` succeeded.
-- `python -m unittest discover -s tests -v`: **37 tests passed**.
-- Donor catalogue rebuilt from supplied exports: 4,730 collection records, 860 leaf-keyed profile groups, zero parse errors.
-- Donor shortlist smoke test returned 113 candidate profiles after excluding police/chopper/traffic classes; top 10 smoke test completed. The score is completeness only, not physical compatibility.
-
-### Known gaps remain
-
-- The donor matcher does not yet compare dimensions, drivetrain, wheelbase, or actual handling characteristics.
-- Current profiles group by leaf name and may incorrectly combine class collections with identical leaves; canonical relationship discovery is a priority.
-- Configuration proposal JSON is not executable and has unresolved target collection mappings.
-- File executor is experimental and not yet validated against real game installation. Folder cleanup, failure injection, symlink race-hardening, and representative package tests remain.
-- ModLoader mapping is provisional; Ed Files/MWPS remain unresolved.
-- No database write, live install, or live uninstall was performed.
-
-### Instructions for the next AI/developer
-
-1. Run compileall and the complete unittest suite first.
-2. Inspect `donor_matcher.py`, `apply_plan.py`, and their tests before extending them.
-3. Fix catalogue identity/relationship modeling before claiming compatibility recommendations.
-4. Do not promote the coverage score as physical suitability.
-5. Do not generate executable donor AMOD until target references and field types are validated.
-6. Do not execute file plans against the user's live game until package-specific mappings are independently confirmed.
-7. Keep all database mutation separate from file operations and require explicit confirmation plus verified backups.
-
----
-
-## 2026-11-21 update — version 0.3.0 Vehicle Intelligence
-
-This section supersedes the older v0.2.0 statements that profiles were grouped only by leaf name and that canonical relationship discovery had not begun.
-
-### Source changes
-
-- `donor_catalogue.py` now captures each collection's parent path from AMOD headers.
-- Canonical road-car candidates are anchored on `pvehicle` records whose parent is `pvehicle/racers`. This excludes police, traffic, trailers and generic category nodes at the source rather than trying to filter all of them later.
-- Each canonical pvehicle record is scanned for explicit `class/collection` references in its top-level exported values. Known vehicle classes are resolved against their corresponding class export, including base and upgrade variants (for example `engine/rx7` and `engine/rx7_top`).
-- The catalogue emits `relationship_edges` and per-profile `collection_references` with resolved/unresolved status.
-- `ecar` is joined by exact vehicle leaf because the inspected pvehicle records do not expose it as a direct subsystem field. The report labels this as `exact-vehicle-leaf`; do not upgrade its confidence without more evidence.
-- Numeric features currently include pvehicle mass and upgrade-count fields, HandlingRating bounds, TENSOR_SCALE vector, plus selected ecar ride-height/camber/steer/wheel fields. No drivetrain, wheelbase or body-size inference is made.
-- `donor_matcher.rank_donors(..., target_profile=...)` can compare shared numeric scalar/vector features against a known profile. The ranking is still heuristic and explicitly not a physical-fitment guarantee.
-- CLI `donor-assist` accepts `--target-profile <profile-key-or-name>`.
-
-### Validation against supplied scan
-
-Using `reports/database-scan-20261120_212135/`:
-
-- 4,730 class collection records parsed.
-- 86 canonical profiles total: 43 ATTRIBUTES.BIN and 43 FE_ATTRIB.BIN.
-- 1,272 relationship edges emitted; 1,190 recognized pvehicle references were audited (1,188 resolved, 2 unresolved).
-- 0 export-file parse/read errors.
-- 2 unresolved references among recognized vehicle-class references; unresolved entries are retained in the profile audit.
-- The stock database does not contain an AMC Rebel profile. For that add-on, the current top-10 remains a configuration-completeness shortlist unless a known baseline vehicle is supplied with `--target-profile`.
-
-### CLI examples
-
-Build catalogue:
-
-```bash
-python -m nfsmw_installer.cli build-donor-catalogue \
-  reports/database-scan-20261120_212135 \
-  -o reports/donor-catalogue-v0.3.0.json
-```
-
-AMC Rebel-style custom add-on (no target profile available):
-
-```bash
-python -m nfsmw_installer.cli donor-assist \
-  "/path/to/addon-folder" \
-  --catalogue reports/donor-catalogue-v0.3.0.json \
-  --limit 10 -o reports/donor-assist.json
-```
-
-Known baseline target profile (example RX-7):
-
-```bash
-python -m nfsmw_installer.cli donor-assist \
-  "/path/to/addon-folder" \
-  --catalogue reports/donor-catalogue-v0.3.0.json \
-  --target-profile attributes.bin:rx7 \
-  --limit 10 -o reports/donor-assist-rx7-baseline.json
-```
-
-### Tests
-
-The v0.3.0 suite has **41 passing tests**. It adds tests for parent path parsing, pvehicle/racers anchoring, explicit subsystem reference resolution (including a different engine leaf), target-profile numeric similarity, and missing target-profile rejection.
-
-### Remaining work after v0.3.0
-
-1. Robust AMOD parser for nested/multiline values and comments; current parser only extracts safe top-level scalars/raw single-line values.
-2. Parse field types/headers and validate reference targets and field compatibility against Attribulina exports.
-3. Extract addon target hints from NFSMS and package metadata; no stock profile exists for AMC Rebel.
-4. Add confidence-weighted per-factor donor score and meaningful missing-data penalties.
-5. Confirm ecar relation and other identity/frontend relationships from authoritative references.
-6. Generate target-specific, deterministic AMOD only after mapping/field types/dependencies are proven; still require Attribulina check and strict dry-run.
-7. Verify ModLoader/Ed Files/MWPS mappings and complete install/uninstall tests.
-
-Never treat this release as a completed installer. Database writes remain out of scope, and the experimental file executor must not be used on a live game without package-specific mapping verification and user approval.
-
-
-## v0.4.0 — Target-aware Hybrid proposal update
-
-Current feature branch target: `feature/donor-engine-v0.4.0`. The `donor-assist` command accepts optional `--amod <converted-target.amod>`. `parse_target_collections()` reads only explicit `create class/target from class/source` directives where class is one of the performance classes. `build_configuration_proposal()` uses these mappings to map selected donor vehicle base/base-variant and `_top` records to target collection names. When target mapping is supplied, it excludes global defaults and unrelated shared records and skips unmapped classes. Without `--amod`, legacy review-only behavior remains for compatibility.
-
-AMC Rebel v0.4.0 test report: `reports/REBEL-hybrid-proposal-v0.4.0.json`. Using catalogue `reports/donor-catalogue-v0.3.0.json` and target AMOD `reports/REBEL-attribulina.amod`, the completeness shortlist contains 43 candidates; `tt` ranks first at 87.26. This is a configuration coverage/richness score only, not physical compatibility. The report maps 13 donor collection records across pvehicle, engine, induction, transmission, brakes, chassis and tires to explicit Rebel target collection names. It is JSON review data only. No Attribulina apply or live database write was performed.
-
-Validation: Python compilation passed; 44/44 unit tests passed. Next: validate proposed fields against class header types, then generate a temporary candidate AMOD and run Attribulina check plus strict dry-run. Do not treat current JSON as an executable install artifact.
+Do not repeat the Attribulina full database scan unless the exports are missing or the user asks for a refresh. The donor catalogue/matcher work remains read-only and should not be entangled with the car installer.

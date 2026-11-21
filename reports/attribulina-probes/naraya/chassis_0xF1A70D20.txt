@@ -1,0 +1,51 @@
+edit chassis/0xF1A70D20 {
+    WHEEL_BASE = 2.54
+    DRAG_COEFFICIENT = 0.28
+    SHOCK_VALVING = {
+        Front = 24
+        Rear = 24
+    }
+    RIDE_HEIGHT = {
+        Front = 7.1
+        Rear = 7.1
+    }
+    SHOCK_STIFFNESS = {
+        Front = 62
+        Rear = 62
+    }
+    SHOCK_BLOWOUT = 8
+    SHOCK_EXT_STIFFNESS = {
+        Front = 62
+        Rear = 62
+    }
+    SWAYBAR_STIFFNESS = {
+        Front = 340
+        Rear = 320
+    }
+    ROLL_CENTER = 6
+    TRAVEL = {
+        Front = 6
+        Rear = 6
+    }
+    SPRING_STIFFNESS = {
+        Front = 680
+        Rear = 680
+    }
+    AERO_CG = 49
+    SPRING_PROGRESSION = {
+        Front = 8
+        Rear = 8
+    }
+    TRACK_WIDTH = {
+        Front = 1.616
+        Rear = 1.592
+    }
+    SHOCK_DIGRESSION = {
+        Front = 0.6
+        Rear = 0.6
+    }
+    RENDER_MOTION = 0.6
+    AERO_COEFFICIENT = 0.27
+    FRONT_AXLE = 1.35
+    FRONT_WEIGHT_BIAS = 56
+}

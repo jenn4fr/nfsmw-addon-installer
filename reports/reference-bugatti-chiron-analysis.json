@@ -1,0 +1,3050 @@
+{
+  "schema_version": "1.0",
+  "package_root": "/mnt/data/nfsmw-reference-packages/bugatti-chiron",
+  "file_count": 26,
+  "total_bytes": 112702055,
+  "car_ids": [
+    "CHIRON16"
+  ],
+  "profiles": [
+    {
+      "id": "unlimiter_addon",
+      "label": "Unlimiter add-on car",
+      "requires": [
+        "NFSMW Unlimiter",
+        "Binary User Mode",
+        "Attribulina Mod Installer or compatible VLT tool"
+      ],
+      "components": [
+        "model files",
+        "Binary package",
+        "VLT/NFSMS/AMOD database scripts",
+        "Unlimiter per-car configuration"
+      ]
+    },
+    {
+      "id": "classic_modloader_replacement",
+      "label": "Classic ModLoader replacement car",
+      "requires": [
+        "Classic NFSMW ModLoader (d3d9.dll + modloader.ini)"
+      ],
+      "components": [
+        "replacement payload",
+        "MWPS patches"
+      ]
+    }
+  ],
+  "declared_tool_requirements": {
+    "Binary": "2.2.0 (credited version; minimum not stated)",
+    "Unlimiter": "3 (required)"
+  },
+  "components": {
+    "model_files_present": true,
+    "model_directories": [
+      "nfsaddons.com_bugattichiron/\u3010bill.o.jack\u3011 2016 bugatti chiron/addon/files/model",
+      "nfsaddons.com_bugattichiron/\u3010bill.o.jack\u3011 2016 bugatti chiron/replace/addons/cars_replace/punto"
+    ],
+    "unlimiter_configs": [
+      "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/_Settings/CHIRON16.ini"
+    ],
+    "save_patcher_files": [
+      "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Save Patcher by MWInside/savepatch/CHIRON16.ini"
+    ],
+    "nfsms": {
+      "script_count": 4,
+      "entrypoints": [
+        "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron VLT.nfsms"
+      ],
+      "uninstall_entrypoints": [],
+      "scripts": [
+        "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron VLT.nfsms",
+        "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Files.nfsms",
+        "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Uninstallchiron.nfsms",
+        "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/chiron.nfsms"
+      ],
+      "script_edges": [
+        {
+          "from": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron VLT.nfsms",
+          "line": 56,
+          "to": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Files.nfsms",
+          "status": "resolved"
+        },
+        {
+          "from": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron VLT.nfsms",
+          "line": 57,
+          "to": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/chiron.nfsms",
+          "status": "resolved"
+        },
+        {
+          "from": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron VLT.nfsms",
+          "line": 60,
+          "to": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Uninstallchiron.nfsms",
+          "status": "resolved"
+        }
+      ],
+      "script_base": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON",
+      "relative_path_fallbacks": [],
+      "ambiguous_script_references": [],
+      "command_counts": {
+        "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron VLT.nfsms": 61,
+        "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Files.nfsms": 4,
+        "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Uninstallchiron.nfsms": 10,
+        "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/chiron.nfsms": 309
+      },
+      "car_collection_ids": [
+        "CHIRON16"
+      ],
+      "file_copy_operations": [
+        {
+          "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Files.nfsms",
+          "line": 3,
+          "source": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Model/GEOMETRY.BIN",
+          "source_exists": true,
+          "destination": "CARS/CHIRON16/GEOMETRY.BIN"
+        },
+        {
+          "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Files.nfsms",
+          "line": 4,
+          "source": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Model/TEXTURES.BIN",
+          "source_exists": true,
+          "destination": "CARS/CHIRON16/TEXTURES.BIN"
+        },
+        {
+          "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Files.nfsms",
+          "line": 5,
+          "source": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Model/VINYLS.BIN",
+          "source_exists": true,
+          "destination": "CARS/CHIRON16/VINYLS.BIN"
+        }
+      ],
+      "ui_controls": [
+        {
+          "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron VLT.nfsms",
+          "line": 53,
+          "args": [
+            "radiobutton",
+            "setup_rbutton",
+            "option1",
+            "Install"
+          ]
+        },
+        {
+          "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron VLT.nfsms",
+          "line": 54,
+          "args": [
+            "radiobutton",
+            "setup_rbutton",
+            "option2",
+            "Uninstall"
+          ]
+        }
+      ],
+      "ui_options": [
+        {
+          "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron VLT.nfsms",
+          "line": 55,
+          "args": [
+            "setup_rbutton",
+            "option1"
+          ]
+        },
+        {
+          "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron VLT.nfsms",
+          "line": 58,
+          "args": [
+            "setup_rbutton",
+            "option1"
+          ]
+        },
+        {
+          "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron VLT.nfsms",
+          "line": 59,
+          "args": [
+            "setup_rbutton",
+            "option2"
+          ]
+        },
+        {
+          "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron VLT.nfsms",
+          "line": 61,
+          "args": [
+            "setup_rbutton",
+            "option2"
+          ]
+        }
+      ],
+      "requires_interactive_choices": true,
+      "missing_references": [],
+      "unsafe_references": []
+    },
+    "amod": {
+      "scripts": [],
+      "entrypoints": [],
+      "uninstall_entrypoints": [],
+      "include_graph": {},
+      "missing_references": [],
+      "unsafe_references": [],
+      "cycles": [],
+      "car_collection_ids": [],
+      "game_targets": [],
+      "script_count": 0
+    },
+    "amod_scripts": [],
+    "direct_model_payload": [],
+    "binary_manifests": [
+      {
+        "path": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron Installer.end",
+        "valid": true,
+        "usage": "User",
+        "game": "MostWanted",
+        "directory": " ",
+        "endscript": "Files/_settings/setup.end",
+        "game_files": [
+          "GLOBAL/GLOBALA.BUN",
+          "GLOBAL/GLOBALB.LZC",
+          "frontend/FRONTB.lzc",
+          "LANGUAGES/ENGLISH.BIN",
+          "LANGUAGES/SPANISH.BIN",
+          "LANGUAGES/CHINESE.BIN",
+          "LANGUAGES/DANISH.BIN",
+          "LANGUAGES/DUTCH.BIN",
+          "LANGUAGES/FINNISH.BIN",
+          "LANGUAGES/FRENCH.BIN",
+          "LANGUAGES/GERMAN.BIN",
+          "LANGUAGES/ITALIAN.BIN",
+          "LANGUAGES/KOREAN.BIN",
+          "LANGUAGES/POLISH.BIN",
+          "LANGUAGES/SWEDISH.BIN"
+        ],
+        "links": [
+          {
+            "LoadType": "Attributes",
+            "PathType": "Absolute",
+            "File": "GLOBAL/attributes.bin"
+          },
+          {
+            "LoadType": "FeAttrib",
+            "PathType": "Absolute",
+            "File": "GLOBAL/fe_attrib.bin"
+          },
+          {
+            "LoadType": "Labels",
+            "PathType": "Absolute",
+            "File": "LANGUAGES/Labels_Global.bin"
+          },
+          {
+            "LoadType": "Labels",
+            "PathType": "Absolute",
+            "File": "LANGUAGES/Labels.bin"
+          }
+        ],
+        "errors": [],
+        "endscript_resolved": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/_Settings/setup.end",
+        "endscript_exists": true
+      }
+    ],
+    "binary_scripts": [
+      {
+        "path": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/_Settings/global_install.end",
+        "version_header": "[VERSN2]",
+        "commands": [
+          {
+            "line": 2,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO CARNAME_BUGATTI2_CHIRON16 \"2016 Bugatti Chiron\""
+          },
+          {
+            "line": 3,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\SPANISH.BIN STRBlocks GLOBAL AUTO CARNAME_BUGATTI2_CHIRON16 \"2016 Bugatti Chiron\""
+          },
+          {
+            "line": 4,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\CHINESE.BIN STRBlocks GLOBAL AUTO CARNAME_BUGATTI2_CHIRON16 \"2016 Bugatti Chiron\""
+          },
+          {
+            "line": 5,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\DANISH.BIN STRBlocks GLOBAL AUTO CARNAME_BUGATTI2_CHIRON16 \"2016 Bugatti Chiron\""
+          },
+          {
+            "line": 6,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\FINNISH.BIN STRBlocks GLOBAL AUTO CARNAME_BUGATTI2_CHIRON16 \"2016 Bugatti Chiron\""
+          },
+          {
+            "line": 7,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\FRENCH.BIN STRBlocks GLOBAL AUTO CARNAME_BUGATTI2_CHIRON16 \"2016 Bugatti Chiron\""
+          },
+          {
+            "line": 8,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\GERMAN.BIN STRBlocks GLOBAL AUTO CARNAME_BUGATTI2_CHIRON16 \"2016 Bugatti Chiron\""
+          },
+          {
+            "line": 9,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ITALIAN.BIN STRBlocks GLOBAL AUTO CARNAME_BUGATTI2_CHIRON16 \"2016 Bugatti Chiron\""
+          },
+          {
+            "line": 10,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\KOREAN.BIN STRBlocks GLOBAL AUTO CARNAME_BUGATTI2_CHIRON16 \"2016 Bugatti Chiron\""
+          },
+          {
+            "line": 11,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\POLISH.BIN STRBlocks GLOBAL AUTO CARNAME_BUGATTI2_CHIRON16 \"2016 Bugatti Chiron\""
+          },
+          {
+            "line": 12,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\SWEDISH.BIN STRBlocks GLOBAL AUTO CARNAME_BUGATTI2_CHIRON16 \"2016 Bugatti Chiron\""
+          },
+          {
+            "line": 15,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_BASE \"Bugatti\""
+          },
+          {
+            "line": 16,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_BASE_1 \"Style 1\""
+          },
+          {
+            "line": 17,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_BASE_2 \"Style 2\""
+          },
+          {
+            "line": 18,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_BASE_3 \"Style 3\""
+          },
+          {
+            "line": 19,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_BASE_4 \"Style 4\""
+          },
+          {
+            "line": 20,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_BASE_5 \"Style 5\""
+          },
+          {
+            "line": 21,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_BASE_6 \"Style 6\""
+          },
+          {
+            "line": 22,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_BODY \"Bugatti\""
+          },
+          {
+            "line": 23,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_BODY_1 \"Alchemist\""
+          },
+          {
+            "line": 24,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_BODY_2 \"Tuning\""
+          },
+          {
+            "line": 25,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_BODY_3 \"SS 300+\""
+          },
+          {
+            "line": 26,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_BODY_4 \"Concept GT\""
+          },
+          {
+            "line": 27,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_BODY_5 \"SpeedHunters\""
+          },
+          {
+            "line": 28,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_INTERIOR \"Bugatti\""
+          },
+          {
+            "line": 29,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_INTERIOR_STYLE01 \"Double Color\""
+          },
+          {
+            "line": 30,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_INTERIOR_STYLE02 \"Concept\""
+          },
+          {
+            "line": 31,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_SPOILER \"Bugatti\""
+          },
+          {
+            "line": 32,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_SPOILER_STYLE01 \"Style 1\""
+          },
+          {
+            "line": 33,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_SPOILER_STYLE02 \"Style 2\""
+          },
+          {
+            "line": 34,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_SPOILER_STYLE03 \"Style 3\""
+          },
+          {
+            "line": 35,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_SPOILER_STYLE04 \"Style 4\""
+          },
+          {
+            "line": 36,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_SPOILER_STYLE05 \"Style 5\""
+          },
+          {
+            "line": 37,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_SPOILER_STYLE06 \"Style 6\""
+          },
+          {
+            "line": 38,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_SPOILER_STYLE07 \"Style 7\""
+          },
+          {
+            "line": 39,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_SPOILER_STYLE08 \"Style 8\""
+          },
+          {
+            "line": 40,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_SPOILER_STYLE09 \"Style 9\""
+          },
+          {
+            "line": 41,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_SPOILER_STYLE10 \"Style 10\""
+          },
+          {
+            "line": 42,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_SPOILER_STYLE11 \"Style 11\""
+          },
+          {
+            "line": 43,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_SPOILER_STYLE12 \"Style 12\""
+          },
+          {
+            "line": 44,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_SPOILER_STYLE13 \"Style 13\""
+          },
+          {
+            "line": 45,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_SPOILER_STYLE14 \"Style 14\""
+          },
+          {
+            "line": 46,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_SPOILER_STYLE15 \"Style 15\""
+          },
+          {
+            "line": 47,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_SPOILER_STYLE16 \"Style 16\""
+          },
+          {
+            "line": 48,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_SPOILER_STYLE17 \"Style 17\""
+          },
+          {
+            "line": 49,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_SPOILER_STYLE18 \"Style 18\""
+          },
+          {
+            "line": 50,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_HOOD_0 \"Bugatti\""
+          },
+          {
+            "line": 51,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_HOOD_6 \"Style 1\""
+          },
+          {
+            "line": 52,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_HOOD_7 \"Style 2\""
+          },
+          {
+            "line": 53,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_HOOD_13 \"Style 3\""
+          },
+          {
+            "line": 54,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_HOOD_16 \"Style 4\""
+          },
+          {
+            "line": 55,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_HOOD_17 \"Style 5\""
+          },
+          {
+            "line": 56,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_HOOD_20 \"Style 6\""
+          },
+          {
+            "line": 57,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_HOOD_2 \"Style 7\""
+          },
+          {
+            "line": 58,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_HOOD_3 \"Style 8\""
+          },
+          {
+            "line": 59,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_HOOD_4 \"Style 9\""
+          },
+          {
+            "line": 60,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_HOOD_23 \"Style 10\""
+          },
+          {
+            "line": 61,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_HOOD_26 \"Style 11\""
+          },
+          {
+            "line": 62,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_HOOD_32 \"Style 12\""
+          },
+          {
+            "line": 63,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_DRIVER_00 \"MW\""
+          },
+          {
+            "line": 64,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_DRIVER_01 \"UC\""
+          },
+          {
+            "line": 65,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_DRIVER_02 \"Female 1\""
+          },
+          {
+            "line": 66,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_DRIVER_03 \"Female 2\""
+          },
+          {
+            "line": 67,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_DRIVER_04 \"Run\""
+          },
+          {
+            "line": 68,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_DRIVER_05 \"2012\""
+          },
+          {
+            "line": 69,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_DRIVER_06 \"Shift 2\""
+          },
+          {
+            "line": 70,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_DRIVER_07 \"AC\""
+          },
+          {
+            "line": 71,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_BRAKE \"Bugatti\""
+          },
+          {
+            "line": 72,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_BRAKE_1 \"Stop-Tech\""
+          },
+          {
+            "line": 73,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_BRAKE_2 \"APRacing\""
+          },
+          {
+            "line": 74,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_BRAKE_3 \"PFC\""
+          },
+          {
+            "line": 75,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_BRAKE_4 \"Alcon\""
+          },
+          {
+            "line": 76,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_BRAKE_5 \"Bosch\""
+          },
+          {
+            "line": 77,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_BRAKE_6 \"Ate\""
+          },
+          {
+            "line": 78,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_BRAKE_7 \"Brembo\""
+          },
+          {
+            "line": 79,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_BRAKE_8 \"Wilwood\""
+          },
+          {
+            "line": 80,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_HEADLIGHT \"Bugatti\""
+          },
+          {
+            "line": 81,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_HEADLIGHT_1 \"LED\""
+          },
+          {
+            "line": 82,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_HEADLIGHT_2 \"Concept\""
+          },
+          {
+            "line": 83,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_BRAKELIGHT \"Bugatti\""
+          },
+          {
+            "line": 84,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_BRAKELIGHT_1 \"Sport\""
+          },
+          {
+            "line": 85,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_BRAKELIGHT_2 \"Concept\""
+          },
+          {
+            "line": 86,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_MIRROR \"Bugatti\""
+          },
+          {
+            "line": 87,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_MIRROR_1 \"Style 1\""
+          },
+          {
+            "line": 88,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_MIRROR_2 \"Style 2\""
+          },
+          {
+            "line": 89,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_MIRROR_3 \"Style 3\""
+          },
+          {
+            "line": 90,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_MIRROR_4 \"Style 4\""
+          },
+          {
+            "line": 91,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_MIRROR_5 \"Style 5\""
+          },
+          {
+            "line": 92,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_MIRROR_6 \"Style 6\""
+          },
+          {
+            "line": 93,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_ATTACHMENT00 \"Front Grill\""
+          },
+          {
+            "line": 94,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_ATTACHMENT00_1 \"Style 1\""
+          },
+          {
+            "line": 95,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_ATTACHMENT00_2 \"Style 2\""
+          },
+          {
+            "line": 96,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_ATTACHMENT00_3 \"Style 3\""
+          },
+          {
+            "line": 97,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_ATTACHMENT00_4 \"Style 4\""
+          },
+          {
+            "line": 98,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_ATTACHMENT00_5 \"Style 5\""
+          },
+          {
+            "line": 99,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_STYLE_TIRE_01 \"Style 1\""
+          },
+          {
+            "line": 100,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_STYLE_TIRE_02 \"Style 1\""
+          },
+          {
+            "line": 101,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_STYLE_TIRE_03 \"Style 3\""
+          },
+          {
+            "line": 102,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_STYLE_TIRE_04 \"Style 4\""
+          },
+          {
+            "line": 103,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_STYLE_TIRE_05 \"Style 5\""
+          },
+          {
+            "line": 104,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_STYLE_TIRE_06 \"Style 6\""
+          },
+          {
+            "line": 105,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_STYLE_TIRE_07 \"Style 7\""
+          },
+          {
+            "line": 106,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL AUTO PN_CHIRON16_STYLE_TIRE_08 \"Style 8\""
+          },
+          {
+            "line": 109,
+            "command": "if",
+            "raw": "if collection_exists FRONTEND\\FRONTB.LZC TPKBlocks DEFAULT"
+          },
+          {
+            "line": 111,
+            "command": "add_texture",
+            "raw": "add_texture FRONTEND\\FRONTB.LZC TPKBlocks DEFAULT SECONDARY_LOGO_CHIRON16 \"..\\_Logos\\SECONDARY_LOGO_CHIRON16.dds\""
+          },
+          {
+            "line": 112,
+            "command": "add_texture",
+            "raw": "add_texture FRONTEND\\FRONTB.LZC TPKBlocks DEFAULT CARSELECT_MANUFACTURER_BUGATTI2 \"..\\_Logos\\CARSELECT_MANUFACTURER_BUGATTI2.dds\""
+          },
+          {
+            "line": 114,
+            "command": "add_texture",
+            "raw": "add_texture FRONTEND\\FRONTB.LZC TPKBlocks FRONTENDTEXTURES SECONDARY_LOGO_CHIRON16 \"..\\_Logos\\SECONDARY_LOGO_CHIRON16.dds\""
+          },
+          {
+            "line": 115,
+            "command": "add_texture",
+            "raw": "add_texture FRONTEND\\FRONTB.LZC TPKBlocks FRONTENDTEXTURES CARSELECT_MANUFACTURER_BUGATTI2 \"..\\_Logos\\CARSELECT_MANUFACTURER_BUGATTI2.dds\""
+          },
+          {
+            "line": 118,
+            "command": "copy_collection",
+            "raw": "copy_collection GLOBAL\\GLOBALB.LZC CarTypeInfos MURCIELAGO CHIRON16"
+          },
+          {
+            "line": 119,
+            "command": "update_collection",
+            "raw": "update_collection GLOBAL\\GLOBALB.LZC CarTypeInfos CHIRON16 ManufacturerName BUGATTI2"
+          },
+          {
+            "line": 120,
+            "command": "copy_collection",
+            "raw": "copy_collection GLOBAL\\GLOBALB.LZC SlotOverrides CLIO_PART_SPOILER CHIRON16_PART_SPOILER"
+          },
+          {
+            "line": 121,
+            "command": "update_collection",
+            "raw": "update_collection GLOBAL\\GLOBALB.LZC SlotOverrides CHIRON16_PART_SPOILER InfoMainOverride SPOILER_NONE"
+          },
+          {
+            "line": 122,
+            "command": "add_collection",
+            "raw": "add_collection GLOBAL\\GLOBALB.LZC SlotOverrides CHIRON16_PART_ROOF"
+          },
+          {
+            "line": 123,
+            "command": "update_collection",
+            "raw": "update_collection GLOBAL\\GLOBALB.LZC SlotOverrides CHIRON16_PART_ROOF InfoMainOverride ROOF_NONE"
+          },
+          {
+            "line": 124,
+            "command": "update_collection",
+            "raw": "update_collection GLOBAL\\GLOBALB.LZC CarTypeInfos CHIRON16 DefaultBasePaint METAL_L1_COLOR01"
+          },
+          {
+            "line": 125,
+            "command": "move_file",
+            "raw": "move_file override relative absolute \"CHIRON16.ini\" scripts\\UnlimiterData\\CHIRON16.ini"
+          },
+          {
+            "line": 126,
+            "command": "move_file",
+            "raw": "move_file override relative absolute \"_CarManufacturers.ini\" scripts\\UnlimiterData\\_CarManufacturers.ini"
+          },
+          {
+            "line": 127,
+            "command": "copy_collection",
+            "raw": "copy_collection GLOBAL\\GLOBALB.LZC Collisions MURCIELAGO CHIRON16"
+          },
+          {
+            "line": 128,
+            "command": "import",
+            "raw": "import override GLOBAL\\GLOBALB.LZC DBModelParts CHIRON16.bin"
+          }
+        ],
+        "command_counts": {
+          "add_collection": 1,
+          "add_string": 103,
+          "add_texture": 4,
+          "copy_collection": 3,
+          "if": 1,
+          "import": 1,
+          "move_file": 2,
+          "update_collection": 4
+        },
+        "package_references": [
+          "CHIRON16.bin",
+          "CHIRON16.ini",
+          "_CarManufacturers.ini"
+        ],
+        "target_game_files": [
+          "FRONTEND/FRONTB.LZC",
+          "GLOBAL/GLOBALB.LZC",
+          "LANGUAGES/CHINESE.BIN",
+          "LANGUAGES/DANISH.BIN",
+          "LANGUAGES/ENGLISH.BIN",
+          "LANGUAGES/FINNISH.BIN",
+          "LANGUAGES/FRENCH.BIN",
+          "LANGUAGES/GERMAN.BIN",
+          "LANGUAGES/ITALIAN.BIN",
+          "LANGUAGES/KOREAN.BIN",
+          "LANGUAGES/POLISH.BIN",
+          "LANGUAGES/SPANISH.BIN",
+          "LANGUAGES/SWEDISH.BIN",
+          "scripts/UnlimiterData/CHIRON16.ini",
+          "scripts/UnlimiterData/_CarManufacturers.ini"
+        ],
+        "uninstall_target_files": [],
+        "move_file_operations": [
+          {
+            "source": "CHIRON16.ini",
+            "destination": "scripts/UnlimiterData/CHIRON16.ini"
+          },
+          {
+            "source": "_CarManufacturers.ini",
+            "destination": "scripts/UnlimiterData/_CarManufacturers.ini"
+          }
+        ],
+        "binary_gui_required": true,
+        "missing_package_references": [],
+        "uninstall_script": false,
+        "is_manifest_endscript": false
+      },
+      {
+        "path": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/_Settings/global_uninstall.end",
+        "version_header": "[VERSN2]",
+        "commands": [
+          {
+            "line": 2,
+            "command": "remove_collection",
+            "raw": "remove_collection GLOBAL\\GLOBALB.LZC DBModelParts CHIRON16"
+          },
+          {
+            "line": 3,
+            "command": "remove_collection",
+            "raw": "remove_collection GLOBAL\\GLOBALB.LZC CarTypeInfos CHIRON16"
+          },
+          {
+            "line": 4,
+            "command": "remove_collection",
+            "raw": "remove_collection GLOBAL\\GLOBALB.LZC Collisions CHIRON16"
+          },
+          {
+            "line": 5,
+            "command": "remove_collection",
+            "raw": "remove_collection GLOBAL\\GLOBALB.LZC SlotOverrides CHIRON16_PART_SPOILER"
+          },
+          {
+            "line": 6,
+            "command": "remove_collection",
+            "raw": "remove_collection GLOBAL\\GLOBALB.LZC SlotOverrides CHIRON16_PART_ROOF"
+          },
+          {
+            "line": 7,
+            "command": "erase_file",
+            "raw": "erase_file absolute scripts\\UnlimiterData\\CHIRON16.ini"
+          },
+          {
+            "line": 8,
+            "command": "erase_file",
+            "raw": "erase_file absolute CARS\\CHIRON16\\GEOMETRY.bin"
+          },
+          {
+            "line": 9,
+            "command": "erase_file",
+            "raw": "erase_file absolute CARS\\CHIRON16\\TEXTURES.bin"
+          },
+          {
+            "line": 10,
+            "command": "erase_folder",
+            "raw": "erase_folder absolute CARS\\CHIRON16"
+          },
+          {
+            "line": 12,
+            "command": "combobox",
+            "raw": "combobox \"Yes\" \"No\" \"Delete Secondary Logo?\""
+          },
+          {
+            "line": 14,
+            "command": "remove_texture",
+            "raw": "remove_texture FRONTEND\\FRONTB.LZC TPKBlocks FRONTENDTEXTURES 0x9A29C800"
+          },
+          {
+            "line": 18,
+            "command": "combobox",
+            "raw": "combobox \"No\" \"Yes\" \"Delete Manufacturer Logo?\""
+          },
+          {
+            "line": 20,
+            "command": "remove_texture",
+            "raw": "remove_texture FRONTEND\\FRONTB.LZC TPKBlocks FRONTENDTEXTURES 0x5DD3D962"
+          },
+          {
+            "line": 24,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\CHINESE.BIN STRBlocks GLOBAL 0x07DB1860"
+          },
+          {
+            "line": 25,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\DANISH.BIN STRBlocks GLOBAL 0x07DB1860"
+          },
+          {
+            "line": 26,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL 0x07DB1860"
+          },
+          {
+            "line": 27,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\FINNISH.BIN STRBlocks GLOBAL 0x07DB1860"
+          },
+          {
+            "line": 28,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\FRENCH.BIN STRBlocks GLOBAL 0x07DB1860"
+          },
+          {
+            "line": 29,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\GERMAN.BIN STRBlocks GLOBAL 0x07DB1860"
+          },
+          {
+            "line": 30,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ITALIAN.BIN STRBlocks GLOBAL 0x07DB1860"
+          },
+          {
+            "line": 31,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\KOREAN.BIN STRBlocks GLOBAL 0x07DB1860"
+          },
+          {
+            "line": 32,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\POLISH.BIN STRBlocks GLOBAL 0x07DB1860"
+          },
+          {
+            "line": 33,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\SPANISH.BIN STRBlocks GLOBAL 0x07DB1860"
+          },
+          {
+            "line": 34,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\SWEDISH.BIN STRBlocks GLOBAL 0x07DB1860"
+          },
+          {
+            "line": 37,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_BASE"
+          },
+          {
+            "line": 38,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_BASE_1"
+          },
+          {
+            "line": 39,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_BASE_2"
+          },
+          {
+            "line": 40,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_BASE_3"
+          },
+          {
+            "line": 41,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_BASE_4"
+          },
+          {
+            "line": 42,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_BASE_5"
+          },
+          {
+            "line": 43,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_BASE_6"
+          },
+          {
+            "line": 44,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_BODY"
+          },
+          {
+            "line": 45,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_BODY_1"
+          },
+          {
+            "line": 46,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_BODY_2"
+          },
+          {
+            "line": 47,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_BODY_3"
+          },
+          {
+            "line": 48,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_BODY_4"
+          },
+          {
+            "line": 49,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_BODY_5"
+          },
+          {
+            "line": 50,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_INTERIOR"
+          },
+          {
+            "line": 51,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_INTERIOR_STYLE01"
+          },
+          {
+            "line": 52,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_INTERIOR_STYLE02"
+          },
+          {
+            "line": 53,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_SPOILER"
+          },
+          {
+            "line": 54,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_SPOILER_STYLE01"
+          },
+          {
+            "line": 55,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_SPOILER_STYLE02"
+          },
+          {
+            "line": 56,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_SPOILER_STYLE03"
+          },
+          {
+            "line": 57,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_SPOILER_STYLE04"
+          },
+          {
+            "line": 58,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_SPOILER_STYLE05"
+          },
+          {
+            "line": 59,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_SPOILER_STYLE06"
+          },
+          {
+            "line": 60,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_SPOILER_STYLE07"
+          },
+          {
+            "line": 61,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_SPOILER_STYLE08"
+          },
+          {
+            "line": 62,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_SPOILER_STYLE09"
+          },
+          {
+            "line": 63,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_SPOILER_STYLE10"
+          },
+          {
+            "line": 64,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_SPOILER_STYLE11"
+          },
+          {
+            "line": 65,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_SPOILER_STYLE12"
+          },
+          {
+            "line": 66,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_SPOILER_STYLE13"
+          },
+          {
+            "line": 67,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_SPOILER_STYLE14"
+          },
+          {
+            "line": 68,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_SPOILER_STYLE15"
+          },
+          {
+            "line": 69,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_SPOILER_STYLE16"
+          },
+          {
+            "line": 70,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_SPOILER_STYLE17"
+          },
+          {
+            "line": 71,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_SPOILER_STYLE18"
+          },
+          {
+            "line": 72,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_HOOD_0"
+          },
+          {
+            "line": 73,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_HOOD_6"
+          },
+          {
+            "line": 74,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_HOOD_7"
+          },
+          {
+            "line": 75,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_HOOD_13"
+          },
+          {
+            "line": 76,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_HOOD_16"
+          },
+          {
+            "line": 77,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_HOOD_17"
+          },
+          {
+            "line": 78,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_HOOD_20"
+          },
+          {
+            "line": 79,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_HOOD_2"
+          },
+          {
+            "line": 80,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_HOOD_3"
+          },
+          {
+            "line": 81,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_HOOD_4"
+          },
+          {
+            "line": 82,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_HOOD_23"
+          },
+          {
+            "line": 83,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_HOOD_26"
+          },
+          {
+            "line": 84,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_HOOD_32"
+          },
+          {
+            "line": 85,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_DRIVER_00"
+          },
+          {
+            "line": 86,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_DRIVER_01"
+          },
+          {
+            "line": 87,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_DRIVER_02"
+          },
+          {
+            "line": 88,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_DRIVER_03"
+          },
+          {
+            "line": 89,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_DRIVER_04"
+          },
+          {
+            "line": 90,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_DRIVER_05"
+          },
+          {
+            "line": 91,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_DRIVER_06"
+          },
+          {
+            "line": 92,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_DRIVER_07"
+          },
+          {
+            "line": 93,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_BRAKE"
+          },
+          {
+            "line": 94,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_BRAKE_1"
+          },
+          {
+            "line": 95,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_BRAKE_2"
+          },
+          {
+            "line": 96,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_BRAKE_3"
+          },
+          {
+            "line": 97,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_BRAKE_4"
+          },
+          {
+            "line": 98,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_BRAKE_5"
+          },
+          {
+            "line": 99,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_BRAKE_6"
+          },
+          {
+            "line": 100,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_BRAKE_7"
+          },
+          {
+            "line": 101,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_BRAKE_8"
+          },
+          {
+            "line": 102,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_HEADLIGHT"
+          },
+          {
+            "line": 103,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_HEADLIGHT_1"
+          },
+          {
+            "line": 104,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_HEADLIGHT_2"
+          },
+          {
+            "line": 105,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_BRAKELIGHT"
+          },
+          {
+            "line": 106,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_BRAKELIGHT_1"
+          },
+          {
+            "line": 107,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_BRAKELIGHT_2"
+          },
+          {
+            "line": 108,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_MIRROR"
+          },
+          {
+            "line": 109,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_MIRROR_1"
+          },
+          {
+            "line": 110,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_MIRROR_2"
+          },
+          {
+            "line": 111,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_MIRROR_3"
+          },
+          {
+            "line": 112,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_MIRROR_4"
+          },
+          {
+            "line": 113,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_MIRROR_5"
+          },
+          {
+            "line": 114,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_MIRROR_6"
+          },
+          {
+            "line": 115,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_ATTACHMENT00"
+          },
+          {
+            "line": 116,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_ATTACHMENT00_1"
+          },
+          {
+            "line": 117,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_ATTACHMENT00_2"
+          },
+          {
+            "line": 118,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_ATTACHMENT00_3"
+          },
+          {
+            "line": 119,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_ATTACHMENT00_4"
+          },
+          {
+            "line": 120,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_ATTACHMENT00_5"
+          },
+          {
+            "line": 121,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_STYLE_TIRE_01"
+          },
+          {
+            "line": 122,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_STYLE_TIRE_02"
+          },
+          {
+            "line": 123,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_STYLE_TIRE_03"
+          },
+          {
+            "line": 124,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_STYLE_TIRE_04"
+          },
+          {
+            "line": 125,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_STYLE_TIRE_05"
+          },
+          {
+            "line": 126,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_STYLE_TIRE_06"
+          },
+          {
+            "line": 127,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_STYLE_TIRE_07"
+          },
+          {
+            "line": 128,
+            "command": "remove_string",
+            "raw": "remove_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL PN_CHIRON16_STYLE_TIRE_08"
+          }
+        ],
+        "command_counts": {
+          "combobox": 2,
+          "erase_file": 3,
+          "erase_folder": 1,
+          "remove_collection": 5,
+          "remove_string": 103,
+          "remove_texture": 2
+        },
+        "package_references": [],
+        "target_game_files": [],
+        "uninstall_target_files": [
+          "CARS/CHIRON16",
+          "CARS/CHIRON16/GEOMETRY.bin",
+          "CARS/CHIRON16/TEXTURES.bin",
+          "FRONTEND/FRONTB.LZC",
+          "GLOBAL/GLOBALB.LZC",
+          "LANGUAGES/CHINESE.BIN",
+          "LANGUAGES/DANISH.BIN",
+          "LANGUAGES/ENGLISH.BIN",
+          "LANGUAGES/FINNISH.BIN",
+          "LANGUAGES/FRENCH.BIN",
+          "LANGUAGES/GERMAN.BIN",
+          "LANGUAGES/ITALIAN.BIN",
+          "LANGUAGES/KOREAN.BIN",
+          "LANGUAGES/POLISH.BIN",
+          "LANGUAGES/SPANISH.BIN",
+          "LANGUAGES/SWEDISH.BIN",
+          "scripts/UnlimiterData/CHIRON16.ini"
+        ],
+        "move_file_operations": [],
+        "binary_gui_required": true,
+        "missing_package_references": [],
+        "uninstall_script": true,
+        "is_manifest_endscript": false
+      },
+      {
+        "path": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/_Settings/setup.end",
+        "version_header": "[VERSN2]",
+        "commands": [
+          {
+            "line": 2,
+            "command": "version",
+            "raw": "version 2.2.0"
+          },
+          {
+            "line": 4,
+            "command": "combobox",
+            "raw": "combobox \"Install 2016 Bugatti Chiron (Add-on)\" \"Uninstall 2016 Bugatti Chiron (Add-on)\" \"Select an action\""
+          },
+          {
+            "line": 7,
+            "command": "append",
+            "raw": "append global_install.end"
+          },
+          {
+            "line": 10,
+            "command": "append",
+            "raw": "append global_uninstall.end"
+          }
+        ],
+        "command_counts": {
+          "append": 2,
+          "combobox": 1,
+          "version": 1
+        },
+        "package_references": [
+          "global_install.end",
+          "global_uninstall.end"
+        ],
+        "target_game_files": [],
+        "uninstall_target_files": [],
+        "move_file_operations": [],
+        "binary_gui_required": true,
+        "missing_package_references": [],
+        "uninstall_script": false,
+        "is_manifest_endscript": true
+      }
+    ],
+    "binary_missing_references": [],
+    "binary_file_moves": [
+      {
+        "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/_Settings/global_install.end",
+        "source": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/_Settings/CHIRON16.ini",
+        "source_exists": true,
+        "destination": "scripts/UnlimiterData/CHIRON16.ini"
+      },
+      {
+        "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/_Settings/global_install.end",
+        "source": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/_Settings/_CarManufacturers.ini",
+        "source_exists": true,
+        "destination": "scripts/UnlimiterData/_CarManufacturers.ini"
+      }
+    ],
+    "binary_uninstall_available": true,
+    "binary_target_game_files": [
+      "FRONTEND/FRONTB.LZC",
+      "GLOBAL/GLOBALA.BUN",
+      "GLOBAL/GLOBALB.LZC",
+      "GLOBAL/attributes.bin",
+      "GLOBAL/fe_attrib.bin",
+      "LANGUAGES/CHINESE.BIN",
+      "LANGUAGES/DANISH.BIN",
+      "LANGUAGES/DUTCH.BIN",
+      "LANGUAGES/ENGLISH.BIN",
+      "LANGUAGES/FINNISH.BIN",
+      "LANGUAGES/FRENCH.BIN",
+      "LANGUAGES/GERMAN.BIN",
+      "LANGUAGES/ITALIAN.BIN",
+      "LANGUAGES/KOREAN.BIN",
+      "LANGUAGES/Labels.bin",
+      "LANGUAGES/Labels_Global.bin",
+      "LANGUAGES/POLISH.BIN",
+      "LANGUAGES/SPANISH.BIN",
+      "LANGUAGES/SWEDISH.BIN",
+      "frontend/FRONTB.lzc",
+      "scripts/UnlimiterData/CHIRON16.ini",
+      "scripts/UnlimiterData/_CarManufacturers.ini"
+    ],
+    "binary_uninstall_target_game_files": [
+      "CARS/CHIRON16",
+      "CARS/CHIRON16/GEOMETRY.bin",
+      "CARS/CHIRON16/TEXTURES.bin",
+      "FRONTEND/FRONTB.LZC",
+      "GLOBAL/GLOBALB.LZC",
+      "LANGUAGES/CHINESE.BIN",
+      "LANGUAGES/DANISH.BIN",
+      "LANGUAGES/ENGLISH.BIN",
+      "LANGUAGES/FINNISH.BIN",
+      "LANGUAGES/FRENCH.BIN",
+      "LANGUAGES/GERMAN.BIN",
+      "LANGUAGES/ITALIAN.BIN",
+      "LANGUAGES/KOREAN.BIN",
+      "LANGUAGES/POLISH.BIN",
+      "LANGUAGES/SPANISH.BIN",
+      "LANGUAGES/SWEDISH.BIN",
+      "scripts/UnlimiterData/CHIRON16.ini"
+    ],
+    "mwps": [
+      {
+        "path": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/REPLACE/ADDONS/CARS_REPLACE/PUNTO/ATTRIBUTES.MWPS",
+        "directive_counts": {
+          "memfile": 1,
+          "patch": 269,
+          "vpak": 1
+        },
+        "directives": [
+          {
+            "line": 8,
+            "command": "memfile",
+            "raw": "memfile GLOBAL\\GlobalMemoryFile.bin"
+          },
+          {
+            "line": 9,
+            "command": "vpak",
+            "raw": "vpak GLOBAL\\ATTRIBUTES.BIN db"
+          },
+          {
+            "line": 16,
+            "command": "patch",
+            "raw": "patch\tint32\tbin:0x306f0\t0x10000000"
+          },
+          {
+            "line": 19,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x306e8\t1400"
+          },
+          {
+            "line": 22,
+            "command": "patch",
+            "raw": "patch\tint32\tbin:0x30894\t0x6aecaf5e"
+          },
+          {
+            "line": 25,
+            "command": "patch",
+            "raw": "patch\tint32\tbin:0x308a0\t0x6aecaf5e"
+          },
+          {
+            "line": 28,
+            "command": "patch",
+            "raw": "patch\tint32\tbin:0x308ac     0x6aecaf5e"
+          },
+          {
+            "line": 31,
+            "command": "patch",
+            "raw": "patch\tint32\tbin:0x3071c\t0x6329736a"
+          },
+          {
+            "line": 34,
+            "command": "patch",
+            "raw": "patch\tint32\tbin:0x3072c\t0x6329736a"
+          },
+          {
+            "line": 37,
+            "command": "patch",
+            "raw": "patch\tint32\tbin:0x3073c\t0x6329736a"
+          },
+          {
+            "line": 40,
+            "command": "patch",
+            "raw": "patch\tint32\tbin:0x3074c\t0x6329736a"
+          },
+          {
+            "line": 43,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x306b0     1"
+          },
+          {
+            "line": 44,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x306b4     2.83"
+          },
+          {
+            "line": 45,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x306b8     1"
+          },
+          {
+            "line": 46,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x306bc     0"
+          },
+          {
+            "line": 49,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x30708     69"
+          },
+          {
+            "line": 50,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3070c     95"
+          },
+          {
+            "line": 53,
+            "command": "patch",
+            "raw": "patch\tint32\tbin:0x306e4\t0"
+          },
+          {
+            "line": 56,
+            "command": "patch",
+            "raw": "patch\tint32\tbin:0x306f4\t1"
+          },
+          {
+            "line": 59,
+            "command": "patch",
+            "raw": "patch\tint32\tbin:0x306ec\t0"
+          },
+          {
+            "line": 62,
+            "command": "patch",
+            "raw": "patch\tint32\tbin:0x306d8\t0"
+          },
+          {
+            "line": 65,
+            "command": "patch",
+            "raw": "patch\tint32\tbin:0x306dc\t0"
+          },
+          {
+            "line": 68,
+            "command": "patch",
+            "raw": "patch\tint32\tbin:0x306e0\t1"
+          },
+          {
+            "line": 71,
+            "command": "patch",
+            "raw": "patch\tint32\tbin:0x306f8\t1"
+          },
+          {
+            "line": 78,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3ddcc\t1"
+          },
+          {
+            "line": 81,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3dd88     1"
+          },
+          {
+            "line": 82,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3dd8c     1"
+          },
+          {
+            "line": 83,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3dd90     1"
+          },
+          {
+            "line": 87,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3dce0\t1.34"
+          },
+          {
+            "line": 88,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3dce4\t1.01"
+          },
+          {
+            "line": 89,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3dce8\t0"
+          },
+          {
+            "line": 90,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3dcec\t0.348"
+          },
+          {
+            "line": 93,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3dcf0\t1.34"
+          },
+          {
+            "line": 94,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3dcf4\t-1.01"
+          },
+          {
+            "line": 95,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3dcf8\t0"
+          },
+          {
+            "line": 96,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3dcfc\t0.348"
+          },
+          {
+            "line": 99,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3dd00\t-1.34"
+          },
+          {
+            "line": 100,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3dd04\t-1.01"
+          },
+          {
+            "line": 101,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3dd08\t0"
+          },
+          {
+            "line": 102,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3dd0c\t0.364"
+          },
+          {
+            "line": 105,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3dd10\t-1.34"
+          },
+          {
+            "line": 106,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3dd14\t1.01"
+          },
+          {
+            "line": 107,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3dd18\t0"
+          },
+          {
+            "line": 108,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3dd1c\t0.364"
+          },
+          {
+            "line": 111,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3dd7c     1"
+          },
+          {
+            "line": 112,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3dd80     1"
+          },
+          {
+            "line": 113,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3dd84     2"
+          },
+          {
+            "line": 116,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3dd70     1"
+          },
+          {
+            "line": 117,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3dd74     1"
+          },
+          {
+            "line": 118,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3dd78     3"
+          },
+          {
+            "line": 121,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3ddc8\t0.18"
+          },
+          {
+            "line": 124,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3ddc0\t0.18"
+          },
+          {
+            "line": 127,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3ddf8\t0.19"
+          },
+          {
+            "line": 128,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3ddfc\t0.19"
+          },
+          {
+            "line": 131,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3ddac\t0.285"
+          },
+          {
+            "line": 132,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3ddb0\t0.285"
+          },
+          {
+            "line": 133,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3ddb4\t0.325"
+          },
+          {
+            "line": 134,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3ddb8\t0.325"
+          },
+          {
+            "line": 137,
+            "command": "patch",
+            "raw": "patch\tint8\tbin:0x3ddec\t5"
+          },
+          {
+            "line": 140,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x3ddc4\t-0.02"
+          },
+          {
+            "line": 143,
+            "command": "patch",
+            "raw": "patch\tint8\tbin:0x3ddd8\t0"
+          },
+          {
+            "line": 144,
+            "command": "patch",
+            "raw": "patch\tint8\tbin:0x3ddd9\t0"
+          },
+          {
+            "line": 145,
+            "command": "patch",
+            "raw": "patch\tint8\tbin:0x3ddda\t55"
+          },
+          {
+            "line": 146,
+            "command": "patch",
+            "raw": "patch\tint8\tbin:0x3dddb\t55"
+          },
+          {
+            "line": 147,
+            "command": "patch",
+            "raw": "patch\tint8\tbin:0x3dddc\t50"
+          },
+          {
+            "line": 148,
+            "command": "patch",
+            "raw": "patch\tint8\tbin:0x3dddd\t200"
+          },
+          {
+            "line": 151,
+            "command": "patch",
+            "raw": "patch\tint8\tbin:0x3dde6     0"
+          },
+          {
+            "line": 152,
+            "command": "patch",
+            "raw": "patch\tint8\tbin:0x3dde7\t0"
+          },
+          {
+            "line": 153,
+            "command": "patch",
+            "raw": "patch\tint8\tbin:0x3dde8\t55"
+          },
+          {
+            "line": 154,
+            "command": "patch",
+            "raw": "patch\tint8\tbin:0x3dde9\t55"
+          },
+          {
+            "line": 155,
+            "command": "patch",
+            "raw": "patch\tint8\tbin:0x3ddea\t35"
+          },
+          {
+            "line": 156,
+            "command": "patch",
+            "raw": "patch\tint8\tbin:0x3ddeb\t170"
+          },
+          {
+            "line": 163,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x244c0\t280"
+          },
+          {
+            "line": 164,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x244c4\t310"
+          },
+          {
+            "line": 167,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x244c8\t310"
+          },
+          {
+            "line": 170,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x244b8\t0.30"
+          },
+          {
+            "line": 171,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x244bc\t1.40"
+          },
+          {
+            "line": 178,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x24880\t490"
+          },
+          {
+            "line": 179,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x24884\t535"
+          },
+          {
+            "line": 182,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x24888\t520"
+          },
+          {
+            "line": 185,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x24878\t0.75"
+          },
+          {
+            "line": 186,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x2487c\t1.00"
+          },
+          {
+            "line": 193,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8dc0\t2.73"
+          },
+          {
+            "line": 196,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8ddc\t0.25"
+          },
+          {
+            "line": 199,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8dac\t20"
+          },
+          {
+            "line": 200,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8db0\t20"
+          },
+          {
+            "line": 203,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8d84\t7.70"
+          },
+          {
+            "line": 204,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8d88\t7.70"
+          },
+          {
+            "line": 207,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8d9c\t60"
+          },
+          {
+            "line": 208,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8da0\t50"
+          },
+          {
+            "line": 211,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8dc4\t5"
+          },
+          {
+            "line": 214,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8d94\t75"
+          },
+          {
+            "line": 215,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8d98\t77"
+          },
+          {
+            "line": 218,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8db4\t200"
+          },
+          {
+            "line": 219,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8db8\t200"
+          },
+          {
+            "line": 222,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8dbc\t8"
+          },
+          {
+            "line": 225,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8d7c\t8"
+          },
+          {
+            "line": 226,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8d80\t8"
+          },
+          {
+            "line": 229,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8da4\t700"
+          },
+          {
+            "line": 230,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8da8\t647"
+          },
+          {
+            "line": 233,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8dc8\t47.75"
+          },
+          {
+            "line": 236,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8d74\t8.26"
+          },
+          {
+            "line": 237,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8d78\t7.50"
+          },
+          {
+            "line": 240,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8d8c\t1.608"
+          },
+          {
+            "line": 241,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8d90\t1.603"
+          },
+          {
+            "line": 244,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8d6c\t0.2"
+          },
+          {
+            "line": 245,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8d70\t0.3"
+          },
+          {
+            "line": 248,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8dcc\t1.00"
+          },
+          {
+            "line": 251,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8dd4\t0.33"
+          },
+          {
+            "line": 254,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8dd0\t1.43"
+          },
+          {
+            "line": 257,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x8dd8\t54"
+          },
+          {
+            "line": 264,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9bcc\t2.67"
+          },
+          {
+            "line": 267,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9be4\t0.33"
+          },
+          {
+            "line": 270,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9bb8\t24"
+          },
+          {
+            "line": 271,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9bbc\t24"
+          },
+          {
+            "line": 274,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9b90\t7.00"
+          },
+          {
+            "line": 275,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9b94\t7.00"
+          },
+          {
+            "line": 278,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9ba8\t70"
+          },
+          {
+            "line": 279,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9bac\t70"
+          },
+          {
+            "line": 282,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9bd0\t7"
+          },
+          {
+            "line": 285,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9ba0\t72"
+          },
+          {
+            "line": 286,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9ba4\t72"
+          },
+          {
+            "line": 289,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9bc0\t325"
+          },
+          {
+            "line": 290,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9bc4\t350"
+          },
+          {
+            "line": 293,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9bc8\t7.55"
+          },
+          {
+            "line": 296,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9b88\t6.5"
+          },
+          {
+            "line": 297,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9b8c\t6.5"
+          },
+          {
+            "line": 300,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9bb0\t750"
+          },
+          {
+            "line": 301,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9bb4\t765"
+          },
+          {
+            "line": 304,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9bd4\t49"
+          },
+          {
+            "line": 307,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9b80\t7.30"
+          },
+          {
+            "line": 308,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9b84\t7.30"
+          },
+          {
+            "line": 311,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9b98\t1.65"
+          },
+          {
+            "line": 312,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9b9c\t1.64"
+          },
+          {
+            "line": 315,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9b78\t0.18"
+          },
+          {
+            "line": 316,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9b7c\t0.12"
+          },
+          {
+            "line": 319,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9bd8\t0.8"
+          },
+          {
+            "line": 322,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9be0\t0.28"
+          },
+          {
+            "line": 325,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9bdc\t1.22"
+          },
+          {
+            "line": 328,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x9be4\t53"
+          },
+          {
+            "line": 335,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x12f54\t0.84"
+          },
+          {
+            "line": 336,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x12f58\t0.96"
+          },
+          {
+            "line": 337,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x12f5c\t1.08"
+          },
+          {
+            "line": 340,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x12f6c\t900"
+          },
+          {
+            "line": 343,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x12f18\t195"
+          },
+          {
+            "line": 344,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x12f1c\t288"
+          },
+          {
+            "line": 345,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x12f20\t391"
+          },
+          {
+            "line": 346,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x12f24\t492"
+          },
+          {
+            "line": 347,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x12f28\t537"
+          },
+          {
+            "line": 348,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x12f2c\t519"
+          },
+          {
+            "line": 349,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x12f30\t472"
+          },
+          {
+            "line": 350,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x12f34\t431"
+          },
+          {
+            "line": 351,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x12f38\t402"
+          },
+          {
+            "line": 354,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x12f64\t9500"
+          },
+          {
+            "line": 357,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x12f60\t11"
+          },
+          {
+            "line": 360,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x12f68\t9000"
+          },
+          {
+            "line": 367,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x13fd4\t0.57"
+          },
+          {
+            "line": 368,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x13fd8\t0.62"
+          },
+          {
+            "line": 369,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x13fdc\t0.68"
+          },
+          {
+            "line": 372,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x13fec\t800"
+          },
+          {
+            "line": 375,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x13f98\t195"
+          },
+          {
+            "line": 376,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x13f9c\t288"
+          },
+          {
+            "line": 377,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x13fa0\t391"
+          },
+          {
+            "line": 378,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x13fa4\t492"
+          },
+          {
+            "line": 379,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x13fa8\t537"
+          },
+          {
+            "line": 380,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x13fac\t519"
+          },
+          {
+            "line": 381,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x13fb0\t472"
+          },
+          {
+            "line": 382,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x13fb4\t431"
+          },
+          {
+            "line": 383,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x13fb8\t402"
+          },
+          {
+            "line": 386,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x13fe4\t9500"
+          },
+          {
+            "line": 389,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x13fe0\t11"
+          },
+          {
+            "line": 392,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x13fe8\t9000"
+          },
+          {
+            "line": 399,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x11ccc\t1"
+          },
+          {
+            "line": 402,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x11ce0\t0.26"
+          },
+          {
+            "line": 405,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x11cc8\t0.26"
+          },
+          {
+            "line": 408,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x11cd8\t2"
+          },
+          {
+            "line": 411,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x11cdc\t23"
+          },
+          {
+            "line": 414,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x11cd4\t0.2"
+          },
+          {
+            "line": 417,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x11cd0\t-0.03"
+          },
+          {
+            "line": 424,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x120d8\t1"
+          },
+          {
+            "line": 427,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x120ec\t0.26"
+          },
+          {
+            "line": 430,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x120d4\t0.26"
+          },
+          {
+            "line": 433,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x120e4\t2"
+          },
+          {
+            "line": 436,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x120e8\t23"
+          },
+          {
+            "line": 439,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x120e0\t0.2"
+          },
+          {
+            "line": 442,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x120dc\t-0.03"
+          },
+          {
+            "line": 449,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x22690\t255"
+          },
+          {
+            "line": 450,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x22694\t255"
+          },
+          {
+            "line": 453,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x22658\t0.36"
+          },
+          {
+            "line": 454,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x2265c\t0.728"
+          },
+          {
+            "line": 455,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x22660\t1.12"
+          },
+          {
+            "line": 456,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x22664\t1.344"
+          },
+          {
+            "line": 459,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x22680\t19"
+          },
+          {
+            "line": 460,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x22684\t19"
+          },
+          {
+            "line": 463,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x22678\t35"
+          },
+          {
+            "line": 464,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x2267c\t35"
+          },
+          {
+            "line": 467,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x22668\t1.22"
+          },
+          {
+            "line": 468,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x2266c\t1.27"
+          },
+          {
+            "line": 471,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x22670\t2.2"
+          },
+          {
+            "line": 472,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x22674\t2.2"
+          },
+          {
+            "line": 475,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x22688\t2.66"
+          },
+          {
+            "line": 476,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x2268c\t2.78"
+          },
+          {
+            "line": 479,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x22698\t1.00"
+          },
+          {
+            "line": 482,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x2269c\t0.25"
+          },
+          {
+            "line": 489,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x23040\t285"
+          },
+          {
+            "line": 490,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x23044\t325"
+          },
+          {
+            "line": 493,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x23008\t0.25"
+          },
+          {
+            "line": 494,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x2300c\t0.65"
+          },
+          {
+            "line": 495,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x23010\t1"
+          },
+          {
+            "line": 496,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x23014\t1.25"
+          },
+          {
+            "line": 499,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x23030\t20"
+          },
+          {
+            "line": 500,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x23034\t20"
+          },
+          {
+            "line": 503,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x23028\t35"
+          },
+          {
+            "line": 504,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x2302c\t35"
+          },
+          {
+            "line": 507,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x23018\t1.2"
+          },
+          {
+            "line": 508,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x2301c\t1.2"
+          },
+          {
+            "line": 511,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x23020\t2.05"
+          },
+          {
+            "line": 512,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x23024\t2.05"
+          },
+          {
+            "line": 515,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x23038\t2.3"
+          },
+          {
+            "line": 516,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x2303c\t2.3"
+          },
+          {
+            "line": 519,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x23048\t1"
+          },
+          {
+            "line": 522,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x2304c\t0.38"
+          },
+          {
+            "line": 529,
+            "command": "patch",
+            "raw": "patch\tint16\tbin:0x1eaca\t9"
+          },
+          {
+            "line": 532,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x1ead0\t2.8"
+          },
+          {
+            "line": 533,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x1ead4\t0"
+          },
+          {
+            "line": 534,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x1ead8\t4.1"
+          },
+          {
+            "line": 535,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x1eadc\t2.53"
+          },
+          {
+            "line": 536,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x1eae0\t1.67"
+          },
+          {
+            "line": 537,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x1eae4\t1.23"
+          },
+          {
+            "line": 538,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x1eae8\t1"
+          },
+          {
+            "line": 539,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x1eaec\t0.83"
+          },
+          {
+            "line": 540,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x1eaf0\t0.72"
+          },
+          {
+            "line": 543,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x1eafc\t0.00"
+          },
+          {
+            "line": 544,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x1eb00\t0.7"
+          },
+          {
+            "line": 545,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x1eb04\t0.00"
+          },
+          {
+            "line": 548,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x1eb10\t1.2"
+          },
+          {
+            "line": 549,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x1eb14\t1.2"
+          },
+          {
+            "line": 550,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x1eb18\t1.2"
+          },
+          {
+            "line": 551,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x1eb1c\t1.2"
+          },
+          {
+            "line": 552,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x1eb20\t1.2"
+          },
+          {
+            "line": 553,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x1eb24\t1.2"
+          },
+          {
+            "line": 554,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x1eb28\t1.2"
+          },
+          {
+            "line": 555,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x1eb2c\t1.2"
+          },
+          {
+            "line": 558,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x1eb38\t0"
+          },
+          {
+            "line": 561,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x1eb48\t3.34"
+          },
+          {
+            "line": 564,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x1eb3c\t0.93"
+          },
+          {
+            "line": 567,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x1eb34\t0.3"
+          },
+          {
+            "line": 574,
+            "command": "patch",
+            "raw": "patch\tint16\tbin:0x20492\t8"
+          },
+          {
+            "line": 577,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x20498\t2.8"
+          },
+          {
+            "line": 578,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x2049c\t0"
+          },
+          {
+            "line": 579,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x204a0\t4.1"
+          },
+          {
+            "line": 580,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x204a4\t2.53"
+          },
+          {
+            "line": 581,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x204a8\t1.67"
+          },
+          {
+            "line": 582,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x204ac\t1.23"
+          },
+          {
+            "line": 583,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x204b0\t1"
+          },
+          {
+            "line": 584,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x204b4\t0.83"
+          },
+          {
+            "line": 587,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x204c4\t0.00"
+          },
+          {
+            "line": 588,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x204c8\t0.75"
+          },
+          {
+            "line": 589,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x204cc\t0.00"
+          },
+          {
+            "line": 592,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x204d8\t1.2"
+          },
+          {
+            "line": 593,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x204dc\t1.2"
+          },
+          {
+            "line": 594,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x204e0\t1.2"
+          },
+          {
+            "line": 595,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x204e4\t1.2"
+          },
+          {
+            "line": 596,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x204e8\t1.2"
+          },
+          {
+            "line": 597,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x204ec\t1.2"
+          },
+          {
+            "line": 598,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x204f0\t1.2"
+          },
+          {
+            "line": 599,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x204f4\t1.2"
+          },
+          {
+            "line": 602,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x20500\t0"
+          },
+          {
+            "line": 605,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x20510\t3.34"
+          },
+          {
+            "line": 608,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x20504\t0.72"
+          },
+          {
+            "line": 611,
+            "command": "patch",
+            "raw": "patch\tfloat\tbin:0x204fc\t0.5"
+          }
+        ]
+      },
+      {
+        "path": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/REPLACE/ADDONS/CARS_REPLACE/PUNTO/FE.MWPS",
+        "directive_counts": {
+          "patch": 3,
+          "vpak": 1
+        },
+        "directives": [
+          {
+            "line": 8,
+            "command": "vpak",
+            "raw": "vpak GLOBAL\\FE_ATTRIB.BIN frontend"
+          },
+          {
+            "line": 16,
+            "command": "patch",
+            "raw": "patch\tdword\tbin:0xbd78\t159 - BUGATTI_HD"
+          },
+          {
+            "line": 19,
+            "command": "patch",
+            "raw": "patch\tbyte\tbin:0xbd91\t1"
+          },
+          {
+            "line": 22,
+            "command": "patch",
+            "raw": "patch\tdword\tbin:0xbd84      3400000"
+          }
+        ]
+      }
+    ],
+    "ed_payload": [],
+    "replacement_payload": [
+      "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/REPLACE/ADDONS/CARS_REPLACE/PUNTO/ATTRIBUTES.MWPS",
+      "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/REPLACE/ADDONS/CARS_REPLACE/PUNTO/CAR.INI",
+      "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/REPLACE/ADDONS/CARS_REPLACE/PUNTO/FE.MWPS",
+      "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/REPLACE/ADDONS/CARS_REPLACE/PUNTO/GEOMETRY.BIN",
+      "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/REPLACE/ADDONS/CARS_REPLACE/PUNTO/SECONDARYLOGO.BIN",
+      "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/REPLACE/ADDONS/CARS_REPLACE/PUNTO/VINYLS.BIN",
+      "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/REPLACE/ADDONS/CARS_REPLACE/PUNTO/textures.bin",
+      "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/REPLACE/ADDONS/FRONTEND/MANUFACTURERS/159-BUGATTI_HD.BIN"
+    ],
+    "legacy_modloader_payload": [],
+    "modern_modloader_payload": []
+  },
+  "warnings": [
+    {
+      "code": "MULTIPLE_INSTALL_PROFILES",
+      "message": "The archive contains more than one installation route. Choose one; do not install all profiles together."
+    },
+    {
+      "code": "ALTERNATIVE_INSTALLERS",
+      "message": "The archive contains both add-on and Classic ModLoader replacement paths. They are alternatives, not cumulative steps."
+    },
+    {
+      "code": "SAVE_PATCHER_MANUAL_ONLY",
+      "message": "A save/profile patcher configuration is present. The installer will not modify career saves automatically."
+    },
+    {
+      "code": "TOOL_VERSION_REQUIREMENTS",
+      "message": "Package readme/scripts declare tool-version requirements; the installer cannot independently validate all GUI tool versions. Confirm them before continuing."
+    }
+  ],
+  "safety": {
+    "writes_performed": false,
+    "automatic_installation_approved": false,
+    "note": "Analysis only. Binary, VLT, Ed and ModLoader operations have distinct execution requirements; do not treat file presence as proof of a working in-game car."
+  }
+}

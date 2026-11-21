@@ -6,6 +6,7 @@ import os
 import re
 import sys
 import subprocess
+import hashlib
 from pathlib import Path
 
 from .core import scan_folder, _read_archive, make_report, load_inventory
@@ -15,6 +16,9 @@ from .donor_catalogue import build_donor_catalogue, write_donor_catalogue
 from .planner import build_install_plan
 from .donor_matcher import rank_donors, build_configuration_proposal, parse_target_collections, write_json
 from .apply_plan import apply_file_plan, rollback_journal
+from .archive import extract_archive
+from .package_analysis import analyze_package
+from .workflow import build_workflow_plan, execute_guided_install, rollback_guided_install
 
 
 def resolve_path(value: str | Path) -> Path:
@@ -330,17 +334,158 @@ def apply_plan_command(args):
 
 
 def rollback_command(args):
-    result = rollback_journal(resolve_path(args.journal))
+    journal_path = resolve_path(args.journal)
+    try:
+        obj = json.loads(journal_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        obj = {}
+    if obj.get("kind") == "guided_install":
+        result = rollback_guided_install(journal_path)
+    else:
+        result = rollback_journal(journal_path)
     print(json.dumps(result, indent=2))
     return 0
 
+
+
+def _prepare_package_source(source: Path, workspace: Path | None = None, seven_zip: str | None = None) -> Path:
+    source = source.resolve()
+    if source.is_dir():
+        return source
+    if not source.is_file():
+        raise FileNotFoundError(f"Package source not found: {source}")
+    digest_hash = hashlib.sha256()
+    with source.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest_hash.update(chunk)
+    digest = digest_hash.hexdigest()
+    if workspace is None:
+        base = Path(os.environ.get("LOCALAPPDATA", Path.home() / ".cache")) / "NFSMW-Addon-Installer" / "packages"
+    else:
+        base = workspace.expanduser().resolve()
+    package_cache = base / digest
+    payload = package_cache / "payload"
+    marker = package_cache / "source.sha256"
+    if payload.is_dir() and marker.is_file():
+        if marker.read_text(encoding="utf-8").strip() == digest:
+            return payload
+        raise RuntimeError(f"Package cache marker mismatch: {package_cache}")
+    package_cache.mkdir(parents=True, exist_ok=True)
+    result = extract_archive(source, payload, seven_zip=seven_zip)
+    marker.write_text(digest + "\n", encoding="utf-8")
+    return payload
+
+
+def analyze_package_command(args):
+    source = resolve_path(args.source).resolve()
+    package = _prepare_package_source(source, resolve_path(args.workspace) if args.workspace else None,
+                                      str(resolve_path(args.seven_zip)) if args.seven_zip else None)
+    report = analyze_package(package)
+    output = resolve_path(args.output)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(report, indent=2), encoding="utf-8")
+    print(f"Package: {package}\nFiles: {report['file_count']}\nCars: {', '.join(report['car_ids']) or 'not identified'}")
+    print("Profiles:", ", ".join(p["id"] for p in report["profiles"]) or "none")
+    print("NFSMS entry points:", ", ".join(report["components"]["nfsms"]["entrypoints"]) or "none")
+    print("Binary manifests:", len(report["components"]["binary_manifests"]))
+    print("MWPS files:", len(report["components"]["mwps"]))
+    print("Warnings:", len(report["warnings"]))
+    print("Report:", output.resolve())
+    print("No game files were changed.")
+    return 0
+
+
+def _discover_executable(name: str, roots: list[Path]) -> Path | None:
+    wanted = name.casefold()
+    candidates: list[Path] = []
+    for root in roots:
+        if not root.is_dir():
+            continue
+        for path in root.rglob("*"):
+            if path.is_file() and path.name.casefold() == wanted:
+                candidates.append(path.resolve())
+    if not candidates:
+        return None
+    candidates = sorted(set(candidates), key=lambda p: str(p).casefold())
+    if len(candidates) > 1:
+        choices = "\n  ".join(str(p) for p in candidates)
+        raise RuntimeError(f"Multiple {name} executables found. Pass an explicit path with the matching option:\n  {choices}")
+    return candidates[0]
+
+
+def install_command(args):
+    source = resolve_path(args.source).resolve()
+    package = _prepare_package_source(source, resolve_path(args.workspace) if args.workspace else None,
+                                      str(resolve_path(args.seven_zip)) if args.seven_zip else None)
+    game = resolve_path(args.game_root).resolve()
+    roots = [resolve_path(args.tools_root).resolve()] if args.tools_root else []
+    if args.execute:
+        roots.extend([game.parent / "NFS-hack" / "utils", game.parent / "NFS-hack" / "tools", game.parent / "utils"])
+        roots = list(dict.fromkeys(p for p in roots if p.is_dir()))
+        binary_path = resolve_path(args.binary).resolve() if args.binary else _discover_executable("Binary.exe", roots)
+        attribulina_path = resolve_path(args.attribulina_installer).resolve() if args.attribulina_installer else _discover_executable("AttribulinaModInstaller.exe", roots)
+        attribcli_path = resolve_path(args.attribcli).resolve() if args.attribcli else (_discover_executable("attribcli.exe", roots) or (attribulina_path.with_name("attribcli.exe") if attribulina_path else None))
+        ed_exe_path = resolve_path(args.ed_exe).resolve() if args.ed_exe else _discover_executable("Ed.exe", roots)
+    else:
+        binary_path = resolve_path(args.binary).resolve() if args.binary else None
+        attribulina_path = resolve_path(args.attribulina_installer).resolve() if args.attribulina_installer else None
+        attribcli_path = resolve_path(args.attribcli).resolve() if args.attribcli else None
+        ed_exe_path = resolve_path(args.ed_exe).resolve() if args.ed_exe else None
+    if args.ed_root:
+        ed_root = resolve_path(args.ed_root).resolve()
+        if args.ed_exe:
+            ed_exe_path = resolve_path(args.ed_exe).resolve()
+        elif (ed_root / "Ed.exe").is_file():
+            ed_exe_path = ed_root / "Ed.exe"
+        elif ed_exe_path and ed_exe_path.parent != ed_root:
+            ed_exe_path = None
+    else:
+        ed_root = ed_exe_path.parent if ed_exe_path else None
+    plan = build_workflow_plan(package, game, profile=args.profile, ed_root=ed_root, car_ids_extra=args.car_id)
+    output = resolve_path(args.output)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(plan, indent=2), encoding="utf-8")
+    print(f"Package: {package}\nGame: {game}\nProfile: {plan['profile']['id']}")
+    if plan.get("profile_selection") == "target_compatible_auto":
+        print("Profile selection: automatically selected the only route compatible with this game folder")
+    if plan.get("database_script_entrypoint_relative"):
+        print(f"Database script ({plan.get('database_script_format')}): {plan['database_script_entrypoint_relative']}")
+    if roots:
+        print("Tool search roots:", ", ".join(str(p) for p in roots))
+    for label, path in (("Binary", binary_path), ("Attribulina Mod Installer", attribulina_path), ("attribcli", attribcli_path), ("Ed", ed_exe_path)):
+        if path:
+            print(f"Detected {label}: {path}")
+    for check in plan["compatibility_checks"]:
+        print(f"{'PASS' if check['passed'] else 'BLOCK'} - {check['check']}: {check['reason']}")
+    if plan["warnings"]:
+        print("Warnings:")
+        for warning in plan["warnings"]:
+            print(f"  - {warning['code']}: {warning['message']}")
+    print("Plan:", output.resolve())
+    if not args.execute:
+        print("Mode: DRY RUN. No game files or databases were changed.")
+        print("To run the guided installer, repeat with --execute. Tools are auto-detected under --tools-root; explicit paths can be supplied if needed.")
+        return 0 if plan["ready"] else 2
+    result = execute_guided_install(
+        package, game, profile=args.profile, car_ids_extra=args.car_id,
+        binary_exe=binary_path,
+        attribulina_installer=attribulina_path,
+        attribcli=attribcli_path,
+        ed_root=ed_root,
+        ed_exe=ed_exe_path,
+        overwrite=args.overwrite,
+        backup_root=resolve_path(args.backup_root) if args.backup_root else None,
+        confirm_game_test=not args.skip_game_test,
+    )
+    print(json.dumps(result, indent=2))
+    return 0 if result["status"] == "PASS" else 1
 
 def main(argv=None):
     parser = argparse.ArgumentParser(
         prog="nfsmw-installer",
         description=(
             "Discovery and validation assistant for NFS Most Wanted (2005). "
-            "Database validation and installation planning are read-only/dry-run."
+            "Analysis and preflight are read-only; guided installation writes only with explicit --execute."
         ),
     )
 
@@ -453,8 +598,33 @@ def main(argv=None):
     apply_cmd.add_argument("--overwrite", action="store_true", help="Back up and replace existing files")
     apply_cmd.add_argument("--backup-root", help="Optional backup directory")
 
-    rollback_cmd = sub.add_parser("rollback-install", help="Restore files using an install-journal.json")
+    rollback_cmd = sub.add_parser("rollback-install", help="Restore files using an install journal")
     rollback_cmd.add_argument("journal")
+
+    package_cmd = sub.add_parser("analyze-package", help="Analyze a real addon package and all installation mechanisms")
+    package_cmd.add_argument("source", help="Extracted folder or ZIP/RAR/7z archive")
+    package_cmd.add_argument("--workspace", help="Optional package extraction cache folder")
+    package_cmd.add_argument("--7zip", dest="seven_zip", help="Path to 7z.exe for RAR/7z archives")
+    package_cmd.add_argument("-o", "--output", default="reports/package-analysis.json")
+
+    install_cmd = sub.add_parser("install", help="One-command guided addon installation (dry-run unless --execute)")
+    install_cmd.add_argument("source", help="Extracted folder or ZIP/RAR/7z archive")
+    install_cmd.add_argument("--game-root", required=True, help="Target NFS MW game directory")
+    install_cmd.add_argument("--profile", choices=["unlimiter_addon", "classic_modloader_replacement", "nfsmw_modular_loader"], help="Choose an install route when package has alternatives")
+    install_cmd.add_argument("--car-id", action="append", help="Add an explicit pvehicle ID; repeat for multi-car packages")
+    install_cmd.add_argument("--workspace", help="Optional package extraction cache folder")
+    install_cmd.add_argument("--tools-root", help="Folder to search recursively for Binary, Attribulina and Ed executables")
+    install_cmd.add_argument("--7zip", dest="seven_zip", help="Path to 7z.exe for RAR/7z archives")
+    install_cmd.add_argument("--binary", help="Path to Binary.exe (required for Binary .end packages)")
+    install_cmd.add_argument("--attribulina-installer", help="Path to AttribulinaModInstaller.exe (required for NFSMS packages)")
+    install_cmd.add_argument("--attribcli", help="Path to attribcli.exe for database read-back verification")
+    install_cmd.add_argument("--ed-root", help="Ed application folder containing Ed.exe")
+    install_cmd.add_argument("--ed-exe", help="Path to Ed.exe")
+    install_cmd.add_argument("--overwrite", action="store_true", help="Back up and replace existing destination files")
+    install_cmd.add_argument("--backup-root", help="Optional backup folder (default inside game root)")
+    install_cmd.add_argument("--execute", action="store_true", help="Run the guided installation after preflight")
+    install_cmd.add_argument("--skip-game-test", action="store_true", help="Stop after file/database verification; final status remains unverified")
+    install_cmd.add_argument("-o", "--output", default="reports/guided-install-plan.json")
 
     args = parser.parse_args(argv)
 
@@ -492,6 +662,11 @@ def main(argv=None):
         if args.action == "rollback-install":
             return rollback_command(args)
 
+        if args.action == "analyze-package":
+            return analyze_package_command(args)
+
+        if args.action == "install":
+            return install_command(args)
 
 
     except (OSError, ValueError, RuntimeError, subprocess.TimeoutExpired) as exc:

@@ -1,0 +1,405 @@
+{
+  "schema_version": "1.0",
+  "package_root": "/mnt/data/nfsmw-reference-packages/flip-car",
+  "file_count": 21,
+  "total_bytes": 57176685,
+  "car_ids": [
+    "FLIPCAR"
+  ],
+  "profiles": [
+    {
+      "id": "unlimiter_addon",
+      "label": "Unlimiter add-on car",
+      "requires": [
+        "NFSMW Unlimiter",
+        "Binary User Mode",
+        "Attribulina Mod Installer or compatible VLT tool"
+      ],
+      "components": [
+        "model files",
+        "Binary package",
+        "VLT/NFSMS/AMOD database scripts",
+        "Unlimiter per-car configuration"
+      ]
+    }
+  ],
+  "declared_tool_requirements": {
+    "Binary": "2.4.0 or higher (required)",
+    "VltEd": "4.6 (required by readme; Attribulina alternative used by this workflow)"
+  },
+  "components": {
+    "model_files_present": true,
+    "model_directories": [
+      "binary files/_main/cars/flipcar"
+    ],
+    "unlimiter_configs": [
+      "Binary Files/_Main/scripts/UnlimiterData/FLIPCAR.ini"
+    ],
+    "save_patcher_files": [],
+    "nfsms": {
+      "script_count": 4,
+      "entrypoints": [
+        "VLT Data Install.nfsms"
+      ],
+      "uninstall_entrypoints": [],
+      "scripts": [
+        "VLT Data Install.nfsms",
+        "VLTFiles/cam_stuffs.nfsms",
+        "VLTFiles/flipcar_install.nfsms",
+        "VLTFiles/flipcar_uninstall.nfsms"
+      ],
+      "script_edges": [
+        {
+          "from": "VLT Data Install.nfsms",
+          "line": 30,
+          "to": "VLTFiles/flipcar_install.nfsms",
+          "status": "resolved"
+        },
+        {
+          "from": "VLT Data Install.nfsms",
+          "line": 31,
+          "to": "VLTFiles/cam_stuffs.nfsms",
+          "status": "resolved"
+        },
+        {
+          "from": "VLT Data Install.nfsms",
+          "line": 35,
+          "to": "VLTFiles/flipcar_uninstall.nfsms",
+          "status": "resolved"
+        }
+      ],
+      "script_base": ".",
+      "relative_path_fallbacks": [],
+      "ambiguous_script_references": [],
+      "command_counts": {
+        "VLT Data Install.nfsms": 28,
+        "VLTFiles/cam_stuffs.nfsms": 105,
+        "VLTFiles/flipcar_install.nfsms": 385,
+        "VLTFiles/flipcar_uninstall.nfsms": 10
+      },
+      "car_collection_ids": [
+        "FLIPCAR"
+      ],
+      "file_copy_operations": [],
+      "ui_controls": [
+        {
+          "script": "VLT Data Install.nfsms",
+          "line": 26,
+          "args": [
+            "radiobutton",
+            "setup_rbutton",
+            "option1",
+            "Install"
+          ]
+        },
+        {
+          "script": "VLT Data Install.nfsms",
+          "line": 27,
+          "args": [
+            "radiobutton",
+            "setup_rbutton",
+            "option2",
+            "Uninstall"
+          ]
+        }
+      ],
+      "ui_options": [
+        {
+          "script": "VLT Data Install.nfsms",
+          "line": 29,
+          "args": [
+            "setup_rbutton",
+            "option1"
+          ]
+        },
+        {
+          "script": "VLT Data Install.nfsms",
+          "line": 32,
+          "args": [
+            "setup_rbutton",
+            "option1"
+          ]
+        },
+        {
+          "script": "VLT Data Install.nfsms",
+          "line": 34,
+          "args": [
+            "setup_rbutton",
+            "option2"
+          ]
+        },
+        {
+          "script": "VLT Data Install.nfsms",
+          "line": 36,
+          "args": [
+            "setup_rbutton",
+            "option2"
+          ]
+        }
+      ],
+      "requires_interactive_choices": true,
+      "missing_references": [],
+      "unsafe_references": []
+    },
+    "amod": {
+      "scripts": [],
+      "entrypoints": [],
+      "uninstall_entrypoints": [],
+      "include_graph": {},
+      "missing_references": [],
+      "unsafe_references": [],
+      "cycles": [],
+      "car_collection_ids": [],
+      "game_targets": [],
+      "script_count": 0
+    },
+    "amod_scripts": [],
+    "direct_model_payload": [],
+    "binary_manifests": [
+      {
+        "path": "Binary Data Install.end",
+        "valid": true,
+        "usage": "User",
+        "game": "MostWanted",
+        "directory": " ",
+        "endscript": "Binary Files/global_install.end",
+        "game_files": [
+          "GLOBAL/GLOBALA.BUN",
+          "GLOBAL/GLOBALB.LZC",
+          "LANGUAGES/ENGLISH.BIN",
+          "FRONTEND/FRONTA.BUN",
+          "FRONTEND/FRONTB.LZC"
+        ],
+        "links": [
+          {
+            "LoadType": "Attributes",
+            "PathType": "Absolute",
+            "File": "GLOBAL/attributes.bin"
+          },
+          {
+            "LoadType": "FeAttrib",
+            "PathType": "Absolute",
+            "File": "GLOBAL/fe_attrib.bin"
+          },
+          {
+            "LoadType": "Labels",
+            "PathType": "Absolute",
+            "File": "LANGUAGES/Labels_Global.bin"
+          },
+          {
+            "LoadType": "Labels",
+            "PathType": "Absolute",
+            "File": "LANGUAGES/Labels.bin"
+          }
+        ],
+        "errors": [],
+        "endscript_resolved": "Binary Files/global_install.end",
+        "endscript_exists": true
+      }
+    ],
+    "binary_scripts": [
+      {
+        "path": "Binary Files/_Textures/GlobalB.end",
+        "version_header": "[VERSN2]",
+        "commands": [
+          {
+            "line": 2,
+            "command": "if",
+            "raw": "if collection_exists FRONTEND\\FRONTB.LZC TPKBlocks DEFAULT"
+          },
+          {
+            "line": 4,
+            "command": "bind_textures",
+            "raw": "bind_textures override Frontend\\FrontB.lzc TPKBlocks DEFAULT _Textures\\FrontB\\FrontendTextures"
+          },
+          {
+            "line": 6,
+            "command": "bind_textures",
+            "raw": "bind_textures override Frontend\\FrontB.lzc TPKBlocks FRONTENDTEXTURES _Textures\\FrontB\\FrontendTextures"
+          }
+        ],
+        "command_counts": {
+          "bind_textures": 2,
+          "if": 1
+        },
+        "package_references": [
+          "_Textures/FrontB/FrontendTextures"
+        ],
+        "target_game_files": [
+          "Frontend/FrontB.lzc"
+        ],
+        "uninstall_target_files": [],
+        "move_file_operations": [],
+        "binary_gui_required": true,
+        "missing_package_references": [],
+        "uninstall_script": false,
+        "is_manifest_endscript": false
+      },
+      {
+        "path": "Binary Files/global_install.end",
+        "version_header": "[VERSN2]",
+        "commands": [
+          {
+            "line": 2,
+            "command": "unlock_memory",
+            "raw": "unlock_memory all"
+          },
+          {
+            "line": 3,
+            "command": "speedreflect",
+            "raw": "speedreflect auto"
+          },
+          {
+            "line": 5,
+            "command": "append",
+            "raw": "append _Textures\\GlobalB.end"
+          },
+          {
+            "line": 7,
+            "command": "add_string",
+            "raw": "add_string LANGUAGES\\ENGLISH.BIN STRBlocks GLOBAL 0x61581E29 CARNAME_FASTFURY_FLIPCAR \"Fast & Furious FlipCar\""
+          },
+          {
+            "line": 9,
+            "command": "move_file",
+            "raw": "move_file override relative absolute _Main\\CARS\\FLIPCAR\\GEOMETRY.BIN CARS\\FLIPCAR\\GEOMETRY.BIN"
+          },
+          {
+            "line": 10,
+            "command": "move_file",
+            "raw": "move_file override relative absolute _Main\\CARS\\FLIPCAR\\TEXTURES.BIN CARS\\FLIPCAR\\TEXTURES.BIN"
+          },
+          {
+            "line": 13,
+            "command": "move_file",
+            "raw": "move_file override relative absolute _Main\\scripts\\UnlimiterData\\FLIPCAR.ini scripts\\UnlimiterData\\FLIPCAR.ini"
+          },
+          {
+            "line": 15,
+            "command": "import",
+            "raw": "import override GLOBAL\\GLOBALB.LZC DBModelParts \"_CarParts\\FLIPCAR_DB.bin\""
+          },
+          {
+            "line": 16,
+            "command": "import",
+            "raw": "import override GLOBAL\\GLOBALB.LZC Collisions \"_CarParts\\FLIPCAR_COL.bin\""
+          },
+          {
+            "line": 17,
+            "command": "import",
+            "raw": "import override GLOBAL\\GLOBALB.LZC CarTypeInfos \"_CarParts\\FLIPCAR_CAR.bin\""
+          },
+          {
+            "line": 18,
+            "command": "import",
+            "raw": "import synchronize GLOBAL\\GLOBALB.LZC TPKBlocks \"_CarParts\\VEE_MODS.bin\""
+          },
+          {
+            "line": 19,
+            "command": "watermark",
+            "raw": "watermark \"Vee's Binary Script Mk. 3\""
+          }
+        ],
+        "command_counts": {
+          "add_string": 1,
+          "append": 1,
+          "import": 4,
+          "move_file": 3,
+          "speedreflect": 1,
+          "unlock_memory": 1,
+          "watermark": 1
+        },
+        "package_references": [
+          "_CarParts/FLIPCAR_CAR.bin",
+          "_CarParts/FLIPCAR_COL.bin",
+          "_CarParts/FLIPCAR_DB.bin",
+          "_CarParts/VEE_MODS.bin",
+          "_Main/CARS/FLIPCAR/GEOMETRY.BIN",
+          "_Main/CARS/FLIPCAR/TEXTURES.BIN",
+          "_Main/scripts/UnlimiterData/FLIPCAR.ini",
+          "_Textures/GlobalB.end"
+        ],
+        "target_game_files": [
+          "CARS/FLIPCAR/GEOMETRY.BIN",
+          "CARS/FLIPCAR/TEXTURES.BIN",
+          "GLOBAL/GLOBALB.LZC",
+          "LANGUAGES/ENGLISH.BIN",
+          "scripts/UnlimiterData/FLIPCAR.ini"
+        ],
+        "uninstall_target_files": [],
+        "move_file_operations": [
+          {
+            "source": "_Main/CARS/FLIPCAR/GEOMETRY.BIN",
+            "destination": "CARS/FLIPCAR/GEOMETRY.BIN"
+          },
+          {
+            "source": "_Main/CARS/FLIPCAR/TEXTURES.BIN",
+            "destination": "CARS/FLIPCAR/TEXTURES.BIN"
+          },
+          {
+            "source": "_Main/scripts/UnlimiterData/FLIPCAR.ini",
+            "destination": "scripts/UnlimiterData/FLIPCAR.ini"
+          }
+        ],
+        "binary_gui_required": true,
+        "missing_package_references": [],
+        "uninstall_script": false,
+        "is_manifest_endscript": true
+      }
+    ],
+    "binary_missing_references": [],
+    "binary_file_moves": [
+      {
+        "script": "Binary Files/global_install.end",
+        "source": "Binary Files/_Main/CARS/FLIPCAR/GEOMETRY.BIN",
+        "source_exists": true,
+        "destination": "CARS/FLIPCAR/GEOMETRY.BIN"
+      },
+      {
+        "script": "Binary Files/global_install.end",
+        "source": "Binary Files/_Main/CARS/FLIPCAR/TEXTURES.BIN",
+        "source_exists": true,
+        "destination": "CARS/FLIPCAR/TEXTURES.BIN"
+      },
+      {
+        "script": "Binary Files/global_install.end",
+        "source": "Binary Files/_Main/scripts/UnlimiterData/FLIPCAR.ini",
+        "source_exists": true,
+        "destination": "scripts/UnlimiterData/FLIPCAR.ini"
+      }
+    ],
+    "binary_uninstall_available": false,
+    "binary_target_game_files": [
+      "CARS/FLIPCAR/GEOMETRY.BIN",
+      "CARS/FLIPCAR/TEXTURES.BIN",
+      "FRONTEND/FRONTA.BUN",
+      "FRONTEND/FRONTB.LZC",
+      "Frontend/FrontB.lzc",
+      "GLOBAL/GLOBALA.BUN",
+      "GLOBAL/GLOBALB.LZC",
+      "GLOBAL/attributes.bin",
+      "GLOBAL/fe_attrib.bin",
+      "LANGUAGES/ENGLISH.BIN",
+      "LANGUAGES/Labels.bin",
+      "LANGUAGES/Labels_Global.bin",
+      "scripts/UnlimiterData/FLIPCAR.ini"
+    ],
+    "binary_uninstall_target_game_files": [],
+    "mwps": [],
+    "ed_payload": [],
+    "replacement_payload": [],
+    "legacy_modloader_payload": [],
+    "modern_modloader_payload": []
+  },
+  "warnings": [
+    {
+      "code": "TOOL_VERSION_REQUIREMENTS",
+      "message": "Package readme/scripts declare tool-version requirements; the installer cannot independently validate all GUI tool versions. Confirm them before continuing."
+    }
+  ],
+  "safety": {
+    "writes_performed": false,
+    "automatic_installation_approved": false,
+    "note": "Analysis only. Binary, VLT, Ed and ModLoader operations have distinct execution requirements; do not treat file presence as proof of a working in-game car."
+  }
+}

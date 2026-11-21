@@ -1,0 +1,174 @@
+{
+  "audit_version": "0.1.0",
+  "created_utc": "2026-11-21T08:45:54.741454+00:00",
+  "status": "audited",
+  "game_root": "D:\\softwares\\NFS-MW-Unlimiter",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "read_only": true,
+  "writes_performed": false,
+  "required_files": [
+    {
+      "path": "speed.exe",
+      "exists": true,
+      "size_bytes": 6029312,
+      "sha256": "b248271bf8eac8c9b283b8c95e3add672b713bf529b05f1780e58268493b9d06"
+    },
+    {
+      "path": "GLOBAL/ATTRIBUTES.BIN",
+      "exists": true,
+      "size_bytes": 666472,
+      "sha256": "bf255d0a0d49311784d69a89db6546dd10726eb75a567b546e9094904da7f051"
+    },
+    {
+      "path": "GLOBAL/FE_ATTRIB.BIN",
+      "exists": true,
+      "size_bytes": 114528,
+      "sha256": "7a244bfbc1582bd1aac188ee6e25f2c7336c2385f6c1c1612ca6ae6d807ffb88"
+    }
+  ],
+  "required_directories": [
+    {
+      "path": "CARS",
+      "exists": true,
+      "immediate_entries": 100
+    },
+    {
+      "path": "GLOBAL",
+      "exists": true,
+      "immediate_entries": 46
+    },
+    {
+      "path": "FRONTEND",
+      "exists": true,
+      "immediate_entries": 6
+    },
+    {
+      "path": "scripts",
+      "exists": true,
+      "immediate_entries": 10
+    }
+  ],
+  "optional_files": [
+    {
+      "path": "dinput8.dll",
+      "exists": true,
+      "size_bytes": 8834752,
+      "sha256": "63b465dbc1bf9c5ab4e33c3ccad099d9edb702f2c51587ac8d4f196497396437"
+    },
+    {
+      "path": "scripts/NFSMW-ML.asi",
+      "exists": true,
+      "size_bytes": 718336,
+      "sha256": "14a9f77f43dc8d1ac72b476feca0cb5a56bf25a1909132ee749b516064e80acd"
+    },
+    {
+      "path": "NFSMW-ML.asi",
+      "exists": false
+    },
+    {
+      "path": "scripts/NFSMWUnlimiter.asi",
+      "exists": true,
+      "size_bytes": 751104,
+      "sha256": "47972a012984e6367d59cacdcba80057fb5461b2c9eb5d0c7794382805fe3b9d"
+    },
+    {
+      "path": "scripts/Unlimiter.asi",
+      "exists": false
+    }
+  ],
+  "optional_directories": [
+    {
+      "path": "modloader",
+      "exists": true,
+      "immediate_entries": 4
+    },
+    {
+      "path": "scripts/UnlimiterData",
+      "exists": true,
+      "immediate_entries": 24
+    },
+    {
+      "path": "UnlimiterData",
+      "exists": false
+    }
+  ],
+  "speed_exe_reference_check": {
+    "known_size_match": true,
+    "known_sha256_match": true,
+    "reference_size_bytes": 6029312,
+    "reference_sha256": "b248271bf8eac8c9b283b8c95e3add672b713bf529b05f1780e58268493b9d06",
+    "note": "Reference values are from the user's previously reported executable; mismatch is a warning, not proof of an invalid game."
+  },
+  "modloader_log": {
+    "path": "modloader/NFSMW-ML.log",
+    "exists": true,
+    "size_bytes": 1627,
+    "sha256": "8281938d8096a302599f039f6953e2f15fd98cf3c55c3c69b57c2d9802911fdd",
+    "tail": [
+      "NFSMW-ML log opened: D:\\softwares\\NFS-MW-Unlimiter\\modloader\\NFSMW-ML.log",
+      "",
+      "[INFO ] NFSMW-ML v1.0.0 \u2014 Need for Speed Most Wanted Mod Loader",
+      "[INFO ] Game directory: D:\\softwares\\NFS-MW-Unlimiter",
+      "[INFO ] Modloader dir:  D:\\softwares\\NFS-MW-Unlimiter\\modloader",
+      "[INFO ] Loader: game dir   = 'D:\\softwares\\NFS-MW-Unlimiter'",
+      "[INFO ] Loader: modloader  = 'D:\\softwares\\NFS-MW-Unlimiter\\modloader'",
+      "[INFO ] Loader: friendly-name self-check OK \u2014 17/17 sky names round-trip",
+      "[INFO ] Loader: 2 mod folder(s) found",
+      "[INFO ] Loader: game file index built \u2014 1992 unique filenames across game tree",
+      "[INFO ] Loader: scanning mod 'Jeep_Grand_Cherokee' ...",
+      "[INFO ] Loader:  [FILE] cars\\cts\\geometry.bin                         <- 'GEOMETRY.BIN'",
+      "[INFO ] Loader:  [FILE] cars\\cts\\textures.bin                         <- 'TEXTURES.BIN'",
+      "[INFO ] Loader: mod 'Jeep_Grand_Cherokee' \u2014 2 file replacement(s), 0 texture patch(es)",
+      "[INFO ] Loader: scanning mod 'plugins' ...",
+      "[INFO ] Loader: mod 'plugins' \u2014 0 file replacement(s), 0 texture patch(es)",
+      "[INFO ] Loader: totals \u2014 2 file replacement(s), 0 texture patch(es)",
+      "[INFO ] FileHooks: CreateFileA hooked (IAT slot @ 0x008902AC)",
+      "[INFO ] FileHooks: CloseHandle hooked",
+      "[INFO ] FileHooks: installed",
+      "[INFO ] PluginHost: scanning 'D:\\softwares\\NFS-MW-Unlimiter\\modloader\\plugins'",
+      "[INFO ] PluginHost: scanning 'D:\\softwares\\NFS-MW-Unlimiter\\modloader\\.data\\plugins'",
+      "[INFO ] PluginHost: 0 module(s) loaded, 0 NFSMW-ML plugin(s) registered",
+      "[INFO ] SkyOverride: no sky.ini \u2014 sky override off",
+      "[INFO ] NFSMW-ML: init complete \u2014 2 mod(s), 2 file replacement(s), 0 texture patch(es)"
+    ]
+  },
+  "attribulina_info": {
+    "ATTRIBUTES.BIN": {
+      "status": "passed",
+      "returncode": 0,
+      "stdout": "game: Most Wanted on PC (mw_pc), from no Vers chunk, as in Most Wanted's vaults; little-endian; 1-byte bools; a timeofdaylighting class, as the PC's has\nschema: mw_pc.txt\n57 classes, 2379 collections\nD:\\softwares\\NFS-MW-Unlimiter\\GLOBAL\\ATTRIBUTES.BIN: 1 vault(s), 2379 collections\n",
+      "stderr": "",
+      "command": [
+        "D:\\softwares\\NFS-hack\\utils\\Attribulina\\attribcli.exe",
+        "info",
+        "D:\\softwares\\NFS-MW-Unlimiter\\GLOBAL\\ATTRIBUTES.BIN"
+      ]
+    },
+    "FE_ATTRIB.BIN": {
+      "status": "passed",
+      "returncode": 0,
+      "stdout": "game: Most Wanted on PC (mw_pc), from no Vers chunk, as in Most Wanted's vaults; little-endian; 1-byte bools; a timeofdaylighting class, as the PC's has\nschema: mw_pc.txt\n57 classes, 2840 collections\nD:\\softwares\\NFS-MW-Unlimiter\\GLOBAL\\attributes.bin: 1 vault(s), 2379 collections\nD:\\softwares\\NFS-MW-Unlimiter\\GLOBAL\\FE_ATTRIB.BIN: 1 vault(s), 461 collections\n",
+      "stderr": "",
+      "command": [
+        "D:\\softwares\\NFS-hack\\utils\\Attribulina\\attribcli.exe",
+        "info",
+        "D:\\softwares\\NFS-MW-Unlimiter\\GLOBAL\\FE_ATTRIB.BIN"
+      ]
+    }
+  },
+  "summary": {
+    "required_files_present": 3,
+    "required_files_total": 3,
+    "required_directories_present": 4,
+    "required_directories_total": 4,
+    "optional_files_present": 3,
+    "optional_directories_present": 2
+  },
+  "limitations": [
+    "This is a preflight installation audit, not proof that an add-on is installed correctly.",
+    "Database file hashes prove file identity only; they do not verify individual vehicle attributes.",
+    "Attribulina info is metadata inspection only. No database apply command is invoked.",
+    "Post-install attribute verification requires an installation-specific expected-value manifest and read-back queries for each affected class/collection/field.",
+    "Game launch and in-game vehicle/menu checks remain separate manual or supervised end-to-end checks."
+  ]
+}

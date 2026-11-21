@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "package_root": "/mnt/data/nfsmw-reference-packages/amc-rebel",
+  "file_count": 10,
+  "total_bytes": 9151416,
+  "car_ids": [
+    "REBEL"
+  ],
+  "profiles": [
+    {
+      "id": "unlimiter_addon",
+      "label": "Unlimiter add-on car",
+      "requires": [
+        "NFSMW Unlimiter",
+        "Attribulina Mod Installer or compatible VLT tool"
+      ],
+      "components": [
+        "model files",
+        "VLT/NFSMS/AMOD database scripts",
+        "Ed configuration/resources"
+      ]
+    }
+  ],
+  "declared_tool_requirements": {},
+  "components": {
+    "model_files_present": true,
+    "model_directories": [
+      "1970 amc rebel the machine/addon/rebel"
+    ],
+    "unlimiter_configs": [],
+    "save_patcher_files": [],
+    "nfsms": {
+      "script_count": 2,
+      "entrypoints": [
+        "1970 AMC Rebel The Machine/Addon/Install.nfsms"
+      ],
+      "uninstall_entrypoints": [],
+      "scripts": [
+        "1970 AMC Rebel The Machine/Addon/Install.nfsms",
+        "1970 AMC Rebel The Machine/Addon/SetupFiles/rebel_install.nfsms"
+      ],
+      "script_edges": [
+        {
+          "from": "1970 AMC Rebel The Machine/Addon/Install.nfsms",
+          "line": 15,
+          "to": "1970 AMC Rebel The Machine/Addon/SetupFiles/rebel_install.nfsms",
+          "status": "resolved"
+        }
+      ],
+      "script_base": "1970 AMC Rebel The Machine/Addon",
+      "relative_path_fallbacks": [],
+      "ambiguous_script_references": [],
+      "command_counts": {
+        "1970 AMC Rebel The Machine/Addon/Install.nfsms": 10,
+        "1970 AMC Rebel The Machine/Addon/SetupFiles/rebel_install.nfsms": 295
+      },
+      "car_collection_ids": [
+        "REBEL"
+      ],
+      "file_copy_operations": [
+        {
+          "script": "1970 AMC Rebel The Machine/Addon/Install.nfsms",
+          "line": 13,
+          "source": "1970 AMC Rebel The Machine/Addon/REBEL/GEOMETRY.BIN",
+          "source_exists": true,
+          "destination": "CARS/REBEL/GEOMETRY.BIN"
+        },
+        {
+          "script": "1970 AMC Rebel The Machine/Addon/Install.nfsms",
+          "line": 14,
+          "source": "1970 AMC Rebel The Machine/Addon/REBEL/TEXTURES.BIN",
+          "source_exists": true,
+          "destination": "CARS/REBEL/TEXTURES.BIN"
+        }
+      ],
+      "ui_controls": [],
+      "ui_options": [],
+      "requires_interactive_choices": false,
+      "missing_references": [],
+      "unsafe_references": []
+    },
+    "amod": {
+      "scripts": [],
+      "entrypoints": [],
+      "uninstall_entrypoints": [],
+      "include_graph": {},
+      "missing_references": [],
+      "unsafe_references": [],
+      "cycles": [],
+      "car_collection_ids": [],
+      "game_targets": [],
+      "script_count": 0
+    },
+    "amod_scripts": [],
+    "direct_model_payload": [],
+    "binary_manifests": [],
+    "binary_scripts": [],
+    "binary_missing_references": [],
+    "binary_file_moves": [],
+    "binary_uninstall_available": false,
+    "binary_target_game_files": [],
+    "binary_uninstall_target_game_files": [],
+    "mwps": [],
+    "ed_payload": [
+      {
+        "source": "1970 AMC Rebel The Machine/Addon/Ed Files/Config/NFSMW/REBEL.ini",
+        "ed_relative": "Config/NFSMW/REBEL.ini"
+      },
+      {
+        "source": "1970 AMC Rebel The Machine/Addon/Ed Files/Resources/NFSMW/FrontEnd/FrontEndTextures/729181AD/CARSELECT_MANUFACTURER_AMC.dds",
+        "ed_relative": "Resources/NFSMW/FrontEnd/FrontEndTextures/729181AD/CARSELECT_MANUFACTURER_AMC.dds"
+      },
+      {
+        "source": "1970 AMC Rebel The Machine/Addon/Ed Files/Resources/NFSMW/FrontEnd/FrontEndTextures/729181AD/SECONDARY_LOGO_REBEL.dds",
+        "ed_relative": "Resources/NFSMW/FrontEnd/FrontEndTextures/729181AD/SECONDARY_LOGO_REBEL.dds"
+      }
+    ],
+    "replacement_payload": [],
+    "legacy_modloader_payload": [],
+    "modern_modloader_payload": []
+  },
+  "warnings": [
+    {
+      "code": "README_INSTALL_MODE_CONFLICT",
+      "message": "README mentions a ModLoader replacement, but the archive also contains an Unlimiter add-on install script and no clear REPLACE payload. Confirm the intended variant before installing."
+    }
+  ],
+  "safety": {
+    "writes_performed": false,
+    "automatic_installation_approved": false,
+    "note": "Analysis only. Binary, VLT, Ed and ModLoader operations have distinct execution requirements; do not treat file presence as proof of a working in-game car."
+  }
+}

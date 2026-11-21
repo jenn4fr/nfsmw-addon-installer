@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "nfsmw-addon-installer"
-version = "0.4.0"
+version = "0.6.1"
 description = "Discovery and validation assistant for Need for Speed Most Wanted (2005) car mods"
 requires-python = ">=3.10"
 authors = [{name = "Local project"}]

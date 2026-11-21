@@ -1,0 +1,1162 @@
+{
+  "schema_version": "1.4",
+  "generated": "2026-11-21",
+  "basis": "User-supplied archives extracted and analyzed from this conversation. Analysis and synthetic preflight only; no live game files were changed.",
+  "archives": {
+    "installer_source": {
+      "filename": "nfsmw-addon-installer.zip",
+      "size_bytes": 8641082,
+      "sha256": "cf369b07b9b244baa0245f2edc724faf692ac2340b75d39c86a543ec5f4c8b1e"
+    },
+    "bugatti_chiron": {
+      "filename": "nfsaddons.com_BugattiChiron.rar",
+      "size_bytes": 23846182,
+      "sha256": "a5b58dbd971b9d09e0fe2baccbd11365d942ffa09b913d602cb9e0a925307429"
+    },
+    "amc_rebel": {
+      "filename": "1970 AMC Rebel The Machine.rar",
+      "size_bytes": 4324680,
+      "sha256": "272f6d4004d7987d5b3fb63ff008dd39e07b3eea8c3996ae4f9dc5e41315a2db"
+    },
+    "fast_n_furious_flip_car": {
+      "filename": "Fast n Furious Flip Car-102-1-01-1704391371(1).7z",
+      "size_bytes": 17374163,
+      "sha256": "31018e52f8ba4a05b891ea8a16bba9064fa2bbf0581ebf74f357133063d357e8"
+    }
+  },
+  "target_installation": {
+    "audit_status": "audited",
+    "read_only": true,
+    "writes_performed": false,
+    "game_root": "D:\\softwares\\NFS-MW-Unlimiter",
+    "speed_exe": {
+      "path": "speed.exe",
+      "exists": true,
+      "size_bytes": 6029312,
+      "sha256": "b248271bf8eac8c9b283b8c95e3add672b713bf529b05f1780e58268493b9d06"
+    },
+    "unlimiter_asi_present": true,
+    "nfsmw_ml_asi_present": true,
+    "dinput8_present": true,
+    "classic_modloader_indicators": "not included in saved audit; runtime preflight checks d3d9.dll and modloader.ini",
+    "modloader_directory_present": true,
+    "attribulina_info": {
+      "ATTRIBUTES.BIN": "passed",
+      "FE_ATTRIB.BIN": "passed"
+    },
+    "note": "The target is the separate Unlimiter + NFSMW-ML installation, not the protected Classic ModLoader installation."
+  },
+  "package_tests": {
+    "amc-rebel": {
+      "file_count": 10,
+      "total_bytes": 9151416,
+      "car_ids": [
+        "REBEL"
+      ],
+      "profiles": [
+        "unlimiter_addon"
+      ],
+      "declared_tool_requirements": {},
+      "nfsms": {
+        "script_count": 2,
+        "entrypoints": [
+          "1970 AMC Rebel The Machine/Addon/Install.nfsms"
+        ],
+        "uninstall_entrypoints": [],
+        "scripts": [
+          "1970 AMC Rebel The Machine/Addon/Install.nfsms",
+          "1970 AMC Rebel The Machine/Addon/SetupFiles/rebel_install.nfsms"
+        ],
+        "script_edges": [
+          {
+            "from": "1970 AMC Rebel The Machine/Addon/Install.nfsms",
+            "line": 15,
+            "to": "1970 AMC Rebel The Machine/Addon/SetupFiles/rebel_install.nfsms",
+            "status": "resolved"
+          }
+        ],
+        "script_base": "1970 AMC Rebel The Machine/Addon",
+        "relative_path_fallbacks": [],
+        "ambiguous_script_references": [],
+        "command_counts": {
+          "1970 AMC Rebel The Machine/Addon/Install.nfsms": 10,
+          "1970 AMC Rebel The Machine/Addon/SetupFiles/rebel_install.nfsms": 295
+        },
+        "car_collection_ids": [
+          "REBEL"
+        ],
+        "file_copy_operations": [
+          {
+            "script": "1970 AMC Rebel The Machine/Addon/Install.nfsms",
+            "line": 13,
+            "source": "1970 AMC Rebel The Machine/Addon/REBEL/GEOMETRY.BIN",
+            "source_exists": true,
+            "destination": "CARS/REBEL/GEOMETRY.BIN"
+          },
+          {
+            "script": "1970 AMC Rebel The Machine/Addon/Install.nfsms",
+            "line": 14,
+            "source": "1970 AMC Rebel The Machine/Addon/REBEL/TEXTURES.BIN",
+            "source_exists": true,
+            "destination": "CARS/REBEL/TEXTURES.BIN"
+          }
+        ],
+        "ui_controls": [],
+        "ui_options": [],
+        "requires_interactive_choices": false,
+        "missing_references": [],
+        "unsafe_references": []
+      },
+      "amod": {
+        "scripts": [],
+        "entrypoints": [],
+        "uninstall_entrypoints": [],
+        "include_graph": {},
+        "missing_references": [],
+        "unsafe_references": [],
+        "cycles": [],
+        "car_collection_ids": [],
+        "game_targets": [],
+        "script_count": 0
+      },
+      "binary_manifests": [],
+      "binary_script_count": 0,
+      "binary_missing_references": [],
+      "binary_file_moves": [],
+      "binary_target_game_files": [],
+      "binary_uninstall_target_game_files": [],
+      "binary_uninstall_available": false,
+      "mwps": [],
+      "ed_payload": [
+        {
+          "source": "1970 AMC Rebel The Machine/Addon/Ed Files/Config/NFSMW/REBEL.ini",
+          "ed_relative": "Config/NFSMW/REBEL.ini"
+        },
+        {
+          "source": "1970 AMC Rebel The Machine/Addon/Ed Files/Resources/NFSMW/FrontEnd/FrontEndTextures/729181AD/CARSELECT_MANUFACTURER_AMC.dds",
+          "ed_relative": "Resources/NFSMW/FrontEnd/FrontEndTextures/729181AD/CARSELECT_MANUFACTURER_AMC.dds"
+        },
+        {
+          "source": "1970 AMC Rebel The Machine/Addon/Ed Files/Resources/NFSMW/FrontEnd/FrontEndTextures/729181AD/SECONDARY_LOGO_REBEL.dds",
+          "ed_relative": "Resources/NFSMW/FrontEnd/FrontEndTextures/729181AD/SECONDARY_LOGO_REBEL.dds"
+        }
+      ],
+      "unlimiter_configs": [],
+      "save_patcher_files": [],
+      "direct_model_payload": [],
+      "warnings": [
+        {
+          "code": "README_INSTALL_MODE_CONFLICT",
+          "message": "README mentions a ModLoader replacement, but the archive also contains an Unlimiter add-on install script and no clear REPLACE payload. Confirm the intended variant before installing."
+        }
+      ],
+      "unlimiter_preflight": {
+        "ready": true,
+        "selected_profile": "unlimiter_addon",
+        "profile_selection": "single_detected_profile",
+        "checks": [
+          {
+            "check": "NFS MW executable",
+            "passed": true,
+            "reason": "speed.exe must exist in the target game folder"
+          },
+          {
+            "check": "Unlimiter",
+            "passed": true,
+            "reason": "scripts/NFSMWUnlimiter.asi must exist"
+          },
+          {
+            "check": "Addon car ID",
+            "passed": true,
+            "reason": "A pvehicle car ID must be identified for independent database read-back"
+          },
+          {
+            "check": "No Classic ModLoader conflict",
+            "passed": true,
+            "reason": "Classic d3d9 ModLoader must not be mixed with the Unlimiter/ASI-loader setup"
+          },
+          {
+            "check": "Ed.exe",
+            "passed": true,
+            "reason": "Expected /tmp/tmp5sj7zxmo/ed/Ed.exe"
+          },
+          {
+            "check": "VLT database GLOBAL/ATTRIBUTES.BIN",
+            "passed": true,
+            "reason": "Required game database file must exist before applying car registration"
+          },
+          {
+            "check": "VLT database GLOBAL/FE_ATTRIB.BIN",
+            "passed": true,
+            "reason": "Required game database file must exist before applying car registration"
+          }
+        ],
+        "car_ids": [
+          "REBEL"
+        ],
+        "database_script_entrypoint_relative": "1970 AMC Rebel The Machine/Addon/Install.nfsms",
+        "ed_payload_count": 3,
+        "nfsms_file_copy_operations": [
+          {
+            "script": "1970 AMC Rebel The Machine/Addon/Install.nfsms",
+            "line": 13,
+            "source": "1970 AMC Rebel The Machine/Addon/REBEL/GEOMETRY.BIN",
+            "source_exists": true,
+            "destination": "CARS/REBEL/GEOMETRY.BIN"
+          },
+          {
+            "script": "1970 AMC Rebel The Machine/Addon/Install.nfsms",
+            "line": 14,
+            "source": "1970 AMC Rebel The Machine/Addon/REBEL/TEXTURES.BIN",
+            "source_exists": true,
+            "destination": "CARS/REBEL/TEXTURES.BIN"
+          }
+        ]
+      }
+    },
+    "bugatti-chiron": {
+      "file_count": 26,
+      "total_bytes": 112702055,
+      "car_ids": [
+        "CHIRON16"
+      ],
+      "profiles": [
+        "unlimiter_addon",
+        "classic_modloader_replacement"
+      ],
+      "declared_tool_requirements": {
+        "Binary": "2.2.0 (credited version; minimum not stated)",
+        "Unlimiter": "3 (required)"
+      },
+      "nfsms": {
+        "script_count": 4,
+        "entrypoints": [
+          "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron VLT.nfsms"
+        ],
+        "uninstall_entrypoints": [],
+        "scripts": [
+          "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron VLT.nfsms",
+          "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Files.nfsms",
+          "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Uninstallchiron.nfsms",
+          "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/chiron.nfsms"
+        ],
+        "script_edges": [
+          {
+            "from": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron VLT.nfsms",
+            "line": 56,
+            "to": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Files.nfsms",
+            "status": "resolved"
+          },
+          {
+            "from": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron VLT.nfsms",
+            "line": 57,
+            "to": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/chiron.nfsms",
+            "status": "resolved"
+          },
+          {
+            "from": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron VLT.nfsms",
+            "line": 60,
+            "to": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Uninstallchiron.nfsms",
+            "status": "resolved"
+          }
+        ],
+        "script_base": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON",
+        "relative_path_fallbacks": [],
+        "ambiguous_script_references": [],
+        "command_counts": {
+          "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron VLT.nfsms": 61,
+          "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Files.nfsms": 4,
+          "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Uninstallchiron.nfsms": 10,
+          "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/chiron.nfsms": 309
+        },
+        "car_collection_ids": [
+          "CHIRON16"
+        ],
+        "file_copy_operations": [
+          {
+            "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Files.nfsms",
+            "line": 3,
+            "source": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Model/GEOMETRY.BIN",
+            "source_exists": true,
+            "destination": "CARS/CHIRON16/GEOMETRY.BIN"
+          },
+          {
+            "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Files.nfsms",
+            "line": 4,
+            "source": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Model/TEXTURES.BIN",
+            "source_exists": true,
+            "destination": "CARS/CHIRON16/TEXTURES.BIN"
+          },
+          {
+            "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Files.nfsms",
+            "line": 5,
+            "source": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Model/VINYLS.BIN",
+            "source_exists": true,
+            "destination": "CARS/CHIRON16/VINYLS.BIN"
+          }
+        ],
+        "ui_controls": [
+          {
+            "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron VLT.nfsms",
+            "line": 53,
+            "args": [
+              "radiobutton",
+              "setup_rbutton",
+              "option1",
+              "Install"
+            ]
+          },
+          {
+            "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron VLT.nfsms",
+            "line": 54,
+            "args": [
+              "radiobutton",
+              "setup_rbutton",
+              "option2",
+              "Uninstall"
+            ]
+          }
+        ],
+        "ui_options": [
+          {
+            "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron VLT.nfsms",
+            "line": 55,
+            "args": [
+              "setup_rbutton",
+              "option1"
+            ]
+          },
+          {
+            "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron VLT.nfsms",
+            "line": 58,
+            "args": [
+              "setup_rbutton",
+              "option1"
+            ]
+          },
+          {
+            "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron VLT.nfsms",
+            "line": 59,
+            "args": [
+              "setup_rbutton",
+              "option2"
+            ]
+          },
+          {
+            "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron VLT.nfsms",
+            "line": 61,
+            "args": [
+              "setup_rbutton",
+              "option2"
+            ]
+          }
+        ],
+        "requires_interactive_choices": true,
+        "missing_references": [],
+        "unsafe_references": []
+      },
+      "amod": {
+        "scripts": [],
+        "entrypoints": [],
+        "uninstall_entrypoints": [],
+        "include_graph": {},
+        "missing_references": [],
+        "unsafe_references": [],
+        "cycles": [],
+        "car_collection_ids": [],
+        "game_targets": [],
+        "script_count": 0
+      },
+      "binary_manifests": [
+        {
+          "path": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/2016 Bugatti Chiron Installer.end",
+          "valid": true,
+          "usage": "User",
+          "game": "MostWanted",
+          "endscript": "Files/_settings/setup.end",
+          "endscript_exists": true,
+          "game_files": [
+            "GLOBAL/GLOBALA.BUN",
+            "GLOBAL/GLOBALB.LZC",
+            "frontend/FRONTB.lzc",
+            "LANGUAGES/ENGLISH.BIN",
+            "LANGUAGES/SPANISH.BIN",
+            "LANGUAGES/CHINESE.BIN",
+            "LANGUAGES/DANISH.BIN",
+            "LANGUAGES/DUTCH.BIN",
+            "LANGUAGES/FINNISH.BIN",
+            "LANGUAGES/FRENCH.BIN",
+            "LANGUAGES/GERMAN.BIN",
+            "LANGUAGES/ITALIAN.BIN",
+            "LANGUAGES/KOREAN.BIN",
+            "LANGUAGES/POLISH.BIN",
+            "LANGUAGES/SWEDISH.BIN"
+          ],
+          "errors": []
+        }
+      ],
+      "binary_script_count": 3,
+      "binary_missing_references": [],
+      "binary_file_moves": [
+        {
+          "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/_Settings/global_install.end",
+          "source": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/_Settings/CHIRON16.ini",
+          "source_exists": true,
+          "destination": "scripts/UnlimiterData/CHIRON16.ini"
+        },
+        {
+          "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/_Settings/global_install.end",
+          "source": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/_Settings/_CarManufacturers.ini",
+          "source_exists": true,
+          "destination": "scripts/UnlimiterData/_CarManufacturers.ini"
+        }
+      ],
+      "binary_target_game_files": [
+        "FRONTEND/FRONTB.LZC",
+        "GLOBAL/GLOBALA.BUN",
+        "GLOBAL/GLOBALB.LZC",
+        "GLOBAL/attributes.bin",
+        "GLOBAL/fe_attrib.bin",
+        "LANGUAGES/CHINESE.BIN",
+        "LANGUAGES/DANISH.BIN",
+        "LANGUAGES/DUTCH.BIN",
+        "LANGUAGES/ENGLISH.BIN",
+        "LANGUAGES/FINNISH.BIN",
+        "LANGUAGES/FRENCH.BIN",
+        "LANGUAGES/GERMAN.BIN",
+        "LANGUAGES/ITALIAN.BIN",
+        "LANGUAGES/KOREAN.BIN",
+        "LANGUAGES/Labels.bin",
+        "LANGUAGES/Labels_Global.bin",
+        "LANGUAGES/POLISH.BIN",
+        "LANGUAGES/SPANISH.BIN",
+        "LANGUAGES/SWEDISH.BIN",
+        "frontend/FRONTB.lzc",
+        "scripts/UnlimiterData/CHIRON16.ini",
+        "scripts/UnlimiterData/_CarManufacturers.ini"
+      ],
+      "binary_uninstall_target_game_files": [
+        "CARS/CHIRON16",
+        "CARS/CHIRON16/GEOMETRY.bin",
+        "CARS/CHIRON16/TEXTURES.bin",
+        "FRONTEND/FRONTB.LZC",
+        "GLOBAL/GLOBALB.LZC",
+        "LANGUAGES/CHINESE.BIN",
+        "LANGUAGES/DANISH.BIN",
+        "LANGUAGES/ENGLISH.BIN",
+        "LANGUAGES/FINNISH.BIN",
+        "LANGUAGES/FRENCH.BIN",
+        "LANGUAGES/GERMAN.BIN",
+        "LANGUAGES/ITALIAN.BIN",
+        "LANGUAGES/KOREAN.BIN",
+        "LANGUAGES/POLISH.BIN",
+        "LANGUAGES/SPANISH.BIN",
+        "LANGUAGES/SWEDISH.BIN",
+        "scripts/UnlimiterData/CHIRON16.ini"
+      ],
+      "binary_uninstall_available": true,
+      "mwps": [
+        {
+          "path": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/REPLACE/ADDONS/CARS_REPLACE/PUNTO/ATTRIBUTES.MWPS",
+          "directive_counts": {
+            "memfile": 1,
+            "patch": 269,
+            "vpak": 1
+          }
+        },
+        {
+          "path": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/REPLACE/ADDONS/CARS_REPLACE/PUNTO/FE.MWPS",
+          "directive_counts": {
+            "patch": 3,
+            "vpak": 1
+          }
+        }
+      ],
+      "ed_payload": [],
+      "unlimiter_configs": [
+        "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/_Settings/CHIRON16.ini"
+      ],
+      "save_patcher_files": [
+        "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Save Patcher by MWInside/savepatch/CHIRON16.ini"
+      ],
+      "direct_model_payload": [],
+      "warnings": [
+        {
+          "code": "MULTIPLE_INSTALL_PROFILES",
+          "message": "The archive contains more than one installation route. Choose one; do not install all profiles together."
+        },
+        {
+          "code": "ALTERNATIVE_INSTALLERS",
+          "message": "The archive contains both add-on and Classic ModLoader replacement paths. They are alternatives, not cumulative steps."
+        },
+        {
+          "code": "SAVE_PATCHER_MANUAL_ONLY",
+          "message": "A save/profile patcher configuration is present. The installer will not modify career saves automatically."
+        },
+        {
+          "code": "TOOL_VERSION_REQUIREMENTS",
+          "message": "Package readme/scripts declare tool-version requirements; the installer cannot independently validate all GUI tool versions. Confirm them before continuing."
+        }
+      ],
+      "unlimiter_preflight": {
+        "ready": true,
+        "selected_profile": "unlimiter_addon",
+        "profile_selection": "target_compatible_auto",
+        "checks": [
+          {
+            "check": "NFS MW executable",
+            "passed": true,
+            "reason": "speed.exe must exist in the target game folder"
+          },
+          {
+            "check": "Unlimiter",
+            "passed": true,
+            "reason": "scripts/NFSMWUnlimiter.asi must exist"
+          },
+          {
+            "check": "Addon car ID",
+            "passed": true,
+            "reason": "A pvehicle car ID must be identified for independent database read-back"
+          },
+          {
+            "check": "No Classic ModLoader conflict",
+            "passed": true,
+            "reason": "Classic d3d9 ModLoader must not be mixed with the Unlimiter/ASI-loader setup"
+          },
+          {
+            "check": "Binary dependency GLOBAL/GLOBALA.BUN",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency GLOBAL/GLOBALB.LZC",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency GLOBAL/attributes.bin",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency GLOBAL/fe_attrib.bin",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency LANGUAGES/CHINESE.BIN",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency LANGUAGES/DANISH.BIN",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency LANGUAGES/DUTCH.BIN",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency LANGUAGES/ENGLISH.BIN",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency LANGUAGES/FINNISH.BIN",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency LANGUAGES/FRENCH.BIN",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency LANGUAGES/GERMAN.BIN",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency LANGUAGES/ITALIAN.BIN",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency LANGUAGES/KOREAN.BIN",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency LANGUAGES/Labels.bin",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency LANGUAGES/Labels_Global.bin",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency LANGUAGES/POLISH.BIN",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency LANGUAGES/SPANISH.BIN",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency LANGUAGES/SWEDISH.BIN",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency frontend/FRONTB.lzc",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary target FRONTEND/FRONTB.LZC",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target GLOBAL/GLOBALA.BUN",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target GLOBAL/GLOBALB.LZC",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target GLOBAL/attributes.bin",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target GLOBAL/fe_attrib.bin",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target LANGUAGES/CHINESE.BIN",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target LANGUAGES/DANISH.BIN",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target LANGUAGES/DUTCH.BIN",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target LANGUAGES/ENGLISH.BIN",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target LANGUAGES/FINNISH.BIN",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target LANGUAGES/FRENCH.BIN",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target LANGUAGES/GERMAN.BIN",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target LANGUAGES/ITALIAN.BIN",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target LANGUAGES/KOREAN.BIN",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target LANGUAGES/Labels.bin",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target LANGUAGES/Labels_Global.bin",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target LANGUAGES/POLISH.BIN",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target LANGUAGES/SPANISH.BIN",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target LANGUAGES/SWEDISH.BIN",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target frontend/FRONTB.lzc",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "UnlimiterData directory",
+            "passed": true,
+            "reason": "Unlimiter per-car data directory must exist"
+          },
+          {
+            "check": "VLT database GLOBAL/ATTRIBUTES.BIN",
+            "passed": true,
+            "reason": "Required game database file must exist before applying car registration"
+          },
+          {
+            "check": "VLT database GLOBAL/FE_ATTRIB.BIN",
+            "passed": true,
+            "reason": "Required game database file must exist before applying car registration"
+          }
+        ],
+        "car_ids": [
+          "CHIRON16"
+        ],
+        "binary_file_moves": [
+          {
+            "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/_Settings/global_install.end",
+            "source": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/_Settings/CHIRON16.ini",
+            "source_exists": true,
+            "destination": "scripts/UnlimiterData/CHIRON16.ini"
+          },
+          {
+            "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/_Settings/global_install.end",
+            "source": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/_Settings/_CarManufacturers.ini",
+            "source_exists": true,
+            "destination": "scripts/UnlimiterData/_CarManufacturers.ini"
+          }
+        ],
+        "nfsms_file_copy_operations": [
+          {
+            "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Files.nfsms",
+            "line": 3,
+            "source": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Model/GEOMETRY.BIN",
+            "source_exists": true,
+            "destination": "CARS/CHIRON16/GEOMETRY.BIN"
+          },
+          {
+            "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Files.nfsms",
+            "line": 4,
+            "source": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Model/TEXTURES.BIN",
+            "source_exists": true,
+            "destination": "CARS/CHIRON16/TEXTURES.BIN"
+          },
+          {
+            "script": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Files.nfsms",
+            "line": 5,
+            "source": "nfsaddons.com_BugattiChiron/\u3010BILL.O.JACK\u3011 2016 Bugatti Chiron/ADDON/Files/Model/VINYLS.BIN",
+            "source_exists": true,
+            "destination": "CARS/CHIRON16/VINYLS.BIN"
+          }
+        ]
+      },
+      "classic_modloader_preflight": {
+        "ready": true,
+        "checks": [
+          {
+            "check": "NFS MW executable",
+            "passed": true,
+            "reason": "speed.exe must exist in the target game folder"
+          },
+          {
+            "check": "Classic ModLoader",
+            "passed": true,
+            "reason": "d3d9.dll and modloader.ini must exist"
+          },
+          {
+            "check": "No Unlimiter/ASI-loader conflict",
+            "passed": true,
+            "reason": "Classic ModLoader replacement path is kept separate from the Unlimiter/ASI-loader installation"
+          }
+        ],
+        "payload_file_count": 8
+      }
+    },
+    "flip-car": {
+      "file_count": 21,
+      "total_bytes": 57176685,
+      "car_ids": [
+        "FLIPCAR"
+      ],
+      "profiles": [
+        "unlimiter_addon"
+      ],
+      "declared_tool_requirements": {
+        "Binary": "2.4.0 or higher (required)",
+        "VltEd": "4.6 (required by readme; Attribulina alternative used by this workflow)"
+      },
+      "nfsms": {
+        "script_count": 4,
+        "entrypoints": [
+          "VLT Data Install.nfsms"
+        ],
+        "uninstall_entrypoints": [],
+        "scripts": [
+          "VLT Data Install.nfsms",
+          "VLTFiles/cam_stuffs.nfsms",
+          "VLTFiles/flipcar_install.nfsms",
+          "VLTFiles/flipcar_uninstall.nfsms"
+        ],
+        "script_edges": [
+          {
+            "from": "VLT Data Install.nfsms",
+            "line": 30,
+            "to": "VLTFiles/flipcar_install.nfsms",
+            "status": "resolved"
+          },
+          {
+            "from": "VLT Data Install.nfsms",
+            "line": 31,
+            "to": "VLTFiles/cam_stuffs.nfsms",
+            "status": "resolved"
+          },
+          {
+            "from": "VLT Data Install.nfsms",
+            "line": 35,
+            "to": "VLTFiles/flipcar_uninstall.nfsms",
+            "status": "resolved"
+          }
+        ],
+        "script_base": ".",
+        "relative_path_fallbacks": [],
+        "ambiguous_script_references": [],
+        "command_counts": {
+          "VLT Data Install.nfsms": 28,
+          "VLTFiles/cam_stuffs.nfsms": 105,
+          "VLTFiles/flipcar_install.nfsms": 385,
+          "VLTFiles/flipcar_uninstall.nfsms": 10
+        },
+        "car_collection_ids": [
+          "FLIPCAR"
+        ],
+        "file_copy_operations": [],
+        "ui_controls": [
+          {
+            "script": "VLT Data Install.nfsms",
+            "line": 26,
+            "args": [
+              "radiobutton",
+              "setup_rbutton",
+              "option1",
+              "Install"
+            ]
+          },
+          {
+            "script": "VLT Data Install.nfsms",
+            "line": 27,
+            "args": [
+              "radiobutton",
+              "setup_rbutton",
+              "option2",
+              "Uninstall"
+            ]
+          }
+        ],
+        "ui_options": [
+          {
+            "script": "VLT Data Install.nfsms",
+            "line": 29,
+            "args": [
+              "setup_rbutton",
+              "option1"
+            ]
+          },
+          {
+            "script": "VLT Data Install.nfsms",
+            "line": 32,
+            "args": [
+              "setup_rbutton",
+              "option1"
+            ]
+          },
+          {
+            "script": "VLT Data Install.nfsms",
+            "line": 34,
+            "args": [
+              "setup_rbutton",
+              "option2"
+            ]
+          },
+          {
+            "script": "VLT Data Install.nfsms",
+            "line": 36,
+            "args": [
+              "setup_rbutton",
+              "option2"
+            ]
+          }
+        ],
+        "requires_interactive_choices": true,
+        "missing_references": [],
+        "unsafe_references": []
+      },
+      "amod": {
+        "scripts": [],
+        "entrypoints": [],
+        "uninstall_entrypoints": [],
+        "include_graph": {},
+        "missing_references": [],
+        "unsafe_references": [],
+        "cycles": [],
+        "car_collection_ids": [],
+        "game_targets": [],
+        "script_count": 0
+      },
+      "binary_manifests": [
+        {
+          "path": "Binary Data Install.end",
+          "valid": true,
+          "usage": "User",
+          "game": "MostWanted",
+          "endscript": "Binary Files/global_install.end",
+          "endscript_exists": true,
+          "game_files": [
+            "GLOBAL/GLOBALA.BUN",
+            "GLOBAL/GLOBALB.LZC",
+            "LANGUAGES/ENGLISH.BIN",
+            "FRONTEND/FRONTA.BUN",
+            "FRONTEND/FRONTB.LZC"
+          ],
+          "errors": []
+        }
+      ],
+      "binary_script_count": 2,
+      "binary_missing_references": [],
+      "binary_file_moves": [
+        {
+          "script": "Binary Files/global_install.end",
+          "source": "Binary Files/_Main/CARS/FLIPCAR/GEOMETRY.BIN",
+          "source_exists": true,
+          "destination": "CARS/FLIPCAR/GEOMETRY.BIN"
+        },
+        {
+          "script": "Binary Files/global_install.end",
+          "source": "Binary Files/_Main/CARS/FLIPCAR/TEXTURES.BIN",
+          "source_exists": true,
+          "destination": "CARS/FLIPCAR/TEXTURES.BIN"
+        },
+        {
+          "script": "Binary Files/global_install.end",
+          "source": "Binary Files/_Main/scripts/UnlimiterData/FLIPCAR.ini",
+          "source_exists": true,
+          "destination": "scripts/UnlimiterData/FLIPCAR.ini"
+        }
+      ],
+      "binary_target_game_files": [
+        "CARS/FLIPCAR/GEOMETRY.BIN",
+        "CARS/FLIPCAR/TEXTURES.BIN",
+        "FRONTEND/FRONTA.BUN",
+        "FRONTEND/FRONTB.LZC",
+        "Frontend/FrontB.lzc",
+        "GLOBAL/GLOBALA.BUN",
+        "GLOBAL/GLOBALB.LZC",
+        "GLOBAL/attributes.bin",
+        "GLOBAL/fe_attrib.bin",
+        "LANGUAGES/ENGLISH.BIN",
+        "LANGUAGES/Labels.bin",
+        "LANGUAGES/Labels_Global.bin",
+        "scripts/UnlimiterData/FLIPCAR.ini"
+      ],
+      "binary_uninstall_target_game_files": [],
+      "binary_uninstall_available": false,
+      "mwps": [],
+      "ed_payload": [],
+      "unlimiter_configs": [
+        "Binary Files/_Main/scripts/UnlimiterData/FLIPCAR.ini"
+      ],
+      "save_patcher_files": [],
+      "direct_model_payload": [],
+      "warnings": [
+        {
+          "code": "TOOL_VERSION_REQUIREMENTS",
+          "message": "Package readme/scripts declare tool-version requirements; the installer cannot independently validate all GUI tool versions. Confirm them before continuing."
+        }
+      ],
+      "unlimiter_preflight": {
+        "ready": true,
+        "selected_profile": "unlimiter_addon",
+        "profile_selection": "single_detected_profile",
+        "checks": [
+          {
+            "check": "NFS MW executable",
+            "passed": true,
+            "reason": "speed.exe must exist in the target game folder"
+          },
+          {
+            "check": "Unlimiter",
+            "passed": true,
+            "reason": "scripts/NFSMWUnlimiter.asi must exist"
+          },
+          {
+            "check": "Addon car ID",
+            "passed": true,
+            "reason": "A pvehicle car ID must be identified for independent database read-back"
+          },
+          {
+            "check": "No Classic ModLoader conflict",
+            "passed": true,
+            "reason": "Classic d3d9 ModLoader must not be mixed with the Unlimiter/ASI-loader setup"
+          },
+          {
+            "check": "Binary dependency FRONTEND/FRONTA.BUN",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency FRONTEND/FRONTB.LZC",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency GLOBAL/GLOBALA.BUN",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency GLOBAL/GLOBALB.LZC",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency GLOBAL/attributes.bin",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency GLOBAL/fe_attrib.bin",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency LANGUAGES/ENGLISH.BIN",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency LANGUAGES/Labels.bin",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary dependency LANGUAGES/Labels_Global.bin",
+            "passed": true,
+            "reason": "Binary installer expects this game data file to exist"
+          },
+          {
+            "check": "Binary target FRONTEND/FRONTA.BUN",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target FRONTEND/FRONTB.LZC",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target Frontend/FrontB.lzc",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target GLOBAL/GLOBALA.BUN",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target GLOBAL/GLOBALB.LZC",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target GLOBAL/attributes.bin",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target GLOBAL/fe_attrib.bin",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target LANGUAGES/ENGLISH.BIN",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target LANGUAGES/Labels.bin",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "Binary target LANGUAGES/Labels_Global.bin",
+            "passed": true,
+            "reason": "Binary script targets this existing game data file"
+          },
+          {
+            "check": "UnlimiterData directory",
+            "passed": true,
+            "reason": "Unlimiter per-car data directory must exist"
+          },
+          {
+            "check": "VLT database GLOBAL/ATTRIBUTES.BIN",
+            "passed": true,
+            "reason": "Required game database file must exist before applying car registration"
+          },
+          {
+            "check": "VLT database GLOBAL/FE_ATTRIB.BIN",
+            "passed": true,
+            "reason": "Required game database file must exist before applying car registration"
+          }
+        ],
+        "car_ids": [
+          "FLIPCAR"
+        ],
+        "binary_file_moves": [
+          {
+            "script": "Binary Files/global_install.end",
+            "source": "Binary Files/_Main/CARS/FLIPCAR/GEOMETRY.BIN",
+            "source_exists": true,
+            "destination": "CARS/FLIPCAR/GEOMETRY.BIN"
+          },
+          {
+            "script": "Binary Files/global_install.end",
+            "source": "Binary Files/_Main/CARS/FLIPCAR/TEXTURES.BIN",
+            "source_exists": true,
+            "destination": "CARS/FLIPCAR/TEXTURES.BIN"
+          },
+          {
+            "script": "Binary Files/global_install.end",
+            "source": "Binary Files/_Main/scripts/UnlimiterData/FLIPCAR.ini",
+            "source_exists": true,
+            "destination": "scripts/UnlimiterData/FLIPCAR.ini"
+          }
+        ]
+      }
+    }
+  }
+}

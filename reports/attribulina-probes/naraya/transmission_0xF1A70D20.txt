@@ -1,0 +1,11 @@
+edit transmission/0xF1A70D20 {
+    GEAR_RATIO = [2.65, 0, 2.94, 1.75, 1.32, 0.92, 0.67, 0.58]
+    DIFFERENTIAL = [0.75, 0.75, 0]
+    GEAR_EFFICIENCY = [0.9, 1, 1, 1, 1, 1, 1, 1, 1]
+    TORQUE_CONVERTER = 0.8
+    TORQUE_SPLIT = 0
+    OPTIMAL_SHIFT = 500
+    CLUTCH_SLIP = 0.8
+    SHIFT_SPEED = 0.05
+    FINAL_GEAR = 4.85
+}

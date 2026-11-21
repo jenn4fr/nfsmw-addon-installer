@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "generated": "2026-11-21",
+  "basis": "Actual CLI install dry-runs against disposable synthetic game layouts populated with the required paths; no real game files were changed.",
+  "results": [
+    {
+      "package": "amc-rebel",
+      "target_fixture": "Unlimiter + NFSMW-ML",
+      "command_exit_code": 0,
+      "selected_profile": "unlimiter_addon",
+      "ready": true,
+      "writes_performed": false,
+      "failed_checks": [],
+      "warning_codes": [
+        "README_INSTALL_MODE_CONFLICT"
+      ],
+      "status": "PASS"
+    },
+    {
+      "package": "bugatti-chiron",
+      "target_fixture": "Unlimiter + NFSMW-ML",
+      "command_exit_code": 0,
+      "selected_profile": "unlimiter_addon",
+      "ready": true,
+      "writes_performed": false,
+      "failed_checks": [],
+      "warning_codes": [
+        "MULTIPLE_INSTALL_PROFILES",
+        "ALTERNATIVE_INSTALLERS",
+        "SAVE_PATCHER_MANUAL_ONLY",
+        "TOOL_VERSION_REQUIREMENTS"
+      ],
+      "status": "PASS"
+    },
+    {
+      "package": "flip-car",
+      "target_fixture": "Unlimiter + NFSMW-ML",
+      "command_exit_code": 0,
+      "selected_profile": "unlimiter_addon",
+      "ready": true,
+      "writes_performed": false,
+      "failed_checks": [],
+      "warning_codes": [
+        "TOOL_VERSION_REQUIREMENTS"
+      ],
+      "status": "PASS"
+    },
+    {
+      "package": "bugatti-chiron",
+      "target_fixture": "Classic ModLoader",
+      "command_exit_code": 0,
+      "selected_profile": "classic_modloader_replacement",
+      "ready": true,
+      "writes_performed": false,
+      "failed_checks": [],
+      "warning_codes": [
+        "MULTIPLE_INSTALL_PROFILES",
+        "ALTERNATIVE_INSTALLERS",
+        "SAVE_PATCHER_MANUAL_ONLY"
+      ],
+      "status": "PASS"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "writes_performed": false
+  }
+}

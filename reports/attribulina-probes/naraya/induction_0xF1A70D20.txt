@@ -1,0 +1,9 @@
+edit induction/0xF1A70D20 {
+    SPOOL_TIME_DOWN = 0.25
+    HIGH_BOOST = 0.22
+    LOW_BOOST = 0.2
+    SPOOL_TIME_UP = 2
+    PSI = 22
+    SPOOL = 0.16
+    VACUUM = 0
+}

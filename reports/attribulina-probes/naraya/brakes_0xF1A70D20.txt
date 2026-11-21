@@ -1,0 +1,11 @@
+edit brakes/0xF1A70D20 {
+    BRAKES = {
+        Front = 750
+        Rear = 850
+    }
+    EBRAKE = 950
+    BRAKE_LOCK = {
+        Front = 1.25
+        Rear = 2.15
+    }
+}

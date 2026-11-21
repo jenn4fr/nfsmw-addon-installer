@@ -1,0 +1,9 @@
+edit engine/0xF1A70D20 {
+    ENGINE_BRAKING = [0.7, 0.8, 0.9]
+    IDLE = 950
+    SPEED_LIMITER = []
+    TORQUE = [223, 328, 423, 591, 654, 745, 702, 675, 652]
+    MAX_RPM = 8500
+    FLYWHEEL_MASS = 10
+    RED_LINE = 7500
+}

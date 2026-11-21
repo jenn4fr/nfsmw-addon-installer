@@ -1,0 +1,29 @@
+edit tires/0xF1A70D20 {
+    SECTION_WIDTH = {
+        Front = 255
+        Rear = 325
+    }
+    YAW_CONTROL = [0.12, 0.43, 0.7, 1]
+    DYNAMIC_GRIP = {
+        Front = 1.8
+        Rear = 1.85
+    }
+    RIM_SIZE = {
+        Front = 20
+        Rear = 21
+    }
+    YAW_SPEED = 0.37
+    ASPECT_RATIO = {
+        Front = 45
+        Rear = 45
+    }
+    STATIC_GRIP = {
+        Front = 3.56
+        Rear = 3.56
+    }
+    GRIP_SCALE = {
+        Front = 1.06
+        Rear = 1.06
+    }
+    STEERING = 1.12
+}

@@ -1,36 +1,31 @@
 # Changelog
 
-## 0.4.0 — Target-aware configuration intelligence
+## 0.6.1 — 2026-11-21
 
-- Added parsing of explicit Attribulina `create class/target from class/source` directives to discover target collection names from a converted add-on AMOD.
-- Added `donor-assist --amod` to attach those grounded target mappings to a review-only Hybrid proposal.
-- Restricted mapped proposals to the selected donor's base/base-variant and `_top` records; global defaults and unrelated shared records are excluded.
-- Proposals now identify exact target collection paths for mapped performance classes while leaving unmapped classes out of the mapped proposal.
-- Generated the AMC Rebel review report using the supplied v0.3.0 donor catalogue and validated Rebel AMOD.
-- No executable AMOD/NFSMS is generated; no Attribulina apply, database write, or game installation is performed.
-- Added target mapping/parser tests. 44/44 tests pass.
+- Added a reference-bundle verifier that checks SHA-256 and byte size for all preserved user-supplied archives.
+- Added regression checks for the saved analysis reports of AMC Rebel, Bugatti Chiron and Fast & Furious Flip Car.
+- Added official external-tool capability notes clarifying GUI/CLI boundaries for Binary, Attribulina, Ed, NFSMW-ML and Unlimiter.
+- Added a Windows live acceptance test plan covering dry-run, execution, database read-back, in-game verification and rollback.
+- Added mocked 7-Zip listing/path-safety tests; actual RAR/7z extraction remains a Windows acceptance item.
+- Updated Windows and Git Bash launchers to prefer the project virtual environment, making the documented one-command workflow work after setup.
+- Re-analyzed all three extracted reference packages and verified four CLI dry-run profile selections against disposable synthetic game layouts.
 
 
-## 0.3.0 — Vehicle intelligence foundation
+## 0.6.0 — 2026-11-21
 
-- Replaced broad leaf-only grouping with `pvehicle/racers`-anchored vehicle profiles.
-- Preserved collection parent paths and parsed explicit VLT collection references from pvehicle fields.
-- Joined referenced engine, induction, transmission, brakes, chassis, tires and other subsystem collections by actual class/collection reference, including upgrade variants.
-- Joined ecar handling/body setup by exact vehicle leaf and records that relationship method explicitly.
-- Extracted numeric descriptors including mass, upgrade availability, handling rating bounds, tensor scale, ride height, camber and wheel spoke count.
-- Added optional target-profile numeric similarity to donor ranking, with explicit warnings and no physical-fitment claims.
-- Added relationship/reference audit details and expanded tests.
-- Read-only only; no game database writes or executable donor AMOD generation.
+- Added target-aware automatic selection when exactly one package route matches the detected loader.
+- Added direct Unlimiter `CARS/<id>` and `UnlimiterData` payload staging for AMOD-based add-ons.
+- Added best-effort AMOD include/collection analysis and safe rejection of ambiguous NFSMS/AMOD entry points.
+- Corrected NFSMS nested `script` resolution to use the documented main-script-relative base, with visible fallback/ambiguity warnings.
+- Added uninstall-entrypoint filtering so uninstall scripts are never selected as install scripts.
+- Added Binary `move_file` source-to-destination hash verification and NFSMS `file_copy` hash verification.
+- Added mandatory `attribcli.exe` read-back for every detected/explicit pvehicle ID before an Unlimiter add-on can reach PASS.
+- Added `--car-id` for packages whose car IDs cannot be inferred automatically.
+- Expanded NFSMW-ML legacy ModLoader mapping to CARS, FRONTEND, GLOBAL, LANGUAGES and SCRIPTS; unknown groups block preflight.
+- Hardened ZIP/RAR/7z extraction checks against traversal, symlinks, duplicate/case-colliding paths and Windows-unsafe path names.
+- Strengthened rollback prevalidation to avoid partial restores if GLOBAL/FRONTEND changed after installation.
+- Added real reference-package audit reports, actual target-game audit, guided-install journal hashes and additional regression tests.
 
-## 0.2.0 — 2026-11-21
-- Added explainable donor shortlist based on configuration class coverage and scalar-field richness.
-- Added review-only Hybrid donor configuration proposal with conservative pvehicle field allowlist and identity preservation.
-- Added explicit opt-in file-plan executor, overwrite backups, install journal and rollback.
-- Added donor matcher and file executor tests.
-- Updated README, project status, roadmap, architecture and AI handoff.
-- Safety: donor proposal remains non-executable; database scripts are skipped by file executor.
-- Hardened rollback journal path validation and added a test rejecting destinations outside the selected game root.
-- Donor proposals now include only simple typed scalar values, record omitted fields, and exclude path-like/nested/identity references.
+## 0.5.0 — 2026-11-18
 
-## 0.1.0 — development foundation
-- Package inspection, NFSMS parser, database inventory, Attribulina dry-run validation, read-only install planner and donor catalogue extraction.
+- Initial guided-install workflow with package analysis, loader profiles, transaction backups, external-tool prompts, file verification, database read-back and rollback.
