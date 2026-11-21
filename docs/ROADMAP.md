@@ -1,105 +1,74 @@
-# Roadmap and Acceptance Criteria
+# Roadmap — v0.3.0 baseline
 
-The project is deliberately staged. A later stage must not bypass an earlier safety or evidence requirement.
+## Stage 1 — Analysis and validation foundation **Implemented foundation**
+- Package inspection, partial NFSMS parsing, findings and dependency graph.
+- Read-only database inventory and Attribulina conversion/check/strict dry-run.
+- Read-only installation plan and source/conflict reporting.
 
-## Milestone 0 — Repository and safety foundation
+## Stage 2 — Vehicle relationship discovery **Initial implementation**
+- Canonical vehicle anchors from `pvehicle/racers`.
+- Explicit subsystem references resolved from pvehicle collection fields.
+- Relationship audit with resolved/unresolved status.
+- ecar handling/body data joined by exact vehicle leaf, with lower-confidence labeling.
+- Separate profiles for ATTRIBUTES.BIN and FE_ATTRIB.BIN.
 
-**Status: achieved foundation**
+Remaining: validate all relationships against type headers and additional database snapshots; determine reliable ecar/identity/frontend references.
 
-- Python package and CLI.
-- Unit tests.
-- Read-only scanning and planning defaults.
-- Path traversal rejection in planner.
-- No database-write adapter.
+## Stage 3 — Vehicle feature extraction **Partial**
+- Extract mass, upgrade availability, handling-rating bounds, tensor scale, selected ecar ride height/camber/steering/wheel fields.
 
-Acceptance: compile succeeds; all tests pass; no command modifies game files or databases.
+Remaining: parse complex vectors/arrays safely; identify verified drivetrain, wheelbase, body dimensions, tire dimensions and other useful features if the game data actually exposes them. Do not infer missing values.
 
-## Milestone 1 — Reliable package inspection
+## Stage 4 — Donor matching **Initial explainable engine**
+- Top-N shortlist by configuration coverage and scalar-field richness.
+- Optional numeric feature similarity against a supplied local target profile.
+- Per-candidate available/missing classes and reasons.
 
-**Status: partial / ongoing**
+Remaining: confidence-calibrated per-factor scoring, meaningful missing-data penalties, target hints from add-on NFSMS/package data, and validation against known donor choices. Scores are not physical-fitment guarantees.
 
-- Improve NFSMS grammar and command coverage.
-- Include resolution and dependency ordering.
-- Detect malformed arguments, missing source files, unsupported operations, and unsafe paths.
-- Add fixtures for real addon packages, including AMC Rebel.
+## Stage 5 — Hybrid configuration proposal **Review-only foundation**
+- Selective class/field proposal with target identity preservation.
+- Exclude model/identity references and avoid copying a full donor car.
 
-Acceptance: each recognized command has a parser test; unknown commands remain visible; findings explain uncertainty rather than inventing validity.
+Remaining: typed schema validation, target collection mapping, dependency/reference resolution, deterministic AMOD generation and Attribulina check/strict dry-run. Do not generate executable output until these are proven.
 
-## Milestone 2 — Database export and normalized inventory
+## Stage 6 — File execution and recovery **Experimental foundation**
+- Explicit `--execute` gate; dry-run default.
+- File copies only; database scripts skipped.
+- Backup overwritten files, write journal, rollback copied/replaced files.
 
-**Status: basic inventory/export achieved; semantic normalization pending**
+Remaining: independently verify ModLoader destination mapping, resolve Ed Files, test folder rollback/failure injection/symlink edge cases, and run representative package tests in a temporary game copy.
 
-- Keep Attribulina scan read-only.
-- Parse complete class exports and field headers/types.
-- Preserve database, class, full collection path, field type, and raw value.
-- Validate references between classes/collections.
-- Avoid redundant individual nested `get` calls unless a specific supported path is proven.
+## Stage 7 — Package compatibility **Pending**
+- Verify ModLoader layout against loader behavior and multiple real packages.
+- Resolve Ed Files config/resource destinations.
+- Add safe MWPS/binary patch handling only after format documentation and validation.
+- Support add-on versus replacement profiles.
 
-Acceptance: scan output has deterministic counts, parse diagnostics, and provenance; no game DB changes; parser fixtures cover real export constructs.
+## Stage 8 — Database configuration workflow **Pending**
+- Generate reviewable AMOD from approved target-specific field mappings.
+- Require backups of both databases, Attribulina check, strict dry-run, explicit confirmation, post-apply verification and rollback.
+- Keep database changes separate from file installation.
 
-## Milestone 3 — Donor catalogue and vehicle profile graph
+## Stage 9 — Productization **Pending**
+- Manifest-based uninstall preview and execution.
+- CI on supported Python versions and Windows.
+- End-to-end tests against temporary copies and multiple real add-on packages.
+- Release documentation and migration notes.
 
-**Status: first catalogue implementation achieved; profile semantics pending**
+## Non-negotiable acceptance criteria
+- No guessed target collection names or field types.
+- No blind donor collection copying.
+- Identity, model, geometry, textures and frontend registration remain target-owned.
+- No silent overwrite.
+- Dry-run by default; explicit user approval for writes.
+- All operations journaled and recoverable.
+- Tests pass and package-specific plan is reviewed before installation.
 
-- Normalize vehicle identity and configuration relationships.
-- Separate ATTRIBUTES and FE_ATTRIB.
-- Distinguish identity/registration from performance/customization configuration.
-- Model missing/unknown fields explicitly.
 
-Acceptance: every relationship includes source evidence; no leaf-name-only assumption is used as canonical identity.
+## v0.4.0 completed — Target-aware proposal foundation
 
-## Milestone 4 — Donor recommendation engine
-
-**Status: pending**
-
-- Compare candidate donors to target addon.
-- Rank top 10 with transparent factor scores.
-- Account for body size, drivetrain, mass, wheelbase, tire setup, performance tier, customization support, frontend structure, and engine setup where data supports it.
-- Provide confidence and missing-data penalties.
-
-Acceptance: deterministic scores; synthetic tests; sample report explains why candidates rank; no unsupported physical characteristics are invented.
-
-## Milestone 5 — Selective donor proposal generator
-
-**Status: pending**
-
-- Implement Option B / Hybrid.
-- Preserve target identity, registration, geometry, textures, unique names/IDs, and collection identity.
-- Borrow only compatible selected configuration entries.
-- Generate proposal artifacts and explanations.
-- Validate with Attribulina conversion/check/strict dry-run.
-
-Acceptance: generated proposal never wholesale-copies donor identity; every change has source/destination provenance; strict dry-run passes on disposable copies/appropriate test databases; still no automatic apply.
-
-## Milestone 6 — File staging and installation
-
-**Status: pending; requires user approval before write capability**
-
-- Verify ModLoader mapping.
-- Resolve Ed Files mapping.
-- Stage package files under a controlled temporary root.
-- Check path traversal, conflicts, hashes, and required files.
-- Back up overwritten files; create rollback/uninstall manifest.
-- Apply only explicitly supported formats.
-
-Acceptance: tests use temporary game-root fixtures; rollback restores byte-identical prior state; dry-run and write modes are distinct; explicit confirmation gates writes.
-
-## Milestone 7 — Database install/uninstall
-
-**Status: pending; highest risk**
-
-- Only after validated proposals and disposable-copy tests.
-- Backup both relevant databases.
-- Apply transactionally if Attribulina supports it; otherwise document limitations and require manual recovery plan.
-- Verify post-install state and generate uninstall manifest.
-
-Acceptance: crash/failure tests; backup verification; rollback demonstrated on disposable copies; no live apply without explicit approval.
-
-## Milestone 8 — Release and maintenance
-
-**Status: pending**
-
-- CI on supported Python versions.
-- Versioned releases and changelog.
-- User docs and known-mod compatibility matrix.
-- Regression fixtures for supported package layouts.
+- Parse target collection names from explicit Attribulina AMOD `create` directives.
+- Map selected donor base/base-variant and top-upgrade scalar proposals to target collection names.
+- Exclude global defaults and unmapped classes from target-aware proposals.
+- Keep proposals review-only; typed validation and candidate AMOD generation are the next gates.

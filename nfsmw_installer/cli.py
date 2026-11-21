@@ -13,6 +13,8 @@ from .attribulina import AttribulinaAdapter
 from .inventory import build_inventory, write_inventory
 from .donor_catalogue import build_donor_catalogue, write_donor_catalogue
 from .planner import build_install_plan
+from .donor_matcher import rank_donors, build_configuration_proposal, parse_target_collections, write_json
+from .apply_plan import apply_file_plan, rollback_journal
 
 
 def resolve_path(value: str | Path) -> Path:
@@ -276,6 +278,63 @@ def build_donor_catalogue_command(args):
     return 0
 
 
+
+def donor_assist_command(args):
+    catalogue_path = resolve_path(args.catalogue).resolve()
+    catalogue = json.loads(catalogue_path.read_text(encoding="utf-8"))
+    package = resolve_path(args.source).resolve()
+    if not package.is_dir():
+        print(f"ERROR: addon folder not found: {package}", file=sys.stderr)
+        return 2
+    target = args.target or package.name
+    result = rank_donors(catalogue, target_name=target, limit=args.limit, database=args.database, target_profile=args.target_profile)
+    if args.donor:
+        key = args.donor if args.donor in catalogue.get("vehicle_profiles", {}) else None
+        if key is None:
+            matches = [k for k, v in catalogue.get("vehicle_profiles", {}).items()
+                       if v.get("name", "").lower() == args.donor.lower()]
+            key = matches[0] if matches else None
+        if key is None:
+            print(f"ERROR: donor not found: {args.donor}", file=sys.stderr)
+            return 2
+        target_collections = None
+        if args.amod:
+            amod_path = resolve_path(args.amod).resolve()
+            if not amod_path.is_file():
+                print(f"ERROR: target AMOD not found: {amod_path}", file=sys.stderr)
+                return 2
+            target_collections = parse_target_collections(amod_path.read_text(encoding="utf-8", errors="replace"))
+        result["configuration_proposal"] = build_configuration_proposal(
+            catalogue, key, target, target_collections=target_collections)
+    output = resolve_path(args.output)
+    write_json(result, output)
+    print("Target vehicle:", target)
+    print("Candidates:", result["candidate_count"])
+    print("Recommendations:")
+    for i, item in enumerate(result["recommendations"], 1):
+        print(f"{i:2}. {item['name']:<24} score={item['score']:>5} coverage={item['coverage_score']:>5}% classes={len(item['available_classes'])}")
+    if args.donor:
+        print("Review-only configuration proposal included.")
+    print("Report:", output.resolve())
+    print("Ranking basis:", result.get("ranking_basis"))
+    print("Physical compatibility verified: NO")
+    print("Game/database writes: NO")
+    return 0
+
+
+def apply_plan_command(args):
+    result = apply_file_plan(resolve_path(args.plan), execute=args.execute,
+                             overwrite=args.overwrite, backup_root=resolve_path(args.backup_root) if args.backup_root else None)
+    print(json.dumps(result, indent=2))
+    return 0
+
+
+def rollback_command(args):
+    result = rollback_journal(resolve_path(args.journal))
+    print(json.dumps(result, indent=2))
+    return 0
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(
         prog="nfsmw-installer",
@@ -377,6 +436,26 @@ def main(argv=None):
         default="reports/donor-catalogue.json",
     )
 
+    assist_cmd = sub.add_parser("donor-assist", help="Rank donor vehicles and optionally create a review-only configuration proposal")
+    assist_cmd.add_argument("source", help="Extracted add-on package folder")
+    assist_cmd.add_argument("--catalogue", required=True, help="donor-catalogue.json")
+    assist_cmd.add_argument("--target", help="Target vehicle name; defaults to package folder name")
+    assist_cmd.add_argument("--target-profile", help="Optional existing vehicle profile key/name for measured local-feature comparison")
+    assist_cmd.add_argument("--donor", help="Optional donor profile key or vehicle leaf name")
+    assist_cmd.add_argument("--amod", help="Optional converted target AMOD; explicit create directives map target collections")
+    assist_cmd.add_argument("--database", default="attributes.bin")
+    assist_cmd.add_argument("--limit", type=int, default=10)
+    assist_cmd.add_argument("-o", "--output", default="reports/donor-assist.json")
+
+    apply_cmd = sub.add_parser("apply-file-plan", help="Apply file-copy operations from a reviewed plan; dry-run unless --execute")
+    apply_cmd.add_argument("plan")
+    apply_cmd.add_argument("--execute", action="store_true", help="Explicitly enable game-file copying")
+    apply_cmd.add_argument("--overwrite", action="store_true", help="Back up and replace existing files")
+    apply_cmd.add_argument("--backup-root", help="Optional backup directory")
+
+    rollback_cmd = sub.add_parser("rollback-install", help="Restore files using an install-journal.json")
+    rollback_cmd.add_argument("journal")
+
     args = parser.parse_args(argv)
 
 
@@ -403,6 +482,15 @@ def main(argv=None):
 
         if args.action == "build-donor-catalogue":
             return build_donor_catalogue_command(args)
+
+        if args.action == "donor-assist":
+            return donor_assist_command(args)
+
+        if args.action == "apply-file-plan":
+            return apply_plan_command(args)
+
+        if args.action == "rollback-install":
+            return rollback_command(args)
 
 
 

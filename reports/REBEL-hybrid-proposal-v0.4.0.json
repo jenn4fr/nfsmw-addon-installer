@@ -1,0 +1,589 @@
+{
+  "matcher_version": 2,
+  "target": "AMC Rebel",
+  "database": "attributes.bin",
+  "ranking_basis": "configuration coverage and exported scalar-field richness",
+  "target_profile": null,
+  "physical_compatibility_verified": false,
+  "score_interpretation": "Configuration coverage/richness only; not physical compatibility.",
+  "recommendations": [
+    {
+      "key": "attributes.bin:tt",
+      "name": "tt",
+      "database": "ATTRIBUTES.BIN",
+      "score": 87.26,
+      "coverage_score": 84.07,
+      "richness_score": 100.0,
+      "available_classes": [
+        "pvehicle",
+        "engine",
+        "induction",
+        "transmission",
+        "brakes",
+        "chassis",
+        "tires",
+        "rigidbodyspecs"
+      ],
+      "missing_classes": [
+        "acceltrans",
+        "nos",
+        "shiftpattern"
+      ],
+      "field_count": 165,
+      "record_count": 15,
+      "feature_similarity": null,
+      "reason": "8/11 performance classes present; 165 exported scalar fields."
+    },
+    {
+      "key": "attributes.bin:bmwm3gtre46",
+      "name": "bmwm3gtre46",
+      "database": "ATTRIBUTES.BIN",
+      "score": 85.84,
+      "coverage_score": 82.3,
+      "richness_score": 100.0,
+      "available_classes": [
+        "pvehicle",
+        "engine",
+        "induction",
+        "transmission",
+        "brakes",
+        "chassis",
+        "tires",
+        "nos"
+      ],
+      "missing_classes": [
+        "acceltrans",
+        "shiftpattern",
+        "rigidbodyspecs"
+      ],
+      "field_count": 105,
+      "record_count": 10,
+      "feature_similarity": null,
+      "reason": "8/11 performance classes present; 105 exported scalar fields."
+    },
+    {
+      "key": "attributes.bin:sl65",
+      "name": "sl65",
+      "database": "ATTRIBUTES.BIN",
+      "score": 85.44,
+      "coverage_score": 82.3,
+      "richness_score": 98.0,
+      "available_classes": [
+        "pvehicle",
+        "engine",
+        "induction",
+        "transmission",
+        "brakes",
+        "chassis",
+        "tires",
+        "nos"
+      ],
+      "missing_classes": [
+        "acceltrans",
+        "shiftpattern",
+        "rigidbodyspecs"
+      ],
+      "field_count": 98,
+      "record_count": 9,
+      "feature_similarity": null,
+      "reason": "8/11 performance classes present; 98 exported scalar fields."
+    },
+    {
+      "key": "attributes.bin:56corvette",
+      "name": "56corvette",
+      "database": "ATTRIBUTES.BIN",
+      "score": 82.3,
+      "coverage_score": 77.88,
+      "richness_score": 100.0,
+      "available_classes": [
+        "pvehicle",
+        "engine",
+        "induction",
+        "transmission",
+        "brakes",
+        "chassis",
+        "tires"
+      ],
+      "missing_classes": [
+        "acceltrans",
+        "nos",
+        "shiftpattern",
+        "rigidbodyspecs"
+      ],
+      "field_count": 127,
+      "record_count": 12,
+      "feature_similarity": null,
+      "reason": "7/11 performance classes present; 127 exported scalar fields."
+    },
+    {
+      "key": "attributes.bin:911turbo",
+      "name": "911turbo",
+      "database": "ATTRIBUTES.BIN",
+      "score": 82.3,
+      "coverage_score": 77.88,
+      "richness_score": 100.0,
+      "available_classes": [
+        "pvehicle",
+        "engine",
+        "induction",
+        "transmission",
+        "brakes",
+        "chassis",
+        "tires"
+      ],
+      "missing_classes": [
+        "acceltrans",
+        "nos",
+        "shiftpattern",
+        "rigidbodyspecs"
+      ],
+      "field_count": 134,
+      "record_count": 13,
+      "feature_similarity": null,
+      "reason": "7/11 performance classes present; 134 exported scalar fields."
+    },
+    {
+      "key": "attributes.bin:997s",
+      "name": "997s",
+      "database": "ATTRIBUTES.BIN",
+      "score": 82.3,
+      "coverage_score": 77.88,
+      "richness_score": 100.0,
+      "available_classes": [
+        "pvehicle",
+        "engine",
+        "induction",
+        "transmission",
+        "brakes",
+        "chassis",
+        "tires"
+      ],
+      "missing_classes": [
+        "acceltrans",
+        "nos",
+        "shiftpattern",
+        "rigidbodyspecs"
+      ],
+      "field_count": 141,
+      "record_count": 14,
+      "feature_similarity": null,
+      "reason": "7/11 performance classes present; 141 exported scalar fields."
+    },
+    {
+      "key": "attributes.bin:a3",
+      "name": "a3",
+      "database": "ATTRIBUTES.BIN",
+      "score": 82.3,
+      "coverage_score": 77.88,
+      "richness_score": 100.0,
+      "available_classes": [
+        "pvehicle",
+        "engine",
+        "induction",
+        "transmission",
+        "brakes",
+        "chassis",
+        "tires"
+      ],
+      "missing_classes": [
+        "acceltrans",
+        "nos",
+        "shiftpattern",
+        "rigidbodyspecs"
+      ],
+      "field_count": 141,
+      "record_count": 14,
+      "feature_similarity": null,
+      "reason": "7/11 performance classes present; 141 exported scalar fields."
+    },
+    {
+      "key": "attributes.bin:a4",
+      "name": "a4",
+      "database": "ATTRIBUTES.BIN",
+      "score": 82.3,
+      "coverage_score": 77.88,
+      "richness_score": 100.0,
+      "available_classes": [
+        "pvehicle",
+        "engine",
+        "induction",
+        "transmission",
+        "brakes",
+        "chassis",
+        "tires"
+      ],
+      "missing_classes": [
+        "acceltrans",
+        "nos",
+        "shiftpattern",
+        "rigidbodyspecs"
+      ],
+      "field_count": 141,
+      "record_count": 14,
+      "feature_similarity": null,
+      "reason": "7/11 performance classes present; 141 exported scalar fields."
+    },
+    {
+      "key": "attributes.bin:carreragt",
+      "name": "carreragt",
+      "database": "ATTRIBUTES.BIN",
+      "score": 82.3,
+      "coverage_score": 77.88,
+      "richness_score": 100.0,
+      "available_classes": [
+        "pvehicle",
+        "engine",
+        "induction",
+        "transmission",
+        "brakes",
+        "chassis",
+        "tires"
+      ],
+      "missing_classes": [
+        "acceltrans",
+        "nos",
+        "shiftpattern",
+        "rigidbodyspecs"
+      ],
+      "field_count": 134,
+      "record_count": 13,
+      "feature_similarity": null,
+      "reason": "7/11 performance classes present; 134 exported scalar fields."
+    },
+    {
+      "key": "attributes.bin:caymans",
+      "name": "caymans",
+      "database": "ATTRIBUTES.BIN",
+      "score": 82.3,
+      "coverage_score": 77.88,
+      "richness_score": 100.0,
+      "available_classes": [
+        "pvehicle",
+        "engine",
+        "induction",
+        "transmission",
+        "brakes",
+        "chassis",
+        "tires"
+      ],
+      "missing_classes": [
+        "acceltrans",
+        "nos",
+        "shiftpattern",
+        "rigidbodyspecs"
+      ],
+      "field_count": 141,
+      "record_count": 14,
+      "feature_similarity": null,
+      "reason": "7/11 performance classes present; 141 exported scalar fields."
+    }
+  ],
+  "candidate_count": 43,
+  "limitations": [
+    "Scores measure exported configuration coverage, not vehicle dimensions, drivetrain, wheelbase, or handling compatibility.",
+    "A real target profile is required for physics-to-physics similarity scoring.",
+    "Only ATTRIBUTES.BIN is ranked by default; FE_ATTRIB.BIN is for cross-checking identity/frontend references."
+  ],
+  "configuration_proposal": {
+    "proposal_version": 2,
+    "mode": "hybrid-review-only",
+    "target_vehicle": "AMC Rebel",
+    "donor_profile": "attributes.bin:tt",
+    "donor_vehicle": "tt",
+    "proposals": [
+      {
+        "class": "pvehicle",
+        "donor_collection": "tt",
+        "target_collection": "pvehicle/rebel",
+        "fields": {
+          "TrafficEngType": 0,
+          "MASS": 1523,
+          "brakes_upgrades": 4,
+          "induction_upgrades": 3,
+          "tires_upgrades": 3,
+          "engine_upgrades": 4,
+          "transmission_upgrades": 4,
+          "nos_upgrades": 3,
+          "chassis_upgrades": 3
+        },
+        "omitted_fields": [
+          "VerbalType",
+          "TENSOR_SCALE",
+          "MODEL",
+          "CollectionName",
+          "HornType",
+          "DefaultPresetRide",
+          "transmission",
+          "HandlingRating",
+          "TurboSND",
+          "tires",
+          "ShiftSND",
+          "rigidbodyspecs",
+          "engine",
+          "induction",
+          "frontend",
+          "chassis",
+          "brakes",
+          "engineaudio"
+        ],
+        "status": "review-required-target-mapping"
+      },
+      {
+        "class": "engine",
+        "donor_collection": "tt",
+        "target_collection": "engine/rebel",
+        "fields": {
+          "MAX_RPM": 8000,
+          "FLYWHEEL_MASS": 14,
+          "RED_LINE": 7000
+        },
+        "omitted_fields": [
+          "ENGINE_BRAKING",
+          "IDLE",
+          "SPEED_LIMITER",
+          "TORQUE"
+        ],
+        "status": "review-required-target-mapping"
+      },
+      {
+        "class": "engine",
+        "donor_collection": "tt_top",
+        "target_collection": "engine/rebel_top",
+        "fields": {
+          "MAX_RPM": 8000,
+          "FLYWHEEL_MASS": 14,
+          "RED_LINE": 7000
+        },
+        "omitted_fields": [
+          "ENGINE_BRAKING",
+          "IDLE",
+          "SPEED_LIMITER",
+          "TORQUE"
+        ],
+        "status": "review-required-target-mapping"
+      },
+      {
+        "class": "induction",
+        "donor_collection": "tt_base",
+        "target_collection": "induction/rebel",
+        "fields": {
+          "SPOOL_TIME_DOWN": 0.25,
+          "HIGH_BOOST": 0.05,
+          "LOW_BOOST": 0.05,
+          "SPOOL_TIME_UP": 2.5,
+          "PSI": 13,
+          "SPOOL": 0.2,
+          "VACUUM": -0.15
+        },
+        "omitted_fields": [],
+        "status": "review-required-target-mapping"
+      },
+      {
+        "class": "induction",
+        "donor_collection": "tt_top",
+        "target_collection": "induction/rebel_top",
+        "fields": {
+          "SPOOL_TIME_DOWN": 0.25,
+          "HIGH_BOOST": 0.25,
+          "LOW_BOOST": 0.25,
+          "SPOOL_TIME_UP": 1.75,
+          "PSI": 15,
+          "SPOOL": 0.2,
+          "VACUUM": -0.05
+        },
+        "omitted_fields": [],
+        "status": "review-required-target-mapping"
+      },
+      {
+        "class": "transmission",
+        "donor_collection": "tt",
+        "target_collection": "transmission/rebel",
+        "fields": {
+          "TORQUE_CONVERTER": 0.2,
+          "TORQUE_SPLIT": 0.5,
+          "OPTIMAL_SHIFT": 500,
+          "CLUTCH_SLIP": 0.8,
+          "SHIFT_SPEED": 0.25,
+          "FINAL_GEAR": 4.2
+        },
+        "omitted_fields": [
+          "GEAR_RATIO",
+          "DIFFERENTIAL",
+          "GEAR_EFFICIENCY"
+        ],
+        "status": "review-required-target-mapping"
+      },
+      {
+        "class": "transmission",
+        "donor_collection": "tt_top",
+        "target_collection": "transmission/rebel_top",
+        "fields": {
+          "TORQUE_CONVERTER": 0.2,
+          "TORQUE_SPLIT": 0.5,
+          "OPTIMAL_SHIFT": 500,
+          "CLUTCH_SLIP": 0.75,
+          "SHIFT_SPEED": 0.25,
+          "FINAL_GEAR": 3.3
+        },
+        "omitted_fields": [
+          "GEAR_RATIO",
+          "DIFFERENTIAL",
+          "GEAR_EFFICIENCY"
+        ],
+        "status": "review-required-target-mapping"
+      },
+      {
+        "class": "brakes",
+        "donor_collection": "tt",
+        "target_collection": "brakes/rebel",
+        "fields": {
+          "EBRAKE": 550
+        },
+        "omitted_fields": [
+          "BRAKES",
+          "BRAKE_LOCK"
+        ],
+        "status": "review-required-target-mapping"
+      },
+      {
+        "class": "brakes",
+        "donor_collection": "tt_top",
+        "target_collection": "brakes/rebel_top",
+        "fields": {
+          "EBRAKE": 700
+        },
+        "omitted_fields": [
+          "BRAKES",
+          "BRAKE_LOCK"
+        ],
+        "status": "review-required-target-mapping"
+      },
+      {
+        "class": "chassis",
+        "donor_collection": "tt",
+        "target_collection": "chassis/rebel",
+        "fields": {
+          "WHEEL_BASE": 2.429,
+          "DRAG_COEFFICIENT": 0.345,
+          "SHOCK_BLOWOUT": 8,
+          "ROLL_CENTER": 9.75,
+          "AERO_CG": 46.5,
+          "RENDER_MOTION": 1,
+          "AERO_COEFFICIENT": 0.2,
+          "FRONT_AXLE": 1.15,
+          "FRONT_WEIGHT_BIAS": 53
+        },
+        "omitted_fields": [
+          "SHOCK_VALVING",
+          "RIDE_HEIGHT",
+          "SHOCK_STIFFNESS",
+          "SHOCK_EXT_STIFFNESS",
+          "SWAYBAR_STIFFNESS",
+          "TRAVEL",
+          "SPRING_STIFFNESS",
+          "SPRING_PROGRESSION",
+          "TRACK_WIDTH",
+          "SHOCK_DIGRESSION"
+        ],
+        "status": "review-required-target-mapping"
+      },
+      {
+        "class": "chassis",
+        "donor_collection": "tt_top",
+        "target_collection": "chassis/rebel_top",
+        "fields": {
+          "WHEEL_BASE": 2.429,
+          "DRAG_COEFFICIENT": 0.39,
+          "SHOCK_BLOWOUT": 8,
+          "ROLL_CENTER": 9,
+          "AERO_CG": 48,
+          "RENDER_MOTION": 0.5,
+          "AERO_COEFFICIENT": 0.25,
+          "FRONT_AXLE": 1.15,
+          "FRONT_WEIGHT_BIAS": 53
+        },
+        "omitted_fields": [
+          "SHOCK_VALVING",
+          "RIDE_HEIGHT",
+          "SHOCK_STIFFNESS",
+          "SHOCK_EXT_STIFFNESS",
+          "SWAYBAR_STIFFNESS",
+          "TRAVEL",
+          "SPRING_STIFFNESS",
+          "SPRING_PROGRESSION",
+          "TRACK_WIDTH",
+          "SHOCK_DIGRESSION"
+        ],
+        "status": "review-required-target-mapping"
+      },
+      {
+        "class": "tires",
+        "donor_collection": "tt",
+        "target_collection": "tires/rebel",
+        "fields": {
+          "YAW_SPEED": 0.4,
+          "STEERING": 1
+        },
+        "omitted_fields": [
+          "SECTION_WIDTH",
+          "YAW_CONTROL",
+          "DYNAMIC_GRIP",
+          "RIM_SIZE",
+          "ASPECT_RATIO",
+          "STATIC_GRIP",
+          "GRIP_SCALE"
+        ],
+        "status": "review-required-target-mapping"
+      },
+      {
+        "class": "tires",
+        "donor_collection": "tt_top",
+        "target_collection": "tires/rebel_top",
+        "fields": {
+          "YAW_SPEED": 0.425,
+          "STEERING": 1
+        },
+        "omitted_fields": [
+          "SECTION_WIDTH",
+          "YAW_CONTROL",
+          "DYNAMIC_GRIP",
+          "RIM_SIZE",
+          "ASPECT_RATIO",
+          "STATIC_GRIP",
+          "GRIP_SCALE"
+        ],
+        "status": "review-required-target-mapping"
+      }
+    ],
+    "preserved_identity_domains": [
+      "vehicle identity",
+      "model/geometry/texture references",
+      "frontend registration",
+      "collection identity"
+    ],
+    "excluded_classes": [
+      "ecar",
+      "camerainfo",
+      "frontend",
+      "pvehicle identity fields"
+    ],
+    "executable": false,
+    "writes_performed": false,
+    "target_collection_mapping": {
+      "brakes": "brakes/rebel",
+      "chassis": "chassis/rebel",
+      "engine": "engine/rebel",
+      "induction": "induction/rebel",
+      "pvehicle": "pvehicle/rebel",
+      "tires": "tires/rebel",
+      "transmission": "transmission/rebel"
+    },
+    "required_before_execution": [
+      "Confirm every target collection mapping against the add-on NFSMS and local database inventory.",
+      "Validate field types against Attribulina headers for every proposed field.",
+      "Review external references and dependencies; do not transplant donor collection IDs blindly.",
+      "Generate AMOD and pass Attribulina check plus strict dry-run."
+    ],
+    "safety_note": "Review-only proposal. No database changes or executable install script generated."
+  }
+}
